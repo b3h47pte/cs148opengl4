@@ -16,10 +16,11 @@ public:
     }
 
     template<typename T, std::enable_if_t<std::is_integral<T>::value>* = nullptr>
-    const SceneObject* GetRawSceneObject(T index) const
+    const SceneObject& GetSceneObject(T index) const
     {
+        assert(index >= 0 && index < sceneObjects.size());
         const std::shared_ptr<SceneObject>& internalObject = sceneObjects[index];
-        return internalObject.get();
+        return *internalObject.get();
     }
 
     friend class Renderer;

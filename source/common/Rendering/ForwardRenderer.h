@@ -10,6 +10,8 @@ class ForwardRenderer: public Renderer
 public:
     ForwardRenderer(std::shared_ptr<class Scene> inputScene, std::shared_ptr<class Camera> inputCamera);
     virtual ~ForwardRenderer();
+
+    virtual void Render();
 };
 
 #endif

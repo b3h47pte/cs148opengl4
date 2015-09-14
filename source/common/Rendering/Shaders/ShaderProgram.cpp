@@ -1,0 +1,86 @@
+#include "common/Rendering/Shaders/ShaderProgram.h"
+#include <fstream>
+#include <iterator>
+
+ShaderProgram::ShaderProgram(const std::unordered_map<GLenum, std::string>& inputShaders):
+    shaderProgram(0)
+{
+    if (inputShaders.find(GL_VERTEX_SHADER) == inputShaders.end() || 
+            inputShaders.find(GL_FRAGMENT_SHADER) == inputShaders.end())
+    {
+        std::cerr <<  "ERROR: Your shader program is either missing a vertex shader or a fragment shader" << std::endl;
+        return;
+    }
+
+    // Read and setup the vertex and fragment shaders.
+    // TODO: Make the shader objects be cached so we don't incur the cost of creating a shader object multiple times if it is being reused.
+    shaderObjects[GL_VERTEX_SHADER] = LoadShaderObject(GL_VERTEX_SHADER, inputShaders.at(GL_VERTEX_SHADER));
+    shaderObjects[GL_FRAGMENT_SHADER] = LoadShaderObject(GL_FRAGMENT_SHADER, inputShaders.at(GL_FRAGMENT_SHADER));
+
+    // Now link the vertex and fragment shader together to create the shader program.
+    shaderProgram = glCreateProgram();
+
+    glAttachShader(shaderProgram, shaderObjects[GL_VERTEX_SHADER]);
+    glAttachShader(shaderProgram, shaderObjects[GL_FRAGMENT_SHADER]);
+    glLinkProgram(shaderProgram);
+    
+    // Check if any errors happened during the linker stage.
+    GLint linkStatus;
+    glGetProgramiv(shaderProgram, GL_LINK_STATUS, &linkStatus);
+    if (linkStatus != GL_TRUE) {
+        char errorLogBuffer[SHADER_ERROR_LOG_SIZE];
+        glGetProgramInfoLog(shaderProgram, SHADER_ERROR_LOG_SIZE, NULL, errorLogBuffer);
+        std::cerr << "ERROR: Program link compilation failure -- " << std::endl << "    " << errorLogBuffer << std::endl;
+        shaderProgram = 0;
+    }
+
+    glDetachShader(shaderProgram, shaderObjects[GL_VERTEX_SHADER]);
+    glDetachShader(shaderProgram, shaderObjects[GL_FRAGMENT_SHADER]);
+    glDeleteShader(shaderObjects[GL_VERTEX_SHADER]);
+    glDeleteShader(shaderObjects[GL_FRAGMENT_SHADER]);
+}
+
+ShaderProgram::~ShaderProgram()
+{
+    glDeleteProgram(shaderProgram);
+}
+
+GLuint ShaderProgram::LoadShaderObject(GLenum type, const std::string& filename)
+{
+    std::ifstream fs(filename, std::ifstream::in);
+    
+    // This reads in the whole file into an std::string. Google for more information!
+    std::string shaderText((std::istreambuf_iterator<char>(fs)), 
+        std::istreambuf_iterator<char>());
+
+    GLuint newShaderObject = glCreateShader(type);
+
+    // Need to associate the actual shader text we loaded ('shaderText') with the shader we just
+    // made so that the driver knows what to compile!
+    const char* shaderTextStr = shaderText.c_str();
+    glShaderSource(newShaderObject, 1, &shaderTextStr, NULL);
+
+    // Compile the shader and make sure compilation passes! Will spit out compilation debugging information if it does not.
+    glCompileShader(newShaderObject);
+
+    GLint compileStatus;
+    glGetShaderiv(newShaderObject, GL_COMPILE_STATUS, &compileStatus);
+    if (compileStatus != GL_TRUE) {
+        char errorLogBuffer[SHADER_ERROR_LOG_SIZE];
+        glGetShaderInfoLog(newShaderObject, SHADER_ERROR_LOG_SIZE, NULL, errorLogBuffer);
+        std::cerr << "ERROR: Shader compilation failure -- " << std::endl << "    " << errorLogBuffer << std::endl;
+        return 0;
+    }
+
+    return newShaderObject;
+}
+
+void ShaderProgram::StartUseShader()
+{
+    glUseProgram(shaderProgram);
+}
+
+void ShaderProgram::StopUseShader()
+{
+    glUseProgram(0);
+}

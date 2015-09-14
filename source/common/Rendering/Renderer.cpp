@@ -12,10 +12,4 @@ Renderer::~Renderer()
 {
 }
 
-void Renderer::Render()
-{
-    auto totalObjects = scene->GetTotalObjects();
-    for (decltype(totalObjects) i = 0; i < totalObjects; ++i) {
 
-    }
-}
