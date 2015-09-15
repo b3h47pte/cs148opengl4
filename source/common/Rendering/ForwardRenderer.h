@@ -5,6 +5,7 @@
 
 #include "common/Rendering/Renderer.h"
 
+// This class provides a forward renderer WITHOUT lighting.
 class ForwardRenderer: public Renderer
 {
 public:

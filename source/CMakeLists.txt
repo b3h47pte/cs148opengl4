@@ -40,6 +40,13 @@ add_definitions("-DASSIGNMENT=${ASSIGNMENT}")
 file(GLOB_RECURSE ASSIGNMENT_SOURCES "./assignment${ASSIGNMENT}/*.cpp")
 file(GLOB_RECURSE ASSIGNMENT_HEADERS "./assignment${ASSIGNMENT}/*.h")
 
+# Shaders. Need to copy shaders to the executables working directory. 
+file(GLOB_RECURSE SHADERS "./shaders/*.vert" "./shaders/*.frag")
+add_custom_target(shaderHandler ALL 
+    python ${CMAKE_CURRENT_SOURCE_DIR}/scripts/dirCopy.py ${CMAKE_CURRENT_SOURCE_DIR}/shaders ${CMAKE_CURRENT_BINARY_DIR}/shaders
+    DEPENDS ${SHADERS}
+    SOURCES ${SHADERS})
+
 # Note that file globbing is generally not recommended. It is usually better to explicitly list files; however,
 # I am assuming that most students are unfamiliar with CMake and thus will not be able to update the CMakeLists.txt
 # file appropriately. Hence, globbing is necessary for me to generate the Makefiles/whatever again should I ever
@@ -47,6 +54,7 @@ file(GLOB_RECURSE ASSIGNMENT_HEADERS "./assignment${ASSIGNMENT}/*.h")
 add_definitions(${CXX_FLAGS})
 add_executable(cs148opengl4 main.cpp ${COMMON_SOURCES} ${COMMON_HEADERS}
     ${ASSIGNMENT_SOURCES} ${ASSIGNMENT_HEADERS})
+add_dependencies(cs148opengl4 shaderHandler)
 
 # OpenGL
 target_link_libraries(cs148opengl4 ${OPENGL_LIBRARIES})
@@ -60,3 +68,5 @@ endif()
 if (APPLE)
     target_link_libraries(cs148opengl4 "${CMAKE_SOURCE_DIR}/external/glew/distrib/osx/lib/libGLEW.a")
 endif()
+
+
