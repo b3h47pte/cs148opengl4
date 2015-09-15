@@ -42,8 +42,14 @@ file(GLOB_RECURSE ASSIGNMENT_HEADERS "./assignment${ASSIGNMENT}/*.h")
 
 # Shaders. Need to copy shaders to the executables working directory. 
 file(GLOB_RECURSE SHADERS "./shaders/*.vert" "./shaders/*.frag")
+
+set(SHADER_TARGET_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
+if (${CMAKE_GENERATOR} STREQUAL "Unix Makefiles")
+    set(SHADER_TARGET_DIRECTORY ${SHADER_TARGET_DIRECTORY}/../)
+endif()
+
 add_custom_target(shaderHandler ALL 
-    python ${CMAKE_CURRENT_SOURCE_DIR}/scripts/dirCopy.py ${CMAKE_CURRENT_SOURCE_DIR}/shaders ${CMAKE_CURRENT_BINARY_DIR}/shaders
+    python ${CMAKE_CURRENT_SOURCE_DIR}/scripts/dirCopy.py ${CMAKE_CURRENT_SOURCE_DIR}/shaders ${SHADER_TARGET_DIRECTORY}/shaders
     DEPENDS ${SHADERS}
     SOURCES ${SHADERS})
 
@@ -62,11 +68,13 @@ target_link_libraries(cs148opengl4 ${OPENGL_LIBRARIES})
 # SDL2 Library
 if (APPLE)
     target_link_libraries(cs148opengl4 "${CMAKE_SOURCE_DIR}/external/SDL2/osx/SDL2.framework")
+
+    # Need to code sign for use with XCode!
+    add_custom_command(TARGET cs148opengl4 POST_BUILD
+        COMMAND codesign -f -s - "${CMAKE_SOURCE_DIR}/external/SDL2/osx/SDL2.framework")
 endif()
 
 # GLEW Library
 if (APPLE)
     target_link_libraries(cs148opengl4 "${CMAKE_SOURCE_DIR}/external/glew/distrib/osx/lib/libGLEW.a")
 endif()
-
-

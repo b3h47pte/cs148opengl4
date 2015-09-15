@@ -47,7 +47,7 @@ ShaderProgram::~ShaderProgram()
 
 GLuint ShaderProgram::LoadShaderObject(GLenum type, const std::string& filename)
 {
-    std::ifstream fs("shaders/" + filename, std::ifstream::in);
+    std::ifstream fs("../shaders/" + filename, std::ifstream::in);
     
     // This reads in the whole file into an std::string. Google for more information!
     std::string shaderText((std::istreambuf_iterator<char>(fs)), 
