@@ -4,11 +4,13 @@
 MediaLayer::MediaLayer(std::unique_ptr<Application> inputApp, std::unique_ptr<Renderer> inputRenderer):
     app(std::move(inputApp)), renderer(std::move(inputRenderer)), sdlWindow(nullptr), sdlInitialized(false), openglInitialized(false)
 {
-    assert(inputApp);
-    assert(inputRenderer);
+    assert(app);
+    assert(renderer);
 
     InitializeSDL();
     InitializeOpenGL();
+
+    app->Initialize();
 }
 
 MediaLayer::~MediaLayer()
@@ -41,6 +43,7 @@ void MediaLayer::InitializeSDL()
 void MediaLayer::InitializeOpenGL()
 {
     if (!sdlInitialized) {
+        std::cerr << "ERROR: Can not initialize OpenGL before setting up SDL." << std::endl;
         return;
     }
 
@@ -68,6 +71,16 @@ void MediaLayer::InitializeOpenGL()
     // More information: https://www.opengl.org/wiki/Swap_Interval
     // Documentation: https://wiki.libsdl.org/SDL_GL_SetSwapInterval
     SDL_GL_SetSwapInterval(0);
+
+    // Initialize GLEW 
+    glewExperimental = GL_TRUE;
+    GLenum err = glewInit();
+    if (err != GLEW_OK) {
+        std::cerr << "ERROR: GLEW failed to initialize." << std::endl;
+        return;
+    }
+    // At this point we want to flush out all of the OpenGL errors that might have been caused by GLEW.
+    while ((err = glGetError()) != GL_NO_ERROR);
 
     openglInitialized = true;
 }

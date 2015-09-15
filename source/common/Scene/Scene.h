@@ -23,6 +23,8 @@ public:
         return *internalObject.get();
     }
 
+    void AddSceneObject(std::shared_ptr<SceneObject> object);
+
     friend class Renderer;
 private:
     std::vector<std::shared_ptr<SceneObject>> sceneObjects;

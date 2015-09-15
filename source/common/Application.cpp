@@ -6,12 +6,16 @@
 Application::Application(std::shared_ptr<class Scene> inputScene, std::shared_ptr<class Camera> inputCamera):
     isRunning(true), scene(std::move(inputScene)), camera(std::move(inputCamera))
 {
-    SetupScene();
-    SetupCamera();
 }
 
 Application::~Application()
 {
+}
+
+void Application::Initialize()
+{
+    SetupScene();
+    SetupCamera();
 }
 
 std::unique_ptr<Application> Application::CreateApplication(std::shared_ptr<class Scene> scene, std::shared_ptr<class Camera> camera)

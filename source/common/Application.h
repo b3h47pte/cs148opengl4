@@ -11,6 +11,8 @@ public:
     Application(std::shared_ptr<class Scene> inputScene, std::shared_ptr<class Camera> inputCamera);
     virtual ~Application();
 
+    virtual void Initialize();
+
     static std::unique_ptr<Application> CreateApplication(std::shared_ptr<class Scene> scene, std::shared_ptr<class Camera> camera);
     static std::shared_ptr<class Scene> CreateScene();
     static std::shared_ptr<class Camera> CreateCamera();

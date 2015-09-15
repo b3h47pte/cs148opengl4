@@ -9,6 +9,12 @@
 class RenderingObject
 {
 public:
+    using PositionArray = std::vector<glm::vec4>;
+    using IndexArray = std::vector<unsigned int>;
+    using NormalArray = std::vector<glm::vec3>;
+    using UVArray = std::vector<glm::vec2>;
+    using ColorArray = std::vector<glm::vec4>;
+
     enum class VertexAttributePositions {
         Position = 0,
         Normals,
@@ -17,44 +23,49 @@ public:
     };
 
     RenderingObject(std::shared_ptr<class ShaderProgram> inputShader,
-        std::unique_ptr<std::vector<glm::vec4>> inputPositions,
-        std::unique_ptr<std::vector<unsigned int>> inputIndices = nullptr,
-        std::unique_ptr<std::vector<glm::vec3>> inputNormals = nullptr,
-        std::unique_ptr<std::vector<glm::vec2>> inputUV = nullptr,
-        std::unique_ptr<std::vector<glm::vec4>> inputColors = nullptr);
-    ~RenderingObject();
+        std::unique_ptr<PositionArray> inputPositions,
+        std::unique_ptr<IndexArray> inputIndices = nullptr,
+        std::unique_ptr<NormalArray> inputNormals = nullptr,
+        std::unique_ptr<UVArray> inputUV = nullptr,
+        std::unique_ptr<ColorArray> inputColors = nullptr);
+    virtual ~RenderingObject();
 
     RenderingObject(const RenderingObject&) = delete;
     RenderingObject& operator=(const RenderingObject&) = delete;
 
-    void BeginRender() const;
-    void Render() const;
-    void EndRender() const;
+    virtual void BeginRender() const;
+    virtual void Render() const;
+    virtual void EndRender() const;
 
-private:
+    void SetDrawMode(GLenum inputMode) {
+        drawMode = inputMode;
+    }
+
+protected:
     std::shared_ptr<class ShaderProgram> shader;
 
     GLuint vertexPositionBuffer;
-    std::unique_ptr<std::vector<glm::vec4>> vertexPositions;
+    std::unique_ptr<PositionArray> vertexPositions;
 
     GLuint vertexIndexBuffer;
-    std::unique_ptr<std::vector<unsigned int>> vertexIndices;
+    std::unique_ptr<IndexArray> vertexIndices;
 
     GLuint vertexNormalBuffer;
-    std::unique_ptr<std::vector<glm::vec3>> vertexNormals;
+    std::unique_ptr<NormalArray> vertexNormals;
     static glm::vec3 DEFAULT_NORMAL;
 
     GLuint vertexUVBuffer;
-    std::unique_ptr<std::vector<glm::vec2>> vertexUV;
+    std::unique_ptr<UVArray> vertexUV;
     static glm::vec2 DEFAULT_UV;
 
     GLuint vertexColorBuffer;
-    std::unique_ptr<std::vector<glm::vec4>> vertexColors;
+    std::unique_ptr<ColorArray> vertexColors;
     static glm::vec4 DEFAULT_COLOR;
 
-    void InitializeOpenGL();
+    virtual void InitializeOpenGL();
 
     GLuint vao;
+    GLenum drawMode;
 };
 
 #endif

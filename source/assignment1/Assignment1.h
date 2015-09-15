@@ -13,6 +13,8 @@ public:
     static std::unique_ptr<Application> CreateApplication(std::shared_ptr<class Scene> scene, std::shared_ptr<class Camera> camera);
 
     virtual glm::vec2 GetWindowSize() const;
+private:
+    virtual void SetupScene();
 };
 
 #endif
