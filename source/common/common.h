@@ -3,6 +3,7 @@
 #ifndef __COMMON__
 #define __COMMON__
 
+#include "SDL2/SDL.h"
 #include "glm/glm.hpp"
 #include "glm/gtc/type_ptr.hpp"
 

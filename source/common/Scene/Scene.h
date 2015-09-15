@@ -24,6 +24,7 @@ public:
     }
 
     void AddSceneObject(std::shared_ptr<SceneObject> object);
+    void ClearScene();
 
     friend class Renderer;
 private:

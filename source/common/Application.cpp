@@ -66,3 +66,7 @@ void Application::Tick(double deltaTime)
     // The application tick should just handle LOGIC operations.
     // Any rendering is handled by the media layer which in turn passes the information to the Renderer.
 }
+
+void Application::HandleInput(SDL_Keysym key, Uint32 state, Uint8 repeat, double timestamp)
+{
+}

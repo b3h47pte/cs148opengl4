@@ -38,10 +38,12 @@ int main(int argc, char** argv) {
     // the MediaLayer is constructed.
 
     auto lastTickTime = std::chrono::high_resolution_clock::now();
+    auto startTickTime = lastTickTime;
     while (media.CanTick()) {
         auto currentTickTime = std::chrono::high_resolution_clock::now();
         auto deltaTime = std::chrono::duration_cast<std::chrono::duration<double>>(currentTickTime - lastTickTime);
-        media.Tick(deltaTime.count());
+        auto totalElapsedTime = std::chrono::duration_cast<std::chrono::duration<double>>(currentTickTime - startTickTime);
+        media.Tick(deltaTime.count(), totalElapsedTime.count());
         lastTickTime = currentTickTime;
     }
     return 0;

@@ -10,7 +10,6 @@
 #include "common/common.h"
 #include "common/Application.h"
 #include "common/Rendering/Renderer.h"
-#include "SDL2/SDL.h"
 #include <memory>
 
 class MediaLayer
@@ -20,7 +19,7 @@ public:
     ~MediaLayer();
 
     bool CanTick() const;
-    void Tick(double deltaTime);
+    void Tick(double deltaTime, double currentTime);
 
 private:
     // Underlying Application to run

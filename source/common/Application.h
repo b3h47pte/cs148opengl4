@@ -24,6 +24,8 @@ public:
     virtual void RequestExit();
 
     virtual void Tick(double deltaTime);
+
+    virtual void HandleInput(SDL_Keysym key, Uint32 state, Uint8 repeat, double timestamp);
 protected:
     bool isRunning;
 

@@ -90,7 +90,7 @@ bool MediaLayer::CanTick() const
     return (openglInitialized && sdlInitialized && !app->IsFinished());
 }
 
-void MediaLayer::Tick(double deltaTime)
+void MediaLayer::Tick(double deltaTime, double currentTime)
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -102,6 +102,10 @@ void MediaLayer::Tick(double deltaTime)
         {
         case SDL_QUIT:
             app->RequestExit();
+            break;
+        case SDL_KEYDOWN:
+        case SDL_KEYUP:
+            app->HandleInput(event.key.keysym, event.type, event.key.repeat, currentTime);
             break;
         default:            
             break;
