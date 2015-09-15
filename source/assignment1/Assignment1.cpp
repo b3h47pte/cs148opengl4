@@ -25,15 +25,33 @@ void Assignment1::SetupScene()
     };
     std::shared_ptr<ShaderProgram> shader = std::make_shared<ShaderProgram>(shaderSpec);
 
-    std::unique_ptr<RenderingObject::PositionArray> vertexPositions = std::make_unique<std::vector<glm::vec4>>(
+    std::unique_ptr<RenderingObject::PositionArray> vertexPositions = std::make_unique<RenderingObject::PositionArray>(
         std::initializer_list<glm::vec4>({
+            // Triangle 1
             {0.f, 0.f, 0.f, 1.f},
             {1.f, 0.f, 0.f, 1.f},
-            {1.f, 1.f, 0.f, 1.f}
+            {1.f, 1.f, 0.f, 1.f},
+            // Triangle 2
+            {0.f, 0.f, 0.f, 1.f},
+            {-1.f, 1.f, 0.f, 1.f},
+            {-1.f, 0.f, 0.f, 1.f}
+        })
+    );
+    
+    std::unique_ptr<RenderingObject::ColorArray> vertexColors = std::make_unique<RenderingObject::ColorArray>(
+        std::initializer_list<glm::vec4>({
+            // Triangle 1
+            {1.f, 0.f, 0.f, 1.f},
+            {0.f, 1.f, 0.f, 1.f},
+            {0.f, 0.f, 1.f, 1.f},
+            // Triangle 2
+            {1.f, 0.f, 0.f, 1.f},
+            {0.f, 1.f, 0.f, 1.f},
+            {0.f, 0.f, 1.f, 1.f}
         })
     );
 
-    std::shared_ptr<RenderingObject> triangleTemplate = std::make_shared<RenderingObject>(shader, std::move(vertexPositions));
+    std::shared_ptr<RenderingObject> triangleTemplate = std::make_shared<RenderingObject>(shader, std::move(vertexPositions), nullptr, nullptr, nullptr, std::move(vertexColors));
     std::shared_ptr<SceneObject> sceneTriangle = std::make_shared<SceneObject>(triangleTemplate);
     scene->AddSceneObject(std::move(sceneTriangle));
 }
