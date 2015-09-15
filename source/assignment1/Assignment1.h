@@ -20,6 +20,7 @@ private:
 
     virtual void SetupExample1();
     virtual void SetupExample2();
+    virtual void SetupExample3();
 };
 
 #endif
