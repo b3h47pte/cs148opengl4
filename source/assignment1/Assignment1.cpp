@@ -22,6 +22,7 @@ void Assignment1::SetupScene()
 
 void Assignment1::SetupExample1()
 {
+    OGL_CALL(glDisable(GL_PROGRAM_POINT_SIZE));
     std::unordered_map<GLenum, std::string> shaderSpec = {
         { GL_VERTEX_SHADER, "basicColor/basicColor.vert" },
         { GL_FRAGMENT_SHADER, "basicColor/basicColor.frag"}
@@ -61,6 +62,7 @@ void Assignment1::SetupExample1()
 
 void Assignment1::SetupExample2()
 {
+    OGL_CALL(glEnable(GL_PROGRAM_POINT_SIZE));
     std::unordered_map<GLenum, std::string> shaderSpec = {
         { GL_VERTEX_SHADER, "basicColor/basicColor.vert" },
         { GL_FRAGMENT_SHADER, "basicColor/basicColor.frag"}
@@ -70,13 +72,13 @@ void Assignment1::SetupExample2()
     std::unique_ptr<RenderingObject::PositionArray> vertexPositions = std::make_unique<RenderingObject::PositionArray>(
         std::initializer_list<glm::vec4>({
             // Triangle 1
-            {0.f, 0.f, 0.f, 1.f},
-            {1.f, 0.f, 0.f, 1.f},
-            {1.f, 1.f, 0.f, 1.f},
+            {0.f, 0.f, 0.f, 0.9f},
+            {0.9f, 0.f, 0.f, 0.9f},
+            {0.9f, 0.9f, 0.f, 0.9f},
             // Triangle 2
-            {0.f, 0.f, 0.f, 1.f},
-            {-1.f, 1.f, 0.f, 1.f},
-            {-1.f, 0.f, 0.f, 1.f}
+            {0.f, 0.f, 0.f, 0.9f},
+            {-0.9f, 0.9f, 0.f, 0.9f},
+            {-0.9f, 0.f, 0.f, 0.9f}
         })
     );
     
@@ -93,9 +95,11 @@ void Assignment1::SetupExample2()
         })
     );
 
-    std::shared_ptr<RenderingObject> triangleTemplate = std::make_shared<RenderingObject>(shader, std::move(vertexPositions), nullptr, nullptr, nullptr, std::move(vertexColors));
-    std::shared_ptr<SceneObject> sceneTriangle = std::make_shared<SceneObject>(triangleTemplate);
-    scene->AddSceneObject(std::move(sceneTriangle));
+    std::shared_ptr<RenderingObject> pointTemplate = std::make_shared<RenderingObject>(shader, std::move(vertexPositions), nullptr, nullptr, nullptr, std::move(vertexColors));
+    pointTemplate->SetDrawMode(GL_POINTS);
+        
+    std::shared_ptr<SceneObject> pointObject = std::make_shared<SceneObject>(pointTemplate);
+    scene->AddSceneObject(std::move(pointObject));
 }
 
 void Assignment1::HandleInput(SDL_Keysym key, Uint32 state, Uint8 repeat, double timestamp)

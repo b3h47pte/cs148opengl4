@@ -10,4 +10,7 @@ out vec4 fragmentColor;
 void main() {
     fragmentColor = vertexColor;
     gl_Position = vertexPosition;
+
+    // This is only used for when we are drawing points.
+    gl_PointSize = 50.0;
 }
