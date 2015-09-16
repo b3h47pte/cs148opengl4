@@ -8,6 +8,7 @@
 #include "glm/gtc/type_ptr.hpp"
 #include "glm/gtc/matrix_transform.hpp"
 #include "glm/gtc/quaternion.hpp"
+#include "glm/gtx/quaternion.hpp"
 #include "glm/gtx/string_cast.hpp"
 
 #include "GL/glew.h"
@@ -62,5 +63,7 @@ inline void _DisplayOpenGLError(std::string command, std::string file, int line)
 #else
 #define OGL_CALL(x) x;
 #endif
+
+constexpr float PI = 3.14159265359f;
 
 #endif

@@ -18,6 +18,7 @@ SceneObject::SceneObject():
 }
 
 SceneObject::SceneObject(std::shared_ptr<class RenderingObject> baseObject):
+    cachedTransformationMatrix(1.f), position(0.f, 0.f, 0.f, 1.f), rotation(1.f, 0.f, 0.f, 0.f), scale(1.f),
     renderObject(std::move(baseObject))
 {
 }
@@ -31,7 +32,6 @@ void SceneObject::PrepareShaderForRendering(GLuint program, const Camera* curren
     // Send the model, view, and projection matrix to the shader only if the shader
     // requests those variables.
     SetShaderUniform(program, MODEL_MATRIX_LOCATION, GetTransformationMatrix());
-//    std::cout << "View Matrix: " << glm::to_string(currentCamera->GetTransformationMatrix()) << std::endl;
     SetShaderUniform(program, VIEW_MATRIX_LOCATION, currentCamera->GetTransformationMatrix());
     SetShaderUniform(program, PROJECTION_MATRIX_LOCATION, currentCamera->GetProjectionMatrix());
 }
@@ -58,6 +58,16 @@ void SceneObject::UpdateTransformationMatrix()
 glm::vec4 SceneObject::GetForwardDirection() const
 {
     return glm::mat4_cast(rotation) * GetWorldForward();
+}
+
+glm::vec4 SceneObject::GetRightDirection() const
+{
+    return glm::mat4_cast(rotation) * GetWorldRight();
+}
+
+glm::vec4 SceneObject::GetUpDirection() const
+{
+    return glm::mat4_cast(rotation) * GetWorldUp();
 }
 
 glm::vec4 SceneObject::GetWorldUp()
@@ -89,6 +99,8 @@ void SceneObject::Translate(const glm::vec3& translation)
 
 void SceneObject::Rotate(const glm::vec3& axis, float radians)
 {
+    glm::quat newRotation = glm::angleAxis(radians, axis);
+    rotation = newRotation * rotation;
     UpdateTransformationMatrix();
 }
 

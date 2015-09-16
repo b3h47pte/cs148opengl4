@@ -19,6 +19,8 @@ public:
     virtual glm::mat4 GetTransformationMatrix() const;
 
     virtual glm::vec4 GetForwardDirection() const;
+    virtual glm::vec4 GetRightDirection() const;
+    virtual glm::vec4 GetUpDirection() const;
 
     static glm::vec4 GetWorldUp();
     static glm::vec4 GetWorldRight();

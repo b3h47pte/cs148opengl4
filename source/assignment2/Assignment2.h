@@ -19,6 +19,8 @@ public:
 private:
     virtual void SetupScene();
     virtual void SetupCamera();
+
+    std::shared_ptr<class SceneObject> sphereObject;
 };
 
 #endif

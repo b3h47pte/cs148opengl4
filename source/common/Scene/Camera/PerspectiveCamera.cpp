@@ -7,7 +7,7 @@ PerspectiveCamera::PerspectiveCamera(float inFov, float inAR):
 
 glm::mat4 PerspectiveCamera::GetProjectionMatrix() const
 {
-    return glm::perspective(GetFOV(), GetAspectRatio(), GetZNear(), GetZFar());
+    return glm::perspective(GetFOV() * PI / 180.f, GetAspectRatio(), GetZNear(), GetZFar());
 }
 
 void PerspectiveCamera::UpdateTransformationMatrix()

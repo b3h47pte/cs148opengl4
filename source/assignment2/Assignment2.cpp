@@ -31,7 +31,7 @@ void Assignment2::SetupScene()
     };
     std::shared_ptr<ShaderProgram> shader = std::make_shared<ShaderProgram>(shaderSpec);
 
-    std::shared_ptr<RenderingObject> sphereTemplate = PrimitiveCreator::CreateIcoSphere(shader, 2.f, 3);
+    std::shared_ptr<RenderingObject> sphereTemplate = PrimitiveCreator::CreateIcoSphere(shader, 5.f, 3);
 
     // TEMPORARY: Give a R/G/B color to each vertex to visualize the sphere.
     const auto totalVertices = sphereTemplate->GetTotalVertices();
@@ -50,7 +50,7 @@ void Assignment2::SetupScene()
     }
     sphereTemplate->SetVertexColors(std::move(vertexColors));
 
-    std::shared_ptr<SceneObject> sphereObject = std::make_shared<SceneObject>(sphereTemplate);
+    sphereObject = std::make_shared<SceneObject>(sphereTemplate);
     scene->AddSceneObject(sphereObject);
 }
 
@@ -61,11 +61,38 @@ void Assignment2::SetupCamera()
 
 void Assignment2::HandleInput(SDL_Keysym key, Uint32 state, Uint8 repeat, double timestamp)
 {
-    if (state != SDL_KEYDOWN || repeat) {
-        return;
-    }
-
-    switch (key.sym) {
+   switch (key.sym) {
+    case SDLK_UP:
+        sphereObject->Rotate(glm::vec3(SceneObject::GetWorldRight()), -0.1f);
+        break;
+    case SDLK_DOWN:
+        sphereObject->Rotate(glm::vec3(SceneObject::GetWorldRight()), 0.1f);
+        break;
+    case SDLK_RIGHT:
+        sphereObject->Rotate(glm::vec3(SceneObject::GetWorldUp()), 0.1f);
+        break;
+    case SDLK_LEFT:
+        sphereObject->Rotate(glm::vec3(SceneObject::GetWorldUp()), -0.1f);
+        break;
+    case SDLK_w:
+        camera->Translate(glm::vec3(SceneObject::GetWorldForward() * -0.3f));
+        break;
+    case SDLK_a:
+        camera->Translate(glm::vec3(SceneObject::GetWorldRight() * 0.3f));
+        break;
+    case SDLK_s:
+        camera->Translate(glm::vec3(SceneObject::GetWorldForward() * 0.3f));
+        break;
+    case SDLK_d:
+        camera->Translate(glm::vec3(SceneObject::GetWorldRight() * -0.3f));
+        break;
+    case SDLK_SPACE:
+        camera->Translate(glm::vec3(SceneObject::GetWorldUp() * -0.3f));
+        break;
+    case SDLK_LCTRL:
+    case SDLK_RCTRL:
+        camera->Translate(glm::vec3(SceneObject::GetWorldUp() * 0.3f));
+        break;
     default:
         break;
     }
