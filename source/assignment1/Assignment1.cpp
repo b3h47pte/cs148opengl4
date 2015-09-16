@@ -57,7 +57,7 @@ void Assignment1::SetupExample1()
 
     std::shared_ptr<RenderingObject> triangleTemplate = std::make_shared<RenderingObject>(shader, std::move(vertexPositions), nullptr, nullptr, nullptr, std::move(vertexColors));
     std::shared_ptr<SceneObject> sceneTriangle = std::make_shared<SceneObject>(triangleTemplate);
-    scene->AddSceneObject(std::move(sceneTriangle));
+    scene->AddSceneObject(sceneTriangle);
 }
 
 void Assignment1::SetupExample2()
@@ -99,7 +99,7 @@ void Assignment1::SetupExample2()
     pointTemplate->SetDrawMode(GL_POINTS);
         
     std::shared_ptr<SceneObject> pointObject = std::make_shared<SceneObject>(pointTemplate);
-    scene->AddSceneObject(std::move(pointObject));
+    scene->AddSceneObject(pointObject);
 }
 
 void Assignment1::SetupExample3()
@@ -164,7 +164,7 @@ void Assignment1::SetupExample3()
     pointTemplate->SetDrawMode(GL_LINES);
         
     std::shared_ptr<SceneObject> pointObject = std::make_shared<SceneObject>(pointTemplate);
-    scene->AddSceneObject(std::move(pointObject));
+    scene->AddSceneObject(pointObject);
 }
 
 void Assignment1::HandleInput(SDL_Keysym key, Uint32 state, Uint8 repeat, double timestamp)
