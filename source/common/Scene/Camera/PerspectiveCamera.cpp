@@ -12,7 +12,6 @@ glm::mat4 PerspectiveCamera::GetProjectionMatrix() const
 
 void PerspectiveCamera::UpdateTransformationMatrix()
 {
-    cachedTransformationMatrix = glm::lookAt(glm::vec3(position) / position.w,
-        glm::vec3(position + GetForwardDirection()),
-        glm::vec3(GetWorldUp()));
+    Camera::UpdateTransformationMatrix();
+    cachedTransformationMatrix = glm::inverse(cachedTransformationMatrix);
 }
