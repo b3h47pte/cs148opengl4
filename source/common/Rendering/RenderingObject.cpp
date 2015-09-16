@@ -139,3 +139,8 @@ void RenderingObject::EndRender() const
     OGL_CALL(glBindVertexArray(0));
     shader->StopUseShader();
 }
+
+GLint RenderingObject::GetShaderProgram() const
+{ 
+    return shader->GetProgram(); 
+}

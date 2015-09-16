@@ -1,7 +1,7 @@
 #include "common/Application.h"
 #include "common/Rendering/ForwardRenderer.h"
 #include "common/Scene/Scene.h"
-#include "common/Scene/Camera.h"
+#include "common/Scene/Camera/Camera.h"
 
 Application::Application(std::shared_ptr<class Scene> inputScene, std::shared_ptr<class Camera> inputCamera):
     isRunning(true), scene(std::move(inputScene)), camera(std::move(inputCamera))

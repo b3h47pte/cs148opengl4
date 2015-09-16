@@ -41,6 +41,7 @@ public:
         drawMode = inputMode;
     }
 
+    GLint GetShaderProgram() const;
 protected:
     std::shared_ptr<class ShaderProgram> shader;
 

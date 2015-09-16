@@ -14,6 +14,8 @@ public:
     void StartUseShader();
     void StopUseShader();
 
+    GLuint GetProgram() const { return shaderProgram; }
+
 protected:
     static GLuint LoadShaderObject(GLenum type, const std::string& filename);
 

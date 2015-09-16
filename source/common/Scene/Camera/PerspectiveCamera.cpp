@@ -1,0 +1,18 @@
+#include "common/Scene/Camera/PerspectiveCamera.h"
+
+PerspectiveCamera::PerspectiveCamera(float inFov, float inAR):
+    fov(inFov), aspectRatio(inAR), zNear(1.f), zFar(200.f)
+{
+}
+
+glm::mat4 PerspectiveCamera::GetProjectionMatrix() const
+{
+    return glm::perspective(GetFOV(), GetAspectRatio(), GetZNear(), GetZFar());
+}
+
+void PerspectiveCamera::UpdateTransformationMatrix()
+{
+    cachedTransformationMatrix = glm::lookAt(glm::vec3(position) / position.w,
+        glm::vec3(position + GetForwardDirection()),
+        glm::vec3(GetWorldUp()));
+}
