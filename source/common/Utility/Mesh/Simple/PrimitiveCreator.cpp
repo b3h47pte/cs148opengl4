@@ -87,18 +87,46 @@ std::shared_ptr<RenderingObject> CreateIcoSphere(std::shared_ptr<ShaderProgram> 
             const glm::vec4 midpointB = glm::vec4(glm::normalize(glm::vec3(vertexPositions->at(vertexIndices[triangleOffset + 1]) + vertexPositions->at(vertexIndices[triangleOffset  + 2])) / 2.f) * radius, 1.f);
             const glm::vec4 midpointC = glm::vec4(glm::normalize(glm::vec3(vertexPositions->at(vertexIndices[triangleOffset + 2]) + vertexPositions->at(vertexIndices[triangleOffset])) / 2.f) * radius, 1.f);
 
-            const unsigned int aIndex = static_cast<unsigned int>(vertexPositions->size());
-            const unsigned int bIndex = static_cast<unsigned int>(vertexPositions->size() + 1);
-            const unsigned int cIndex = static_cast<unsigned int>(vertexPositions->size() + 2);
+            unsigned int aIndex = static_cast<unsigned int>(vertexPositions->size());
+            unsigned int bIndex = static_cast<unsigned int>(vertexPositions->size() + 1);
+            unsigned int cIndex = static_cast<unsigned int>(vertexPositions->size() + 2);
+
+            // NOTE: Slow. VERY SLOW. O(n^2) SLOW. :((
+            // TODO: Use a KD-Tree to speed this up.
+            for (auto j = 0; j < vertexPositions->size(); ++j) {
+                if (aIndex >= vertexPositions->size() && glm::distance(midpointA, vertexPositions->at(j)) < 1e-6f) {
+                    aIndex = j;
+                }
+
+                if (bIndex >= vertexPositions->size() && glm::distance(midpointB, vertexPositions->at(j)) < 1e-6f) {
+                    bIndex = j;
+                }
+
+                if (cIndex >= vertexPositions->size() && glm::distance(midpointC, vertexPositions->at(j)) < 1e-6f) {
+                    cIndex = j;
+                }
+            }
+
+            if (aIndex >= vertexPositions->size()) {
+                vertexPositions->push_back(midpointA);
+                aIndex = vertexPositions->size() - 1;
+            }
+
+            if (bIndex >= vertexPositions->size()) {
+                vertexPositions->push_back(midpointB);
+                bIndex = vertexPositions->size() - 1;
+            }
+
+            if (cIndex >= vertexPositions->size()) {
+                vertexPositions->push_back(midpointC);
+                cIndex = vertexPositions->size() - 1;
+            }
 
             AddTriangleIndices(glm::uvec3(vertexIndices[triangleOffset], aIndex, cIndex), newVertexIndices);
             AddTriangleIndices(glm::uvec3(vertexIndices[triangleOffset + 1], bIndex, aIndex), newVertexIndices);
             AddTriangleIndices(glm::uvec3(vertexIndices[triangleOffset + 2], cIndex, bIndex), newVertexIndices);
             AddTriangleIndices(glm::uvec3(aIndex, bIndex, cIndex), newVertexIndices);
 
-            vertexPositions->push_back(midpointA);
-            vertexPositions->push_back(midpointB);
-            vertexPositions->push_back(midpointC);
         }
         vertexIndices = std::move(newVertexIndices);
     }
