@@ -7,8 +7,8 @@ const std::string SceneObject::VIEW_MATRIX_LOCATION = "viewMatrix";
 const std::string SceneObject::PROJECTION_MATRIX_LOCATION = "projectionMatrix";
 
 #define VERIFY_SHADER_UNIFORM_EXISTS(program, name, var) \
-    GLint var = glGetUniformLocation(program, name); \
-    if (!var) { \
+    GLint var = OGL_CALL(glGetUniformLocation(program, name)); \
+    if (var == -1) { \
         return; \
     } \
 
@@ -77,5 +77,5 @@ glm::vec4 SceneObject::GetWorldForward()
 void SceneObject::SetShaderUniform(GLuint program, const std::string& location, const glm::mat4& value) const
 {
     VERIFY_SHADER_UNIFORM_EXISTS(program, location.c_str(), uniformLocation);
-    glUniformMatrix4fv(uniformLocation, 1, GL_FALSE, glm::value_ptr(value));
+    OGL_CALL(glUniformMatrix4fv(uniformLocation, 1, GL_FALSE, glm::value_ptr(value)));
 }
