@@ -18,6 +18,7 @@ glm::vec2 Assignment1::GetWindowSize() const
 
 void Assignment1::SetupScene()
 {
+    SetupExample1();
 }
 
 void Assignment1::SetupExample1()

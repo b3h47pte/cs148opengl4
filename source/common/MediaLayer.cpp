@@ -83,6 +83,9 @@ void MediaLayer::InitializeOpenGL()
     while ((err = glGetError()) != GL_NO_ERROR);
 
     openglInitialized = true;
+
+    // Sane default settings for OpenGL rendering
+    OGL_CALL(glEnable(GL_DEPTH_TEST));
 }
 
 bool MediaLayer::CanTick() const

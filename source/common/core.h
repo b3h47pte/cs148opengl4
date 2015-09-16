@@ -10,5 +10,6 @@
 #include "common/Scene/Scene.h"
 #include "common/Scene/SceneObject.h"
 #include "common/Scene/Camera/Camera.h"
+#include "common/Scene/Camera/PerspectiveCamera.h"
 
 #endif

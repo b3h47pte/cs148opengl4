@@ -23,6 +23,13 @@ public:
     static glm::vec4 GetWorldUp();
     static glm::vec4 GetWorldRight();
     static glm::vec4 GetWorldForward();
+
+    //
+    // Functions to transform the object.
+    //
+    void Translate(const glm::vec3& translation);
+    void Rotate(const glm::vec3& axis, float radians);
+    void Scale(float scale);
 protected:
     virtual void UpdateTransformationMatrix();
     glm::mat4 cachedTransformationMatrix;

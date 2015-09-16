@@ -13,7 +13,7 @@ const std::string SceneObject::PROJECTION_MATRIX_LOCATION = "projectionMatrix";
     } \
 
 SceneObject::SceneObject():
-    cachedTransformationMatrix(1.f), rotation(1.f, 0.f, 0.f, 0.f), scale(1.f)
+    cachedTransformationMatrix(1.f), position(0.f, 0.f, 0.f, 1.f), rotation(1.f, 0.f, 0.f, 0.f), scale(1.f)
 {
 }
 
@@ -31,6 +31,7 @@ void SceneObject::PrepareShaderForRendering(GLuint program, const Camera* curren
     // Send the model, view, and projection matrix to the shader only if the shader
     // requests those variables.
     SetShaderUniform(program, MODEL_MATRIX_LOCATION, GetTransformationMatrix());
+//    std::cout << "View Matrix: " << glm::to_string(currentCamera->GetTransformationMatrix()) << std::endl;
     SetShaderUniform(program, VIEW_MATRIX_LOCATION, currentCamera->GetTransformationMatrix());
     SetShaderUniform(program, PROJECTION_MATRIX_LOCATION, currentCamera->GetProjectionMatrix());
 }
@@ -50,7 +51,7 @@ void SceneObject::UpdateTransformationMatrix()
     glm::mat4 newTransformation(1.f);
     newTransformation = glm::scale(newTransformation, scale);
     newTransformation = glm::mat4_cast(rotation) * newTransformation;
-    newTransformation = glm::translate(newTransformation, glm::vec3(position) / position.w);
+    newTransformation = glm::translate(newTransformation, glm::vec3(position));
     cachedTransformationMatrix = std::move(newTransformation);
 }
 
@@ -78,4 +79,20 @@ void SceneObject::SetShaderUniform(GLuint program, const std::string& location, 
 {
     VERIFY_SHADER_UNIFORM_EXISTS(program, location.c_str(), uniformLocation);
     OGL_CALL(glUniformMatrix4fv(uniformLocation, 1, GL_FALSE, glm::value_ptr(value)));
+}
+
+void SceneObject::Translate(const glm::vec3& translation)
+{
+    position += glm::vec4(translation, 0.f);
+    UpdateTransformationMatrix();
+}
+
+void SceneObject::Rotate(const glm::vec3& axis, float radians)
+{
+    UpdateTransformationMatrix();
+}
+
+void SceneObject::Scale(float scale)
+{
+    UpdateTransformationMatrix();
 }

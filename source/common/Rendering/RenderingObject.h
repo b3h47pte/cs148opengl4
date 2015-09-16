@@ -42,6 +42,18 @@ public:
     }
 
     GLint GetShaderProgram() const;
+
+    decltype(auto) GetTotalVertices() const
+    {
+        return vertexPositions->size();
+    }
+
+    virtual void SetVertexPositions(std::unique_ptr<PositionArray> positions);
+    virtual void SetVertexIndices(std::unique_ptr<IndexArray> indices);
+    virtual void SetVertexNormals(std::unique_ptr<NormalArray> normals);
+    virtual void SetVertexUV(std::unique_ptr<UVArray> uv);
+    virtual void SetVertexColors(std::unique_ptr<ColorArray> colors);
+
 protected:
     std::shared_ptr<class ShaderProgram> shader;
 
@@ -64,6 +76,21 @@ protected:
     static glm::vec4 DEFAULT_COLOR;
 
     virtual void InitializeOpenGL();
+    
+    virtual void UpdateVertexPositions();
+    virtual void UpdateVertexIndices();
+    virtual void UpdateVertexNormals();
+    virtual void UpdateVertexUV();
+    virtual void UpdateVertexColors();
+
+    virtual void CleanupVertexPositions();
+    virtual void CleanupVertexIndices();
+    virtual void CleanupVertexNormals();
+    virtual void CleanupVertexUV();
+    virtual void CleanupVertexColors();
+
+
+
 
     GLuint vao;
     GLenum drawMode;
