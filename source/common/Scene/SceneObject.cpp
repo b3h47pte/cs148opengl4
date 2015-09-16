@@ -104,7 +104,16 @@ void SceneObject::Rotate(const glm::vec3& axis, float radians)
     UpdateTransformationMatrix();
 }
 
-void SceneObject::Scale(float scale)
+void SceneObject::MultScale(float inputScale)
 {
+    scale *= inputScale;
+    scale = glm::max(scale, MINIMUM_SCALE);
+    UpdateTransformationMatrix();
+}
+
+void SceneObject::AddScale(float inputScale)
+{
+    scale += inputScale;
+    scale = glm::max(scale, MINIMUM_SCALE);
     UpdateTransformationMatrix();
 }

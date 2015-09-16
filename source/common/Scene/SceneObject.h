@@ -31,7 +31,8 @@ public:
     //
     void Translate(const glm::vec3& translation);
     void Rotate(const glm::vec3& axis, float radians);
-    void Scale(float scale);
+    void MultScale(float inputScale);
+    void AddScale(float inputScale);
 protected:
     virtual void UpdateTransformationMatrix();
     glm::mat4 cachedTransformationMatrix;
@@ -43,6 +44,7 @@ protected:
     static const std::string MODEL_MATRIX_LOCATION;
     static const std::string VIEW_MATRIX_LOCATION;
     static const std::string PROJECTION_MATRIX_LOCATION;
+    static constexpr float MINIMUM_SCALE = 0.01f;
 
     // Shader Interface
     void SetShaderUniform(GLuint program, const std::string& location, const glm::mat4& value) const;

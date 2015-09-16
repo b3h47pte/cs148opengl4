@@ -16,11 +16,16 @@ public:
     virtual glm::vec2 GetWindowSize() const;
 
     virtual void HandleInput(SDL_Keysym key, Uint32 state, Uint8 repeat, double timestamp);
+protected:
+    virtual void HandleWindowResize(float x, float y);
+
 private:
     virtual void SetupScene();
     virtual void SetupCamera();
 
     std::shared_ptr<class SceneObject> sphereObject;
+
+
 };
 
 #endif

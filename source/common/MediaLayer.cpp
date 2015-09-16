@@ -30,7 +30,7 @@ void MediaLayer::InitializeSDL()
 
     glm::vec2 windowSize(app->GetWindowSize());
     sdlWindow = SDL_CreateWindow("CS148 Fall 2015-2016", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
-        windowSize.x, windowSize.y, SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN);
+        windowSize.x, windowSize.y, SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
 
     if (!sdlWindow) {
         std::cerr << "ERROR: SDL failed to create a window." << std::endl;
@@ -109,6 +109,9 @@ void MediaLayer::Tick(double deltaTime, double currentTime)
         case SDL_KEYDOWN:
         case SDL_KEYUP:
             app->HandleInput(event.key.keysym, event.type, event.key.repeat, currentTime);
+            break;
+        case SDL_WINDOWEVENT:
+            app->HandleWindowEvent(static_cast<SDL_WindowEventID>(event.window.event), event.window.data1, event.window.data2, currentTime);
             break;
         default:            
             break;

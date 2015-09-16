@@ -15,7 +15,9 @@ std::unique_ptr<Application> Assignment2::CreateApplication(std::shared_ptr<clas
 std::shared_ptr<class Camera> Assignment2::CreateCamera()
 {
     // Specify any old aspect ratio for now, we'll update it later once the window gets made!
-    return std::make_shared<PerspectiveCamera>(100.f, 1280.f / 720.f);
+    // Read more about Field of View: http://rg3.name/201210281829.html!
+    // Note that our field of view is the VERTICAL field of view (in degrees).
+    return std::make_shared<PerspectiveCamera>(75.f, 1280.f / 720.f);
 }
 
 glm::vec2 Assignment2::GetWindowSize() const
@@ -93,7 +95,21 @@ void Assignment2::HandleInput(SDL_Keysym key, Uint32 state, Uint8 repeat, double
     case SDLK_RCTRL:
         camera->Translate(glm::vec3(SceneObject::GetWorldUp() * 0.3f));
         break;
+    case SDLK_EQUALS:
+        sphereObject->AddScale(0.1f);
+        break;
+    case SDLK_MINUS:
+        sphereObject->AddScale(-0.1f);
+        break;
     default:
+        Application::HandleInput(key, state, repeat, timestamp);
         break;
     }
 }
+
+void Assignment2::HandleWindowResize(float x, float y)
+{
+    Application::HandleWindowResize(x, y);
+    std::static_pointer_cast<PerspectiveCamera>(camera)->SetAspectRatio(x / y);
+}
+

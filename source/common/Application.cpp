@@ -70,3 +70,21 @@ void Application::Tick(double deltaTime)
 void Application::HandleInput(SDL_Keysym key, Uint32 state, Uint8 repeat, double timestamp)
 {
 }
+
+void Application::HandleWindowEvent(SDL_WindowEventID eventId, Sint32 data1, Sint32 data2, double timestamp)
+{
+    switch (eventId) {
+    case SDL_WINDOWEVENT_SIZE_CHANGED:
+    case SDL_WINDOWEVENT_RESIZED:
+        HandleWindowResize(static_cast<float>(data1), static_cast<float>(data2));
+        break;
+    default:
+        break;
+    }
+
+}
+
+void Application::HandleWindowResize(float x, float y)
+{
+    OGL_CALL(glViewport(0, 0, x, y));
+}

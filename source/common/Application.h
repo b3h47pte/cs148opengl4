@@ -26,12 +26,15 @@ public:
     virtual void Tick(double deltaTime);
 
     virtual void HandleInput(SDL_Keysym key, Uint32 state, Uint8 repeat, double timestamp);
+
+    virtual void HandleWindowEvent(SDL_WindowEventID eventId, Sint32 data1, Sint32 data2, double timestamp);
 protected:
     bool isRunning;
 
     std::shared_ptr<class Scene> scene;
     std::shared_ptr<class Camera> camera;
 
+    virtual void HandleWindowResize(float x, float y);
 private:
     // Setup scene will create the meshes, shaders and lights that will be needed to render the scene.
     virtual void SetupScene();
