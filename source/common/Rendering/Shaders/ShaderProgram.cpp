@@ -111,10 +111,11 @@ void ShaderProgram::SetShaderUniform(const std::string& location, const glm::vec
     OGL_CALL(glUniform4fv(uniformLocation, 1, glm::value_ptr(value)));
 }
 
+// Currently only supports 1 subroutine per shader...
 void ShaderProgram::SetShaderSubroutine(const std::string& location, const std::string& subroutine, GLenum substage) const
 {
     GLint uniformLocation = OGL_CALL(glGetSubroutineUniformLocation(shaderProgram, substage, location.c_str()));
-    if (uniformLocation == -1) {
+    if (uniformLocation != 0) {
         return;
     }
 
@@ -123,7 +124,7 @@ void ShaderProgram::SetShaderSubroutine(const std::string& location, const std::
         return;
     }
     
-    glUniformSubroutinesuiv(substage, 1, &subroutineIndex);
+    OGL_CALL(glUniformSubroutinesuiv(substage, 1, &subroutineIndex));
 }
 
 void ShaderProgram::SetupShaderLighting(const Light* light) const

@@ -25,6 +25,7 @@ BlinnPhongShader::BlinnPhongShader(const std::unordered_map<GLenum, std::string>
 
 BlinnPhongShader::~BlinnPhongShader()
 {
+    OGL_CALL(glDeleteBuffers(1, &materialBuffer));
 }
 
 void BlinnPhongShader::SetupShaderLighting(const Light* light) const
@@ -117,5 +118,3 @@ void BlinnPhongShader::SetAmbient(glm::vec4 inAmbient)
     ambient = inAmbient; 
     UpdateMaterialBlock();
 }
-
-

@@ -13,4 +13,5 @@ void Scene::AddLight(std::shared_ptr<Light> light)
 void Scene::ClearScene()
 {
     sceneObjects.clear();
+    sceneLights.clear();
 }

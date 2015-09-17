@@ -21,6 +21,10 @@ protected:
 
 private:
     virtual void SetupScene();
+
+    virtual void SetupExample1();
+    virtual void SetupExample2();
+
     virtual void SetupCamera();
 
     std::shared_ptr<class SceneObject> sphereObject;

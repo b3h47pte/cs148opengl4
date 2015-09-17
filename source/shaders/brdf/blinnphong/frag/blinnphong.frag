@@ -1,18 +1,10 @@
-#version 400 
+#version 400
 
-// Blinn-Phong Lighting comes from Blinn's 1977 paper "Models of Light Reflection for Computer Synthesized Pictures"
-// Link: https://design.osu.edu/carlson/history/PDFs/blinn-light.pdf
+in vec4 fragmentColor;
+in vec4 vertexWorldPosition;
+in vec3 vertexWorldNormal;
 
-uniform mat4 modelMatrix;
-uniform mat4 viewMatrix;
-uniform mat4 projectionMatrix;
-
-layout(location = 0) in vec4 vertexPosition;
-layout(location = 1) in vec3 vertexNormal;
-layout(location = 2) in vec2 vertexUV;
-layout(location = 3) in vec4 vertexColor;
-
-out vec4 fragmentColor;
+out vec4 finalColor;
 
 uniform InputMaterial {
     vec4 matDiffuse;
@@ -78,10 +70,9 @@ vec4 AttenuateLight(vec4 originalColor, vec4 worldPosition)
     return originalColor * attenuation;
 }
 
+
+
 void main()
 {
-    vec4 vertexWorldPosition =  modelMatrix * vertexPosition;
-    vec3 vertexWorldNormal = transpose(inverse(mat3(modelMatrix))) * vertexNormal;
-    gl_Position = projectionMatrix * viewMatrix * vertexWorldPosition;
-    fragmentColor = AttenuateLight(inputLightSubroutine(vertexWorldPosition, vertexWorldNormal), vertexWorldPosition) * vertexColor;
+    finalColor = AttenuateLight(inputLightSubroutine(vertexWorldPosition, vertexWorldNormal), vertexWorldPosition) * fragmentColor;
 }
