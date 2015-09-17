@@ -139,9 +139,20 @@ void Assignment2::SetupExample1()
     lightProperties->specularColor = glm::vec4(1.f, 1.f, 1.f, 1.f);
 
     pointLight = std::make_shared<Light>(std::move(lightProperties));
-    pointLight->Translate(glm::vec3(10.f, 0.f, 10.f));
+
+    lightProperties = BlinnPhongShader::CreateLightProperties();
+    lightProperties->diffuseColor = glm::vec4(1.f, 0.f, 0.f, 1.f);
+    lightProperties->specularColor = glm::vec4(0.f, 1.f, 0.f, 1.f);
+    pointLight2 = std::make_shared<Light>(std::move(lightProperties));
+
+    lightProperties = BlinnPhongShader::CreateLightProperties();
+    lightProperties->diffuseColor = glm::vec4(0.f, 0.f, 1.f, 1.f);
+    lightProperties->specularColor = glm::vec4(1.f, 0.f, 0.f, 1.f);
+    pointLight3 = std::make_shared<Light>(std::move(lightProperties));
 
     scene->AddLight(pointLight);
+    scene->AddLight(pointLight2);
+    scene->AddLight(pointLight3);
 }
 
 void Assignment2::SetupExample2()
@@ -184,17 +195,40 @@ void Assignment2::SetupExample2()
     lightProperties->specularColor = glm::vec4(1.f, 1.f, 1.f, 1.f);
 
     pointLight = std::make_shared<Light>(std::move(lightProperties));
-    pointLight->Translate(glm::vec3(10.f, 0.f, 10.f));
+
+    lightProperties = BlinnPhongShader::CreateLightProperties();
+    lightProperties->diffuseColor = glm::vec4(1.f, 0.f, 0.f, 1.f);
+    lightProperties->specularColor = glm::vec4(0.f, 1.f, 0.f, 1.f);
+    pointLight2 = std::make_shared<Light>(std::move(lightProperties));
+
+    lightProperties = BlinnPhongShader::CreateLightProperties();
+    lightProperties->diffuseColor = glm::vec4(0.f, 0.f, 1.f, 1.f);
+    lightProperties->specularColor = glm::vec4(1.f, 0.f, 0.f, 1.f);
+    pointLight3 = std::make_shared<Light>(std::move(lightProperties));
 
     scene->AddLight(pointLight);
+    scene->AddLight(pointLight2);
+    scene->AddLight(pointLight3);
 }
 
 void Assignment2::Tick(double deltaTime)
 {
     glm::vec3 position(std::sin(elapsedTime), 0.f, std::cos(elapsedTime));
+    glm::vec3 position2(std::sin(elapsedTime), std::cos(elapsedTime), 0.f);
+    glm::vec3 position3(0.f, std::sin(elapsedTime), std::cos(elapsedTime));
     position *= 10.f;
+    position2 *= 10.f;
+    position3 *= 10.f;
     if (pointLight) {
         pointLight->SetPosition(position);
+    }
+
+    if (pointLight2) {
+        pointLight2->SetPosition(position2);
+    }
+
+    if (pointLight3) {
+        pointLight3->SetPosition(position3);
     }
     elapsedTime += deltaTime;
 }

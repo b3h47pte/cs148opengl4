@@ -31,6 +31,8 @@ private:
     std::shared_ptr<class SceneObject> sphereObject;
 
     std::shared_ptr<class Light> pointLight;
+    std::shared_ptr<class Light> pointLight2;
+    std::shared_ptr<class Light> pointLight3;
     float elapsedTime;
 };
 
