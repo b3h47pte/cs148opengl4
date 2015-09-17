@@ -16,6 +16,7 @@ public:
     virtual glm::vec2 GetWindowSize() const;
 
     virtual void HandleInput(SDL_Keysym key, Uint32 state, Uint8 repeat, double timestamp);
+    virtual void Tick(double deltaTime);
 protected:
     virtual void HandleWindowResize(float x, float y);
 
@@ -29,7 +30,8 @@ private:
 
     std::shared_ptr<class SceneObject> sphereObject;
 
-
+    std::shared_ptr<class Light> pointLight;
+    float elapsedTime;
 };
 
 #endif

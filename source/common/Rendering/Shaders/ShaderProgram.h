@@ -23,6 +23,7 @@ public:
     // Shader Interface
     void SetShaderUniform(const std::string& location, const glm::mat4& value) const;
     void SetShaderUniform(const std::string& location, float value) const;
+    void SetShaderUniform(const std::string& location, int value) const;
     void SetShaderUniform(const std::string& location, const glm::vec4& value) const;
     void SetShaderSubroutine(const std::string& location, const std::string& subroutine, GLenum substage) const;
 

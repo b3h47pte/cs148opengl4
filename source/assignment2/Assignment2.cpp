@@ -1,9 +1,10 @@
 #include "assignment2/Assignment2.h"
 #include "common/core.h" // <-- haha.
 #include "common/Utility/Mesh/Simple/PrimitiveCreator.h"
+#include <cmath>
 
 Assignment2::Assignment2(std::shared_ptr<class Scene> inputScene, std::shared_ptr<class Camera> inputCamera):
-    Application(std::move(inputScene), std::move(inputCamera))
+    Application(std::move(inputScene), std::move(inputCamera)), elapsedTime(0.f)
 {
 }
 
@@ -100,16 +101,23 @@ void Assignment2::HandleWindowResize(float x, float y)
 void Assignment2::SetupExample1()
 {
     scene->ClearScene();
+#ifndef DISABLE_OPENGL_SUBROUTINES
     std::unordered_map<GLenum, std::string> shaderSpec = {
         { GL_VERTEX_SHADER, "brdf/blinnphong/vert/blinnphong.vert" },
         { GL_FRAGMENT_SHADER, "brdf/blinnphong/vert/blinnphong.frag"}
     };
+#else
+    std::unordered_map<GLenum, std::string> shaderSpec = {
+        { GL_VERTEX_SHADER, "brdf/blinnphong/vert/noSubroutine/blinnphong.vert" },
+        { GL_FRAGMENT_SHADER, "brdf/blinnphong/vert/noSubroutine/blinnphong.frag"}
+    };
+#endif
     std::shared_ptr<BlinnPhongShader> shader = std::make_shared<BlinnPhongShader>(shaderSpec, GL_VERTEX_SHADER);
-    shader->SetDiffuse(glm::vec4(0.5f, 0.5f, 0.5f, 1.f));
+    shader->SetDiffuse(glm::vec4(0.3f, 0.3f, 0.3f, 1.f));
     shader->SetSpecular(glm::vec4(0.9f, 0.9f, 0.9f, 1.f), 40.f);
     shader->SetAmbient(glm::vec4(0.1f));
 
-    std::shared_ptr<RenderingObject> sphereTemplate = PrimitiveCreator::CreateIcoSphere(shader, 5.f, 3);
+    std::shared_ptr<RenderingObject> sphereTemplate = PrimitiveCreator::CreateIcoSphere(shader, 5.f, 4);
 
     // Give a R/G/B color to each vertex to visualize the sphere.
     const auto totalVertices = sphereTemplate->GetTotalVertices();
@@ -118,14 +126,9 @@ void Assignment2::SetupExample1()
     vertexColors->reserve(totalVertices);
 
     for (auto i = 0; i < totalVertices; ++i) {
-        if (i % 3 == 0) {
-            vertexColors->emplace_back(1.f, 0.f, 0.f, 1.f);
-        } else if (i % 3 == 1) { 
-            vertexColors->emplace_back(0.f, 1.f, 0.f, 1.f);
-        } else if (i % 3 == 2) {
-            vertexColors->emplace_back(0.f, 0.f, 1.f, 1.f);
-        }
+        vertexColors->emplace_back(0.5f, 0.5f, 0.5f, 1.f);
     }
+    
     sphereTemplate->SetVertexColors(std::move(vertexColors));
 
     sphereObject = std::make_shared<SceneObject>(sphereTemplate);
@@ -135,8 +138,8 @@ void Assignment2::SetupExample1()
     lightProperties->diffuseColor = glm::vec4(1.f, 1.f, 1.f, 1.f);
     lightProperties->specularColor = glm::vec4(1.f, 1.f, 1.f, 1.f);
 
-    std::shared_ptr<Light> pointLight = std::make_shared<Light>(std::move(lightProperties));
-    pointLight->Translate(glm::vec3(0.f, 0.f, 10.f));
+    pointLight = std::make_shared<Light>(std::move(lightProperties));
+    pointLight->Translate(glm::vec3(10.f, 0.f, 10.f));
 
     scene->AddLight(pointLight);
 }
@@ -144,16 +147,23 @@ void Assignment2::SetupExample1()
 void Assignment2::SetupExample2()
 {
     scene->ClearScene();
+#ifndef DISABLE_OPENGL_SUBROUTINES
     std::unordered_map<GLenum, std::string> shaderSpec = {
         { GL_VERTEX_SHADER, "brdf/blinnphong/frag/blinnphong.vert" },
         { GL_FRAGMENT_SHADER, "brdf/blinnphong/frag/blinnphong.frag"}
     };
+#else
+    std::unordered_map<GLenum, std::string> shaderSpec = {
+        { GL_VERTEX_SHADER, "brdf/blinnphong/frag/noSubroutine/blinnphong.vert" },
+        { GL_FRAGMENT_SHADER, "brdf/blinnphong/frag/noSubroutine/blinnphong.frag"}
+    };
+#endif
     std::shared_ptr<BlinnPhongShader> shader = std::make_shared<BlinnPhongShader>(shaderSpec, GL_FRAGMENT_SHADER);
-    shader->SetDiffuse(glm::vec4(0.5f, 0.5f, 0.5f, 1.f));
+    shader->SetDiffuse(glm::vec4(0.3f, 0.3f, 0.3f, 1.f));
     shader->SetSpecular(glm::vec4(0.9f, 0.9f, 0.9f, 1.f), 40.f);
     shader->SetAmbient(glm::vec4(0.1f));
 
-    std::shared_ptr<RenderingObject> sphereTemplate = PrimitiveCreator::CreateIcoSphere(shader, 5.f, 3);
+    std::shared_ptr<RenderingObject> sphereTemplate = PrimitiveCreator::CreateIcoSphere(shader, 5.f, 4);
 
     // Give a R/G/B color to each vertex to visualize the sphere.
     const auto totalVertices = sphereTemplate->GetTotalVertices();
@@ -162,13 +172,7 @@ void Assignment2::SetupExample2()
     vertexColors->reserve(totalVertices);
 
     for (auto i = 0; i < totalVertices; ++i) {
-        if (i % 3 == 0) {
-            vertexColors->emplace_back(1.f, 0.f, 0.f, 1.f);
-        } else if (i % 3 == 1) { 
-            vertexColors->emplace_back(0.f, 1.f, 0.f, 1.f);
-        } else if (i % 3 == 2) {
-            vertexColors->emplace_back(0.f, 0.f, 1.f, 1.f);
-        }
+        vertexColors->emplace_back(0.5f, 0.5f, 0.5f, 1.f);
     }
     sphereTemplate->SetVertexColors(std::move(vertexColors));
 
@@ -179,8 +183,18 @@ void Assignment2::SetupExample2()
     lightProperties->diffuseColor = glm::vec4(1.f, 1.f, 1.f, 1.f);
     lightProperties->specularColor = glm::vec4(1.f, 1.f, 1.f, 1.f);
 
-    std::shared_ptr<Light> pointLight = std::make_shared<Light>(std::move(lightProperties));
-    pointLight->Translate(glm::vec3(0.f, 0.f, 10.f));
+    pointLight = std::make_shared<Light>(std::move(lightProperties));
+    pointLight->Translate(glm::vec3(10.f, 0.f, 10.f));
 
     scene->AddLight(pointLight);
+}
+
+void Assignment2::Tick(double deltaTime)
+{
+    glm::vec3 position(std::sin(elapsedTime), 0.f, std::cos(elapsedTime));
+    position *= 10.f;
+    if (pointLight) {
+        pointLight->SetPosition(position);
+    }
+    elapsedTime += deltaTime;
 }

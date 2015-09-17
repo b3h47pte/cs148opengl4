@@ -86,6 +86,12 @@ glm::vec4 SceneObject::GetWorldForward()
     return glm::vec4(0.f, 0.f, -1.f, 0.f);
 }
 
+void SceneObject::SetPosition(const glm::vec3& in)
+{
+    position = glm::vec4(in, 0.f);
+    UpdateTransformationMatrix();
+}
+
 void SceneObject::Translate(const glm::vec3& translation)
 {
     position += glm::vec4(translation, 0.f);

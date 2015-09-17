@@ -15,6 +15,7 @@
 
 #ifdef __APPLE__
 #include "OpenGL/gl.h"
+#define DISABLE_OPENGL_SUBROUTINES
 #endif
 
 #include <iostream>

@@ -34,6 +34,8 @@ public:
     void MultScale(float inputScale);
     void AddScale(float inputScale);
 
+    void SetPosition(const glm::vec3& in);
+
     //
     // Individual transform retrieval.
     //

@@ -10,7 +10,8 @@ class Light: public SceneObject
 {
 public:
     enum class LightType {
-        POINT 
+        GLOBAL = 0,
+        POINT
     };
 
     Light(std::unique_ptr<struct LightProperties> inProperties, LightType type = LightType::POINT);

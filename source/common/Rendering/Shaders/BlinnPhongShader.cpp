@@ -21,6 +21,10 @@ BlinnPhongShader::BlinnPhongShader(const std::unordered_map<GLenum, std::string>
 
     SetupUniformBlock<4>("InputMaterial", MATERIAL_PROPERTY_NAMES, materialIndices, materialOffsets, materialStorage, materialBlockLocation, materialBlockSize, materialBuffer);
     UpdateMaterialBlock();
+
+#ifdef DISABLE_OPENGL_SUBROUTINES
+    (void)lightingShaderStage;
+#endif
 }
 
 BlinnPhongShader::~BlinnPhongShader()
@@ -31,16 +35,28 @@ BlinnPhongShader::~BlinnPhongShader()
 void BlinnPhongShader::SetupShaderLighting(const Light* light) const
 {
     if (!light) {
+#ifndef DISABLE_OPENGL_SUBROUTINES
         SetShaderSubroutine("inputLightSubroutine", "globalLightSubroutine", lightingShaderStage);
+#else
+        SetShaderUniform("lightingType", static_cast<int>(Light::LightType::GLOBAL));
+#endif
     } else {
         // Select proper lighting subroutine based on the light's type.
         switch(light->GetLightType()) {
         case Light::LightType::POINT:
+#ifndef DISABLE_OPENGL_SUBROUTINES
             SetShaderSubroutine("inputLightSubroutine", "pointLightSubroutine", lightingShaderStage);
+#else
+            SetShaderUniform("lightingType", static_cast<int>(Light::LightType::POINT));
+#endif
             break;
         default:
             std::cerr << "WARNING: Light type is not supported. Defaulting to global light. Your output may look wrong. -- Ignoring: " << static_cast<int>(light->GetLightType()) << std::endl;
+#ifndef DISABLE_OPENGL_SUBROUTINES
             SetShaderSubroutine("inputLightSubroutine", "globalLightSubroutine", lightingShaderStage);
+#else
+            SetShaderUniform("lightingType", static_cast<int>(Light::LightType::GLOBAL));
+#endif
             break;
         }
 

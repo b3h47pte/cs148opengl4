@@ -99,6 +99,12 @@ void ShaderProgram::SetShaderUniform(const std::string& location, const glm::mat
     OGL_CALL(glUniformMatrix4fv(uniformLocation, 1, GL_FALSE, glm::value_ptr(value)));
 }
 
+void ShaderProgram::SetShaderUniform(const std::string& location, int value) const
+{
+    VERIFY_SHADER_UNIFORM_EXISTS(shaderProgram, location.c_str(), uniformLocation);
+    OGL_CALL(glUniform1i(uniformLocation, value));
+}
+
 void ShaderProgram::SetShaderUniform(const std::string& location, float value) const
 {
     VERIFY_SHADER_UNIFORM_EXISTS(shaderProgram, location.c_str(), uniformLocation);
@@ -114,6 +120,7 @@ void ShaderProgram::SetShaderUniform(const std::string& location, const glm::vec
 // Currently only supports 1 subroutine per shader...
 void ShaderProgram::SetShaderSubroutine(const std::string& location, const std::string& subroutine, GLenum substage) const
 {
+#ifdef DISABLE_OPENGL_SUBROUTINES
     GLint uniformLocation = OGL_CALL(glGetSubroutineUniformLocation(shaderProgram, substage, location.c_str()));
     if (uniformLocation != 0) {
         return;
@@ -125,6 +132,9 @@ void ShaderProgram::SetShaderSubroutine(const std::string& location, const std::
     }
     
     OGL_CALL(glUniformSubroutinesuiv(substage, 1, &subroutineIndex));
+#else
+    static_assert(false, "Subroutines are disabled via the 'DISABLE_OPENGL_SUBROUTINES' macro in common.h. Please undefine that macro to use subroutines. Do note that NVIDIA devices running on Apple do not properly support subroutines.");
+#endif
 }
 
 void ShaderProgram::SetupShaderLighting(const Light* light) const
