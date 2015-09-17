@@ -42,6 +42,7 @@ public:
     }
 
     GLint GetShaderProgram() const;
+    const class ShaderProgram* GetShaderProgramRaw() const;
 
     decltype(auto) GetTotalVertices() const
     {
@@ -88,9 +89,6 @@ protected:
     virtual void CleanupVertexNormals();
     virtual void CleanupVertexUV();
     virtual void CleanupVertexColors();
-
-
-
 
     GLuint vao;
     GLenum drawMode;

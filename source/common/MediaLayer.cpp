@@ -86,6 +86,13 @@ void MediaLayer::InitializeOpenGL()
 
     // Sane default settings for OpenGL rendering
     OGL_CALL(glEnable(GL_DEPTH_TEST));
+    OGL_CALL(glEnable(GL_BLEND));
+    OGL_CALL(glBlendFunc(GL_ONE, GL_ONE));
+
+    OGL_CALL(glEnable(GL_CULL_FACE));
+    OGL_CALL(glCullFace(GL_BACK));
+
+    OGL_CALL(glClearColor(0.0f, 0.0f, 0.0f, 1.0f));
 }
 
 bool MediaLayer::CanTick() const

@@ -1,6 +1,14 @@
 #include "common/Rendering/Shaders/ShaderProgram.h"
+#include "common/Scene/Light/Light.h"
+#include "common/Scene/Light/LightProperties.h"
 #include <fstream>
 #include <iterator>
+
+#define VERIFY_SHADER_UNIFORM_EXISTS(program, name, var) \
+    GLint var = OGL_CALL(glGetUniformLocation(program, name)); \
+    if (var == -1) { \
+        return; \
+    } \
 
 ShaderProgram::ShaderProgram(const std::unordered_map<GLenum, std::string>& inputShaders):
     shaderProgram(0)
@@ -75,12 +83,62 @@ GLuint ShaderProgram::LoadShaderObject(GLenum type, const std::string& filename)
     return newShaderObject;
 }
 
-void ShaderProgram::StartUseShader()
+void ShaderProgram::StartUseShader() const
 {
     OGL_CALL(glUseProgram(shaderProgram));
 }
 
-void ShaderProgram::StopUseShader()
+void ShaderProgram::StopUseShader() const
 {
     OGL_CALL(glUseProgram(0));
+}
+
+void ShaderProgram::SetShaderUniform(const std::string& location, const glm::mat4& value) const
+{
+    VERIFY_SHADER_UNIFORM_EXISTS(shaderProgram, location.c_str(), uniformLocation);
+    OGL_CALL(glUniformMatrix4fv(uniformLocation, 1, GL_FALSE, glm::value_ptr(value)));
+}
+
+void ShaderProgram::SetShaderUniform(const std::string& location, float value) const
+{
+    VERIFY_SHADER_UNIFORM_EXISTS(shaderProgram, location.c_str(), uniformLocation);
+    OGL_CALL(glUniform1f(uniformLocation, value));
+}
+
+void ShaderProgram::SetShaderUniform(const std::string& location, const glm::vec4& value) const
+{
+    VERIFY_SHADER_UNIFORM_EXISTS(shaderProgram, location.c_str(), uniformLocation);
+    OGL_CALL(glUniform4fv(uniformLocation, 1, glm::value_ptr(value)));
+}
+
+void ShaderProgram::SetShaderSubroutine(const std::string& location, const std::string& subroutine, GLenum substage) const
+{
+    GLint uniformLocation = OGL_CALL(glGetSubroutineUniformLocation(shaderProgram, substage, location.c_str()));
+    if (uniformLocation == -1) {
+        return;
+    }
+
+    GLuint subroutineIndex = OGL_CALL(glGetSubroutineIndex(shaderProgram, substage, subroutine.c_str()));
+    if (subroutineIndex == GL_INVALID_INDEX) {
+        return;
+    }
+    
+    glUniformSubroutinesuiv(substage, 1, &subroutineIndex);
+}
+
+void ShaderProgram::SetupShaderLighting(const Light* light) const
+{
+}
+
+void ShaderProgram::SetupShaderMaterials() const
+{
+}
+
+void ShaderProgram::SetupShaderCamera(const Camera* camera) const
+{
+}
+
+std::unique_ptr<LightProperties> ShaderProgram::CreateLightProperties()
+{
+    return std::make_unique<LightProperties>();
 }

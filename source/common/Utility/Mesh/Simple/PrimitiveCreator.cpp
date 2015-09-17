@@ -131,9 +131,15 @@ std::shared_ptr<RenderingObject> CreateIcoSphere(std::shared_ptr<ShaderProgram> 
         vertexIndices = std::move(newVertexIndices);
     }
 
+    std::unique_ptr<RenderingObject::NormalArray> vertexNormals = std::make_unique<RenderingObject::NormalArray>(vertexPositions->size());
+    for (auto i = 0; i < vertexNormals->size(); ++i) {
+        vertexNormals->at(i) = glm::normalize(glm::vec3(vertexPositions->at(i)));
+    }
+
     std::shared_ptr<RenderingObject> newObj = std::make_shared<RenderingObject>(std::move(inputShader),
         std::move(vertexPositions), 
-        std::make_unique<RenderingObject::IndexArray>(std::move(vertexIndices))
+        std::make_unique<RenderingObject::IndexArray>(std::move(vertexIndices)),
+        std::move(vertexNormals)
     );
             
     return newObj;

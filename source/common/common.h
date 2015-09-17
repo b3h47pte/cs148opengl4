@@ -18,6 +18,7 @@
 #endif
 
 #include <iostream>
+#include <array>
 #include <memory>
 #include <vector>
 #include <cassert>

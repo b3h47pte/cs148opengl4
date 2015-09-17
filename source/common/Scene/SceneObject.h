@@ -12,7 +12,7 @@ public:
     SceneObject(std::shared_ptr<class RenderingObject> baseObject);
     virtual ~SceneObject();
 
-    virtual void PrepareShaderForRendering(GLuint program, const class Camera* currentCamera) const;
+    virtual void PrepareShaderForRendering(const class ShaderProgram* shader, const class Camera* currentCamera, const class Light* currentLight) const;
 
     virtual const class RenderingObject* GetRenderObject() const;
 
@@ -33,6 +33,11 @@ public:
     void Rotate(const glm::vec3& axis, float radians);
     void MultScale(float inputScale);
     void AddScale(float inputScale);
+
+    //
+    // Individual transform retrieval.
+    //
+    glm::vec4 GetPosition() const { return position; }
 protected:
     virtual void UpdateTransformationMatrix();
     glm::mat4 cachedTransformationMatrix;
@@ -46,8 +51,6 @@ protected:
     static const std::string PROJECTION_MATRIX_LOCATION;
     static constexpr float MINIMUM_SCALE = 0.01f;
 
-    // Shader Interface
-    void SetShaderUniform(GLuint program, const std::string& location, const glm::mat4& value) const;
 private:
     std::shared_ptr<class RenderingObject> renderObject;
 };

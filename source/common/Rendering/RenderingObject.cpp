@@ -44,8 +44,6 @@ void RenderingObject::InitializeOpenGL()
     UpdateVertexUV();
     UpdateVertexColors();
     UpdateVertexIndices();
-    
-
 }
 
 void RenderingObject::BeginRender() const
@@ -78,6 +76,11 @@ void RenderingObject::EndRender() const
 GLint RenderingObject::GetShaderProgram() const
 { 
     return shader->GetProgram(); 
+}
+
+const ShaderProgram* RenderingObject::GetShaderProgramRaw() const
+{
+    return shader.get();
 }
 
 void RenderingObject::SetVertexPositions(std::unique_ptr<PositionArray> positions)

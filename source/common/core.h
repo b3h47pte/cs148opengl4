@@ -7,9 +7,12 @@
 
 #include "common/Rendering/RenderingObject.h"
 #include "common/Rendering/Shaders/ShaderProgram.h"
+#include "common/Rendering/Shaders/BlinnPhongShader.h"
 #include "common/Scene/Scene.h"
 #include "common/Scene/SceneObject.h"
 #include "common/Scene/Camera/Camera.h"
 #include "common/Scene/Camera/PerspectiveCamera.h"
+#include "common/Scene/Light/Light.h"
+#include "common/Scene/Light/Properties/BlinnPhong/BlinnPhongLightProperties.h"
 
 #endif

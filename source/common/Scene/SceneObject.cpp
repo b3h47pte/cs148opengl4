@@ -1,16 +1,12 @@
 #include "common/Scene/SceneObject.h"
 #include "common/Scene/Camera/Camera.h"
+#include "common/Scene/Light/Light.h"
+#include "common/Rendering/Shaders/ShaderProgram.h"
 #include "common/Rendering/RenderingObject.h"
 
 const std::string SceneObject::MODEL_MATRIX_LOCATION = "modelMatrix";
 const std::string SceneObject::VIEW_MATRIX_LOCATION = "viewMatrix";
 const std::string SceneObject::PROJECTION_MATRIX_LOCATION = "projectionMatrix";
-
-#define VERIFY_SHADER_UNIFORM_EXISTS(program, name, var) \
-    GLint var = OGL_CALL(glGetUniformLocation(program, name)); \
-    if (var == -1) { \
-        return; \
-    } \
 
 SceneObject::SceneObject():
     cachedTransformationMatrix(1.f), position(0.f, 0.f, 0.f, 1.f), rotation(1.f, 0.f, 0.f, 0.f), scale(1.f)
@@ -27,13 +23,18 @@ SceneObject::~SceneObject()
 {
 }
 
-void SceneObject::PrepareShaderForRendering(GLuint program, const Camera* currentCamera) const
+void SceneObject::PrepareShaderForRendering(const ShaderProgram* shader, const Camera* currentCamera, const Light* currentLight) const
 {
+    assert(shader);
     // Send the model, view, and projection matrix to the shader only if the shader
     // requests those variables.
-    SetShaderUniform(program, MODEL_MATRIX_LOCATION, GetTransformationMatrix());
-    SetShaderUniform(program, VIEW_MATRIX_LOCATION, currentCamera->GetTransformationMatrix());
-    SetShaderUniform(program, PROJECTION_MATRIX_LOCATION, currentCamera->GetProjectionMatrix());
+    shader->SetShaderUniform(MODEL_MATRIX_LOCATION, GetTransformationMatrix());
+    shader->SetShaderUniform(VIEW_MATRIX_LOCATION, currentCamera->GetTransformationMatrix());
+    shader->SetShaderUniform(PROJECTION_MATRIX_LOCATION, currentCamera->GetProjectionMatrix());
+
+    shader->SetupShaderCamera(currentCamera);
+    shader->SetupShaderLighting(currentLight);
+    shader->SetupShaderMaterials();
 }
 
 const RenderingObject* SceneObject::GetRenderObject() const
@@ -83,12 +84,6 @@ glm::vec4 SceneObject::GetWorldRight()
 glm::vec4 SceneObject::GetWorldForward()
 {
     return glm::vec4(0.f, 0.f, -1.f, 0.f);
-}
-
-void SceneObject::SetShaderUniform(GLuint program, const std::string& location, const glm::mat4& value) const
-{
-    VERIFY_SHADER_UNIFORM_EXISTS(program, location.c_str(), uniformLocation);
-    OGL_CALL(glUniformMatrix4fv(uniformLocation, 1, GL_FALSE, glm::value_ptr(value)));
 }
 
 void SceneObject::Translate(const glm::vec3& translation)

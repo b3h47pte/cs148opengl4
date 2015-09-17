@@ -28,14 +28,17 @@ glm::vec2 Assignment2::GetWindowSize() const
 void Assignment2::SetupScene()
 {
     std::unordered_map<GLenum, std::string> shaderSpec = {
-        { GL_VERTEX_SHADER, "basicColor/basicColor.vert" },
-        { GL_FRAGMENT_SHADER, "basicColor/basicColor.frag"}
+        { GL_VERTEX_SHADER, "brdf/blinnphong/vert/blinnphong.vert" },
+        { GL_FRAGMENT_SHADER, "brdf/blinnphong/vert/blinnphong.frag"}
     };
-    std::shared_ptr<ShaderProgram> shader = std::make_shared<ShaderProgram>(shaderSpec);
+    std::shared_ptr<BlinnPhongShader> shader = std::make_shared<BlinnPhongShader>(shaderSpec, GL_VERTEX_SHADER);
+    shader->SetDiffuse(glm::vec4(0.5f, 0.5f, 0.5f, 1.f));
+    shader->SetSpecular(glm::vec4(0.9f, 0.9f, 0.9f, 1.f), 40.f);
+    shader->SetAmbient(glm::vec4(0.1f));
 
     std::shared_ptr<RenderingObject> sphereTemplate = PrimitiveCreator::CreateIcoSphere(shader, 5.f, 3);
 
-    // TEMPORARY: Give a R/G/B color to each vertex to visualize the sphere.
+    // Give a R/G/B color to each vertex to visualize the sphere.
     const auto totalVertices = sphereTemplate->GetTotalVertices();
 
     std::unique_ptr<RenderingObject::ColorArray> vertexColors = std::make_unique<RenderingObject::ColorArray>();
@@ -54,6 +57,15 @@ void Assignment2::SetupScene()
 
     sphereObject = std::make_shared<SceneObject>(sphereTemplate);
     scene->AddSceneObject(sphereObject);
+
+    std::unique_ptr<BlinnPhongLightProperties> lightProperties = BlinnPhongShader::CreateLightProperties();
+    lightProperties->diffuseColor = glm::vec4(1.f, 1.f, 1.f, 1.f);
+    lightProperties->specularColor = glm::vec4(1.f, 1.f, 1.f, 1.f);
+
+    std::shared_ptr<Light> pointLight = std::make_shared<Light>(std::move(lightProperties));
+    pointLight->Translate(glm::vec3(0.f, 0.f, 10.f));
+
+    scene->AddLight(pointLight);
 }
 
 void Assignment2::SetupCamera()
