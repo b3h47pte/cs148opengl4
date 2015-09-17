@@ -10,6 +10,7 @@ MediaLayer::MediaLayer(std::unique_ptr<Application> inputApp, std::unique_ptr<Re
     InitializeSDL();
     InitializeOpenGL();
 
+    renderer->Initialize();
     app->Initialize();
 }
 
@@ -86,6 +87,8 @@ void MediaLayer::InitializeOpenGL()
 
     // Sane default settings for OpenGL rendering
     OGL_CALL(glEnable(GL_DEPTH_TEST));
+    OGL_CALL(glDepthFunc(GL_LEQUAL));
+
     OGL_CALL(glEnable(GL_BLEND));
     OGL_CALL(glBlendFunc(GL_ONE, GL_ONE));
 

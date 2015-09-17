@@ -12,7 +12,11 @@ public:
     ForwardRenderer(std::shared_ptr<class Scene> inputScene, std::shared_ptr<class Camera> inputCamera);
     virtual ~ForwardRenderer();
 
+    virtual void Initialize();
     virtual void Render();
+
+protected:
+    std::shared_ptr<class ShaderProgram> depthPrepassShader;
 };
 
 #endif

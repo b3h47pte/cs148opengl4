@@ -3,6 +3,7 @@
 #include "common/Scene/SceneObject.h"
 #include "common/Scene/Camera/Camera.h"
 #include "common/Rendering/RenderingObject.h"
+#include "common/Rendering/Shaders/ShaderProgram.h"
 
 #include <algorithm>
 
@@ -15,32 +16,64 @@ ForwardRenderer::~ForwardRenderer()
 {
 }
 
+void ForwardRenderer::Initialize()
+{
+    std::unordered_map<GLenum, std::string> shaderSpec = {
+        { GL_VERTEX_SHADER, "required/pass/pass.vert" },
+        { GL_FRAGMENT_SHADER, "required/pass/pass.frag"}
+    };
+    depthPrepassShader = std::make_shared<ShaderProgram>(shaderSpec);
+}
+
 void ForwardRenderer::Render()
 {
     auto totalObjects = scene->GetTotalObjects();
-    auto totalLights = scene->GetTotalLights() + 1;
+    auto totalLights = scene->GetTotalLights();
+    auto totalRenderingPasses = totalLights + 2;
 
-    for (decltype(totalLights) l = 0; l < totalLights; ++l) {
-        OGL_CALL(glClear(GL_DEPTH_BUFFER_BIT));
+    // Render passes:
+    //   0 - Depth Prepass
+    //   1 - Global Light for the Objects (Ambient, Emissive)
+    //   Rest - Diffuse/Specular/etc Lighting for Objects
+    for (auto p = 0; p < totalRenderingPasses; ++p) {
+        OGL_CALL(glDepthMask((p == 0) ? GL_TRUE : GL_FALSE));
+        if (p == 0) {
+            OGL_CALL(glDisable(GL_POLYGON_OFFSET_FILL));
+        } else {
+            // Need this to prevent z-fighting with the depth prepass!
+            OGL_CALL(glEnable(GL_POLYGON_OFFSET_FILL));
+            OGL_CALL(glPolygonOffset(0.f, -1.f));
+        }
 
-        // Start from the end because the very 'last' light handles the global lighting for the object.
-        // A light that is a nullptr will cause the shader to perform default behavior, whatever that may be.
-        const Light* lightObject = scene->GetLightObject(totalLights - l - 1);
-
-        for (decltype(totalObjects) i = 0; i < totalObjects; ++i) {
+        for (auto i = 0; i < totalObjects; ++i) {
             const SceneObject& sceneObject = scene->GetSceneObject(i); 
-            const RenderingObject* renderObject = sceneObject.GetRenderObject();
-            if (!renderObject) {
-                continue;
+
+            auto totalRenderObjects = sceneObject.GetTotalRenderObjects();
+            for (auto r = 0; r < totalRenderObjects; ++r) {
+                const RenderingObject* renderObject = sceneObject.GetRenderObject(r);
+                if (!renderObject) {
+                    continue;
+                }
+
+                const ShaderProgram* shaderToUse = (p == 0) ? depthPrepassShader.get() : renderObject->GetShaderProgramRaw();
+                assert(shaderToUse);
+
+                shaderToUse->StartUseShader();
+
+                renderObject->BeginRender();
+
+                // Make the scene object setup its shader with any data its shader might need.
+                // Start from the end because the very 'last' light handles the global lighting for the object.
+                // A light that is a nullptr will cause the shader to perform default behavior, whatever that may be.
+                const Light* lightObject = scene->GetLightObject(totalRenderingPasses - p - 1);
+                sceneObject.PrepareShaderForRendering(shaderToUse, camera.get(), lightObject);
+
+                renderObject->Render();
+                renderObject->EndRender();
+
+                shaderToUse->StopUseShader();
             }
-
-            renderObject->BeginRender();
-
-            // Make the scene object setup its shader with any data its shader might need.
-            sceneObject.PrepareShaderForRendering(renderObject->GetShaderProgramRaw(), camera.get(), lightObject);
-            renderObject->Render();
-
-            renderObject->EndRender();
         }
     }
+    OGL_CALL(glDepthMask(GL_TRUE));
 }

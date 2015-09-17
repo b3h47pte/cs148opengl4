@@ -68,4 +68,7 @@ inline void _DisplayOpenGLError(std::string command, std::string file, int line)
 
 constexpr float PI = 3.14159265359f;
 
+#define STRINGIFY_HELPER(x) #x
+#define STRINGIFY(x) STRINGIFY_HELPER(x)
+
 #endif

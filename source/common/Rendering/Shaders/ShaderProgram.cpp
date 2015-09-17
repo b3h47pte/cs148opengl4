@@ -13,23 +13,32 @@
 ShaderProgram::ShaderProgram(const std::unordered_map<GLenum, std::string>& inputShaders):
     shaderProgram(0)
 {
-    if (inputShaders.find(GL_VERTEX_SHADER) == inputShaders.end() || 
-            inputShaders.find(GL_FRAGMENT_SHADER) == inputShaders.end())
+    if (inputShaders.find(GL_VERTEX_SHADER) == inputShaders.end())
     {
-        std::cerr <<  "ERROR: Your shader program is either missing a vertex shader or a fragment shader" << std::endl;
+        std::cerr << "ERROR: Your shader program is either missing a vertex shader which is required." << std::endl;
+        return;
+    }
+    bool hasFragmentShader = inputShaders.find(GL_FRAGMENT_SHADER) != inputShaders.end();
+    if (!hasFragmentShader) {
+        std::cerr << "WARNING: You did not specify a fragment shader. Although this may be valid, be warned that things may go very wrong!" << std::endl;
         return;
     }
 
     // Read and setup the vertex and fragment shaders.
     // TODO: Make the shader objects be cached so we don't incur the cost of creating a shader object multiple times if it is being reused.
     shaderObjects[GL_VERTEX_SHADER] = LoadShaderObject(GL_VERTEX_SHADER, inputShaders.at(GL_VERTEX_SHADER));
-    shaderObjects[GL_FRAGMENT_SHADER] = LoadShaderObject(GL_FRAGMENT_SHADER, inputShaders.at(GL_FRAGMENT_SHADER));
+
+    if (hasFragmentShader) {
+        shaderObjects[GL_FRAGMENT_SHADER] = LoadShaderObject(GL_FRAGMENT_SHADER, inputShaders.at(GL_FRAGMENT_SHADER));
+    }
 
     // Now link the vertex and fragment shader together to create the shader program.
     shaderProgram = OGL_CALL(glCreateProgram());
 
     OGL_CALL(glAttachShader(shaderProgram, shaderObjects[GL_VERTEX_SHADER]));
-    OGL_CALL(glAttachShader(shaderProgram, shaderObjects[GL_FRAGMENT_SHADER]));
+    if (hasFragmentShader) {
+        OGL_CALL(glAttachShader(shaderProgram, shaderObjects[GL_FRAGMENT_SHADER]));
+    }
     OGL_CALL(glLinkProgram(shaderProgram));
     
     // Check if any errors happened during the linker stage.
@@ -43,9 +52,12 @@ ShaderProgram::ShaderProgram(const std::unordered_map<GLenum, std::string>& inpu
     }
 
     OGL_CALL(glDetachShader(shaderProgram, shaderObjects[GL_VERTEX_SHADER]));
-    OGL_CALL(glDetachShader(shaderProgram, shaderObjects[GL_FRAGMENT_SHADER]));
-    OGL_CALL(glDeleteShader(shaderObjects[GL_VERTEX_SHADER]));
     OGL_CALL(glDeleteShader(shaderObjects[GL_FRAGMENT_SHADER]));
+
+    if (hasFragmentShader) {
+        OGL_CALL(glDetachShader(shaderProgram, shaderObjects[GL_FRAGMENT_SHADER]));
+        OGL_CALL(glDeleteShader(shaderObjects[GL_VERTEX_SHADER]));
+    }
 }
 
 ShaderProgram::~ShaderProgram()
@@ -56,6 +68,11 @@ ShaderProgram::~ShaderProgram()
 GLuint ShaderProgram::LoadShaderObject(GLenum type, const std::string& filename)
 {
     std::ifstream fs("../shaders/" + filename, std::ifstream::in);
+
+    if (!fs.is_open()) {
+        std::cerr << "ERROR: Could not read shader from " << filename << std::endl;
+        return 0;
+    }
     
     // This reads in the whole file into an std::string. Google for more information!
     std::string shaderText((std::istreambuf_iterator<char>(fs)), 

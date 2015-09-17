@@ -48,7 +48,6 @@ void RenderingObject::InitializeOpenGL()
 
 void RenderingObject::BeginRender() const
 {
-    shader->StartUseShader();
     OGL_CALL(glBindVertexArray(vao));
     OGL_CALL(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, vertexIndexBuffer));
 }
@@ -70,7 +69,6 @@ void RenderingObject::EndRender() const
 {
     OGL_CALL(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0));
     OGL_CALL(glBindVertexArray(0));
-    shader->StopUseShader();
 }
 
 GLint RenderingObject::GetShaderProgram() const
@@ -125,6 +123,7 @@ void RenderingObject::UpdateVertexPositions()
     OGL_CALL(glBufferData(GL_ARRAY_BUFFER, sizeof(glm::vec4) * vertexPositions->size(), &(*vertexPositions.get())[0], GL_STATIC_DRAW));
     OGL_CALL(glVertexAttribPointer(static_cast<int>(VertexAttributePositions::Position), 4, GL_FLOAT, GL_FALSE, 0, 0));
     OGL_CALL(glEnableVertexAttribArray(static_cast<int>(VertexAttributePositions::Position)));
+    OGL_CALL(glBindBuffer(GL_ARRAY_BUFFER, 0));
     EndRender();
 }
 
@@ -139,6 +138,7 @@ void RenderingObject::UpdateVertexIndices()
         }
         OGL_CALL(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, vertexIndexBuffer));
         OGL_CALL(glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(int) * vertexIndices->size(), &(*vertexIndices.get())[0], GL_STATIC_DRAW));
+        OGL_CALL(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0));
     } else {
         CleanupVertexIndices();
     }
@@ -157,6 +157,7 @@ void RenderingObject::UpdateVertexNormals()
             OGL_CALL(glBufferData(GL_ARRAY_BUFFER, sizeof(glm::vec3) * vertexNormals->size(), &(*vertexNormals.get())[0], GL_STATIC_DRAW));
             OGL_CALL(glVertexAttribPointer(static_cast<int>(VertexAttributePositions::Normals), 3, GL_FLOAT, GL_FALSE, 0, 0));
             OGL_CALL(glEnableVertexAttribArray(static_cast<int>(VertexAttributePositions::Normals)));
+            OGL_CALL(glBindBuffer(GL_ARRAY_BUFFER, 0));
         } else {
             std::cerr << "WARNING: Ignoring input vertex normals. It needs to have the same number of elements as the vertex positions vector." << std::endl;   
             CleanupVertexNormals();
@@ -181,8 +182,9 @@ void RenderingObject::UpdateVertexUV()
             }
             OGL_CALL(glBindBuffer(GL_ARRAY_BUFFER, vertexUVBuffer));
             OGL_CALL(glBufferData(GL_ARRAY_BUFFER, sizeof(glm::vec2) * vertexUV->size(), &(*vertexUV.get())[0], GL_STATIC_DRAW));
-            OGL_CALL(glVertexAttribPointer(static_cast<int>(VertexAttributePositions::Normals), 2, GL_FLOAT, GL_FALSE, 0, 0));
+            OGL_CALL(glVertexAttribPointer(static_cast<int>(VertexAttributePositions::UV), 2, GL_FLOAT, GL_FALSE, 0, 0));
             OGL_CALL(glEnableVertexAttribArray(static_cast<int>(VertexAttributePositions::UV)));
+            OGL_CALL(glBindBuffer(GL_ARRAY_BUFFER, 0));
         } else {
             std::cerr << "WARNING: Ignoring input vertex UVs. It needs to have the same number of elements as the vertex positions vector." << std::endl;   
             CleanupVertexUV();
@@ -209,6 +211,7 @@ void RenderingObject::UpdateVertexColors()
             OGL_CALL(glBufferData(GL_ARRAY_BUFFER, sizeof(glm::vec4) * vertexColors->size(), &(*vertexColors.get())[0], GL_STATIC_DRAW));
             OGL_CALL(glVertexAttribPointer(static_cast<int>(VertexAttributePositions::Colors), 4, GL_FLOAT, GL_FALSE, 0, 0));
             OGL_CALL(glEnableVertexAttribArray(static_cast<int>(VertexAttributePositions::Colors)));
+            OGL_CALL(glBindBuffer(GL_ARRAY_BUFFER, 0));
         } else {
             std::cerr << "WARNING: Ignoring input vertex colors. It needs to have the same number of elements as the vertex positions vector." << std::endl;   
             CleanupVertexColors();
@@ -252,5 +255,3 @@ void RenderingObject::CleanupVertexColors()
     OGL_CALL(glDeleteBuffers(1, &vertexColorBuffer));
     vertexColorBuffer = 0;
 }
-
-

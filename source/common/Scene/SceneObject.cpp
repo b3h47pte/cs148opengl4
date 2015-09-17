@@ -14,8 +14,14 @@ SceneObject::SceneObject():
 }
 
 SceneObject::SceneObject(std::shared_ptr<class RenderingObject> baseObject):
+    cachedTransformationMatrix(1.f), position(0.f, 0.f, 0.f, 1.f), rotation(1.f, 0.f, 0.f, 0.f), scale(1.f)
+{
+    renderObject.push_back(std::move(baseObject));
+}
+
+SceneObject::SceneObject(const std::vector<std::shared_ptr<class RenderingObject>>& baseObjects):
     cachedTransformationMatrix(1.f), position(0.f, 0.f, 0.f, 1.f), rotation(1.f, 0.f, 0.f, 0.f), scale(1.f),
-    renderObject(std::move(baseObject))
+    renderObject(baseObjects)
 {
 }
 
@@ -37,9 +43,10 @@ void SceneObject::PrepareShaderForRendering(const ShaderProgram* shader, const C
     shader->SetupShaderMaterials();
 }
 
-const RenderingObject* SceneObject::GetRenderObject() const
+const RenderingObject* SceneObject::GetRenderObject(int index) const
 {
-    return renderObject.get();
+    assert(index >= 0 && index < renderObject.size());
+    return renderObject[index].get();
 }
 
 glm::mat4 SceneObject::GetTransformationMatrix() const

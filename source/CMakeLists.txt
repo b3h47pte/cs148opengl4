@@ -24,6 +24,9 @@ include_directories("./external/glm")
 # GLEW Headers
 include_directories("./external/glew/include")
 
+# Open Asset Import Headers
+include_directories("./external/assimp/include")
+
 # OpenGL Shenanigans
 find_package(OpenGL REQUIRED)
 include_directories(${OPENGL_INCLUDE_DIR})
@@ -53,6 +56,9 @@ add_custom_target(shaderHandler ALL
     DEPENDS ${SHADERS}
     SOURCES ${SHADERS})
 
+# Path to Assets
+add_definitions("-DASSET_PATH=${CMAKE_CURRENT_SOURCE_DIR}/assets")
+
 # Note that file globbing is generally not recommended. It is usually better to explicitly list files; however,
 # I am assuming that most students are unfamiliar with CMake and thus will not be able to update the CMakeLists.txt
 # file appropriately. Hence, globbing is necessary for me to generate the Makefiles/whatever again should I ever
@@ -77,4 +83,9 @@ endif()
 # GLEW Library
 if (APPLE)
     target_link_libraries(cs148opengl4 "${CMAKE_SOURCE_DIR}/external/glew/distrib/osx/lib/libGLEW.a")
+endif()
+
+# Open Asset Import Library
+if (APPLE)
+    target_link_libraries(cs148opengl4 "${CMAKE_SOURCE_DIR}/external/assimp/distrib/osx/libassimp.dylib")
 endif()

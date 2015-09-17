@@ -1,6 +1,7 @@
 #include "assignment2/Assignment2.h"
 #include "common/core.h" // <-- haha.
 #include "common/Utility/Mesh/Simple/PrimitiveCreator.h"
+#include "common/Utility/Mesh/Loading/MeshLoader.h"
 #include <cmath>
 
 Assignment2::Assignment2(std::shared_ptr<class Scene> inputScene, std::shared_ptr<class Camera> inputCamera):
@@ -37,7 +38,11 @@ void Assignment2::SetupCamera()
 }
 
 void Assignment2::HandleInput(SDL_Keysym key, Uint32 state, Uint8 repeat, double timestamp)
-{
+{   
+    if (state != SDL_KEYDOWN) {
+        return;
+    }
+
     switch (key.sym) {
     case SDLK_1:
         if (!repeat && state == SDL_KEYDOWN) {
@@ -49,17 +54,22 @@ void Assignment2::HandleInput(SDL_Keysym key, Uint32 state, Uint8 repeat, double
             SetupExample2();
         }
         break;
+    case SDLK_3:
+        if (!repeat && state == SDL_KEYDOWN) {
+            SetupExample3();
+        }
+        break;
     case SDLK_UP:
-        sphereObject->Rotate(glm::vec3(SceneObject::GetWorldRight()), -0.1f);
+        sceneObject->Rotate(glm::vec3(SceneObject::GetWorldRight()), -0.1f);
         break;
     case SDLK_DOWN:
-        sphereObject->Rotate(glm::vec3(SceneObject::GetWorldRight()), 0.1f);
+        sceneObject->Rotate(glm::vec3(SceneObject::GetWorldRight()), 0.1f);
         break;
     case SDLK_RIGHT:
-        sphereObject->Rotate(glm::vec3(SceneObject::GetWorldUp()), 0.1f);
+        sceneObject->Rotate(glm::vec3(SceneObject::GetWorldUp()), 0.1f);
         break;
     case SDLK_LEFT:
-        sphereObject->Rotate(glm::vec3(SceneObject::GetWorldUp()), -0.1f);
+        sceneObject->Rotate(glm::vec3(SceneObject::GetWorldUp()), -0.1f);
         break;
     case SDLK_w:
         camera->Translate(glm::vec3(SceneObject::GetWorldForward() * -0.3f));
@@ -81,10 +91,10 @@ void Assignment2::HandleInput(SDL_Keysym key, Uint32 state, Uint8 repeat, double
         camera->Translate(glm::vec3(SceneObject::GetWorldUp() * 0.3f));
         break;
     case SDLK_EQUALS:
-        sphereObject->AddScale(0.1f);
+        sceneObject->AddScale(0.1f);
         break;
     case SDLK_MINUS:
-        sphereObject->AddScale(-0.1f);
+        sceneObject->AddScale(-0.1f);
         break;
     default:
         Application::HandleInput(key, state, repeat, timestamp);
@@ -131,8 +141,8 @@ void Assignment2::SetupExample1()
     
     sphereTemplate->SetVertexColors(std::move(vertexColors));
 
-    sphereObject = std::make_shared<SceneObject>(sphereTemplate);
-    scene->AddSceneObject(sphereObject);
+    sceneObject = std::make_shared<SceneObject>(sphereTemplate);
+    scene->AddSceneObject(sceneObject);
 
     std::unique_ptr<BlinnPhongLightProperties> lightProperties = BlinnPhongShader::CreateLightProperties();
     lightProperties->diffuseColor = glm::vec4(1.f, 1.f, 1.f, 1.f);
@@ -187,8 +197,57 @@ void Assignment2::SetupExample2()
     }
     sphereTemplate->SetVertexColors(std::move(vertexColors));
 
-    sphereObject = std::make_shared<SceneObject>(sphereTemplate);
-    scene->AddSceneObject(sphereObject);
+    sceneObject = std::make_shared<SceneObject>(sphereTemplate);
+    scene->AddSceneObject(sceneObject);
+
+    std::unique_ptr<BlinnPhongLightProperties> lightProperties = BlinnPhongShader::CreateLightProperties();
+    lightProperties->diffuseColor = glm::vec4(1.f, 1.f, 1.f, 1.f);
+    lightProperties->specularColor = glm::vec4(1.f, 1.f, 1.f, 1.f);
+
+    pointLight = std::make_shared<Light>(std::move(lightProperties));
+
+    lightProperties = BlinnPhongShader::CreateLightProperties();
+    lightProperties->diffuseColor = glm::vec4(1.f, 0.f, 0.f, 1.f);
+    lightProperties->specularColor = glm::vec4(0.f, 1.f, 0.f, 1.f);
+    pointLight2 = std::make_shared<Light>(std::move(lightProperties));
+
+    lightProperties = BlinnPhongShader::CreateLightProperties();
+    lightProperties->diffuseColor = glm::vec4(0.f, 0.f, 1.f, 1.f);
+    lightProperties->specularColor = glm::vec4(1.f, 0.f, 0.f, 1.f);
+    pointLight3 = std::make_shared<Light>(std::move(lightProperties));
+
+    scene->AddLight(pointLight);
+    scene->AddLight(pointLight2);
+    scene->AddLight(pointLight3);
+}
+
+void Assignment2::SetupExample3()
+{
+    scene->ClearScene();
+#ifndef DISABLE_OPENGL_SUBROUTINES
+    std::unordered_map<GLenum, std::string> shaderSpec = {
+        { GL_VERTEX_SHADER, "brdf/blinnphong/frag/blinnphong.vert" },
+        { GL_FRAGMENT_SHADER, "brdf/blinnphong/frag/blinnphong.frag"}
+    };
+#else
+    std::unordered_map<GLenum, std::string> shaderSpec = {
+        { GL_VERTEX_SHADER, "brdf/blinnphong/frag/noSubroutine/blinnphong.vert" },
+        { GL_FRAGMENT_SHADER, "brdf/blinnphong/frag/noSubroutine/blinnphong.frag"}
+    };
+#endif
+    std::shared_ptr<BlinnPhongShader> shader = std::make_shared<BlinnPhongShader>(shaderSpec, GL_FRAGMENT_SHADER);
+    shader->SetDiffuse(glm::vec4(0.3f, 0.3f, 0.3f, 1.f));
+    shader->SetSpecular(glm::vec4(0.9f, 0.9f, 0.9f, 1.f), 40.f);
+    shader->SetAmbient(glm::vec4(0.1f));
+
+    std::vector<std::shared_ptr<RenderingObject>> meshTemplate = MeshLoader::LoadMesh(shader, "outlander/Model/Outlander_Model.obj");
+    if (meshTemplate.empty()) {
+        std::cerr << "ERROR: Failed to load the model. Check your paths." << std::endl;
+        return;
+    }
+
+    sceneObject = std::make_shared<SceneObject>(meshTemplate);
+    scene->AddSceneObject(sceneObject);
 
     std::unique_ptr<BlinnPhongLightProperties> lightProperties = BlinnPhongShader::CreateLightProperties();
     lightProperties->diffuseColor = glm::vec4(1.f, 1.f, 1.f, 1.f);

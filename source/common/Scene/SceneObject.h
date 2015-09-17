@@ -10,11 +10,13 @@ class SceneObject: public std::enable_shared_from_this<SceneObject>
 public:
     SceneObject();
     SceneObject(std::shared_ptr<class RenderingObject> baseObject);
+    SceneObject(const std::vector<std::shared_ptr<class RenderingObject>>& baseObjects);
     virtual ~SceneObject();
 
     virtual void PrepareShaderForRendering(const class ShaderProgram* shader, const class Camera* currentCamera, const class Light* currentLight) const;
 
-    virtual const class RenderingObject* GetRenderObject() const;
+    decltype(auto) GetTotalRenderObjects() const { return renderObject.size(); }
+    virtual const class RenderingObject* GetRenderObject(int index = 0) const;
 
     virtual glm::mat4 GetTransformationMatrix() const;
 
@@ -54,7 +56,7 @@ protected:
     static constexpr float MINIMUM_SCALE = 0.01f;
 
 private:
-    std::shared_ptr<class RenderingObject> renderObject;
+    std::vector<std::shared_ptr<class RenderingObject>> renderObject;
 };
 
 #endif
