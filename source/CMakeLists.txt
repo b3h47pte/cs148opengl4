@@ -99,3 +99,35 @@ endif()
 if (APPLE)
     target_link_libraries(cs148opengl4 "${CMAKE_SOURCE_DIR}/external/freeimage/distrib/osx/libfreeimage.a")
 endif()
+
+# Source Group Folders for IDE Usage
+# Shaders
+source_group(basicColor REGULAR_EXPRESSION basicColor/.*)
+
+source_group(brdf REGULAR_EXPRESSION brdf/.*)
+source_group(brdf\\blinnphong REGULAR_EXPRESSION brdf/blinnphong/.*)
+source_group(brdf\\blinnphong\\frag REGULAR_EXPRESSION brdf/blinnphong/frag/.*)
+source_group(brdf\\blinnphong\\fragTexture REGULAR_EXPRESSION brdf/blinnphong/fragTexture/.*)
+source_group(brdf\\blinnphong\\vert REGULAR_EXPRESSION brdf/blinnphong/vert/.*)
+source_group(brdf\\blinnphong\\frag\\noSubroutine REGULAR_EXPRESSION brdf/blinnphong/frag/noSubroutine/.*)
+source_group(brdf\\blinnphong\\fragTexture\\noSubroutine REGULAR_EXPRESSION brdf/blinnphong/fragTexture/noSubroutine/.*)
+source_group(brdf\\blinnphong\\vert\\noSubroutine REGULAR_EXPRESSION brdf/blinnphong/vert/noSubroutine/.*)
+
+source_group(required REGULAR_EXPRESSION required/.*)
+source_group(required\\ REGULAR_EXPRESSION required/pass/.*)
+
+# Source Files
+source_group(common REGULAR_EXPRESSION common/.*)
+source_group(common\\Rendering REGULAR_EXPRESSION common/Rendering/.*)
+source_group(common\\Rendering\\Shaders REGULAR_EXPRESSION common/Rendering/Shaders/.*)
+source_group(common\\Rendering\\Textures REGULAR_EXPRESSION common/Rendering/Textures/.*)
+source_group(common\\Scene REGULAR_EXPRESSION common/Scene/.*)
+source_group(common\\Scene\\Camera REGULAR_EXPRESSION common/Scene/Camera/.*)
+source_group(common\\Scene\\Light REGULAR_EXPRESSION common/Scene/Light/.*)
+source_group(common\\Utility REGULAR_EXPRESSION common/Utility/.*)
+source_group(common\\Utility\\Mesh REGULAR_EXPRESSION common/Utility/Mesh/.*)
+source_group(common\\Utility\\Mesh\\Loading REGULAR_EXPRESSION common/Utility/Mesh/Loading/.*)
+source_group(common\\Utility\\Mesh\\Simple REGULAR_EXPRESSION common/Utility/Mesh/Simple/.*)
+source_group(common\\Utility\\Texture REGULAR_EXPRESSION common/Utility/Texture/.*)
+
+
