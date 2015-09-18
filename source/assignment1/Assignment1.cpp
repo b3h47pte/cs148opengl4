@@ -8,7 +8,7 @@ Assignment1::Assignment1(std::shared_ptr<class Scene> inputScene, std::shared_pt
 
 std::unique_ptr<Application> Assignment1::CreateApplication(std::shared_ptr<class Scene> scene, std::shared_ptr<class Camera> camera)
 {
-    return std::make_unique<Assignment1>(std::move(scene), std::move(camera));
+    return make_unique<Assignment1>(std::move(scene), std::move(camera));
 }
 
 glm::vec2 Assignment1::GetWindowSize() const
@@ -30,7 +30,7 @@ void Assignment1::SetupExample1()
     };
     std::shared_ptr<ShaderProgram> shader = std::make_shared<ShaderProgram>(shaderSpec);
 
-    std::unique_ptr<RenderingObject::PositionArray> vertexPositions = std::make_unique<RenderingObject::PositionArray>(
+    std::unique_ptr<RenderingObject::PositionArray> vertexPositions = make_unique<RenderingObject::PositionArray>(
         std::initializer_list<glm::vec4>({
             // Triangle 1
             {0.f, 0.f, 0.f, 1.f},
@@ -43,7 +43,7 @@ void Assignment1::SetupExample1()
         })
     );
     
-    std::unique_ptr<RenderingObject::ColorArray> vertexColors = std::make_unique<RenderingObject::ColorArray>(
+    std::unique_ptr<RenderingObject::ColorArray> vertexColors = make_unique<RenderingObject::ColorArray>(
         std::initializer_list<glm::vec4>({
             // Triangle 1
             {1.f, 0.f, 0.f, 1.f},
@@ -70,7 +70,7 @@ void Assignment1::SetupExample2()
     };
     std::shared_ptr<ShaderProgram> shader = std::make_shared<ShaderProgram>(shaderSpec);
 
-    std::unique_ptr<RenderingObject::PositionArray> vertexPositions = std::make_unique<RenderingObject::PositionArray>(
+    std::unique_ptr<RenderingObject::PositionArray> vertexPositions = make_unique<RenderingObject::PositionArray>(
         std::initializer_list<glm::vec4>({
             // Triangle 1
             {0.f, 0.f, 0.f, 1.0f},
@@ -83,7 +83,7 @@ void Assignment1::SetupExample2()
         })
     );
     
-    std::unique_ptr<RenderingObject::ColorArray> vertexColors = std::make_unique<RenderingObject::ColorArray>(
+    std::unique_ptr<RenderingObject::ColorArray> vertexColors = make_unique<RenderingObject::ColorArray>(
         std::initializer_list<glm::vec4>({
             // Triangle 1
             {0.f, 1.f, 0.f, 1.f},
@@ -117,7 +117,7 @@ void Assignment1::SetupExample3()
     };
     std::shared_ptr<ShaderProgram> shader = std::make_shared<ShaderProgram>(shaderSpec);
 
-    std::unique_ptr<RenderingObject::PositionArray> vertexPositions = std::make_unique<RenderingObject::PositionArray>(
+    std::unique_ptr<RenderingObject::PositionArray> vertexPositions = make_unique<RenderingObject::PositionArray>(
         std::initializer_list<glm::vec4>({
             // Triangle 1
             {0.f, 0.f, 0.f, 1.0f},
@@ -142,7 +142,7 @@ void Assignment1::SetupExample3()
     );
 
    
-    std::unique_ptr<RenderingObject::ColorArray> vertexColors = std::make_unique<RenderingObject::ColorArray>(
+    std::unique_ptr<RenderingObject::ColorArray> vertexColors = make_unique<RenderingObject::ColorArray>(
         std::initializer_list<glm::vec4>({
             // Triangle 1
             {0.f, 1.f, 0.f, 1.f},

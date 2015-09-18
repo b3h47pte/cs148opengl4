@@ -11,7 +11,7 @@ Assignment2::Assignment2(std::shared_ptr<class Scene> inputScene, std::shared_pt
 
 std::unique_ptr<Application> Assignment2::CreateApplication(std::shared_ptr<class Scene> scene, std::shared_ptr<class Camera> camera)
 {
-    return std::make_unique<Assignment2>(std::move(scene), std::move(camera));
+    return make_unique<Assignment2>(std::move(scene), std::move(camera));
 }
 
 std::shared_ptr<class Camera> Assignment2::CreateCamera()
@@ -132,7 +132,7 @@ void Assignment2::SetupExample1()
     // Give a R/G/B color to each vertex to visualize the sphere.
     const auto totalVertices = sphereTemplate->GetTotalVertices();
 
-    std::unique_ptr<RenderingObject::ColorArray> vertexColors = std::make_unique<RenderingObject::ColorArray>();
+    std::unique_ptr<RenderingObject::ColorArray> vertexColors = make_unique<RenderingObject::ColorArray>();
     vertexColors->reserve(totalVertices);
 
     for (auto i = 0; i < totalVertices; ++i) {
@@ -189,7 +189,7 @@ void Assignment2::SetupExample2()
     // Give a R/G/B color to each vertex to visualize the sphere.
     const auto totalVertices = sphereTemplate->GetTotalVertices();
 
-    std::unique_ptr<RenderingObject::ColorArray> vertexColors = std::make_unique<RenderingObject::ColorArray>();
+    std::unique_ptr<RenderingObject::ColorArray> vertexColors = make_unique<RenderingObject::ColorArray>();
     vertexColors->reserve(totalVertices);
 
     for (auto i = 0; i < totalVertices; ++i) {

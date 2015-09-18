@@ -11,17 +11,17 @@ class Light;
 class Scene: public std::enable_shared_from_this<Scene>
 {
 public:
-    decltype(auto) GetTotalObjects() const 
+    size_t GetTotalObjects() const 
     { 
         return sceneObjects.size(); 
     }
 
-    decltype(auto) GetTotalLights() const
+    size_t GetTotalLights() const
     {
         return sceneLights.size();
     }
 
-    template<typename T, std::enable_if_t<std::is_integral<T>::value>* = nullptr>
+    template<typename T, typename std::enable_if<std::is_integral<T>::value>::type* = nullptr>
     const SceneObject& GetSceneObject(T index) const
     {
         assert(index >= 0 && index < sceneObjects.size());
@@ -29,7 +29,7 @@ public:
         return *internalObject.get();
     }
 
-    template<typename T, std::enable_if_t<std::is_integral<T>::value>* = nullptr>
+    template<typename T, typename std::enable_if<std::is_integral<T>::value>::type* = nullptr>
     const Light* GetLightObject(T index) const
     {
         if (index >= 0 && index < sceneLights.size()) {

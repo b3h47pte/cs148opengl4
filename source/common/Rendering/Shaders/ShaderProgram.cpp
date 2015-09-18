@@ -168,5 +168,5 @@ void ShaderProgram::SetupShaderCamera(const Camera* camera) const
 
 std::unique_ptr<LightProperties> ShaderProgram::CreateLightProperties()
 {
-    return std::make_unique<LightProperties>();
+    return make_unique<LightProperties>();
 }

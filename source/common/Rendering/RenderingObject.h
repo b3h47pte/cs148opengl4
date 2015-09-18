@@ -46,7 +46,7 @@ public:
     GLint GetShaderProgram() const;
     const class ShaderProgram* GetShaderProgramRaw() const;
 
-    decltype(auto) GetTotalVertices() const
+    size_t GetTotalVertices() const
     {
         return vertexPositions->size();
     }

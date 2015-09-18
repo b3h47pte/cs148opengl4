@@ -38,11 +38,11 @@ std::vector<std::shared_ptr<RenderingObject>> LoadMesh(std::shared_ptr<ShaderPro
         }
 
         auto totalVertices = mesh->mNumVertices;
-        std::unique_ptr<RenderingObject::PositionArray> positions = std::make_unique<RenderingObject::PositionArray>(totalVertices);
-        std::unique_ptr<RenderingObject::NormalArray> normals = mesh->HasNormals() ? std::make_unique<RenderingObject::NormalArray>(totalVertices) : nullptr;
-        std::unique_ptr<RenderingObject::UVArray> uv =  mesh->HasTextureCoords(0) ? std::make_unique<RenderingObject::UVArray>(totalVertices) : nullptr;
-        std::unique_ptr<RenderingObject::ColorArray> colors = mesh->HasVertexColors(0) ? std::make_unique<RenderingObject::ColorArray>(totalVertices) : nullptr;
-        std::unique_ptr<RenderingObject::IndexArray> indices = mesh->HasFaces() ? std::make_unique<RenderingObject::IndexArray>(mesh->mNumFaces * 3) : nullptr;
+        std::unique_ptr<RenderingObject::PositionArray> positions = make_unique<RenderingObject::PositionArray>(totalVertices);
+        std::unique_ptr<RenderingObject::NormalArray> normals = mesh->HasNormals() ? make_unique<RenderingObject::NormalArray>(totalVertices) : nullptr;
+        std::unique_ptr<RenderingObject::UVArray> uv =  mesh->HasTextureCoords(0) ? make_unique<RenderingObject::UVArray>(totalVertices) : nullptr;
+        std::unique_ptr<RenderingObject::ColorArray> colors = mesh->HasVertexColors(0) ? make_unique<RenderingObject::ColorArray>(totalVertices) : nullptr;
+        std::unique_ptr<RenderingObject::IndexArray> indices = mesh->HasFaces() ? make_unique<RenderingObject::IndexArray>(mesh->mNumFaces * 3) : nullptr;
 
         for (auto v = 0; v < totalVertices; ++v) {
             positions->at(v) = glm::vec4(mesh->mVertices[v].x, mesh->mVertices[v].y, mesh->mVertices[v].z, 1.f);

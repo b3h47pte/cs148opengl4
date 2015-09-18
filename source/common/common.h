@@ -71,4 +71,10 @@ constexpr float PI = 3.14159265359f;
 #define STRINGIFY_HELPER(x) #x
 #define STRINGIFY(x) STRINGIFY_HELPER(x)
 
+template<typename T, typename... Ts>
+std::unique_ptr<T> make_unique(Ts&&... params)
+{
+    return std::unique_ptr<T>(new T(std::forward<Ts>(params)...));
+}
+
 #endif

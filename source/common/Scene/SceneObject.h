@@ -15,7 +15,7 @@ public:
 
     virtual void PrepareShaderForRendering(const class ShaderProgram* shader, const class Camera* currentCamera, const class Light* currentLight) const;
 
-    decltype(auto) GetTotalRenderObjects() const { return renderObject.size(); }
+    size_t GetTotalRenderObjects() const { return renderObject.size(); }
     virtual const class RenderingObject* GetRenderObject(int index = 0) const;
 
     virtual glm::mat4 GetTransformationMatrix() const;

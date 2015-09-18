@@ -8,7 +8,7 @@ if (NOT CMAKE_BUILD_TYPE)
 endif()
 
 # CPP Flags
-set(CXX_FLAGS "-Wall -std=c++14 -Wno-missing-braces")
+set(CXX_FLAGS "-Wall -std=c++11 -Wno-missing-braces")
 
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -O0")
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3")

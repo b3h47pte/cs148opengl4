@@ -20,7 +20,7 @@ void Application::Initialize()
 
 std::unique_ptr<Application> Application::CreateApplication(std::shared_ptr<class Scene> scene, std::shared_ptr<class Camera> camera)
 {
-    return std::make_unique<Application>(std::move(scene), std::move(camera));
+    return make_unique<Application>(std::move(scene), std::move(camera));
 }
 
 std::shared_ptr<Scene> Application::CreateScene()
@@ -35,7 +35,7 @@ std::shared_ptr<Camera> Application::CreateCamera()
 
 std::unique_ptr<class Renderer> Application::CreateRenderer()
 {
-    return std::make_unique<ForwardRenderer>(scene, camera);
+    return make_unique<ForwardRenderer>(scene, camera);
 }
 
 glm::vec2 Application::GetWindowSize() const

@@ -4,6 +4,7 @@
 #define __BLINN_PHONG_SHADER__
 
 #include "common/Rendering/Shaders/ShaderProgram.h"
+#include <functional>
 
 // CPU Interface to the BlinnPhong shader (either or: vert or frag version).
 class BlinnPhongShader: public ShaderProgram
@@ -20,11 +21,13 @@ public:
     virtual void SetSpecular(glm::vec4 inSpecular, float inShininess);
     virtual void SetAmbient(glm::vec4 inAmbient);
 
-    enum class TextureSlots {
-        DIFFUSE = 0,
-        SPECULAR
+    struct TextureSlots {
+        enum Type {
+            DIFFUSE = 0,
+            SPECULAR
+        };
     };
-    virtual void SetTexture(TextureSlots slot, std::shared_ptr<class Texture> inputTexture);
+    virtual void SetTexture(TextureSlots::Type slot, std::shared_ptr<class Texture> inputTexture);
 
     static std::unique_ptr<struct BlinnPhongLightProperties> CreateLightProperties();
 protected:
@@ -51,7 +54,7 @@ protected:
 private:
     // Textures
     std::shared_ptr<class Texture> defaultTexture;
-    std::unordered_map<TextureSlots, std::shared_ptr<class Texture>> textureSlotMapping;
+    std::unordered_map<TextureSlots::Type, std::shared_ptr<class Texture>, std::hash<int> > textureSlotMapping;
 
     GLenum lightingShaderStage;
 };

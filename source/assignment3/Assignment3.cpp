@@ -12,7 +12,7 @@ Assignment3::Assignment3(std::shared_ptr<class Scene> inputScene, std::shared_pt
 
 std::unique_ptr<Application> Assignment3::CreateApplication(std::shared_ptr<class Scene> scene, std::shared_ptr<class Camera> camera)
 {
-    return std::make_unique<Assignment3>(std::move(scene), std::move(camera));
+    return make_unique<Assignment3>(std::move(scene), std::move(camera));
 }
 
 std::shared_ptr<class Camera> Assignment3::CreateCamera()

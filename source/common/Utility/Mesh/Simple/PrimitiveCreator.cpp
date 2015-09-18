@@ -24,7 +24,7 @@ std::shared_ptr<RenderingObject> CreateIcoSphere(std::shared_ptr<ShaderProgram> 
     //  https://en.wikipedia.org/wiki/Regular_icosahedron
     const float gr = (1.f + std::sqrtf(5.f)) * 0.5f;
 
-    std::unique_ptr<RenderingObject::PositionArray> vertexPositions = std::make_unique<RenderingObject::PositionArray>();
+    std::unique_ptr<RenderingObject::PositionArray> vertexPositions = make_unique<RenderingObject::PositionArray>();
     // An Icohedron's vertices can be placed onto three orthogonal rectangles (check the links for pictures!)
     // Note that the icosahedron code is based off of the implementation by Andreas Kahler.
     vertexPositions->emplace_back(-1.f, gr, 0.f, 1.f);
@@ -44,7 +44,7 @@ std::shared_ptr<RenderingObject> CreateIcoSphere(std::shared_ptr<ShaderProgram> 
 
     // Force every vertex to be on the sphere of radius 'radius'
     std::for_each(vertexPositions->begin(), vertexPositions->end(),
-        [=](auto& position) {
+        [=](decltype(*vertexPositions->begin())& position) {
             position = glm::vec4(glm::normalize(glm::vec3(position)) * radius, 1.f);
         }
     );
@@ -131,14 +131,14 @@ std::shared_ptr<RenderingObject> CreateIcoSphere(std::shared_ptr<ShaderProgram> 
         vertexIndices = std::move(newVertexIndices);
     }
 
-    std::unique_ptr<RenderingObject::NormalArray> vertexNormals = std::make_unique<RenderingObject::NormalArray>(vertexPositions->size());
+    std::unique_ptr<RenderingObject::NormalArray> vertexNormals = make_unique<RenderingObject::NormalArray>(vertexPositions->size());
     for (auto i = 0; i < vertexNormals->size(); ++i) {
         vertexNormals->at(i) = glm::normalize(glm::vec3(vertexPositions->at(i)));
     }
 
     std::shared_ptr<RenderingObject> newObj = std::make_shared<RenderingObject>(std::move(inputShader),
         std::move(vertexPositions), 
-        std::make_unique<RenderingObject::IndexArray>(std::move(vertexIndices)),
+        make_unique<RenderingObject::IndexArray>(std::move(vertexIndices)),
         std::move(vertexNormals)
     );
             

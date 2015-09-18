@@ -142,7 +142,7 @@ void BlinnPhongShader::SetupShaderCamera(const class Camera* camera) const
 
 std::unique_ptr<BlinnPhongLightProperties> BlinnPhongShader::CreateLightProperties()
 {
-    return std::make_unique<BlinnPhongLightProperties>();
+    return make_unique<BlinnPhongLightProperties>();
 }
 void BlinnPhongShader::SetDiffuse(glm::vec4 inDiffuse) 
 { 
@@ -163,7 +163,7 @@ void BlinnPhongShader::SetAmbient(glm::vec4 inAmbient)
     UpdateMaterialBlock();
 }
 
-void BlinnPhongShader::SetTexture(TextureSlots slot, std::shared_ptr<class Texture> inputTexture)
+void BlinnPhongShader::SetTexture(TextureSlots::Type slot, std::shared_ptr<class Texture> inputTexture)
 {
     textureSlotMapping[slot] = std::move(inputTexture);
 }
