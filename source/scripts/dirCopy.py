@@ -3,6 +3,9 @@ import sys
 import shutil
 
 def CopyDir(inputDirectory, outputDirectory):
+    if inputDirectory == outputDirectory:
+        return
+
     try:
         if os.path.exists(outputDirectory):
             shutil.rmtree(outputDirectory)

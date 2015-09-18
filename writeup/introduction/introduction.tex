@@ -33,6 +33,16 @@ You will need to make sure you have the following:
     \item Python 2.7.x
 \end{enumerate}
 
+If you are on Linux, you will also need to get the following dependencies on your system:
+\begin{enumerate}
+    \item SDL 2
+    \item Open Asset Import Library
+    \item FreeImage
+    \item GLEW
+\end{enumerate}
+
+On the other operating systems, I have provided pre-built binaries.
+
 If any of the instructions below are unclear, ask a CA or post on Piazza.
 
 \subsection*{Windows}
@@ -61,13 +71,13 @@ Download Python 2.7 from \href{https://www.python.org/download/releases/2.7/}{he
 
 Make sure you have XCode installed. If you do not have XCode installed, you can go \href{https://developer.apple.com/xcode/download/}{here} to download it (it will redirect you to the app store). Make sure you download XCode 7 and not the XCode 7.1 beta. If you wish, you can click on 'Additional Tools' \href{https://developer.apple.com/downloads/}{(or here)} to find XCode 6.4.
 
-\textcolor{red}{TODO: Test XCode 7}
+Note that if you want to use the command line instead on Mac OSX, you will have to also install the Command Line Tools for your Mac OSX version and your Xcode version (this is also found under 'Additional Tools').
 
 \subsubsection*{OpenGL 4.1 Support}
 
 Your system should have the OpenGL headers already once you install XCode. To see if your system supports OpenGL 4.1 look at Apple's OpenGL capabilities table: \href{https://developer.apple.com/opengl/capabilities/}{here}. To see what graphics card you have, you can click on the 'Apple' button and click on 'About this Mac' and in the window that pops up, your graphics card is displayed next to \textbf{Graphics}. Additionally, you'll want to make sure your Mac OS X is updated to at least 10.9 if not 10.10 (upgrade! It's free).
 
-\textcolor{red}{TODO: Add pictures}
+\includegraphics[width=\linewidth]{osx1.png}
 
 \subsubsection*{CMake}
 
@@ -83,7 +93,7 @@ Note that the instructions here are tailored to Ubuntu. If you have a different 
 
 \subsubsection*{C++ Compiler}
 
-On Linux, you'll want to be using G++ 4.6 or later. If possible, you'll want to be using G++ 4.8.1 or GCC 5+. On Ubuntu you can run:
+On Linux, you'll want to be using G++ 4.6 or later. If possible, you'll want to be using G++ 4.8.1+. On Ubuntu you can run:
 
 \begin{lstlisting}
 sudo apt-get install g++-4.8
@@ -117,6 +127,54 @@ In your command line, type "python --version" to see what version of Python you 
 sudo apt-get install python
 \end{lstlisting}
 
+\subsubsection*{Other Dependencies}
+
+\paragraph{\textbf{SDL 2}}
+
+SDL 2 shoudl be available in your distribution's package repository. On Ubuntu:
+
+\begin{lstlisting}
+sudo apt-get install libsdl2-2.0-0
+sudo apt-get install libsdl2-dev
+\end{lstlisting}
+
+If it is not in the repository, you will have to compile manually. See a CA if you need assistance.
+
+\paragraph{\textbf{Open Asset Import Library}}
+
+I have provided the Open Asset Import library source code with the assignment framework under "source/external/assimp" as well as a convenient build folder "source/external/assimp/build/unix". In your terminal, go to the build folder and run:
+
+\begin{lstlisting}
+cmake -G "Unix Makefiles" ../../
+make -jN
+\end{lstlisting}
+
+Where N is the number of cores you want to use for compilation. Afterwards, in the 'code' folder, there should be a 'libassimp.a' file, move this into 'source/external/assimp/distrib/unix'.
+
+\paragraph{\textbf{FreeImage}}
+
+FreeImage should be available in your distribution's package repository. On Ubuntu:
+
+\begin{lstlisting}
+sudo apt-get install libfreeimage3
+sudo apt-get install libfreeimage-dev
+\end{lstlisting}
+
+If it is not in the repository, you will have to compile manually. See a CA if you need assistance.
+
+\paragraph{\textbf{GLEW}}
+
+GLEW should be available in your distribution's package repository. On Ubuntu:
+
+\begin{lstlisting}
+sudo apt-get install libglew1.10
+sudo apt-get install libglew-dev
+\end{lstlisting}
+
+Other versions of GLEW should be okay. People using Windows/OSX will be using GLEW 1.13.
+
+If it is not in the repository, you will have to compile manually. See a CA if you need assistance.
+
 \section*{Compiling}
 
 Compiling is a two step process regardless or whether you are using the CMake GUI or the CMake Command-Line Interface (CLI). First you will use CMake to generate the proper build files (Visual Studio, XCode, or Makefiles) and use Visual Studio/Xcode/Makefiles to actually build the application (aptly named cs148opengl4). This section assumes that you have the assignment code unzipped somewhere. 
@@ -127,10 +185,13 @@ Compiling is a two step process regardless or whether you are using the CMake GU
 
 If you are using CMake to generate for Visual Studio or XCode, you can run CMake once (the very first time) and then use Visual Studio or Xcode to manage any new files you might add (instead of using CMake to do that for you). However, should you ever run CMake again, you will overwrite your Visual Studio solution/XCode project and lose any changes you made. To avoid having to run CMake to compile a new assignment, you can instead go into "main.cpp" and after the include statements, add a line that says 
 \begin{lstlisting}
+#undef ASSIGNMENT
 #define ASSIGNMENT N
 \end{lstlisting}
 
-where N is the assignment you wish to compile for (1, 2, 3).
+where N is the assignment you wish to compile for (1, 2, 3). Afterwards, make sure you have added the AssignmentN.h and AssignmentH.cpp file to the project. For XCode, make sure that the AssignmentN.cpp is under 'Compile Sources' in your 'Build Phases.' To get to your 'Build Phases', click on the 'cs148-opengl project', then click on the 'cs148opengl4' target. If the AssignmentN.cpp file is NOT there, click on the plus button at the bottom of the 'Compile Sources' section and add it!
+
+\includegraphics[width=\linewidth]{xcode4.png}
 
 \subsubsection*{GUI (Windows, Mac OSX)}
 
@@ -177,6 +238,10 @@ In the upper left corner, your build target by default should be set to ALL\_BUI
 At this point, you can hit the 'Play' button and it will compile and launch the application! However, if you ever want to change from a Debug build to a Relase build or vice versa, you will need to go same screen as before (click on cs148opengl4) and click on 'Edit Scheme...'. In the screen that pops up, make sure on the left, you have 'Run' selected and on the right, you are in the 'Info' tab. You should see a build configuration dropdown from which you can select the build type that you want.
 
 \includegraphics[width=\linewidth]{xcode2.png}
+
+If you are running XCode 7, you may run into an issue where it tells you that you can not run cs148opengl4 because the deployment target is too high. In that case, click on the cs148-opengl4 project, click on the cs148opengl4 target, click on 'Build Settings', under 'Deployment' find 'OS X Deployment Target' and change it to whatever version of OSX you have.
+
+\includegraphics[width=\linewidth]{xcode3.png}
 
 \subsubsection*{Makefiles}
 
