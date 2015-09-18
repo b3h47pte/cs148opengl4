@@ -75,7 +75,9 @@ flags = [
 '-I',
 './external/glew/include',
 '-I',
-'./external/assimp/include'
+'./external/assimp/include',
+'-I',
+'./external/freeimage/distrib/osx/'
 ]
 
 

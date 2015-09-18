@@ -1,5 +1,6 @@
 #include "common/MediaLayer.h"
 #include "common/Rendering/ForwardRenderer.h"
+#include "FreeImage.h"
 
 #if ASSIGNMENT == 1
 #include "assignment1/Assignment1.h"
@@ -18,6 +19,8 @@
 #include <chrono>
 
 int main(int argc, char** argv) {
+    FreeImage_Initialise();
+
     std::unique_ptr<Application> app = APPLICATION::CreateApplication(APPLICATION::CreateScene(), APPLICATION::CreateCamera());
     if (!app) {
         std::cerr << "ERROR: Created application is not valid." << std::endl;
@@ -46,5 +49,7 @@ int main(int argc, char** argv) {
         media.Tick(deltaTime.count(), totalElapsedTime.count());
         lastTickTime = currentTickTime;
     }
+
+    FreeImage_DeInitialise();
     return 0;
 }

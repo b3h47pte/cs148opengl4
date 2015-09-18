@@ -42,7 +42,7 @@ void ForwardRenderer::Render()
         } else {
             // Need this to prevent z-fighting with the depth prepass!
             OGL_CALL(glEnable(GL_POLYGON_OFFSET_FILL));
-            OGL_CALL(glPolygonOffset(0.f, -1.f));
+            OGL_CALL(glPolygonOffset(-1.f, -1.f));
         }
 
         for (auto i = 0; i < totalObjects; ++i) {

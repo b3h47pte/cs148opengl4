@@ -33,6 +33,11 @@ RenderingObject::~RenderingObject()
     OGL_CALL(glDeleteVertexArrays(1, &vao));
 }
 
+void RenderingObject::SetShader(std::shared_ptr<class ShaderProgram> inputShader)
+{
+    shader = std::move(inputShader);
+}
+
 void RenderingObject::InitializeOpenGL()
 {
     // Setup mesh data

@@ -1,7 +1,9 @@
 #include "common/Rendering/Shaders/BlinnPhongShader.h"
+#include "common/Rendering/Textures/Texture.h"
 #include "common/Scene/Light/Light.h"
 #include "common/Scene/Light/Properties/BlinnPhong/BlinnPhongLightProperties.h"
 #include "common/Scene/Camera/Camera.h"
+#include "common/Utility/Texture/TextureLoader.h"
 
 const std::array<const char*, 4> BlinnPhongShader::MATERIAL_PROPERTY_NAMES = {
     "InputMaterial.matDiffuse", 
@@ -25,6 +27,12 @@ BlinnPhongShader::BlinnPhongShader(const std::unordered_map<GLenum, std::string>
 #ifdef DISABLE_OPENGL_SUBROUTINES
     (void)lightingShaderStage;
 #endif
+
+    defaultTexture = TextureLoader::LoadTexture("required/defaultTexture.png");
+    if (!defaultTexture) {
+        std::cerr << "WARNING: Failed to load the default texture." << std::endl;
+        return;
+    }
 }
 
 BlinnPhongShader::~BlinnPhongShader()
@@ -86,6 +94,10 @@ void BlinnPhongShader::UpdateMaterialBlock() const
         OGL_CALL(glBindBuffer(GL_UNIFORM_BUFFER, 0));
     }
 
+    // While we're here, also setup the textures too.
+    SetShaderUniform("diffuseTexture", static_cast<int>(TextureSlots::DIFFUSE));
+    SetShaderUniform("specularTexture", static_cast<int>(TextureSlots::SPECULAR));
+
     StopUseShader();
 }
 
@@ -105,6 +117,26 @@ void BlinnPhongShader::SetupShaderMaterials() const
 {
     // Need to make sure the material buffer is bound.
     OGL_CALL(glBindBufferBase(GL_UNIFORM_BUFFER, MATERIAL_BINDING_POINT, materialBuffer));
+
+    // Make sure the right textures are bound.
+    const Texture* diffuseTexture = defaultTexture.get();
+    if (textureSlotMapping.find(TextureSlots::DIFFUSE) != textureSlotMapping.end()) {
+        diffuseTexture = textureSlotMapping.at(TextureSlots::DIFFUSE).get();
+    } else {
+        std::cerr << "WARNING: You are using the DEFAULT texture for the diffuse texture." << std::endl;
+    }
+    assert(diffuseTexture);
+    diffuseTexture->BeginRender(static_cast<int>(TextureSlots::DIFFUSE));
+
+    const Texture* specularTexture = defaultTexture.get();
+    if (textureSlotMapping.find(TextureSlots::DIFFUSE) != textureSlotMapping.end()) {
+        specularTexture = textureSlotMapping.at(TextureSlots::DIFFUSE).get();
+    } else {
+        std::cerr << "WARNING: You are using the DEFAULT texture for the specular texture." << std::endl;
+    }
+    assert(specularTexture);
+    specularTexture->BeginRender(static_cast<int>(TextureSlots::SPECULAR));
+
 }
 
 void BlinnPhongShader::SetupShaderCamera(const class Camera* camera) const
@@ -133,4 +165,9 @@ void BlinnPhongShader::SetAmbient(glm::vec4 inAmbient)
 { 
     ambient = inAmbient; 
     UpdateMaterialBlock();
+}
+
+void BlinnPhongShader::SetTexture(TextureSlots slot, std::shared_ptr<class Texture> inputTexture)
+{
+    textureSlotMapping[slot] = std::move(inputTexture);
 }

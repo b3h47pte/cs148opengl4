@@ -27,6 +27,11 @@ include_directories("./external/glew/include")
 # Open Asset Import Headers
 include_directories("./external/assimp/include")
 
+# FreeImage Header
+if (APPLE)
+include_directories("./external/freeimage/distrib/osx")
+endif()
+
 # OpenGL Shenanigans
 find_package(OpenGL REQUIRED)
 include_directories(${OPENGL_INCLUDE_DIR})
@@ -88,4 +93,9 @@ endif()
 # Open Asset Import Library
 if (APPLE)
     target_link_libraries(cs148opengl4 "${CMAKE_SOURCE_DIR}/external/assimp/distrib/osx/libassimp.dylib")
+endif()
+
+# FreeImage Library
+if (APPLE)
+    target_link_libraries(cs148opengl4 "${CMAKE_SOURCE_DIR}/external/freeimage/distrib/osx/libfreeimage.a")
 endif()

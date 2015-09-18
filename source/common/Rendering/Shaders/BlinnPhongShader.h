@@ -20,6 +20,12 @@ public:
     virtual void SetSpecular(glm::vec4 inSpecular, float inShininess);
     virtual void SetAmbient(glm::vec4 inAmbient);
 
+    enum class TextureSlots {
+        DIFFUSE = 0,
+        SPECULAR
+    };
+    virtual void SetTexture(TextureSlots slot, std::shared_ptr<class Texture> inputTexture);
+
     static std::unique_ptr<struct BlinnPhongLightProperties> CreateLightProperties();
 protected:
     // Material Parameters
@@ -43,6 +49,10 @@ protected:
     virtual void UpdateAttenuationUniforms(const class Light* light) const;
 
 private:
+    // Textures
+    std::shared_ptr<class Texture> defaultTexture;
+    std::unordered_map<TextureSlots, std::shared_ptr<class Texture>> textureSlotMapping;
+
     GLenum lightingShaderStage;
 };
 

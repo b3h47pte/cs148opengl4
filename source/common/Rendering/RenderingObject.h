@@ -30,6 +30,8 @@ public:
         std::unique_ptr<ColorArray> inputColors = nullptr);
     virtual ~RenderingObject();
 
+    virtual void SetShader(std::shared_ptr<class ShaderProgram> inputShader);
+
     RenderingObject(const RenderingObject&) = delete;
     RenderingObject& operator=(const RenderingObject&) = delete;
 
