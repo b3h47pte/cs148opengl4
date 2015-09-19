@@ -39,7 +39,7 @@ protected:
     glm::vec4 ambient;
 
     // Material Bindings into the Shader
-    static const std::array<const char*, 4> MATERIAL_PROPERTY_NAMES;
+    static std::array<const char*, 4> MATERIAL_PROPERTY_NAMES;
     static constexpr int MATERIAL_BINDING_POINT = 0;
     GLuint materialBlockLocation;
     GLint materialBlockSize;

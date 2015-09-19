@@ -1,6 +1,7 @@
 #include "common/Utility/Mesh/Simple/PrimitiveCreator.h"
 #include "common/Rendering/RenderingObject.h"
 #include <cmath>
+#include <algorithm>
 
 namespace PrimitiveCreator 
 {
@@ -22,7 +23,7 @@ std::shared_ptr<RenderingObject> CreateIcoSphere(std::shared_ptr<ShaderProgram> 
     // More specifics in generating the icosahedron can be found at: 
     //  http://blog.andreaskahler.com/2009/06/creating-icosphere-mesh-in-code.html
     //  https://en.wikipedia.org/wiki/Regular_icosahedron
-    const float gr = (1.f + std::sqrtf(5.f)) * 0.5f;
+    const float gr = (1.f + std::sqrt(5.f)) * 0.5f;
 
     std::unique_ptr<RenderingObject::PositionArray> vertexPositions = make_unique<RenderingObject::PositionArray>();
     // An Icohedron's vertices can be placed onto three orthogonal rectangles (check the links for pictures!)
