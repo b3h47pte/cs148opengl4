@@ -1,0 +1,81 @@
+\hypertarget{class_shader_program}{}\section{Shader\+Program Class Reference}
+\label{class_shader_program}\index{Shader\+Program@{Shader\+Program}}
+Inheritance diagram for Shader\+Program\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_shader_program}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_shader_program_aba2db5734b2f70cc34078126ad279588}{}{\bfseries Shader\+Program} (const std\+::unordered\+\_\+map$<$ G\+Lenum, std\+::string $>$ \&input\+Shaders)\label{class_shader_program_aba2db5734b2f70cc34078126ad279588}
+
+\item 
+\hypertarget{class_shader_program_a906b0232f27663b28cc800ac2851541f}{}virtual void {\bfseries Start\+Use\+Shader} () const \label{class_shader_program_a906b0232f27663b28cc800ac2851541f}
+
+\item 
+\hypertarget{class_shader_program_a5afb6f91d30b6e197fab0827c416c51f}{}virtual void {\bfseries Stop\+Use\+Shader} () const \label{class_shader_program_a5afb6f91d30b6e197fab0827c416c51f}
+
+\item 
+\hypertarget{class_shader_program_a281396edbb786eacf86ae4997a3e90c6}{}G\+Luint {\bfseries Get\+Program} () const \label{class_shader_program_a281396edbb786eacf86ae4997a3e90c6}
+
+\item 
+\hypertarget{class_shader_program_a2f3c1c149aa0988e07e0a513c69c1770}{}virtual void {\bfseries Setup\+Shader\+Lighting} (const class \hyperlink{class_light}{Light} $\ast$light) const \label{class_shader_program_a2f3c1c149aa0988e07e0a513c69c1770}
+
+\item 
+\hypertarget{class_shader_program_ad7a595a10717c6051d6c582c850c4ed7}{}virtual void {\bfseries Setup\+Shader\+Materials} () const \label{class_shader_program_ad7a595a10717c6051d6c582c850c4ed7}
+
+\item 
+\hypertarget{class_shader_program_a75e888f885b9028847e2d9556a754170}{}virtual void {\bfseries Setup\+Shader\+Camera} (const class \hyperlink{class_camera}{Camera} $\ast$camera) const \label{class_shader_program_a75e888f885b9028847e2d9556a754170}
+
+\item 
+\hypertarget{class_shader_program_a47298abb4ffc8d75f88b3d603aa989f9}{}void {\bfseries Set\+Shader\+Uniform} (const std\+::string \&location, const glm\+::mat4 \&value) const \label{class_shader_program_a47298abb4ffc8d75f88b3d603aa989f9}
+
+\item 
+\hypertarget{class_shader_program_a3a4c9cd6967787bded962acd7ce6b3c6}{}void {\bfseries Set\+Shader\+Uniform} (const std\+::string \&location, float value) const \label{class_shader_program_a3a4c9cd6967787bded962acd7ce6b3c6}
+
+\item 
+\hypertarget{class_shader_program_a93e7090cc8ff284bfcde6ae972aa5b9e}{}void {\bfseries Set\+Shader\+Uniform} (const std\+::string \&location, int value) const \label{class_shader_program_a93e7090cc8ff284bfcde6ae972aa5b9e}
+
+\item 
+\hypertarget{class_shader_program_a08b8936758c067aad38e6cd94608663f}{}void {\bfseries Set\+Shader\+Uniform} (const std\+::string \&location, const glm\+::vec4 \&value) const \label{class_shader_program_a08b8936758c067aad38e6cd94608663f}
+
+\item 
+\hypertarget{class_shader_program_ae2e00fa2f9107b34c758996021574b15}{}void {\bfseries Set\+Shader\+Subroutine} (const std\+::string \&location, const std\+::string \&subroutine, G\+Lenum substage) const \label{class_shader_program_ae2e00fa2f9107b34c758996021574b15}
+
+\item 
+\hypertarget{class_shader_program_a16169356d5ce43e64e6018ad5d79f594}{}{\footnotesize template$<$int N$>$ }\\void {\bfseries Setup\+Uniform\+Block} (const std\+::string \&block\+Name, const std\+::array$<$ const char $\ast$, N $>$ \&names, std\+::array$<$ G\+Luint, N $>$ \&indices, std\+::array$<$ G\+Lint, N $>$ \&offsets, std\+::vector$<$ G\+Lubyte $>$ \&data, G\+Luint \&block\+Location, G\+Lint \&block\+Size, G\+Luint \&buffer\+Location)\label{class_shader_program_a16169356d5ce43e64e6018ad5d79f594}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_shader_program_a9c09a5050b37c958e07ce4d9756421b9}{}static std\+::unique\+\_\+ptr$<$ struct \hyperlink{struct_light_properties}{Light\+Properties} $>$ {\bfseries Create\+Light\+Properties} ()\label{class_shader_program_a9c09a5050b37c958e07ce4d9756421b9}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_shader_program_ab5c50c33203cf65b7f6ffe00d2243d5a}{}static G\+Luint {\bfseries Load\+Shader\+Object} (G\+Lenum type, const std\+::string \&filename)\label{class_shader_program_ab5c50c33203cf65b7f6ffe00d2243d5a}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_shader_program_a7d8f2b643a81ac4097606e43ade92f81}{}G\+Luint {\bfseries shader\+Program}\label{class_shader_program_a7d8f2b643a81ac4097606e43ade92f81}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 8 of file Shader\+Program.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/michaelbao/workspace/cs148opengl4/source/common/\+Rendering/\+Shaders/Shader\+Program.\+h\item 
+/\+Users/michaelbao/workspace/cs148opengl4/source/common/\+Rendering/\+Shaders/Shader\+Program.\+cpp\end{DoxyCompactItemize}

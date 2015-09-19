@@ -37,7 +37,7 @@ void Assignment2::SetupCamera()
     camera->Translate(glm::vec3(0.f, 0.f, 10.f));
 }
 
-void Assignment2::HandleInput(SDL_Keysym key, Uint32 state, Uint8 repeat, double timestamp)
+void Assignment2::HandleInput(SDL_Keysym key, Uint32 state, Uint8 repeat, double timestamp, double deltaTime)
 {   
     if (state != SDL_KEYDOWN) {
         return;
@@ -97,7 +97,7 @@ void Assignment2::HandleInput(SDL_Keysym key, Uint32 state, Uint8 repeat, double
         sceneObject->AddScale(-0.1f);
         break;
     default:
-        Application::HandleInput(key, state, repeat, timestamp);
+        Application::HandleInput(key, state, repeat, timestamp, deltaTime);
         break;
     }
 }

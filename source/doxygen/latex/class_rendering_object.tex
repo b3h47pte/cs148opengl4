@@ -1,0 +1,181 @@
+\hypertarget{class_rendering_object}{}\section{Rendering\+Object Class Reference}
+\label{class_rendering_object}\index{Rendering\+Object@{Rendering\+Object}}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_rendering_object_ab772f569ef63a1db07db29a744b519ee}{}enum {\bfseries Vertex\+Attribute\+Positions} \{ {\bfseries Position} = 0, 
+{\bfseries Normals}, 
+{\bfseries U\+V}, 
+{\bfseries Colors}
+ \}\label{class_rendering_object_ab772f569ef63a1db07db29a744b519ee}
+
+\item 
+\hypertarget{class_rendering_object_a1223b9cf03f2029b9c43d71042c2a18e}{}using {\bfseries Position\+Array} = std\+::vector$<$ glm\+::vec4 $>$\label{class_rendering_object_a1223b9cf03f2029b9c43d71042c2a18e}
+
+\item 
+\hypertarget{class_rendering_object_a9931c88bca3384065c6691dfe1e60af1}{}using {\bfseries Index\+Array} = std\+::vector$<$ unsigned int $>$\label{class_rendering_object_a9931c88bca3384065c6691dfe1e60af1}
+
+\item 
+\hypertarget{class_rendering_object_a327c4d892de8d6138fb59afa6d078257}{}using {\bfseries Normal\+Array} = std\+::vector$<$ glm\+::vec3 $>$\label{class_rendering_object_a327c4d892de8d6138fb59afa6d078257}
+
+\item 
+\hypertarget{class_rendering_object_a504ecd45ebe36dfa5b78c46d64d9904a}{}using {\bfseries U\+V\+Array} = std\+::vector$<$ glm\+::vec2 $>$\label{class_rendering_object_a504ecd45ebe36dfa5b78c46d64d9904a}
+
+\item 
+\hypertarget{class_rendering_object_a8a12e1f9be788d99af6c089e1c600022}{}using {\bfseries Color\+Array} = std\+::vector$<$ glm\+::vec4 $>$\label{class_rendering_object_a8a12e1f9be788d99af6c089e1c600022}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_rendering_object_a0550d86d49a01032921150d1c09c378f}{}{\bfseries Rendering\+Object} (std\+::shared\+\_\+ptr$<$ class \hyperlink{class_shader_program}{Shader\+Program} $>$ input\+Shader, std\+::unique\+\_\+ptr$<$ Position\+Array $>$ input\+Positions, std\+::unique\+\_\+ptr$<$ Index\+Array $>$ input\+Indices=nullptr, std\+::unique\+\_\+ptr$<$ Normal\+Array $>$ input\+Normals=nullptr, std\+::unique\+\_\+ptr$<$ U\+V\+Array $>$ input\+U\+V=nullptr, std\+::unique\+\_\+ptr$<$ Color\+Array $>$ input\+Colors=nullptr)\label{class_rendering_object_a0550d86d49a01032921150d1c09c378f}
+
+\item 
+\hypertarget{class_rendering_object_a22311d08bb7559f6b913afe314a5031e}{}virtual void {\bfseries Set\+Shader} (std\+::shared\+\_\+ptr$<$ class \hyperlink{class_shader_program}{Shader\+Program} $>$ input\+Shader)\label{class_rendering_object_a22311d08bb7559f6b913afe314a5031e}
+
+\item 
+\hypertarget{class_rendering_object_ac702ac667116929234273ecdb99cf7d6}{}{\bfseries Rendering\+Object} (const \hyperlink{class_rendering_object}{Rendering\+Object} \&)=delete\label{class_rendering_object_ac702ac667116929234273ecdb99cf7d6}
+
+\item 
+\hypertarget{class_rendering_object_ab644292ac584d1a9813e5f30ad79c4f1}{}\hyperlink{class_rendering_object}{Rendering\+Object} \& {\bfseries operator=} (const \hyperlink{class_rendering_object}{Rendering\+Object} \&)=delete\label{class_rendering_object_ab644292ac584d1a9813e5f30ad79c4f1}
+
+\item 
+\hypertarget{class_rendering_object_afa4510ba81fb7b17b940c92b27442d93}{}virtual void {\bfseries Begin\+Render} () const \label{class_rendering_object_afa4510ba81fb7b17b940c92b27442d93}
+
+\item 
+\hypertarget{class_rendering_object_a5fdb7a1b2d53b7ce024a4eeabd9c86d3}{}virtual void {\bfseries Render} () const \label{class_rendering_object_a5fdb7a1b2d53b7ce024a4eeabd9c86d3}
+
+\item 
+\hypertarget{class_rendering_object_a2a038472f934360acddd26f4e992b28b}{}virtual void {\bfseries End\+Render} () const \label{class_rendering_object_a2a038472f934360acddd26f4e992b28b}
+
+\item 
+\hypertarget{class_rendering_object_aa627eb310f11d0e04dbbb3665f58bb4e}{}void {\bfseries Set\+Draw\+Mode} (G\+Lenum input\+Mode)\label{class_rendering_object_aa627eb310f11d0e04dbbb3665f58bb4e}
+
+\item 
+\hypertarget{class_rendering_object_a80658debd2668b55a3c9fe86ec9f49fb}{}G\+Lint {\bfseries Get\+Shader\+Program} () const \label{class_rendering_object_a80658debd2668b55a3c9fe86ec9f49fb}
+
+\item 
+\hypertarget{class_rendering_object_ac9187166c98131aab185111e105528c2}{}const class \hyperlink{class_shader_program}{Shader\+Program} $\ast$ {\bfseries Get\+Shader\+Program\+Raw} () const \label{class_rendering_object_ac9187166c98131aab185111e105528c2}
+
+\item 
+\hypertarget{class_rendering_object_a3bb36683836c8c177984aa928cb1fb04}{}size\+\_\+t {\bfseries Get\+Total\+Vertices} () const \label{class_rendering_object_a3bb36683836c8c177984aa928cb1fb04}
+
+\item 
+\hypertarget{class_rendering_object_ada51886b7da1924a17d3a55e8fe90061}{}virtual void {\bfseries Set\+Vertex\+Positions} (std\+::unique\+\_\+ptr$<$ Position\+Array $>$ positions)\label{class_rendering_object_ada51886b7da1924a17d3a55e8fe90061}
+
+\item 
+\hypertarget{class_rendering_object_a61ea597df0c456834eac8eb4087fb573}{}virtual void {\bfseries Set\+Vertex\+Indices} (std\+::unique\+\_\+ptr$<$ Index\+Array $>$ indices)\label{class_rendering_object_a61ea597df0c456834eac8eb4087fb573}
+
+\item 
+\hypertarget{class_rendering_object_a4cd085aed01fbc5e4fae7076e00919d3}{}virtual void {\bfseries Set\+Vertex\+Normals} (std\+::unique\+\_\+ptr$<$ Normal\+Array $>$ normals)\label{class_rendering_object_a4cd085aed01fbc5e4fae7076e00919d3}
+
+\item 
+\hypertarget{class_rendering_object_a2a2b3c6ec2d13e8d3a4b6ac4c05ae11b}{}virtual void {\bfseries Set\+Vertex\+U\+V} (std\+::unique\+\_\+ptr$<$ U\+V\+Array $>$ uv)\label{class_rendering_object_a2a2b3c6ec2d13e8d3a4b6ac4c05ae11b}
+
+\item 
+\hypertarget{class_rendering_object_aa1170c47ff02b2305a54c8aab3460201}{}virtual void {\bfseries Set\+Vertex\+Colors} (std\+::unique\+\_\+ptr$<$ Color\+Array $>$ colors)\label{class_rendering_object_aa1170c47ff02b2305a54c8aab3460201}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_rendering_object_a77c78d1b42ea2ebfdbf994b6b91ce805}{}virtual void {\bfseries Initialize\+Open\+G\+L} ()\label{class_rendering_object_a77c78d1b42ea2ebfdbf994b6b91ce805}
+
+\item 
+\hypertarget{class_rendering_object_a7a097727acf37f9671ddd5e3a9873771}{}virtual void {\bfseries Update\+Vertex\+Positions} ()\label{class_rendering_object_a7a097727acf37f9671ddd5e3a9873771}
+
+\item 
+\hypertarget{class_rendering_object_afb49054121b1b552bce58625db91b851}{}virtual void {\bfseries Update\+Vertex\+Indices} ()\label{class_rendering_object_afb49054121b1b552bce58625db91b851}
+
+\item 
+\hypertarget{class_rendering_object_ae4b537e1c9b1c5c50cb7b0db83e6f190}{}virtual void {\bfseries Update\+Vertex\+Normals} ()\label{class_rendering_object_ae4b537e1c9b1c5c50cb7b0db83e6f190}
+
+\item 
+\hypertarget{class_rendering_object_ac00889f2afaa605b09164649ef68a1b6}{}virtual void {\bfseries Update\+Vertex\+U\+V} ()\label{class_rendering_object_ac00889f2afaa605b09164649ef68a1b6}
+
+\item 
+\hypertarget{class_rendering_object_aca18dbb9252f27cef09df307dbcf02a9}{}virtual void {\bfseries Update\+Vertex\+Colors} ()\label{class_rendering_object_aca18dbb9252f27cef09df307dbcf02a9}
+
+\item 
+\hypertarget{class_rendering_object_af9c1a07398071cdd0cca3ad36095fc85}{}virtual void {\bfseries Cleanup\+Vertex\+Positions} ()\label{class_rendering_object_af9c1a07398071cdd0cca3ad36095fc85}
+
+\item 
+\hypertarget{class_rendering_object_ac60c8a7f3d5678fd4aa8198f6c980e6e}{}virtual void {\bfseries Cleanup\+Vertex\+Indices} ()\label{class_rendering_object_ac60c8a7f3d5678fd4aa8198f6c980e6e}
+
+\item 
+\hypertarget{class_rendering_object_ad89bc24893f8fe32794f0686c2bb0da1}{}virtual void {\bfseries Cleanup\+Vertex\+Normals} ()\label{class_rendering_object_ad89bc24893f8fe32794f0686c2bb0da1}
+
+\item 
+\hypertarget{class_rendering_object_a776f54b41f9e9f0e55fc1104919c3e7c}{}virtual void {\bfseries Cleanup\+Vertex\+U\+V} ()\label{class_rendering_object_a776f54b41f9e9f0e55fc1104919c3e7c}
+
+\item 
+\hypertarget{class_rendering_object_adce4a6d6406eb589b088bedd19127f32}{}virtual void {\bfseries Cleanup\+Vertex\+Colors} ()\label{class_rendering_object_adce4a6d6406eb589b088bedd19127f32}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_rendering_object_ae50e545ce2008ffa802478cd4316e82e}{}std\+::shared\+\_\+ptr$<$ class \hyperlink{class_shader_program}{Shader\+Program} $>$ {\bfseries shader}\label{class_rendering_object_ae50e545ce2008ffa802478cd4316e82e}
+
+\item 
+\hypertarget{class_rendering_object_a473f623b39157288bef992e76ddc45a9}{}G\+Luint {\bfseries vertex\+Position\+Buffer}\label{class_rendering_object_a473f623b39157288bef992e76ddc45a9}
+
+\item 
+\hypertarget{class_rendering_object_a14721712672d0421ed72a394e3131da0}{}std\+::unique\+\_\+ptr$<$ Position\+Array $>$ {\bfseries vertex\+Positions}\label{class_rendering_object_a14721712672d0421ed72a394e3131da0}
+
+\item 
+\hypertarget{class_rendering_object_a6740a0a0e6bd4d841c9c211f2a31cca3}{}G\+Luint {\bfseries vertex\+Index\+Buffer}\label{class_rendering_object_a6740a0a0e6bd4d841c9c211f2a31cca3}
+
+\item 
+\hypertarget{class_rendering_object_a7b84487d3c34c1ca36b2ac6060b0f802}{}std\+::unique\+\_\+ptr$<$ Index\+Array $>$ {\bfseries vertex\+Indices}\label{class_rendering_object_a7b84487d3c34c1ca36b2ac6060b0f802}
+
+\item 
+\hypertarget{class_rendering_object_a91649e3a653f2266cd00c718f10849f9}{}G\+Luint {\bfseries vertex\+Normal\+Buffer}\label{class_rendering_object_a91649e3a653f2266cd00c718f10849f9}
+
+\item 
+\hypertarget{class_rendering_object_ac28d301f97d29ab603f65f8e823063b4}{}std\+::unique\+\_\+ptr$<$ Normal\+Array $>$ {\bfseries vertex\+Normals}\label{class_rendering_object_ac28d301f97d29ab603f65f8e823063b4}
+
+\item 
+\hypertarget{class_rendering_object_ad583c70014e3f6ab0c9b62ea3c96ad25}{}G\+Luint {\bfseries vertex\+U\+V\+Buffer}\label{class_rendering_object_ad583c70014e3f6ab0c9b62ea3c96ad25}
+
+\item 
+\hypertarget{class_rendering_object_afc405316bddec4ba1d5c228ecc0d9061}{}std\+::unique\+\_\+ptr$<$ U\+V\+Array $>$ {\bfseries vertex\+U\+V}\label{class_rendering_object_afc405316bddec4ba1d5c228ecc0d9061}
+
+\item 
+\hypertarget{class_rendering_object_aeb014a4ef24e2fc4665a769241660cad}{}G\+Luint {\bfseries vertex\+Color\+Buffer}\label{class_rendering_object_aeb014a4ef24e2fc4665a769241660cad}
+
+\item 
+\hypertarget{class_rendering_object_a65fc52e665791ce55e43106b603e917a}{}std\+::unique\+\_\+ptr$<$ Color\+Array $>$ {\bfseries vertex\+Colors}\label{class_rendering_object_a65fc52e665791ce55e43106b603e917a}
+
+\item 
+\hypertarget{class_rendering_object_a96dd05670a977a949514a2c490c1c867}{}G\+Luint {\bfseries vao}\label{class_rendering_object_a96dd05670a977a949514a2c490c1c867}
+
+\item 
+\hypertarget{class_rendering_object_aa67856a72705b54a5667e91e270d00b3}{}G\+Lenum {\bfseries draw\+Mode}\label{class_rendering_object_aa67856a72705b54a5667e91e270d00b3}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_rendering_object_af270a476ba12c23fefbb034e21930add}{}static glm\+::vec3 {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+N\+O\+R\+M\+A\+L}\label{class_rendering_object_af270a476ba12c23fefbb034e21930add}
+
+\item 
+\hypertarget{class_rendering_object_a3dcb28a12f578630aea75cc59ea39588}{}static glm\+::vec2 {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+U\+V}\label{class_rendering_object_a3dcb28a12f578630aea75cc59ea39588}
+
+\item 
+\hypertarget{class_rendering_object_a3bf21996dc0ef604b2b81d95275c97f9}{}static glm\+::vec4 {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+O\+R}\label{class_rendering_object_a3bf21996dc0ef604b2b81d95275c97f9}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 9 of file Rendering\+Object.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/michaelbao/workspace/cs148opengl4/source/common/\+Rendering/Rendering\+Object.\+h\item 
+/\+Users/michaelbao/workspace/cs148opengl4/source/common/\+Rendering/Rendering\+Object.\+cpp\end{DoxyCompactItemize}

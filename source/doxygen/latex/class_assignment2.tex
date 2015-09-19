@@ -1,0 +1,131 @@
+\hypertarget{class_assignment2}{}\section{Assignment2 Class Reference}
+\label{class_assignment2}\index{Assignment2@{Assignment2}}
+Inheritance diagram for Assignment2\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_assignment2}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_assignment2_ac684d2ecb894a4e71f8359e3a2ebd37f}{}{\bfseries Assignment2} (std\+::shared\+\_\+ptr$<$ class \hyperlink{class_scene}{Scene} $>$ input\+Scene, std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$ input\+Camera)\label{class_assignment2_ac684d2ecb894a4e71f8359e3a2ebd37f}
+
+\item 
+virtual glm\+::vec2 \hyperlink{class_assignment2_ae7ae8c9e7eb64cf9661d9ddb1992f314}{Get\+Window\+Size} () const 
+\begin{DoxyCompactList}\small\item\em Specifies the initial window size. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_assignment2_aca261dbf5bd583ecf013dccbe2abaf90}{Handle\+Input} (S\+D\+L\+\_\+\+Keysym key, Uint32 state, Uint8 repeat, double timestamp)
+\begin{DoxyCompactList}\small\item\em Processes an S\+D\+L keyboard event. Details about an S\+D\+L Keyboard event can be found \href{https://wiki.libsdl.org/SDL_KeyboardEvent}{\tt here} \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_assignment2_a41544ad361dd798d5fae1ec3197fc66e}{Tick} (double delta\+Time)
+\begin{DoxyCompactList}\small\item\em Called every frame to advance program logic. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_assignment2_ae4f0035275d5be2c053a598fbe3209e6}{}static std\+::unique\+\_\+ptr$<$ \hyperlink{class_application}{Application} $>$ {\bfseries Create\+Application} (std\+::shared\+\_\+ptr$<$ class \hyperlink{class_scene}{Scene} $>$ scene, std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$ camera)\label{class_assignment2_ae4f0035275d5be2c053a598fbe3209e6}
+
+\item 
+\hypertarget{class_assignment2_a285e6d6ff330c03e28e49660ec178fa4}{}static std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$ {\bfseries Create\+Camera} ()\label{class_assignment2_a285e6d6ff330c03e28e49660ec178fa4}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_assignment2_a1af734567de5e8e73a2fd726fe3914f2}{}virtual void {\bfseries Handle\+Window\+Resize} (float x, float y)\label{class_assignment2_a1af734567de5e8e73a2fd726fe3914f2}
+
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 8 of file Assignment2.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_assignment2_ae7ae8c9e7eb64cf9661d9ddb1992f314}{}\index{Assignment2@{Assignment2}!Get\+Window\+Size@{Get\+Window\+Size}}
+\index{Get\+Window\+Size@{Get\+Window\+Size}!Assignment2@{Assignment2}}
+\subsubsection[{Get\+Window\+Size}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec2 Assignment2\+::\+Get\+Window\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_assignment2_ae7ae8c9e7eb64cf9661d9ddb1992f314}
+
+
+Specifies the initial window size. 
+
+\begin{DoxyReturn}{Returns}
+The desired window size. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_application_a3e9992f0ceae0d8beda7debccdb00534}{Application}.
+
+
+
+Definition at line 25 of file Assignment2.\+cpp.
+
+\hypertarget{class_assignment2_aca261dbf5bd583ecf013dccbe2abaf90}{}\index{Assignment2@{Assignment2}!Handle\+Input@{Handle\+Input}}
+\index{Handle\+Input@{Handle\+Input}!Assignment2@{Assignment2}}
+\subsubsection[{Handle\+Input}]{\setlength{\rightskip}{0pt plus 5cm}void Assignment2\+::\+Handle\+Input (
+\begin{DoxyParamCaption}
+\item[{S\+D\+L\+\_\+\+Keysym}]{key, }
+\item[{Uint32}]{state, }
+\item[{Uint8}]{repeat, }
+\item[{double}]{timestamp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_assignment2_aca261dbf5bd583ecf013dccbe2abaf90}
+
+
+Processes an S\+D\+L keyboard event. Details about an S\+D\+L Keyboard event can be found \href{https://wiki.libsdl.org/SDL_KeyboardEvent}{\tt here} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & See the S\+D\+L documentation for more details about S\+D\+L\+\_\+\+Keysym. \href{https://wiki.libsdl.org/SDL_Keysym}{\tt Here} \\
+\hline
+{\em state} & This is the type field in the S\+D\+L\+\_\+\+Event datastructure. S\+D\+L Documentation\+: \href{https://wiki.libsdl.org/SDL_Event}{\tt Here} \\
+\hline
+{\em repeat} & This value is non-\/zero is the key is being repeated. \\
+\hline
+{\em timestamp} & Timestamp is the number of seconds since the program was first started.\\
+\hline
+\end{DoxyParams}
+Although you get an input immediately, if you want to make a change to the scene, it is highly recommended that you queue a change and then process it within the \hyperlink{class_assignment2_a41544ad361dd798d5fae1ec3197fc66e}{Tick()} function. This allows you to multiply by the appropriate delta when making a change. For example, an object moves at 10 meters per second and you want it to move forward when you hit the \textquotesingle{}W\textquotesingle{} key. How many units do you move forward by? You would move forward by $10 \cdot deltaTime$ 
+
+Reimplemented from \hyperlink{class_application_afe6553c2828e6eb38f74af8d3a5a9c2f}{Application}.
+
+
+
+Definition at line 40 of file Assignment2.\+cpp.
+
+\hypertarget{class_assignment2_a41544ad361dd798d5fae1ec3197fc66e}{}\index{Assignment2@{Assignment2}!Tick@{Tick}}
+\index{Tick@{Tick}!Assignment2@{Assignment2}}
+\subsubsection[{Tick}]{\setlength{\rightskip}{0pt plus 5cm}void Assignment2\+::\+Tick (
+\begin{DoxyParamCaption}
+\item[{double}]{delta\+Time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_assignment2_a41544ad361dd798d5fae1ec3197fc66e}
+
+
+Called every frame to advance program logic. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & The amount of time (in seconds) since the last tick.\\
+\hline
+\end{DoxyParams}
+If you need something in the \hyperlink{class_scene}{Scene} to change over time, this is where you should implement that logic. It is recommended that you make use of the delta\+Time variable to make things change smoothly! 
+
+Reimplemented from \hyperlink{class_application_a0800afd5651153d31fa775a8048d14dd}{Application}.
+
+
+
+Definition at line 273 of file Assignment2.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/michaelbao/workspace/cs148opengl4/source/assignment2/Assignment2.\+h\item 
+/\+Users/michaelbao/workspace/cs148opengl4/source/assignment2/Assignment2.\+cpp\end{DoxyCompactItemize}

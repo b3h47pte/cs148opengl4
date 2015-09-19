@@ -118,7 +118,7 @@ void MediaLayer::Tick(double deltaTime, double currentTime)
             break;
         case SDL_KEYDOWN:
         case SDL_KEYUP:
-            app->HandleInput(event.key.keysym, event.type, event.key.repeat, currentTime);
+            app->HandleInput(event.key.keysym, event.type, event.key.repeat, currentTime, deltaTime);
             break;
         case SDL_WINDOWEVENT:
             app->HandleWindowEvent(static_cast<SDL_WindowEventID>(event.window.event), event.window.data1, event.window.data2, currentTime);

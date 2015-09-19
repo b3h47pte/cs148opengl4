@@ -1,0 +1,117 @@
+\hypertarget{class_scene_object}{}\section{Scene\+Object Class Reference}
+\label{class_scene_object}\index{Scene\+Object@{Scene\+Object}}
+Inheritance diagram for Scene\+Object\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.985765cm]{class_scene_object}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_scene_object_a9dd76f946c8e0743bed57f9499773fbd}{}{\bfseries Scene\+Object} (std\+::shared\+\_\+ptr$<$ class \hyperlink{class_rendering_object}{Rendering\+Object} $>$ base\+Object)\label{class_scene_object_a9dd76f946c8e0743bed57f9499773fbd}
+
+\item 
+\hypertarget{class_scene_object_aa89b21b4732296d196a76d1785aee02c}{}{\bfseries Scene\+Object} (const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ class \hyperlink{class_rendering_object}{Rendering\+Object} $>$$>$ \&base\+Objects)\label{class_scene_object_aa89b21b4732296d196a76d1785aee02c}
+
+\item 
+\hypertarget{class_scene_object_a5ab56b2b2997f96aed97415185beec41}{}virtual void {\bfseries Prepare\+Shader\+For\+Rendering} (const class \hyperlink{class_shader_program}{Shader\+Program} $\ast$shader, const class \hyperlink{class_camera}{Camera} $\ast$current\+Camera, const class \hyperlink{class_light}{Light} $\ast$current\+Light) const \label{class_scene_object_a5ab56b2b2997f96aed97415185beec41}
+
+\item 
+\hypertarget{class_scene_object_ac2873f8a613bd4b161a1ea605888d6e7}{}size\+\_\+t {\bfseries Get\+Total\+Render\+Objects} () const \label{class_scene_object_ac2873f8a613bd4b161a1ea605888d6e7}
+
+\item 
+\hypertarget{class_scene_object_a29b15adf1faeceef0b3f5b1c36e34d5c}{}virtual const class \hyperlink{class_rendering_object}{Rendering\+Object} $\ast$ {\bfseries Get\+Render\+Object} (int index=0) const \label{class_scene_object_a29b15adf1faeceef0b3f5b1c36e34d5c}
+
+\item 
+\hypertarget{class_scene_object_aea26bf44c609cc4d733a811a55e442e2}{}virtual glm\+::mat4 {\bfseries Get\+Transformation\+Matrix} () const \label{class_scene_object_aea26bf44c609cc4d733a811a55e442e2}
+
+\item 
+\hypertarget{class_scene_object_abdf46a2b05799382e9cb3894d5da03ea}{}virtual glm\+::vec4 {\bfseries Get\+Forward\+Direction} () const \label{class_scene_object_abdf46a2b05799382e9cb3894d5da03ea}
+
+\item 
+\hypertarget{class_scene_object_ab96fed2fb77d81c8d1c2735fbf2a998a}{}virtual glm\+::vec4 {\bfseries Get\+Right\+Direction} () const \label{class_scene_object_ab96fed2fb77d81c8d1c2735fbf2a998a}
+
+\item 
+\hypertarget{class_scene_object_ad8828989c033b25c996cf025d7e86f54}{}virtual glm\+::vec4 {\bfseries Get\+Up\+Direction} () const \label{class_scene_object_ad8828989c033b25c996cf025d7e86f54}
+
+\item 
+\hypertarget{class_scene_object_a04868377580069b0ee9d202bdb1b7159}{}void {\bfseries Translate} (const glm\+::vec3 \&translation)\label{class_scene_object_a04868377580069b0ee9d202bdb1b7159}
+
+\item 
+\hypertarget{class_scene_object_a0d27f5853e8e1718b1a77f0f1a6d4551}{}void {\bfseries Rotate} (const glm\+::vec3 \&axis, float radians)\label{class_scene_object_a0d27f5853e8e1718b1a77f0f1a6d4551}
+
+\item 
+\hypertarget{class_scene_object_a00d73ad3f7d77bfc0d3c1869decb97ea}{}void {\bfseries Mult\+Scale} (float input\+Scale)\label{class_scene_object_a00d73ad3f7d77bfc0d3c1869decb97ea}
+
+\item 
+\hypertarget{class_scene_object_a40d7194cf79cad6ee3a2fa7c3d8ed95c}{}void {\bfseries Add\+Scale} (float input\+Scale)\label{class_scene_object_a40d7194cf79cad6ee3a2fa7c3d8ed95c}
+
+\item 
+\hypertarget{class_scene_object_a1903672e77e88a1e220fcfa8e6afc1d4}{}void {\bfseries Set\+Position} (const glm\+::vec3 \&in)\label{class_scene_object_a1903672e77e88a1e220fcfa8e6afc1d4}
+
+\item 
+\hypertarget{class_scene_object_ac52870b92ce4cebdd153d44754d1ca7c}{}glm\+::vec4 {\bfseries Get\+Position} () const \label{class_scene_object_ac52870b92ce4cebdd153d44754d1ca7c}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_scene_object_a334a5fb4e91d85fe6a046bd83dd235d3}{}static glm\+::vec4 {\bfseries Get\+World\+Up} ()\label{class_scene_object_a334a5fb4e91d85fe6a046bd83dd235d3}
+
+\item 
+\hypertarget{class_scene_object_a46d0ffed082f7bd515b9550ef9f9a86a}{}static glm\+::vec4 {\bfseries Get\+World\+Right} ()\label{class_scene_object_a46d0ffed082f7bd515b9550ef9f9a86a}
+
+\item 
+\hypertarget{class_scene_object_a6fa71efda895933be4ee684745980e68}{}static glm\+::vec4 {\bfseries Get\+World\+Forward} ()\label{class_scene_object_a6fa71efda895933be4ee684745980e68}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_scene_object_a20e31da3f9d2765de50cdb2d637ae6c9}{}virtual void {\bfseries Update\+Transformation\+Matrix} ()\label{class_scene_object_a20e31da3f9d2765de50cdb2d637ae6c9}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_scene_object_aac3f13eea8a7b455e8cffc6eceef211c}{}glm\+::mat4 {\bfseries cached\+Transformation\+Matrix}\label{class_scene_object_aac3f13eea8a7b455e8cffc6eceef211c}
+
+\item 
+\hypertarget{class_scene_object_ab4aa9bed778001970c38ea11ef34b285}{}glm\+::vec4 {\bfseries position}\label{class_scene_object_ab4aa9bed778001970c38ea11ef34b285}
+
+\item 
+\hypertarget{class_scene_object_ae27376aaca87543a75b5a2cd0daf6e2f}{}glm\+::quat {\bfseries rotation}\label{class_scene_object_ae27376aaca87543a75b5a2cd0daf6e2f}
+
+\item 
+\hypertarget{class_scene_object_a62c686b880fe4f58dec64a409e56de26}{}glm\+::vec3 {\bfseries scale}\label{class_scene_object_a62c686b880fe4f58dec64a409e56de26}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_scene_object_a62d236f4f5c52b66bd02d13d09b6ce5e}{}static const std\+::string {\bfseries M\+O\+D\+E\+L\+\_\+\+M\+A\+T\+R\+I\+X\+\_\+\+L\+O\+C\+A\+T\+I\+O\+N} = \char`\"{}model\+Matrix\char`\"{}\label{class_scene_object_a62d236f4f5c52b66bd02d13d09b6ce5e}
+
+\item 
+\hypertarget{class_scene_object_a1c129ecdd6bd8e2f34c713f5dd183361}{}static const std\+::string {\bfseries V\+I\+E\+W\+\_\+\+M\+A\+T\+R\+I\+X\+\_\+\+L\+O\+C\+A\+T\+I\+O\+N} = \char`\"{}view\+Matrix\char`\"{}\label{class_scene_object_a1c129ecdd6bd8e2f34c713f5dd183361}
+
+\item 
+\hypertarget{class_scene_object_ad9a8c9c39a4a262c5e379c0bda184541}{}static const std\+::string {\bfseries P\+R\+O\+J\+E\+C\+T\+I\+O\+N\+\_\+\+M\+A\+T\+R\+I\+X\+\_\+\+L\+O\+C\+A\+T\+I\+O\+N} = \char`\"{}projection\+Matrix\char`\"{}\label{class_scene_object_ad9a8c9c39a4a262c5e379c0bda184541}
+
+\item 
+\hypertarget{class_scene_object_a5c61f60925abade4340e7e56c68a989a}{}static constexpr float {\bfseries M\+I\+N\+I\+M\+U\+M\+\_\+\+S\+C\+A\+L\+E} = 0.\+01f\label{class_scene_object_a5c61f60925abade4340e7e56c68a989a}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 8 of file Scene\+Object.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/michaelbao/workspace/cs148opengl4/source/common/\+Scene/Scene\+Object.\+h\item 
+/\+Users/michaelbao/workspace/cs148opengl4/source/common/\+Scene/Scene\+Object.\+cpp\end{DoxyCompactItemize}

@@ -67,7 +67,7 @@ void Application::Tick(double deltaTime)
     // Any rendering is handled by the media layer which in turn passes the information to the Renderer.
 }
 
-void Application::HandleInput(SDL_Keysym key, Uint32 state, Uint8 repeat, double timestamp)
+void Application::HandleInput(SDL_Keysym key, Uint32 state, Uint8 repeat, double timestamp, double deltaTime)
 {
 }
 

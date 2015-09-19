@@ -168,7 +168,7 @@ void Assignment1::SetupExample3()
     scene->AddSceneObject(pointObject);
 }
 
-void Assignment1::HandleInput(SDL_Keysym key, Uint32 state, Uint8 repeat, double timestamp)
+void Assignment1::HandleInput(SDL_Keysym key, Uint32 state, Uint8 repeat, double timestamp, double deltaTime)
 {
     if (state != SDL_KEYDOWN || repeat) {
         return;
