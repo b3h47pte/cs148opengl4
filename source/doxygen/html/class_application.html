@@ -136,16 +136,16 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <tr class="memitem:a0800afd5651153d31fa775a8048d14dd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application.html#a0800afd5651153d31fa775a8048d14dd">Tick</a> (double deltaTime)</td></tr>
 <tr class="memdesc:a0800afd5651153d31fa775a8048d14dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called every frame to advance program logic.  <a href="#a0800afd5651153d31fa775a8048d14dd">More...</a><br /></td></tr>
 <tr class="separator:a0800afd5651153d31fa775a8048d14dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe6553c2828e6eb38f74af8d3a5a9c2f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application.html#afe6553c2828e6eb38f74af8d3a5a9c2f">HandleInput</a> (SDL_Keysym key, Uint32 state, Uint8 repeat, double timestamp)</td></tr>
-<tr class="memdesc:afe6553c2828e6eb38f74af8d3a5a9c2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes an SDL keyboard event. Details about an SDL Keyboard event can be found <a href="https://wiki.libsdl.org/SDL_KeyboardEvent">here</a>  <a href="#afe6553c2828e6eb38f74af8d3a5a9c2f">More...</a><br /></td></tr>
-<tr class="separator:afe6553c2828e6eb38f74af8d3a5a9c2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6074c3f102de1cb2fe4c81b545679db"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application.html#ae6074c3f102de1cb2fe4c81b545679db">HandleInput</a> (SDL_Keysym key, Uint32 state, Uint8 repeat, double timestamp, double deltaTime)</td></tr>
+<tr class="memdesc:ae6074c3f102de1cb2fe4c81b545679db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes an SDL keyboard event which has type <a href="https://wiki.libsdl.org/SDL_KeyboardEvent">SDL_KeyboardEvent</a>.  <a href="#ae6074c3f102de1cb2fe4c81b545679db">More...</a><br /></td></tr>
+<tr class="separator:ae6074c3f102de1cb2fe4c81b545679db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74d92db64e051efa56d0357989dcb755"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application.html#a74d92db64e051efa56d0357989dcb755">HandleWindowEvent</a> (SDL_WindowEventID eventId, Sint32 data1, Sint32 data2, double timestamp)</td></tr>
 <tr class="memdesc:a74d92db64e051efa56d0357989dcb755"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes an SDL window event. Details about an SDL window event can be found <a href="https://wiki.libsdl.org/SDL_WindowEvent">here</a>  <a href="#a74d92db64e051efa56d0357989dcb755">More...</a><br /></td></tr>
 <tr class="separator:a74d92db64e051efa56d0357989dcb755"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a727f63f898a68bddf6d88309195ef194"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; <a class="el" href="class_application.html">Application</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application.html#a727f63f898a68bddf6d88309195ef194">CreateApplication</a> (std::shared_ptr&lt; class <a class="el" href="class_scene.html">Scene</a> &gt; scene, std::shared_ptr&lt; class <a class="el" href="class_camera.html">Camera</a> &gt; camera)</td></tr>
+<tr class="memitem:a727f63f898a68bddf6d88309195ef194"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; <a class="el" href="class_application.html">Application</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application.html#a727f63f898a68bddf6d88309195ef194">CreateApplication</a> (std::shared_ptr&lt; class <a class="el" href="class_scene.html">Scene</a> &gt; <a class="el" href="class_application.html#a88c6615107a5094bb93fa5f153f79554">scene</a>, std::shared_ptr&lt; class <a class="el" href="class_camera.html">Camera</a> &gt; <a class="el" href="class_application.html#a0e8589fcb13c520ba472473abe5a518d">camera</a>)</td></tr>
 <tr class="memdesc:a727f63f898a68bddf6d88309195ef194"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a unique pointer to an <a class="el" href="class_application.html" title="Handles creating configurable objects (i.e. scene, camera, renderer), handling SDL events passed in b...">Application</a>. This should be used instead of the constructor.  <a href="#a727f63f898a68bddf6d88309195ef194">More...</a><br /></td></tr>
 <tr class="separator:a727f63f898a68bddf6d88309195ef194"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a511e638cf5748e10151f17d6140b9119"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; class <a class="el" href="class_scene.html">Scene</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application.html#a511e638cf5748e10151f17d6140b9119">CreateScene</a> ()</td></tr>
@@ -157,27 +157,27 @@ Static Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:abdba284a0f075ee1d4a2108c3a5236a2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abdba284a0f075ee1d4a2108c3a5236a2"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>HandleWindowResize</b> (float x, float y)</td></tr>
+<tr class="memitem:abdba284a0f075ee1d4a2108c3a5236a2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application.html#abdba284a0f075ee1d4a2108c3a5236a2">HandleWindowResize</a> (float x, float y)</td></tr>
+<tr class="memdesc:abdba284a0f075ee1d4a2108c3a5236a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by <a class="el" href="class_application.html#a74d92db64e051efa56d0357989dcb755" title="Processes an SDL window event. Details about an SDL window event can be found here ...">HandleWindowEvent()</a> when the window is resized.  <a href="#abdba284a0f075ee1d4a2108c3a5236a2">More...</a><br /></td></tr>
 <tr class="separator:abdba284a0f075ee1d4a2108c3a5236a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:ae1c1ff7a7663d9baa9b65a7ba8e1dcf8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae1c1ff7a7663d9baa9b65a7ba8e1dcf8"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isRunning</b></td></tr>
+<tr class="memitem:ae1c1ff7a7663d9baa9b65a7ba8e1dcf8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application.html#ae1c1ff7a7663d9baa9b65a7ba8e1dcf8">isRunning</a></td></tr>
+<tr class="memdesc:ae1c1ff7a7663d9baa9b65a7ba8e1dcf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether or not the application is currently running.  <a href="#ae1c1ff7a7663d9baa9b65a7ba8e1dcf8">More...</a><br /></td></tr>
 <tr class="separator:ae1c1ff7a7663d9baa9b65a7ba8e1dcf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88c6615107a5094bb93fa5f153f79554"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a88c6615107a5094bb93fa5f153f79554"></a>
-std::shared_ptr&lt; class <a class="el" href="class_scene.html">Scene</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>scene</b></td></tr>
+<tr class="memitem:a88c6615107a5094bb93fa5f153f79554"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; class <a class="el" href="class_scene.html">Scene</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application.html#a88c6615107a5094bb93fa5f153f79554">scene</a></td></tr>
+<tr class="memdesc:a88c6615107a5094bb93fa5f153f79554"><td class="mdescLeft">&#160;</td><td class="mdescRight">A shared pointer to the scene.  <a href="#a88c6615107a5094bb93fa5f153f79554">More...</a><br /></td></tr>
 <tr class="separator:a88c6615107a5094bb93fa5f153f79554"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e8589fcb13c520ba472473abe5a518d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0e8589fcb13c520ba472473abe5a518d"></a>
-std::shared_ptr&lt; class <a class="el" href="class_camera.html">Camera</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>camera</b></td></tr>
+<tr class="memitem:a0e8589fcb13c520ba472473abe5a518d"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; class <a class="el" href="class_camera.html">Camera</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application.html#a0e8589fcb13c520ba472473abe5a518d">camera</a></td></tr>
+<tr class="memdesc:a0e8589fcb13c520ba472473abe5a518d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A shared pointer to the camera.  <a href="#a0e8589fcb13c520ba472473abe5a518d">More...</a><br /></td></tr>
 <tr class="separator:a0e8589fcb13c520ba472473abe5a518d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Handles creating configurable objects (i.e. scene, camera, renderer), handling SDL events passed in by the <a class="el" href="class_media_layer.html">MediaLayer</a>, and handles creating the scene to be display. </p>
 <p>An '<a class="el" href="class_application.html" title="Handles creating configurable objects (i.e. scene, camera, renderer), handling SDL events passed in b...">Application</a>' MUST be created to run the assignment framework. By default, the application will create a 1280x720 window that is completely black. After the '<a class="el" href="class_application.html" title="Handles creating configurable objects (i.e. scene, camera, renderer), handling SDL events passed in b...">Application</a>' is created, it must be passed to the '<a class="el" href="class_media_layer.html">MediaLayer</a>' who will call the '<a class="el" href="class_application.html" title="Handles creating configurable objects (i.e. scene, camera, renderer), handling SDL events passed in b...">Application</a>'s tick function every frame. </p>
 
-<p>Definition at line <a class="el" href="_application_8h_source.html#l00014">14</a> of file <a class="el" href="_application_8h_source.html">Application.h</a>.</p>
+<p>Definition at line <a class="el" href="_application_8h_source.html#l00013">13</a> of file <a class="el" href="_application_8h_source.html">Application.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a78cdcb03e6f06272f7c528fe407951c5"></a>
 <div class="memitem">
@@ -375,7 +375,7 @@ std::shared_ptr&lt; class <a class="el" href="class_camera.html">Camera</a> &gt;
 
 </div>
 </div>
-<a class="anchor" id="afe6553c2828e6eb38f74af8d3a5a9c2f"></a>
+<a class="anchor" id="ae6074c3f102de1cb2fe4c81b545679db"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -404,7 +404,13 @@ std::shared_ptr&lt; class <a class="el" href="class_camera.html">Camera</a> &gt;
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>timestamp</em>&#160;</td>
+          <td class="paramname"><em>timestamp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>deltaTime</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -419,21 +425,22 @@ std::shared_ptr&lt; class <a class="el" href="class_camera.html">Camera</a> &gt;
 </table>
 </div><div class="memdoc">
 
-<p>Processes an SDL keyboard event. Details about an SDL Keyboard event can be found <a href="https://wiki.libsdl.org/SDL_KeyboardEvent">here</a> </p>
+<p>Processes an SDL keyboard event which has type <a href="https://wiki.libsdl.org/SDL_KeyboardEvent">SDL_KeyboardEvent</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">key</td><td>See the SDL documentation for more details about SDL_Keysym. <a href="https://wiki.libsdl.org/SDL_Keysym">Here</a> </td></tr>
-    <tr><td class="paramname">state</td><td>This is the type field in the SDL_Event datastructure. SDL Documentation: <a href="https://wiki.libsdl.org/SDL_Event">Here</a> </td></tr>
+    <tr><td class="paramname">key</td><td>See the SDL documentation for more details about <a href="https://wiki.libsdl.org/SDL_Keysym">SDL_Keysym</a>. </td></tr>
+    <tr><td class="paramname">state</td><td>This is the type field in the <a href="https://wiki.libsdl.org/SDL_Event">SDL_Event</a>datastructure. </td></tr>
     <tr><td class="paramname">repeat</td><td>This value is non-zero is the key is being repeated. </td></tr>
-    <tr><td class="paramname">timestamp</td><td>Timestamp is the number of seconds since the program was first started.</td></tr>
+    <tr><td class="paramname">timestamp</td><td>Timestamp is the number of seconds since the program was first started. </td></tr>
+    <tr><td class="paramname">deltaTime</td><td>The amount of time (in seconds) since the last tick.</td></tr>
   </table>
   </dd>
 </dl>
-<p>Although you get an input immediately, if you want to make a change to the scene, it is highly recommended that you queue a change and then process it within the <a class="el" href="class_application.html#a0800afd5651153d31fa775a8048d14dd" title="Called every frame to advance program logic. ">Tick()</a> function. This allows you to multiply by the appropriate delta when making a change. For example, an object moves at 10 meters per second and you want it to move forward when you hit the 'W' key. How many units do you move forward by? You would move forward by <img class="formulaInl" alt="$10 \cdot deltaTime$" src="form_0.png"/> </p>
+<p>Takes in a keyboard event and process it. This does nothing by default. 'deltaTime' is included to allow you to move something and have the movement look smooth. For example, if you have an object that you want to move forward whenever 'W' is pressed. You know that the object travels at 10 meters per second when 'W' is pressed and 0 meters per second when it is not. How far should you move the object? You would want to move it forward by <img class="formulaInl" alt="$10 \cdot deltaTime $" src="form_1.png"/> units. </p>
 
-<p>Reimplemented in <a class="el" href="class_assignment2.html#aca261dbf5bd583ecf013dccbe2abaf90">Assignment2</a>, <a class="el" href="class_assignment3.html#a7a3563e16c7fbd71d709decd266f6e9a">Assignment3</a>, and <a class="el" href="class_assignment1.html#a29da6ab20003bfec87bcc93474dc8ade">Assignment1</a>.</p>
+<p>Reimplemented in <a class="el" href="class_assignment2.html#a3ee099a8ba45db14103541981e3c4fe8">Assignment2</a>, <a class="el" href="class_assignment3.html#a1cc65ca321f39eb7092959b2dada8d31">Assignment3</a>, and <a class="el" href="class_assignment1.html#ab9db4f51e177dd72130cd61d86b97535">Assignment1</a>.</p>
 
-<p>Definition at line <a class="el" href="_application_8cpp_source.html#l00070">70</a> of file <a class="el" href="_application_8cpp_source.html">Application.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_application_8cpp_source.html#l00072">72</a> of file <a class="el" href="_application_8cpp_source.html">Application.cpp</a>.</p>
 
 </div>
 </div>
@@ -491,9 +498,57 @@ std::shared_ptr&lt; class <a class="el" href="class_camera.html">Camera</a> &gt;
   </table>
   </dd>
 </dl>
-<p>This takes in a window event and process it. By default it handles when the size of the window changes and calls <a href="https://www.opengl.org/sdk/docs/man/html/glViewport.xhtml">glViewport</a> to resize the viewport as necessary. You can expand on this functionality in the sub-class to handle other events such as the window moving, etc. However, make sure you maintain a call to <a class="el" href="class_application.html#a74d92db64e051efa56d0357989dcb755" title="Processes an SDL window event. Details about an SDL window event can be found here ...">Application::HandleWindowEvent()</a> to make sure glViewport is still called! </p>
+<p>This takes in a window event and process it. By default it handles when the size of the window change and calls <a class="el" href="class_application.html#abdba284a0f075ee1d4a2108c3a5236a2" title="Called by HandleWindowEvent() when the window is resized. ">HandleWindowResize()</a>. You can expand on this functionality in the sub-class to handle other events such as the window moving, etc. However, make sure you maintain a call to <a class="el" href="class_application.html#a74d92db64e051efa56d0357989dcb755" title="Processes an SDL window event. Details about an SDL window event can be found here ...">Application::HandleWindowEvent()</a> to make sure glViewport is still called! </p>
 
-<p>Definition at line <a class="el" href="_application_8cpp_source.html#l00074">74</a> of file <a class="el" href="_application_8cpp_source.html">Application.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_application_8cpp_source.html#l00076">76</a> of file <a class="el" href="_application_8cpp_source.html">Application.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abdba284a0f075ee1d4a2108c3a5236a2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Application::HandleWindowResize </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Called by <a class="el" href="class_application.html#a74d92db64e051efa56d0357989dcb755" title="Processes an SDL window event. Details about an SDL window event can be found here ...">HandleWindowEvent()</a> when the window is resized. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>The width of the window. </td></tr>
+    <tr><td class="paramname">y</td><td>The height of the window.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>By default calls, <a href="https://www.opengl.org/sdk/docs/man/html/glViewport.xhtml">glViewport</a> to resize the viewport as necessary. If any part of your application depends on the window resize, you will want to take care of it in this function! (Hint for the OPTIONAL deferred rendering task in assignment 2: your 'G-Buffers' should be resized). </p>
+
+<p>Reimplemented in <a class="el" href="class_assignment2.html#a1af734567de5e8e73a2fd726fe3914f2">Assignment2</a>, and <a class="el" href="class_assignment3.html#a851c637c83c8092d8adfb5c9f761daeb">Assignment3</a>.</p>
+
+<p>Definition at line <a class="el" href="_application_8cpp_source.html#l00089">89</a> of file <a class="el" href="_application_8cpp_source.html">Application.cpp</a>.</p>
 
 </div>
 </div>
@@ -550,7 +605,7 @@ std::shared_ptr&lt; class <a class="el" href="class_camera.html">Camera</a> &gt;
 <dl class="section return"><dt>Returns</dt><dd>Whether the application is finished running.</dd></dl>
 <p>When the MediaLayer::Tick() function detects that the application is finished, the program will exit. </p>
 
-<p>Definition at line <a class="el" href="_application_8cpp_source.html#l00054">54</a> of file <a class="el" href="_application_8cpp_source.html">Application.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_application_8cpp_source.html#l00056">56</a> of file <a class="el" href="_application_8cpp_source.html">Application.cpp</a>.</p>
 
 </div>
 </div>
@@ -578,7 +633,7 @@ std::shared_ptr&lt; class <a class="el" href="class_camera.html">Camera</a> &gt;
 <p>Notifies the <a class="el" href="class_application.html" title="Handles creating configurable objects (i.e. scene, camera, renderer), handling SDL events passed in b...">Application</a> that it should finish. </p>
 <p>An external source (i.e. the <a class="el" href="class_media_layer.html">MediaLayer</a>) may request for the <a class="el" href="class_application.html" title="Handles creating configurable objects (i.e. scene, camera, renderer), handling SDL events passed in b...">Application</a> to finish. This lets the <a class="el" href="class_application.html" title="Handles creating configurable objects (i.e. scene, camera, renderer), handling SDL events passed in b...">Application</a> exit gracefully. The <a class="el" href="class_application.html" title="Handles creating configurable objects (i.e. scene, camera, renderer), handling SDL events passed in b...">Application</a> can choose to ignore the request (thought that is not recommended). After this function is called, <a class="el" href="class_application.html#ae0019f2c58008791971e67f23f2d4182" title="Whether or not the application is finished running. ">IsFinished()</a> should return true. </p>
 
-<p>Definition at line <a class="el" href="_application_8cpp_source.html#l00059">59</a> of file <a class="el" href="_application_8cpp_source.html">Application.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_application_8cpp_source.html#l00061">61</a> of file <a class="el" href="_application_8cpp_source.html">Application.cpp</a>.</p>
 
 </div>
 </div>
@@ -615,7 +670,83 @@ std::shared_ptr&lt; class <a class="el" href="class_camera.html">Camera</a> &gt;
 
 <p>Reimplemented in <a class="el" href="class_assignment2.html#a41544ad361dd798d5fae1ec3197fc66e">Assignment2</a>, and <a class="el" href="class_assignment3.html#a11256b6e7b38ab24baa92729cfb8ffe2">Assignment3</a>.</p>
 
-<p>Definition at line <a class="el" href="_application_8cpp_source.html#l00064">64</a> of file <a class="el" href="_application_8cpp_source.html">Application.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_application_8cpp_source.html#l00066">66</a> of file <a class="el" href="_application_8cpp_source.html">Application.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a0e8589fcb13c520ba472473abe5a518d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;class <a class="el" href="class_camera.html">Camera</a>&gt; Application::camera</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A shared pointer to the camera. </p>
+<p>Currently, only one camera is supported at a time. This one camera will be shared across the framework to properly generate the view and projection matrices. Additionally, shaders utilize some camera properties to calculate the fragment color. </p>
+
+<p>Definition at line <a class="el" href="_application_8h_source.html#l00135">135</a> of file <a class="el" href="_application_8h_source.html">Application.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae1c1ff7a7663d9baa9b65a7ba8e1dcf8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Application::isRunning</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether or not the application is currently running. </p>
+<p>This variable is negated and returned by <a class="el" href="class_application.html#ae0019f2c58008791971e67f23f2d4182" title="Whether or not the application is finished running. ">IsFinished()</a>. </p>
+
+<p>Definition at line <a class="el" href="_application_8h_source.html#l00120">120</a> of file <a class="el" href="_application_8h_source.html">Application.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a88c6615107a5094bb93fa5f153f79554"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;class <a class="el" href="class_scene.html">Scene</a>&gt; Application::scene</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A shared pointer to the scene. </p>
+<p>Currently, there can only ever be one scene at a time. You will add lights and other objects to the scene to generate your image. This scene is used across the framework to perform rendering. </p>
+
+<p>Definition at line <a class="el" href="_application_8h_source.html#l00128">128</a> of file <a class="el" href="_application_8h_source.html">Application.h</a>.</p>
 
 </div>
 </div>
@@ -626,7 +757,7 @@ std::shared_ptr&lt; class <a class="el" href="class_camera.html">Camera</a> &gt;
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 19 2015 00:30:22 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 19 2015 00:46:30 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

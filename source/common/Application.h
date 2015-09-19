@@ -5,8 +5,7 @@
 
 #include "common/common.h"
 
-/*! \class Application
- *  \brief Handles creating configurable objects (i.e. scene, camera, renderer), handling SDL events passed in by the MediaLayer, and handles creating the scene to be display.
+/*! \brief Handles creating configurable objects (i.e. scene, camera, renderer), handling SDL events passed in by the MediaLayer, and handles creating the scene to be display.
  *
  *  An 'Application' MUST be created to run the assignment framework. By default, the application will create a 1280x720 window that is completely black. 
  *  After the 'Application' is created, it must be passed to the 'MediaLayer' who will call the 'Application's tick function every frame.
@@ -108,22 +107,53 @@ public:
       * \param data2 This changes depending on what eventId is. See the docs for SDL_WindowEventID.
       * \param timestamp Timestamp is the number of seconds since the program was first started.
       *
-      * This takes in a window event and process it. By default it handles when the size of the window changes and calls 
-      * <a href="https://www.opengl.org/sdk/docs/man/html/glViewport.xhtml">glViewport</a> to resize the viewport as necessary.
+      * This takes in a window event and process it. By default it handles when the size of the window change and calls HandleWindowResize().
       * You can expand on this functionality in the sub-class to handle other events such as the window moving, etc. However,
       * make sure you maintain a call to Application::HandleWindowEvent() to make sure glViewport is still called!
       */
     virtual void HandleWindowEvent(SDL_WindowEventID eventId, Sint32 data1, Sint32 data2, double timestamp);
 protected:
+    /*! \brief Whether or not the application is currently running.
+     *
+     * This variable is negated and returned by IsFinished().
+     */
     bool isRunning;
 
+
+    /*! \brief A shared pointer to the scene.
+     *
+     *  Currently, there can only ever be one scene at a time. You will add lights and other objects to the scene to generate your image. This scene is used across
+     *  the framework to perform rendering.
+     */
     std::shared_ptr<class Scene> scene;
+
+    /*! \brief A shared pointer to the camera.
+     *
+     *  Currently, only one camera is supported at a time. This one camera will be shared across the framework to properly generate the view and projection matrices.
+     *  Additionally, shaders utilize some camera properties to calculate the fragment color.
+     */
     std::shared_ptr<class Camera> camera;
 
+    /*! \brief Called by HandleWindowEvent() when the window is resized.
+     *  \param x The width of the window.
+     *  \param y The height of the window.
+     * 
+     *  By default calls, <a href="https://www.opengl.org/sdk/docs/man/html/glViewport.xhtml">glViewport</a> to resize the viewport as necessary. If any part of your
+     *  application depends on the window resize, you will want to take care of it in this function! (Hint for the OPTIONAL deferred rendering task in assignment 2: 
+     *  your 'G-Buffers' should be resized).
+     */
     virtual void HandleWindowResize(float x, float y);
 private:
-    // Setup scene will create the meshes, shaders and lights that will be needed to render the scene.
+    /*! \brief Called by Initialize() to populate the scene.
+     *
+     *  Note by the time this function is called, the Application sub-class is fully constructed and Scene object is already created.
+     */
     virtual void SetupScene();
+
+    /*! \brief Called by Initialize() to setup the camera.
+     *
+     *  Note by the time this function is called, the Application sub-class is fully constructed and Camera object is already created.
+     */
     virtual void SetupCamera();
 };
 

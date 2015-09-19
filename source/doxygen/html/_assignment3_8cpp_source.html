@@ -124,10 +124,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keywordtype">void</span> Assignment3::SetupCamera()</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    camera-&gt;Translate(glm::vec3(0.f, 0.f, 10.f));</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="class_application.html#a0e8589fcb13c520ba472473abe5a518d">camera</a>-&gt;Translate(glm::vec3(0.f, 0.f, 10.f));</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_assignment3.html#a7a3563e16c7fbd71d709decd266f6e9a">   41</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_assignment3.html#a7a3563e16c7fbd71d709decd266f6e9a">Assignment3::HandleInput</a>(SDL_Keysym key, Uint32 state, Uint8 repeat, <span class="keywordtype">double</span> timestamp)</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_assignment3.html#a1cc65ca321f39eb7092959b2dada8d31">   41</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_assignment3.html#a1cc65ca321f39eb7092959b2dada8d31">Assignment3::HandleInput</a>(SDL_Keysym key, Uint32 state, Uint8 repeat, <span class="keywordtype">double</span> timestamp, <span class="keywordtype">double</span> deltaTime)</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{   </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">if</span> (state != SDL_KEYDOWN) {</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">return</span>;</div>
@@ -152,23 +152,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        sceneObject-&gt;Rotate(glm::vec3(SceneObject::GetWorldUp()), -0.1f);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">case</span> SDLK_w:</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        camera-&gt;Translate(glm::vec3(SceneObject::GetWorldForward() * -0.3f));</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="class_application.html#a0e8589fcb13c520ba472473abe5a518d">camera</a>-&gt;Translate(glm::vec3(SceneObject::GetWorldForward() * -0.3f));</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">case</span> SDLK_a:</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        camera-&gt;Translate(glm::vec3(SceneObject::GetWorldRight() * 0.3f));</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="class_application.html#a0e8589fcb13c520ba472473abe5a518d">camera</a>-&gt;Translate(glm::vec3(SceneObject::GetWorldRight() * 0.3f));</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">case</span> SDLK_s:</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        camera-&gt;Translate(glm::vec3(SceneObject::GetWorldForward() * 0.3f));</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <a class="code" href="class_application.html#a0e8589fcb13c520ba472473abe5a518d">camera</a>-&gt;Translate(glm::vec3(SceneObject::GetWorldForward() * 0.3f));</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">case</span> SDLK_d:</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        camera-&gt;Translate(glm::vec3(SceneObject::GetWorldRight() * -0.3f));</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <a class="code" href="class_application.html#a0e8589fcb13c520ba472473abe5a518d">camera</a>-&gt;Translate(glm::vec3(SceneObject::GetWorldRight() * -0.3f));</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">case</span> SDLK_SPACE:</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        camera-&gt;Translate(glm::vec3(SceneObject::GetWorldUp() * -0.3f));</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="class_application.html#a0e8589fcb13c520ba472473abe5a518d">camera</a>-&gt;Translate(glm::vec3(SceneObject::GetWorldUp() * -0.3f));</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">case</span> SDLK_LCTRL:</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">case</span> SDLK_RCTRL:</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        camera-&gt;Translate(glm::vec3(SceneObject::GetWorldUp() * 0.3f));</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <a class="code" href="class_application.html#a0e8589fcb13c520ba472473abe5a518d">camera</a>-&gt;Translate(glm::vec3(SceneObject::GetWorldUp() * 0.3f));</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">case</span> SDLK_EQUALS:</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        sceneObject-&gt;AddScale(0.1f);</div>
@@ -177,20 +177,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        sceneObject-&gt;AddScale(-0.1f);</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <a class="code" href="class_application.html#afe6553c2828e6eb38f74af8d3a5a9c2f">Application::HandleInput</a>(key, state, repeat, timestamp);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <a class="code" href="class_application.html#ae6074c3f102de1cb2fe4c81b545679db">Application::HandleInput</a>(key, state, repeat, timestamp, deltaTime);</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keywordtype">void</span> Assignment3::HandleWindowResize(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y)</div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="class_assignment3.html#a851c637c83c8092d8adfb5c9f761daeb">   96</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_assignment3.html#a851c637c83c8092d8adfb5c9f761daeb">Assignment3::HandleWindowResize</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y)</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;{</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    Application::HandleWindowResize(x, y);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    std::static_pointer_cast&lt;<a class="code" href="class_perspective_camera.html">PerspectiveCamera</a>&gt;(camera)-&gt;SetAspectRatio(x / y);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <a class="code" href="class_application.html#abdba284a0f075ee1d4a2108c3a5236a2">Application::HandleWindowResize</a>(x, y);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    std::static_pointer_cast&lt;<a class="code" href="class_perspective_camera.html">PerspectiveCamera</a>&gt;(<a class="code" href="class_application.html#a0e8589fcb13c520ba472473abe5a518d">camera</a>)-&gt;SetAspectRatio(x / y);</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keywordtype">void</span> Assignment3::SetupExample1()</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;{</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    scene-&gt;ClearScene();</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <a class="code" href="class_application.html#a88c6615107a5094bb93fa5f153f79554">scene</a>-&gt;ClearScene();</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">#ifndef DISABLE_OPENGL_SUBROUTINES</span></div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    std::unordered_map&lt;GLenum, std::string&gt; shaderSpec = {</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        { GL_VERTEX_SHADER, <span class="stringliteral">&quot;brdf/blinnphong/fragTexture/blinnphong.vert&quot;</span> },</div>
@@ -236,7 +236,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    }</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    sceneObject = std::make_shared&lt;SceneObject&gt;(meshTemplate);</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    scene-&gt;AddSceneObject(sceneObject);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <a class="code" href="class_application.html#a88c6615107a5094bb93fa5f153f79554">scene</a>-&gt;AddSceneObject(sceneObject);</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    std::unique_ptr&lt;BlinnPhongLightProperties&gt; lightProperties = BlinnPhongShader::CreateLightProperties();</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    lightProperties-&gt;diffuseColor = glm::vec4(1.f, 1.f, 1.f, 1.f);</div>
@@ -259,10 +259,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    lightProperties-&gt;specularColor = glm::vec4(1.f, 1.f, 1.f, 1.f);</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    pointLight4 = std::make_shared&lt;Light&gt;(std::move(lightProperties));</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    scene-&gt;AddLight(pointLight);</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    scene-&gt;AddLight(pointLight2);</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    scene-&gt;AddLight(pointLight3);</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    scene-&gt;AddLight(pointLight4);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <a class="code" href="class_application.html#a88c6615107a5094bb93fa5f153f79554">scene</a>-&gt;AddLight(pointLight);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <a class="code" href="class_application.html#a88c6615107a5094bb93fa5f153f79554">scene</a>-&gt;AddLight(pointLight2);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <a class="code" href="class_application.html#a88c6615107a5094bb93fa5f153f79554">scene</a>-&gt;AddLight(pointLight3);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <a class="code" href="class_application.html#a88c6615107a5094bb93fa5f153f79554">scene</a>-&gt;AddLight(pointLight4);</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;}</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
 <div class="line"><a name="l00179"></a><span class="lineno"><a class="line" href="class_assignment3.html#a11256b6e7b38ab24baa92729cfb8ffe2">  179</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_assignment3.html#a11256b6e7b38ab24baa92729cfb8ffe2">Assignment3::Tick</a>(<span class="keywordtype">double</span> deltaTime)</div>
@@ -285,19 +285,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        pointLight3-&gt;SetPosition(position3);</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    }</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    pointLight4-&gt;SetPosition(glm::vec3(camera-&gt;GetPosition()));</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    pointLight4-&gt;SetPosition(glm::vec3(<a class="code" href="class_application.html#a0e8589fcb13c520ba472473abe5a518d">camera</a>-&gt;GetPosition()));</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    elapsedTime += deltaTime;</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;}</div>
+<div class="ttc" id="class_assignment3_html_a1cc65ca321f39eb7092959b2dada8d31"><div class="ttname"><a href="class_assignment3.html#a1cc65ca321f39eb7092959b2dada8d31">Assignment3::HandleInput</a></div><div class="ttdeci">virtual void HandleInput(SDL_Keysym key, Uint32 state, Uint8 repeat, double timestamp, double deltaTime)</div><div class="ttdoc">Processes an SDL keyboard event which has type SDL_KeyboardEvent. </div><div class="ttdef"><b>Definition:</b> <a href="_assignment3_8cpp_source.html#l00041">Assignment3.cpp:41</a></div></div>
+<div class="ttc" id="class_application_html_ae6074c3f102de1cb2fe4c81b545679db"><div class="ttname"><a href="class_application.html#ae6074c3f102de1cb2fe4c81b545679db">Application::HandleInput</a></div><div class="ttdeci">virtual void HandleInput(SDL_Keysym key, Uint32 state, Uint8 repeat, double timestamp, double deltaTime)</div><div class="ttdoc">Processes an SDL keyboard event which has type SDL_KeyboardEvent. </div><div class="ttdef"><b>Definition:</b> <a href="_application_8cpp_source.html#l00072">Application.cpp:72</a></div></div>
 <div class="ttc" id="class_assignment3_html_a895e38d50717c935706a719f4368f5e8"><div class="ttname"><a href="class_assignment3.html#a895e38d50717c935706a719f4368f5e8">Assignment3::GetWindowSize</a></div><div class="ttdeci">virtual glm::vec2 GetWindowSize() const </div><div class="ttdoc">Specifies the initial window size. </div><div class="ttdef"><b>Definition:</b> <a href="_assignment3_8cpp_source.html#l00026">Assignment3.cpp:26</a></div></div>
 <div class="ttc" id="class_assignment3_html_a11256b6e7b38ab24baa92729cfb8ffe2"><div class="ttname"><a href="class_assignment3.html#a11256b6e7b38ab24baa92729cfb8ffe2">Assignment3::Tick</a></div><div class="ttdeci">virtual void Tick(double deltaTime)</div><div class="ttdoc">Called every frame to advance program logic. </div><div class="ttdef"><b>Definition:</b> <a href="_assignment3_8cpp_source.html#l00179">Assignment3.cpp:179</a></div></div>
 <div class="ttc" id="class_perspective_camera_html"><div class="ttname"><a href="class_perspective_camera.html">PerspectiveCamera</a></div><div class="ttdef"><b>Definition:</b> <a href="_perspective_camera_8h_source.html#l00008">PerspectiveCamera.h:8</a></div></div>
-<div class="ttc" id="class_assignment3_html_a7a3563e16c7fbd71d709decd266f6e9a"><div class="ttname"><a href="class_assignment3.html#a7a3563e16c7fbd71d709decd266f6e9a">Assignment3::HandleInput</a></div><div class="ttdeci">virtual void HandleInput(SDL_Keysym key, Uint32 state, Uint8 repeat, double timestamp)</div><div class="ttdoc">Processes an SDL keyboard event. Details about an SDL Keyboard event can be found here ...</div><div class="ttdef"><b>Definition:</b> <a href="_assignment3_8cpp_source.html#l00041">Assignment3.cpp:41</a></div></div>
-<div class="ttc" id="class_application_html"><div class="ttname"><a href="class_application.html">Application</a></div><div class="ttdoc">Handles creating configurable objects (i.e. scene, camera, renderer), handling SDL events passed in b...</div><div class="ttdef"><b>Definition:</b> <a href="_application_8h_source.html#l00014">Application.h:14</a></div></div>
-<div class="ttc" id="class_application_html_afe6553c2828e6eb38f74af8d3a5a9c2f"><div class="ttname"><a href="class_application.html#afe6553c2828e6eb38f74af8d3a5a9c2f">Application::HandleInput</a></div><div class="ttdeci">virtual void HandleInput(SDL_Keysym key, Uint32 state, Uint8 repeat, double timestamp)</div><div class="ttdoc">Processes an SDL keyboard event. Details about an SDL Keyboard event can be found here ...</div><div class="ttdef"><b>Definition:</b> <a href="_application_8cpp_source.html#l00070">Application.cpp:70</a></div></div>
+<div class="ttc" id="class_application_html_a88c6615107a5094bb93fa5f153f79554"><div class="ttname"><a href="class_application.html#a88c6615107a5094bb93fa5f153f79554">Application::scene</a></div><div class="ttdeci">std::shared_ptr&lt; class Scene &gt; scene</div><div class="ttdoc">A shared pointer to the scene. </div><div class="ttdef"><b>Definition:</b> <a href="_application_8h_source.html#l00128">Application.h:128</a></div></div>
+<div class="ttc" id="class_application_html_a0e8589fcb13c520ba472473abe5a518d"><div class="ttname"><a href="class_application.html#a0e8589fcb13c520ba472473abe5a518d">Application::camera</a></div><div class="ttdeci">std::shared_ptr&lt; class Camera &gt; camera</div><div class="ttdoc">A shared pointer to the camera. </div><div class="ttdef"><b>Definition:</b> <a href="_application_8h_source.html#l00135">Application.h:135</a></div></div>
+<div class="ttc" id="class_assignment3_html_a851c637c83c8092d8adfb5c9f761daeb"><div class="ttname"><a href="class_assignment3.html#a851c637c83c8092d8adfb5c9f761daeb">Assignment3::HandleWindowResize</a></div><div class="ttdeci">virtual void HandleWindowResize(float x, float y)</div><div class="ttdoc">Called by HandleWindowEvent() when the window is resized. </div><div class="ttdef"><b>Definition:</b> <a href="_assignment3_8cpp_source.html#l00096">Assignment3.cpp:96</a></div></div>
+<div class="ttc" id="class_application_html"><div class="ttname"><a href="class_application.html">Application</a></div><div class="ttdoc">Handles creating configurable objects (i.e. scene, camera, renderer), handling SDL events passed in b...</div><div class="ttdef"><b>Definition:</b> <a href="_application_8h_source.html#l00013">Application.h:13</a></div></div>
+<div class="ttc" id="class_application_html_abdba284a0f075ee1d4a2108c3a5236a2"><div class="ttname"><a href="class_application.html#abdba284a0f075ee1d4a2108c3a5236a2">Application::HandleWindowResize</a></div><div class="ttdeci">virtual void HandleWindowResize(float x, float y)</div><div class="ttdoc">Called by HandleWindowEvent() when the window is resized. </div><div class="ttdef"><b>Definition:</b> <a href="_application_8cpp_source.html#l00089">Application.cpp:89</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 19 2015 00:30:21 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 19 2015 00:46:29 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

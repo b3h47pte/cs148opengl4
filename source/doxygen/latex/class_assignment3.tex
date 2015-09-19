@@ -14,14 +14,14 @@ Inheritance diagram for Assignment3\+:\begin{figure}[H]
 \item 
 virtual glm\+::vec2 \hyperlink{class_assignment3_a895e38d50717c935706a719f4368f5e8}{Get\+Window\+Size} () const 
 \begin{DoxyCompactList}\small\item\em Specifies the initial window size. \end{DoxyCompactList}\item 
-virtual void \hyperlink{class_assignment3_a7a3563e16c7fbd71d709decd266f6e9a}{Handle\+Input} (S\+D\+L\+\_\+\+Keysym key, Uint32 state, Uint8 repeat, double timestamp)
-\begin{DoxyCompactList}\small\item\em Processes an S\+D\+L keyboard event. Details about an S\+D\+L Keyboard event can be found \href{https://wiki.libsdl.org/SDL_KeyboardEvent}{\tt here} \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_assignment3_a1cc65ca321f39eb7092959b2dada8d31}{Handle\+Input} (S\+D\+L\+\_\+\+Keysym key, Uint32 state, Uint8 repeat, double timestamp, double delta\+Time)
+\begin{DoxyCompactList}\small\item\em Processes an S\+D\+L keyboard event which has type \href{https://wiki.libsdl.org/SDL_KeyboardEvent}{\tt S\+D\+L\+\_\+\+Keyboard\+Event}. \end{DoxyCompactList}\item 
 virtual void \hyperlink{class_assignment3_a11256b6e7b38ab24baa92729cfb8ffe2}{Tick} (double delta\+Time)
 \begin{DoxyCompactList}\small\item\em Called every frame to advance program logic. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_assignment3_a12b30bd7b8a0bcefbd977f126ce00b25}{}static std\+::unique\+\_\+ptr$<$ \hyperlink{class_application}{Application} $>$ {\bfseries Create\+Application} (std\+::shared\+\_\+ptr$<$ class \hyperlink{class_scene}{Scene} $>$ scene, std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$ camera)\label{class_assignment3_a12b30bd7b8a0bcefbd977f126ce00b25}
+\hypertarget{class_assignment3_a12b30bd7b8a0bcefbd977f126ce00b25}{}static std\+::unique\+\_\+ptr$<$ \hyperlink{class_application}{Application} $>$ {\bfseries Create\+Application} (std\+::shared\+\_\+ptr$<$ class \hyperlink{class_scene}{Scene} $>$ \hyperlink{class_application_a88c6615107a5094bb93fa5f153f79554}{scene}, std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$ \hyperlink{class_application_a0e8589fcb13c520ba472473abe5a518d}{camera})\label{class_assignment3_a12b30bd7b8a0bcefbd977f126ce00b25}
 
 \item 
 \hypertarget{class_assignment3_a47d1b58079eee3e135e08768cd2a2461}{}static std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$ {\bfseries Create\+Camera} ()\label{class_assignment3_a47d1b58079eee3e135e08768cd2a2461}
@@ -30,9 +30,8 @@ virtual void \hyperlink{class_assignment3_a11256b6e7b38ab24baa92729cfb8ffe2}{Tic
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_assignment3_a851c637c83c8092d8adfb5c9f761daeb}{}virtual void {\bfseries Handle\+Window\+Resize} (float x, float y)\label{class_assignment3_a851c637c83c8092d8adfb5c9f761daeb}
-
-\end{DoxyCompactItemize}
+virtual void \hyperlink{class_assignment3_a851c637c83c8092d8adfb5c9f761daeb}{Handle\+Window\+Resize} (float x, float y)
+\begin{DoxyCompactList}\small\item\em Called by \hyperlink{class_application_a74d92db64e051efa56d0357989dcb755}{Handle\+Window\+Event()} when the window is resized. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
@@ -66,38 +65,68 @@ Reimplemented from \hyperlink{class_application_a3e9992f0ceae0d8beda7debccdb0053
 
 Definition at line 26 of file Assignment3.\+cpp.
 
-\hypertarget{class_assignment3_a7a3563e16c7fbd71d709decd266f6e9a}{}\index{Assignment3@{Assignment3}!Handle\+Input@{Handle\+Input}}
+\hypertarget{class_assignment3_a1cc65ca321f39eb7092959b2dada8d31}{}\index{Assignment3@{Assignment3}!Handle\+Input@{Handle\+Input}}
 \index{Handle\+Input@{Handle\+Input}!Assignment3@{Assignment3}}
 \subsubsection[{Handle\+Input}]{\setlength{\rightskip}{0pt plus 5cm}void Assignment3\+::\+Handle\+Input (
 \begin{DoxyParamCaption}
 \item[{S\+D\+L\+\_\+\+Keysym}]{key, }
 \item[{Uint32}]{state, }
 \item[{Uint8}]{repeat, }
-\item[{double}]{timestamp}
+\item[{double}]{timestamp, }
+\item[{double}]{delta\+Time}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_assignment3_a7a3563e16c7fbd71d709decd266f6e9a}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_assignment3_a1cc65ca321f39eb7092959b2dada8d31}
 
 
-Processes an S\+D\+L keyboard event. Details about an S\+D\+L Keyboard event can be found \href{https://wiki.libsdl.org/SDL_KeyboardEvent}{\tt here} 
+Processes an S\+D\+L keyboard event which has type \href{https://wiki.libsdl.org/SDL_KeyboardEvent}{\tt S\+D\+L\+\_\+\+Keyboard\+Event}. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em key} & See the S\+D\+L documentation for more details about S\+D\+L\+\_\+\+Keysym. \href{https://wiki.libsdl.org/SDL_Keysym}{\tt Here} \\
+{\em key} & See the S\+D\+L documentation for more details about \href{https://wiki.libsdl.org/SDL_Keysym}{\tt S\+D\+L\+\_\+\+Keysym}. \\
 \hline
-{\em state} & This is the type field in the S\+D\+L\+\_\+\+Event datastructure. S\+D\+L Documentation\+: \href{https://wiki.libsdl.org/SDL_Event}{\tt Here} \\
+{\em state} & This is the type field in the \href{https://wiki.libsdl.org/SDL_Event}{\tt S\+D\+L\+\_\+\+Event}datastructure. \\
 \hline
 {\em repeat} & This value is non-\/zero is the key is being repeated. \\
 \hline
-{\em timestamp} & Timestamp is the number of seconds since the program was first started.\\
+{\em timestamp} & Timestamp is the number of seconds since the program was first started. \\
+\hline
+{\em delta\+Time} & The amount of time (in seconds) since the last tick.\\
 \hline
 \end{DoxyParams}
-Although you get an input immediately, if you want to make a change to the scene, it is highly recommended that you queue a change and then process it within the \hyperlink{class_assignment3_a11256b6e7b38ab24baa92729cfb8ffe2}{Tick()} function. This allows you to multiply by the appropriate delta when making a change. For example, an object moves at 10 meters per second and you want it to move forward when you hit the \textquotesingle{}W\textquotesingle{} key. How many units do you move forward by? You would move forward by $10 \cdot deltaTime$ 
+Takes in a keyboard event and process it. This does nothing by default. \textquotesingle{}delta\+Time\textquotesingle{} is included to allow you to move something and have the movement look smooth. For example, if you have an object that you want to move forward whenever \textquotesingle{}W\textquotesingle{} is pressed. You know that the object travels at 10 meters per second when \textquotesingle{}W\textquotesingle{} is pressed and 0 meters per second when it is not. How far should you move the object? You would want to move it forward by $10 \cdot deltaTime $ units. 
 
-Reimplemented from \hyperlink{class_application_afe6553c2828e6eb38f74af8d3a5a9c2f}{Application}.
+Reimplemented from \hyperlink{class_application_ae6074c3f102de1cb2fe4c81b545679db}{Application}.
 
 
 
 Definition at line 41 of file Assignment3.\+cpp.
+
+\hypertarget{class_assignment3_a851c637c83c8092d8adfb5c9f761daeb}{}\index{Assignment3@{Assignment3}!Handle\+Window\+Resize@{Handle\+Window\+Resize}}
+\index{Handle\+Window\+Resize@{Handle\+Window\+Resize}!Assignment3@{Assignment3}}
+\subsubsection[{Handle\+Window\+Resize}]{\setlength{\rightskip}{0pt plus 5cm}void Assignment3\+::\+Handle\+Window\+Resize (
+\begin{DoxyParamCaption}
+\item[{float}]{x, }
+\item[{float}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_assignment3_a851c637c83c8092d8adfb5c9f761daeb}
+
+
+Called by \hyperlink{class_application_a74d92db64e051efa56d0357989dcb755}{Handle\+Window\+Event()} when the window is resized. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The width of the window. \\
+\hline
+{\em y} & The height of the window.\\
+\hline
+\end{DoxyParams}
+By default calls, \href{https://www.opengl.org/sdk/docs/man/html/glViewport.xhtml}{\tt gl\+Viewport} to resize the viewport as necessary. If any part of your application depends on the window resize, you will want to take care of it in this function! (Hint for the O\+P\+T\+I\+O\+N\+A\+L deferred rendering task in assignment 2\+: your \textquotesingle{}G-\/\+Buffers\textquotesingle{} should be resized). 
+
+Reimplemented from \hyperlink{class_application_abdba284a0f075ee1d4a2108c3a5236a2}{Application}.
+
+
+
+Definition at line 96 of file Assignment3.\+cpp.
 
 \hypertarget{class_assignment3_a11256b6e7b38ab24baa92729cfb8ffe2}{}\index{Assignment3@{Assignment3}!Tick@{Tick}}
 \index{Tick@{Tick}!Assignment3@{Assignment3}}

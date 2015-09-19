@@ -147,7 +147,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    std::shared_ptr&lt;RenderingObject&gt; triangleTemplate = std::make_shared&lt;RenderingObject&gt;(shader, std::move(vertexPositions), <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>, std::move(vertexColors));</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    std::shared_ptr&lt;SceneObject&gt; sceneTriangle = std::make_shared&lt;SceneObject&gt;(triangleTemplate);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    scene-&gt;AddSceneObject(sceneTriangle);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="class_application.html#a88c6615107a5094bb93fa5f153f79554">scene</a>-&gt;AddSceneObject(sceneTriangle);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keywordtype">void</span> Assignment1::SetupExample2()</div>
@@ -189,7 +189,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    pointTemplate-&gt;SetDrawMode(GL_POINTS);</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        </div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    std::shared_ptr&lt;SceneObject&gt; pointObject = std::make_shared&lt;SceneObject&gt;(pointTemplate);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    scene-&gt;AddSceneObject(pointObject);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <a class="code" href="class_application.html#a88c6615107a5094bb93fa5f153f79554">scene</a>-&gt;AddSceneObject(pointObject);</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keywordtype">void</span> Assignment1::SetupExample3()</div>
@@ -254,10 +254,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    pointTemplate-&gt;SetDrawMode(GL_LINES);</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        </div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    std::shared_ptr&lt;SceneObject&gt; pointObject = std::make_shared&lt;SceneObject&gt;(pointTemplate);</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    scene-&gt;AddSceneObject(pointObject);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <a class="code" href="class_application.html#a88c6615107a5094bb93fa5f153f79554">scene</a>-&gt;AddSceneObject(pointObject);</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;}</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;</div>
-<div class="line"><a name="l00171"></a><span class="lineno"><a class="line" href="class_assignment1.html#a29da6ab20003bfec87bcc93474dc8ade">  171</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_assignment1.html#a29da6ab20003bfec87bcc93474dc8ade">Assignment1::HandleInput</a>(SDL_Keysym key, Uint32 state, Uint8 repeat, <span class="keywordtype">double</span> timestamp)</div>
+<div class="line"><a name="l00171"></a><span class="lineno"><a class="line" href="class_assignment1.html#ab9db4f51e177dd72130cd61d86b97535">  171</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_assignment1.html#ab9db4f51e177dd72130cd61d86b97535">Assignment1::HandleInput</a>(SDL_Keysym key, Uint32 state, Uint8 repeat, <span class="keywordtype">double</span> timestamp, <span class="keywordtype">double</span> deltaTime)</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;{</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keywordflow">if</span> (state != SDL_KEYDOWN || repeat) {</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keywordflow">return</span>;</div>
@@ -265,31 +265,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordflow">switch</span> (key.sym) {</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keywordflow">case</span> SDLK_0:</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        scene-&gt;ClearScene();</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <a class="code" href="class_application.html#a88c6615107a5094bb93fa5f153f79554">scene</a>-&gt;ClearScene();</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keywordflow">case</span> SDLK_1:</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        scene-&gt;ClearScene();</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <a class="code" href="class_application.html#a88c6615107a5094bb93fa5f153f79554">scene</a>-&gt;ClearScene();</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        SetupExample1();</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordflow">case</span> SDLK_2:</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        scene-&gt;ClearScene();</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <a class="code" href="class_application.html#a88c6615107a5094bb93fa5f153f79554">scene</a>-&gt;ClearScene();</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        SetupExample2();</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordflow">case</span> SDLK_3:</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        scene-&gt;ClearScene();</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <a class="code" href="class_application.html#a88c6615107a5094bb93fa5f153f79554">scene</a>-&gt;ClearScene();</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        SetupExample3();</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordflow">default</span>:</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    }</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;}</div>
-<div class="ttc" id="class_assignment1_html_a29da6ab20003bfec87bcc93474dc8ade"><div class="ttname"><a href="class_assignment1.html#a29da6ab20003bfec87bcc93474dc8ade">Assignment1::HandleInput</a></div><div class="ttdeci">virtual void HandleInput(SDL_Keysym key, Uint32 state, Uint8 repeat, double timestamp)</div><div class="ttdoc">Processes an SDL keyboard event. Details about an SDL Keyboard event can be found here ...</div><div class="ttdef"><b>Definition:</b> <a href="_assignment1_8cpp_source.html#l00171">Assignment1.cpp:171</a></div></div>
+<div class="ttc" id="class_assignment1_html_ab9db4f51e177dd72130cd61d86b97535"><div class="ttname"><a href="class_assignment1.html#ab9db4f51e177dd72130cd61d86b97535">Assignment1::HandleInput</a></div><div class="ttdeci">virtual void HandleInput(SDL_Keysym key, Uint32 state, Uint8 repeat, double timestamp, double deltaTime)</div><div class="ttdoc">Processes an SDL keyboard event which has type SDL_KeyboardEvent. </div><div class="ttdef"><b>Definition:</b> <a href="_assignment1_8cpp_source.html#l00171">Assignment1.cpp:171</a></div></div>
+<div class="ttc" id="class_application_html_a88c6615107a5094bb93fa5f153f79554"><div class="ttname"><a href="class_application.html#a88c6615107a5094bb93fa5f153f79554">Application::scene</a></div><div class="ttdeci">std::shared_ptr&lt; class Scene &gt; scene</div><div class="ttdoc">A shared pointer to the scene. </div><div class="ttdef"><b>Definition:</b> <a href="_application_8h_source.html#l00128">Application.h:128</a></div></div>
 <div class="ttc" id="class_assignment1_html_a27daa24c1afe9e10bd6615dfa250473e"><div class="ttname"><a href="class_assignment1.html#a27daa24c1afe9e10bd6615dfa250473e">Assignment1::GetWindowSize</a></div><div class="ttdeci">virtual glm::vec2 GetWindowSize() const </div><div class="ttdoc">Specifies the initial window size. </div><div class="ttdef"><b>Definition:</b> <a href="_assignment1_8cpp_source.html#l00014">Assignment1.cpp:14</a></div></div>
-<div class="ttc" id="class_application_html"><div class="ttname"><a href="class_application.html">Application</a></div><div class="ttdoc">Handles creating configurable objects (i.e. scene, camera, renderer), handling SDL events passed in b...</div><div class="ttdef"><b>Definition:</b> <a href="_application_8h_source.html#l00014">Application.h:14</a></div></div>
+<div class="ttc" id="class_application_html"><div class="ttname"><a href="class_application.html">Application</a></div><div class="ttdoc">Handles creating configurable objects (i.e. scene, camera, renderer), handling SDL events passed in b...</div><div class="ttdef"><b>Definition:</b> <a href="_application_8h_source.html#l00013">Application.h:13</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 19 2015 00:30:21 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 19 2015 00:46:29 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

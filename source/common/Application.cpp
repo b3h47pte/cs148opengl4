@@ -45,10 +45,12 @@ glm::vec2 Application::GetWindowSize() const
 
 void Application::SetupScene()
 {
+    assert(scene);
 }
 
 void Application::SetupCamera()
 {
+    assert(camera);
 }
 
 bool Application::IsFinished() const
