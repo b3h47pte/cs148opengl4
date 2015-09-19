@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -87,11 +88,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-static-methods">Static Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="class_shader_program-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">ShaderProgram Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_shader_program_8h_source.html">ShaderProgram.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ShaderProgram:</div>
 <div class="dyncontent">
@@ -104,76 +109,623 @@ Inheritance diagram for ShaderProgram:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aba2db5734b2f70cc34078126ad279588"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aba2db5734b2f70cc34078126ad279588"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ShaderProgram</b> (const std::unordered_map&lt; GLenum, std::string &gt; &amp;inputShaders)</td></tr>
+<tr class="memitem:aba2db5734b2f70cc34078126ad279588"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#aba2db5734b2f70cc34078126ad279588">ShaderProgram</a> (const std::unordered_map&lt; GLenum, std::string &gt; &amp;inputShaders)</td></tr>
 <tr class="separator:aba2db5734b2f70cc34078126ad279588"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a906b0232f27663b28cc800ac2851541f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a906b0232f27663b28cc800ac2851541f"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>StartUseShader</b> () const </td></tr>
+<tr class="memitem:a2d2eadcfc48cc2e2ddb82aba70553a9f"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#a2d2eadcfc48cc2e2ddb82aba70553a9f">~ShaderProgram</a> ()</td></tr>
+<tr class="separator:a2d2eadcfc48cc2e2ddb82aba70553a9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a906b0232f27663b28cc800ac2851541f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#a906b0232f27663b28cc800ac2851541f">StartUseShader</a> () const </td></tr>
 <tr class="separator:a906b0232f27663b28cc800ac2851541f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5afb6f91d30b6e197fab0827c416c51f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5afb6f91d30b6e197fab0827c416c51f"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>StopUseShader</b> () const </td></tr>
+<tr class="memitem:a5afb6f91d30b6e197fab0827c416c51f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#a5afb6f91d30b6e197fab0827c416c51f">StopUseShader</a> () const </td></tr>
 <tr class="separator:a5afb6f91d30b6e197fab0827c416c51f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a281396edbb786eacf86ae4997a3e90c6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a281396edbb786eacf86ae4997a3e90c6"></a>
-GLuint&#160;</td><td class="memItemRight" valign="bottom"><b>GetProgram</b> () const </td></tr>
+<tr class="memitem:a281396edbb786eacf86ae4997a3e90c6"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#a281396edbb786eacf86ae4997a3e90c6">GetProgram</a> () const </td></tr>
 <tr class="separator:a281396edbb786eacf86ae4997a3e90c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f3c1c149aa0988e07e0a513c69c1770"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2f3c1c149aa0988e07e0a513c69c1770"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>SetupShaderLighting</b> (const class <a class="el" href="class_light.html">Light</a> *light) const </td></tr>
+<tr class="memitem:a2f3c1c149aa0988e07e0a513c69c1770"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#a2f3c1c149aa0988e07e0a513c69c1770">SetupShaderLighting</a> (const class <a class="el" href="class_light.html">Light</a> *light) const </td></tr>
 <tr class="separator:a2f3c1c149aa0988e07e0a513c69c1770"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7a595a10717c6051d6c582c850c4ed7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad7a595a10717c6051d6c582c850c4ed7"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>SetupShaderMaterials</b> () const </td></tr>
+<tr class="memitem:ad7a595a10717c6051d6c582c850c4ed7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#ad7a595a10717c6051d6c582c850c4ed7">SetupShaderMaterials</a> () const </td></tr>
 <tr class="separator:ad7a595a10717c6051d6c582c850c4ed7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75e888f885b9028847e2d9556a754170"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a75e888f885b9028847e2d9556a754170"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>SetupShaderCamera</b> (const class <a class="el" href="class_camera.html">Camera</a> *camera) const </td></tr>
+<tr class="memitem:a75e888f885b9028847e2d9556a754170"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#a75e888f885b9028847e2d9556a754170">SetupShaderCamera</a> (const class <a class="el" href="class_camera.html">Camera</a> *camera) const </td></tr>
 <tr class="separator:a75e888f885b9028847e2d9556a754170"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47298abb4ffc8d75f88b3d603aa989f9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a47298abb4ffc8d75f88b3d603aa989f9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetShaderUniform</b> (const std::string &amp;location, const glm::mat4 &amp;value) const </td></tr>
+<tr class="memitem:a47298abb4ffc8d75f88b3d603aa989f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#a47298abb4ffc8d75f88b3d603aa989f9">SetShaderUniform</a> (const std::string &amp;location, const glm::mat4 &amp;value) const </td></tr>
 <tr class="separator:a47298abb4ffc8d75f88b3d603aa989f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a4c9cd6967787bded962acd7ce6b3c6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3a4c9cd6967787bded962acd7ce6b3c6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetShaderUniform</b> (const std::string &amp;location, float value) const </td></tr>
+<tr class="memitem:a3a4c9cd6967787bded962acd7ce6b3c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#a3a4c9cd6967787bded962acd7ce6b3c6">SetShaderUniform</a> (const std::string &amp;location, float value) const </td></tr>
 <tr class="separator:a3a4c9cd6967787bded962acd7ce6b3c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93e7090cc8ff284bfcde6ae972aa5b9e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a93e7090cc8ff284bfcde6ae972aa5b9e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetShaderUniform</b> (const std::string &amp;location, int value) const </td></tr>
+<tr class="memitem:a93e7090cc8ff284bfcde6ae972aa5b9e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#a93e7090cc8ff284bfcde6ae972aa5b9e">SetShaderUniform</a> (const std::string &amp;location, int value) const </td></tr>
 <tr class="separator:a93e7090cc8ff284bfcde6ae972aa5b9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08b8936758c067aad38e6cd94608663f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a08b8936758c067aad38e6cd94608663f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetShaderUniform</b> (const std::string &amp;location, const glm::vec4 &amp;value) const </td></tr>
+<tr class="memitem:a08b8936758c067aad38e6cd94608663f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#a08b8936758c067aad38e6cd94608663f">SetShaderUniform</a> (const std::string &amp;location, const glm::vec4 &amp;value) const </td></tr>
 <tr class="separator:a08b8936758c067aad38e6cd94608663f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2e00fa2f9107b34c758996021574b15"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae2e00fa2f9107b34c758996021574b15"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetShaderSubroutine</b> (const std::string &amp;location, const std::string &amp;subroutine, GLenum substage) const </td></tr>
+<tr class="memitem:ae2e00fa2f9107b34c758996021574b15"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#ae2e00fa2f9107b34c758996021574b15">SetShaderSubroutine</a> (const std::string &amp;location, const std::string &amp;subroutine, GLenum substage) const </td></tr>
 <tr class="separator:ae2e00fa2f9107b34c758996021574b15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16169356d5ce43e64e6018ad5d79f594"><td class="memTemplParams" colspan="2"><a class="anchor" id="a16169356d5ce43e64e6018ad5d79f594"></a>
-template&lt;int N&gt; </td></tr>
-<tr class="memitem:a16169356d5ce43e64e6018ad5d79f594"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>SetupUniformBlock</b> (const std::string &amp;blockName, const std::array&lt; const char *, N &gt; &amp;names, std::array&lt; GLuint, N &gt; &amp;indices, std::array&lt; GLint, N &gt; &amp;offsets, std::vector&lt; GLubyte &gt; &amp;data, GLuint &amp;blockLocation, GLint &amp;blockSize, GLuint &amp;bufferLocation)</td></tr>
+<tr class="memitem:a16169356d5ce43e64e6018ad5d79f594"><td class="memTemplParams" colspan="2">template&lt;int N&gt; </td></tr>
+<tr class="memitem:a16169356d5ce43e64e6018ad5d79f594"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_shader_program.html#a16169356d5ce43e64e6018ad5d79f594">SetupUniformBlock</a> (const std::string &amp;blockName, const std::array&lt; const char *, N &gt; &amp;names, std::array&lt; GLuint, N &gt; &amp;indices, std::array&lt; GLint, N &gt; &amp;offsets, std::vector&lt; GLubyte &gt; &amp;data, GLuint &amp;blockLocation, GLint &amp;blockSize, GLuint &amp;bufferLocation)</td></tr>
 <tr class="separator:a16169356d5ce43e64e6018ad5d79f594"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a9c09a5050b37c958e07ce4d9756421b9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9c09a5050b37c958e07ce4d9756421b9"></a>
-static std::unique_ptr&lt; struct <a class="el" href="struct_light_properties.html">LightProperties</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>CreateLightProperties</b> ()</td></tr>
+<tr class="memitem:a9c09a5050b37c958e07ce4d9756421b9"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; struct <a class="el" href="struct_light_properties.html">LightProperties</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#a9c09a5050b37c958e07ce4d9756421b9">CreateLightProperties</a> ()</td></tr>
 <tr class="separator:a9c09a5050b37c958e07ce4d9756421b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-methods"></a>
 Static Protected Member Functions</h2></td></tr>
-<tr class="memitem:ab5c50c33203cf65b7f6ffe00d2243d5a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab5c50c33203cf65b7f6ffe00d2243d5a"></a>
-static GLuint&#160;</td><td class="memItemRight" valign="bottom"><b>LoadShaderObject</b> (GLenum type, const std::string &amp;filename)</td></tr>
+<tr class="memitem:ab5c50c33203cf65b7f6ffe00d2243d5a"><td class="memItemLeft" align="right" valign="top">static GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#ab5c50c33203cf65b7f6ffe00d2243d5a">LoadShaderObject</a> (GLenum type, const std::string &amp;filename)</td></tr>
 <tr class="separator:ab5c50c33203cf65b7f6ffe00d2243d5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a7d8f2b643a81ac4097606e43ade92f81"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7d8f2b643a81ac4097606e43ade92f81"></a>
-GLuint&#160;</td><td class="memItemRight" valign="bottom"><b>shaderProgram</b></td></tr>
+<tr class="memitem:a7d8f2b643a81ac4097606e43ade92f81"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#a7d8f2b643a81ac4097606e43ade92f81">shaderProgram</a></td></tr>
 <tr class="separator:a7d8f2b643a81ac4097606e43ade92f81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a8eabcc4ff693bc9430daef8cfc6008de"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; GLenum, GLuint &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#a8eabcc4ff693bc9430daef8cfc6008de">shaderObjects</a></td></tr>
+<tr class="separator:a8eabcc4ff693bc9430daef8cfc6008de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a6dfa734f6cd9bdd1debf1a6f39bdfa05"><td class="memItemLeft" align="right" valign="top">static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#a6dfa734f6cd9bdd1debf1a6f39bdfa05">SHADER_ERROR_LOG_SIZE</a> = 500</td></tr>
+<tr class="separator:a6dfa734f6cd9bdd1debf1a6f39bdfa05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
 <p>Definition at line <a class="el" href="_shader_program_8h_source.html#l00008">8</a> of file <a class="el" href="_shader_program_8h_source.html">ShaderProgram.h</a>.</p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="aba2db5734b2f70cc34078126ad279588"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ShaderProgram::ShaderProgram </td>
+          <td>(</td>
+          <td class="paramtype">const std::unordered_map&lt; GLenum, std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>inputShaders</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_shader_program_8cpp_source.html#l00013">13</a> of file <a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2d2eadcfc48cc2e2ddb82aba70553a9f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ShaderProgram::~ShaderProgram </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_shader_program_8cpp_source.html#l00063">63</a> of file <a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a9c09a5050b37c958e07ce4d9756421b9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="struct_light_properties.html">LightProperties</a> &gt; ShaderProgram::CreateLightProperties </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_shader_program_8cpp_source.html#l00169">169</a> of file <a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a281396edbb786eacf86ae4997a3e90c6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLuint ShaderProgram::GetProgram </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_shader_program_8h_source.html#l00017">17</a> of file <a class="el" href="_shader_program_8h_source.html">ShaderProgram.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab5c50c33203cf65b7f6ffe00d2243d5a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLuint ShaderProgram::LoadShaderObject </td>
+          <td>(</td>
+          <td class="paramtype">GLenum&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>filename</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_shader_program_8cpp_source.html#l00068">68</a> of file <a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae2e00fa2f9107b34c758996021574b15"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ShaderProgram::SetShaderSubroutine </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>subroutine</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLenum&#160;</td>
+          <td class="paramname"><em>substage</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_shader_program_8cpp_source.html#l00138">138</a> of file <a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a47298abb4ffc8d75f88b3d603aa989f9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ShaderProgram::SetShaderUniform </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const glm::mat4 &amp;&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_shader_program_8cpp_source.html#l00113">113</a> of file <a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3a4c9cd6967787bded962acd7ce6b3c6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ShaderProgram::SetShaderUniform </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_shader_program_8cpp_source.html#l00125">125</a> of file <a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a93e7090cc8ff284bfcde6ae972aa5b9e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ShaderProgram::SetShaderUniform </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_shader_program_8cpp_source.html#l00119">119</a> of file <a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a08b8936758c067aad38e6cd94608663f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ShaderProgram::SetShaderUniform </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const glm::vec4 &amp;&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_shader_program_8cpp_source.html#l00131">131</a> of file <a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a75e888f885b9028847e2d9556a754170"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ShaderProgram::SetupShaderCamera </td>
+          <td>(</td>
+          <td class="paramtype">const class <a class="el" href="class_camera.html">Camera</a> *&#160;</td>
+          <td class="paramname"><em>camera</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="class_blinn_phong_shader.html#a0e3e2e1d5981f173a72e82d0ef4d643d">BlinnPhongShader</a>.</p>
+
+<p>Definition at line <a class="el" href="_shader_program_8cpp_source.html#l00165">165</a> of file <a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2f3c1c149aa0988e07e0a513c69c1770"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ShaderProgram::SetupShaderLighting </td>
+          <td>(</td>
+          <td class="paramtype">const class <a class="el" href="class_light.html">Light</a> *&#160;</td>
+          <td class="paramname"><em>light</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="class_blinn_phong_shader.html#a9e4a7358ce59f7fa77ed872eb15eabe7">BlinnPhongShader</a>.</p>
+
+<p>Definition at line <a class="el" href="_shader_program_8cpp_source.html#l00157">157</a> of file <a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad7a595a10717c6051d6c582c850c4ed7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ShaderProgram::SetupShaderMaterials </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="class_blinn_phong_shader.html#ade1dfa6ceb0b2650b2ca3b849ee875ac">BlinnPhongShader</a>.</p>
+
+<p>Definition at line <a class="el" href="_shader_program_8cpp_source.html#l00161">161</a> of file <a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a16169356d5ce43e64e6018ad5d79f594"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int N&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ShaderProgram::SetupUniformBlock </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>blockName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::array&lt; const char *, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>names</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::array&lt; GLuint, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>indices</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::array&lt; GLint, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>offsets</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; GLubyte &gt; &amp;&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLuint &amp;&#160;</td>
+          <td class="paramname"><em>blockLocation</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLint &amp;&#160;</td>
+          <td class="paramname"><em>blockSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLuint &amp;&#160;</td>
+          <td class="paramname"><em>bufferLocation</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_shader_program_8h_source.html#l00031">31</a> of file <a class="el" href="_shader_program_8h_source.html">ShaderProgram.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a906b0232f27663b28cc800ac2851541f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ShaderProgram::StartUseShader </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_shader_program_8cpp_source.html#l00103">103</a> of file <a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5afb6f91d30b6e197fab0827c416c51f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ShaderProgram::StopUseShader </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_shader_program_8cpp_source.html#l00108">108</a> of file <a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a6dfa734f6cd9bdd1debf1a6f39bdfa05"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int ShaderProgram::SHADER_ERROR_LOG_SIZE = 500</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_shader_program_8h_source.html#l00064">64</a> of file <a class="el" href="_shader_program_8h_source.html">ShaderProgram.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8eabcc4ff693bc9430daef8cfc6008de"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt;GLenum, GLuint&gt; ShaderProgram::shaderObjects</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_shader_program_8h_source.html#l00062">62</a> of file <a class="el" href="_shader_program_8h_source.html">ShaderProgram.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7d8f2b643a81ac4097606e43ade92f81"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLuint ShaderProgram::shaderProgram</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_shader_program_8h_source.html#l00060">60</a> of file <a class="el" href="_shader_program_8h_source.html">ShaderProgram.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>/Users/michaelbao/workspace/cs148opengl4/source/common/Rendering/Shaders/<a class="el" href="_shader_program_8h_source.html">ShaderProgram.h</a></li>
 <li>/Users/michaelbao/workspace/cs148opengl4/source/common/Rendering/Shaders/<a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 19 2015 01:03:44 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 19 2015 01:31:35 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -93,183 +94,1312 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">RenderingObject Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_rendering_object_8h_source.html">RenderingObject.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:ab772f569ef63a1db07db29a744b519ee"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab772f569ef63a1db07db29a744b519ee"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>VertexAttributePositions</b> { <b>Position</b> = 0, 
-<b>Normals</b>, 
-<b>UV</b>, 
-<b>Colors</b>
+<tr class="memitem:ab772f569ef63a1db07db29a744b519ee"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#ab772f569ef63a1db07db29a744b519ee">VertexAttributePositions</a> { <a class="el" href="class_rendering_object.html#ab772f569ef63a1db07db29a744b519eea52f5e0bc3859bc5f5e25130b6c7e8881">VertexAttributePositions::Position</a> = 0, 
+<a class="el" href="class_rendering_object.html#ab772f569ef63a1db07db29a744b519eea4ab971a51f0335cbf8d9c2c65d379e99">VertexAttributePositions::Normals</a>, 
+<a class="el" href="class_rendering_object.html#ab772f569ef63a1db07db29a744b519eeadeaa2adbeb26802ae61609c3f3642d82">VertexAttributePositions::UV</a>, 
+<a class="el" href="class_rendering_object.html#ab772f569ef63a1db07db29a744b519eea5d50889672f6f860d14f502de3de1957">VertexAttributePositions::Colors</a>
  }</td></tr>
 <tr class="separator:ab772f569ef63a1db07db29a744b519ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1223b9cf03f2029b9c43d71042c2a18e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1223b9cf03f2029b9c43d71042c2a18e"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>PositionArray</b> = std::vector&lt; glm::vec4 &gt;</td></tr>
+<tr class="memitem:a1223b9cf03f2029b9c43d71042c2a18e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#a1223b9cf03f2029b9c43d71042c2a18e">PositionArray</a> = std::vector&lt; glm::vec4 &gt;</td></tr>
 <tr class="separator:a1223b9cf03f2029b9c43d71042c2a18e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9931c88bca3384065c6691dfe1e60af1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9931c88bca3384065c6691dfe1e60af1"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>IndexArray</b> = std::vector&lt; unsigned int &gt;</td></tr>
+<tr class="memitem:a9931c88bca3384065c6691dfe1e60af1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#a9931c88bca3384065c6691dfe1e60af1">IndexArray</a> = std::vector&lt; unsigned int &gt;</td></tr>
 <tr class="separator:a9931c88bca3384065c6691dfe1e60af1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a327c4d892de8d6138fb59afa6d078257"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a327c4d892de8d6138fb59afa6d078257"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>NormalArray</b> = std::vector&lt; glm::vec3 &gt;</td></tr>
+<tr class="memitem:a327c4d892de8d6138fb59afa6d078257"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#a327c4d892de8d6138fb59afa6d078257">NormalArray</a> = std::vector&lt; glm::vec3 &gt;</td></tr>
 <tr class="separator:a327c4d892de8d6138fb59afa6d078257"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a504ecd45ebe36dfa5b78c46d64d9904a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a504ecd45ebe36dfa5b78c46d64d9904a"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>UVArray</b> = std::vector&lt; glm::vec2 &gt;</td></tr>
+<tr class="memitem:a504ecd45ebe36dfa5b78c46d64d9904a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#a504ecd45ebe36dfa5b78c46d64d9904a">UVArray</a> = std::vector&lt; glm::vec2 &gt;</td></tr>
 <tr class="separator:a504ecd45ebe36dfa5b78c46d64d9904a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a12e1f9be788d99af6c089e1c600022"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8a12e1f9be788d99af6c089e1c600022"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>ColorArray</b> = std::vector&lt; glm::vec4 &gt;</td></tr>
+<tr class="memitem:a8a12e1f9be788d99af6c089e1c600022"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#a8a12e1f9be788d99af6c089e1c600022">ColorArray</a> = std::vector&lt; glm::vec4 &gt;</td></tr>
 <tr class="separator:a8a12e1f9be788d99af6c089e1c600022"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0550d86d49a01032921150d1c09c378f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0550d86d49a01032921150d1c09c378f"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>RenderingObject</b> (std::shared_ptr&lt; class <a class="el" href="class_shader_program.html">ShaderProgram</a> &gt; inputShader, std::unique_ptr&lt; PositionArray &gt; inputPositions, std::unique_ptr&lt; IndexArray &gt; inputIndices=nullptr, std::unique_ptr&lt; NormalArray &gt; inputNormals=nullptr, std::unique_ptr&lt; UVArray &gt; inputUV=nullptr, std::unique_ptr&lt; ColorArray &gt; inputColors=nullptr)</td></tr>
+<tr class="memitem:a0550d86d49a01032921150d1c09c378f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#a0550d86d49a01032921150d1c09c378f">RenderingObject</a> (std::shared_ptr&lt; class <a class="el" href="class_shader_program.html">ShaderProgram</a> &gt; inputShader, std::unique_ptr&lt; <a class="el" href="class_rendering_object.html#a1223b9cf03f2029b9c43d71042c2a18e">PositionArray</a> &gt; inputPositions, std::unique_ptr&lt; <a class="el" href="class_rendering_object.html#a9931c88bca3384065c6691dfe1e60af1">IndexArray</a> &gt; inputIndices=nullptr, std::unique_ptr&lt; <a class="el" href="class_rendering_object.html#a327c4d892de8d6138fb59afa6d078257">NormalArray</a> &gt; inputNormals=nullptr, std::unique_ptr&lt; <a class="el" href="class_rendering_object.html#a504ecd45ebe36dfa5b78c46d64d9904a">UVArray</a> &gt; inputUV=nullptr, std::unique_ptr&lt; <a class="el" href="class_rendering_object.html#a8a12e1f9be788d99af6c089e1c600022">ColorArray</a> &gt; inputColors=nullptr)</td></tr>
 <tr class="separator:a0550d86d49a01032921150d1c09c378f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22311d08bb7559f6b913afe314a5031e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a22311d08bb7559f6b913afe314a5031e"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>SetShader</b> (std::shared_ptr&lt; class <a class="el" href="class_shader_program.html">ShaderProgram</a> &gt; inputShader)</td></tr>
+<tr class="memitem:ae4e8e14104ee3a587d10c9f90ec82048"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#ae4e8e14104ee3a587d10c9f90ec82048">~RenderingObject</a> ()</td></tr>
+<tr class="separator:ae4e8e14104ee3a587d10c9f90ec82048"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22311d08bb7559f6b913afe314a5031e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#a22311d08bb7559f6b913afe314a5031e">SetShader</a> (std::shared_ptr&lt; class <a class="el" href="class_shader_program.html">ShaderProgram</a> &gt; inputShader)</td></tr>
 <tr class="separator:a22311d08bb7559f6b913afe314a5031e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac702ac667116929234273ecdb99cf7d6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac702ac667116929234273ecdb99cf7d6"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>RenderingObject</b> (const <a class="el" href="class_rendering_object.html">RenderingObject</a> &amp;)=delete</td></tr>
+<tr class="memitem:ac702ac667116929234273ecdb99cf7d6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#ac702ac667116929234273ecdb99cf7d6">RenderingObject</a> (const <a class="el" href="class_rendering_object.html">RenderingObject</a> &amp;)=delete</td></tr>
 <tr class="separator:ac702ac667116929234273ecdb99cf7d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab644292ac584d1a9813e5f30ad79c4f1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab644292ac584d1a9813e5f30ad79c4f1"></a>
-<a class="el" href="class_rendering_object.html">RenderingObject</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="class_rendering_object.html">RenderingObject</a> &amp;)=delete</td></tr>
+<tr class="memitem:ab644292ac584d1a9813e5f30ad79c4f1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_rendering_object.html">RenderingObject</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#ab644292ac584d1a9813e5f30ad79c4f1">operator=</a> (const <a class="el" href="class_rendering_object.html">RenderingObject</a> &amp;)=delete</td></tr>
 <tr class="separator:ab644292ac584d1a9813e5f30ad79c4f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa4510ba81fb7b17b940c92b27442d93"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afa4510ba81fb7b17b940c92b27442d93"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>BeginRender</b> () const </td></tr>
+<tr class="memitem:afa4510ba81fb7b17b940c92b27442d93"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#afa4510ba81fb7b17b940c92b27442d93">BeginRender</a> () const </td></tr>
 <tr class="separator:afa4510ba81fb7b17b940c92b27442d93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5fdb7a1b2d53b7ce024a4eeabd9c86d3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5fdb7a1b2d53b7ce024a4eeabd9c86d3"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Render</b> () const </td></tr>
+<tr class="memitem:a5fdb7a1b2d53b7ce024a4eeabd9c86d3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#a5fdb7a1b2d53b7ce024a4eeabd9c86d3">Render</a> () const </td></tr>
 <tr class="separator:a5fdb7a1b2d53b7ce024a4eeabd9c86d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a038472f934360acddd26f4e992b28b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2a038472f934360acddd26f4e992b28b"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>EndRender</b> () const </td></tr>
+<tr class="memitem:a2a038472f934360acddd26f4e992b28b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#a2a038472f934360acddd26f4e992b28b">EndRender</a> () const </td></tr>
 <tr class="separator:a2a038472f934360acddd26f4e992b28b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa627eb310f11d0e04dbbb3665f58bb4e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa627eb310f11d0e04dbbb3665f58bb4e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetDrawMode</b> (GLenum inputMode)</td></tr>
+<tr class="memitem:aa627eb310f11d0e04dbbb3665f58bb4e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#aa627eb310f11d0e04dbbb3665f58bb4e">SetDrawMode</a> (GLenum inputMode)</td></tr>
 <tr class="separator:aa627eb310f11d0e04dbbb3665f58bb4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80658debd2668b55a3c9fe86ec9f49fb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a80658debd2668b55a3c9fe86ec9f49fb"></a>
-GLint&#160;</td><td class="memItemRight" valign="bottom"><b>GetShaderProgram</b> () const </td></tr>
+<tr class="memitem:a80658debd2668b55a3c9fe86ec9f49fb"><td class="memItemLeft" align="right" valign="top">GLint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#a80658debd2668b55a3c9fe86ec9f49fb">GetShaderProgram</a> () const </td></tr>
 <tr class="separator:a80658debd2668b55a3c9fe86ec9f49fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9187166c98131aab185111e105528c2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac9187166c98131aab185111e105528c2"></a>
-const class <a class="el" href="class_shader_program.html">ShaderProgram</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>GetShaderProgramRaw</b> () const </td></tr>
+<tr class="memitem:ac9187166c98131aab185111e105528c2"><td class="memItemLeft" align="right" valign="top">const class <a class="el" href="class_shader_program.html">ShaderProgram</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#ac9187166c98131aab185111e105528c2">GetShaderProgramRaw</a> () const </td></tr>
 <tr class="separator:ac9187166c98131aab185111e105528c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3bb36683836c8c177984aa928cb1fb04"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3bb36683836c8c177984aa928cb1fb04"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>GetTotalVertices</b> () const </td></tr>
+<tr class="memitem:a3bb36683836c8c177984aa928cb1fb04"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#a3bb36683836c8c177984aa928cb1fb04">GetTotalVertices</a> () const </td></tr>
 <tr class="separator:a3bb36683836c8c177984aa928cb1fb04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada51886b7da1924a17d3a55e8fe90061"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ada51886b7da1924a17d3a55e8fe90061"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>SetVertexPositions</b> (std::unique_ptr&lt; PositionArray &gt; positions)</td></tr>
+<tr class="memitem:ada51886b7da1924a17d3a55e8fe90061"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#ada51886b7da1924a17d3a55e8fe90061">SetVertexPositions</a> (std::unique_ptr&lt; <a class="el" href="class_rendering_object.html#a1223b9cf03f2029b9c43d71042c2a18e">PositionArray</a> &gt; positions)</td></tr>
 <tr class="separator:ada51886b7da1924a17d3a55e8fe90061"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61ea597df0c456834eac8eb4087fb573"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a61ea597df0c456834eac8eb4087fb573"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>SetVertexIndices</b> (std::unique_ptr&lt; IndexArray &gt; indices)</td></tr>
+<tr class="memitem:a61ea597df0c456834eac8eb4087fb573"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#a61ea597df0c456834eac8eb4087fb573">SetVertexIndices</a> (std::unique_ptr&lt; <a class="el" href="class_rendering_object.html#a9931c88bca3384065c6691dfe1e60af1">IndexArray</a> &gt; indices)</td></tr>
 <tr class="separator:a61ea597df0c456834eac8eb4087fb573"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4cd085aed01fbc5e4fae7076e00919d3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4cd085aed01fbc5e4fae7076e00919d3"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>SetVertexNormals</b> (std::unique_ptr&lt; NormalArray &gt; normals)</td></tr>
+<tr class="memitem:a4cd085aed01fbc5e4fae7076e00919d3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#a4cd085aed01fbc5e4fae7076e00919d3">SetVertexNormals</a> (std::unique_ptr&lt; <a class="el" href="class_rendering_object.html#a327c4d892de8d6138fb59afa6d078257">NormalArray</a> &gt; normals)</td></tr>
 <tr class="separator:a4cd085aed01fbc5e4fae7076e00919d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a2b3c6ec2d13e8d3a4b6ac4c05ae11b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2a2b3c6ec2d13e8d3a4b6ac4c05ae11b"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>SetVertexUV</b> (std::unique_ptr&lt; UVArray &gt; uv)</td></tr>
+<tr class="memitem:a2a2b3c6ec2d13e8d3a4b6ac4c05ae11b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#a2a2b3c6ec2d13e8d3a4b6ac4c05ae11b">SetVertexUV</a> (std::unique_ptr&lt; <a class="el" href="class_rendering_object.html#a504ecd45ebe36dfa5b78c46d64d9904a">UVArray</a> &gt; uv)</td></tr>
 <tr class="separator:a2a2b3c6ec2d13e8d3a4b6ac4c05ae11b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1170c47ff02b2305a54c8aab3460201"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa1170c47ff02b2305a54c8aab3460201"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>SetVertexColors</b> (std::unique_ptr&lt; ColorArray &gt; colors)</td></tr>
+<tr class="memitem:aa1170c47ff02b2305a54c8aab3460201"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#aa1170c47ff02b2305a54c8aab3460201">SetVertexColors</a> (std::unique_ptr&lt; <a class="el" href="class_rendering_object.html#a8a12e1f9be788d99af6c089e1c600022">ColorArray</a> &gt; colors)</td></tr>
 <tr class="separator:aa1170c47ff02b2305a54c8aab3460201"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a77c78d1b42ea2ebfdbf994b6b91ce805"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a77c78d1b42ea2ebfdbf994b6b91ce805"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>InitializeOpenGL</b> ()</td></tr>
+<tr class="memitem:a77c78d1b42ea2ebfdbf994b6b91ce805"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#a77c78d1b42ea2ebfdbf994b6b91ce805">InitializeOpenGL</a> ()</td></tr>
 <tr class="separator:a77c78d1b42ea2ebfdbf994b6b91ce805"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a097727acf37f9671ddd5e3a9873771"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7a097727acf37f9671ddd5e3a9873771"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>UpdateVertexPositions</b> ()</td></tr>
+<tr class="memitem:a7a097727acf37f9671ddd5e3a9873771"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#a7a097727acf37f9671ddd5e3a9873771">UpdateVertexPositions</a> ()</td></tr>
 <tr class="separator:a7a097727acf37f9671ddd5e3a9873771"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb49054121b1b552bce58625db91b851"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afb49054121b1b552bce58625db91b851"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>UpdateVertexIndices</b> ()</td></tr>
+<tr class="memitem:afb49054121b1b552bce58625db91b851"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#afb49054121b1b552bce58625db91b851">UpdateVertexIndices</a> ()</td></tr>
 <tr class="separator:afb49054121b1b552bce58625db91b851"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4b537e1c9b1c5c50cb7b0db83e6f190"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae4b537e1c9b1c5c50cb7b0db83e6f190"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>UpdateVertexNormals</b> ()</td></tr>
+<tr class="memitem:ae4b537e1c9b1c5c50cb7b0db83e6f190"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#ae4b537e1c9b1c5c50cb7b0db83e6f190">UpdateVertexNormals</a> ()</td></tr>
 <tr class="separator:ae4b537e1c9b1c5c50cb7b0db83e6f190"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac00889f2afaa605b09164649ef68a1b6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac00889f2afaa605b09164649ef68a1b6"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>UpdateVertexUV</b> ()</td></tr>
+<tr class="memitem:ac00889f2afaa605b09164649ef68a1b6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#ac00889f2afaa605b09164649ef68a1b6">UpdateVertexUV</a> ()</td></tr>
 <tr class="separator:ac00889f2afaa605b09164649ef68a1b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca18dbb9252f27cef09df307dbcf02a9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aca18dbb9252f27cef09df307dbcf02a9"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>UpdateVertexColors</b> ()</td></tr>
+<tr class="memitem:aca18dbb9252f27cef09df307dbcf02a9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#aca18dbb9252f27cef09df307dbcf02a9">UpdateVertexColors</a> ()</td></tr>
 <tr class="separator:aca18dbb9252f27cef09df307dbcf02a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9c1a07398071cdd0cca3ad36095fc85"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af9c1a07398071cdd0cca3ad36095fc85"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>CleanupVertexPositions</b> ()</td></tr>
+<tr class="memitem:af9c1a07398071cdd0cca3ad36095fc85"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#af9c1a07398071cdd0cca3ad36095fc85">CleanupVertexPositions</a> ()</td></tr>
 <tr class="separator:af9c1a07398071cdd0cca3ad36095fc85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac60c8a7f3d5678fd4aa8198f6c980e6e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac60c8a7f3d5678fd4aa8198f6c980e6e"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>CleanupVertexIndices</b> ()</td></tr>
+<tr class="memitem:ac60c8a7f3d5678fd4aa8198f6c980e6e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#ac60c8a7f3d5678fd4aa8198f6c980e6e">CleanupVertexIndices</a> ()</td></tr>
 <tr class="separator:ac60c8a7f3d5678fd4aa8198f6c980e6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad89bc24893f8fe32794f0686c2bb0da1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad89bc24893f8fe32794f0686c2bb0da1"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>CleanupVertexNormals</b> ()</td></tr>
+<tr class="memitem:ad89bc24893f8fe32794f0686c2bb0da1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#ad89bc24893f8fe32794f0686c2bb0da1">CleanupVertexNormals</a> ()</td></tr>
 <tr class="separator:ad89bc24893f8fe32794f0686c2bb0da1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a776f54b41f9e9f0e55fc1104919c3e7c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a776f54b41f9e9f0e55fc1104919c3e7c"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>CleanupVertexUV</b> ()</td></tr>
+<tr class="memitem:a776f54b41f9e9f0e55fc1104919c3e7c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#a776f54b41f9e9f0e55fc1104919c3e7c">CleanupVertexUV</a> ()</td></tr>
 <tr class="separator:a776f54b41f9e9f0e55fc1104919c3e7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adce4a6d6406eb589b088bedd19127f32"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adce4a6d6406eb589b088bedd19127f32"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>CleanupVertexColors</b> ()</td></tr>
+<tr class="memitem:adce4a6d6406eb589b088bedd19127f32"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#adce4a6d6406eb589b088bedd19127f32">CleanupVertexColors</a> ()</td></tr>
 <tr class="separator:adce4a6d6406eb589b088bedd19127f32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:ae50e545ce2008ffa802478cd4316e82e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae50e545ce2008ffa802478cd4316e82e"></a>
-std::shared_ptr&lt; class <a class="el" href="class_shader_program.html">ShaderProgram</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>shader</b></td></tr>
+<tr class="memitem:ae50e545ce2008ffa802478cd4316e82e"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; class <a class="el" href="class_shader_program.html">ShaderProgram</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#ae50e545ce2008ffa802478cd4316e82e">shader</a></td></tr>
 <tr class="separator:ae50e545ce2008ffa802478cd4316e82e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a473f623b39157288bef992e76ddc45a9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a473f623b39157288bef992e76ddc45a9"></a>
-GLuint&#160;</td><td class="memItemRight" valign="bottom"><b>vertexPositionBuffer</b></td></tr>
+<tr class="memitem:a473f623b39157288bef992e76ddc45a9"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#a473f623b39157288bef992e76ddc45a9">vertexPositionBuffer</a></td></tr>
 <tr class="separator:a473f623b39157288bef992e76ddc45a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a14721712672d0421ed72a394e3131da0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a14721712672d0421ed72a394e3131da0"></a>
-std::unique_ptr&lt; PositionArray &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>vertexPositions</b></td></tr>
+<tr class="memitem:a14721712672d0421ed72a394e3131da0"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_rendering_object.html#a1223b9cf03f2029b9c43d71042c2a18e">PositionArray</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#a14721712672d0421ed72a394e3131da0">vertexPositions</a></td></tr>
 <tr class="separator:a14721712672d0421ed72a394e3131da0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6740a0a0e6bd4d841c9c211f2a31cca3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6740a0a0e6bd4d841c9c211f2a31cca3"></a>
-GLuint&#160;</td><td class="memItemRight" valign="bottom"><b>vertexIndexBuffer</b></td></tr>
+<tr class="memitem:a6740a0a0e6bd4d841c9c211f2a31cca3"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#a6740a0a0e6bd4d841c9c211f2a31cca3">vertexIndexBuffer</a></td></tr>
 <tr class="separator:a6740a0a0e6bd4d841c9c211f2a31cca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b84487d3c34c1ca36b2ac6060b0f802"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7b84487d3c34c1ca36b2ac6060b0f802"></a>
-std::unique_ptr&lt; IndexArray &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>vertexIndices</b></td></tr>
+<tr class="memitem:a7b84487d3c34c1ca36b2ac6060b0f802"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_rendering_object.html#a9931c88bca3384065c6691dfe1e60af1">IndexArray</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#a7b84487d3c34c1ca36b2ac6060b0f802">vertexIndices</a></td></tr>
 <tr class="separator:a7b84487d3c34c1ca36b2ac6060b0f802"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a91649e3a653f2266cd00c718f10849f9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a91649e3a653f2266cd00c718f10849f9"></a>
-GLuint&#160;</td><td class="memItemRight" valign="bottom"><b>vertexNormalBuffer</b></td></tr>
+<tr class="memitem:a91649e3a653f2266cd00c718f10849f9"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#a91649e3a653f2266cd00c718f10849f9">vertexNormalBuffer</a></td></tr>
 <tr class="separator:a91649e3a653f2266cd00c718f10849f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac28d301f97d29ab603f65f8e823063b4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac28d301f97d29ab603f65f8e823063b4"></a>
-std::unique_ptr&lt; NormalArray &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>vertexNormals</b></td></tr>
+<tr class="memitem:ac28d301f97d29ab603f65f8e823063b4"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_rendering_object.html#a327c4d892de8d6138fb59afa6d078257">NormalArray</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#ac28d301f97d29ab603f65f8e823063b4">vertexNormals</a></td></tr>
 <tr class="separator:ac28d301f97d29ab603f65f8e823063b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad583c70014e3f6ab0c9b62ea3c96ad25"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad583c70014e3f6ab0c9b62ea3c96ad25"></a>
-GLuint&#160;</td><td class="memItemRight" valign="bottom"><b>vertexUVBuffer</b></td></tr>
+<tr class="memitem:ad583c70014e3f6ab0c9b62ea3c96ad25"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#ad583c70014e3f6ab0c9b62ea3c96ad25">vertexUVBuffer</a></td></tr>
 <tr class="separator:ad583c70014e3f6ab0c9b62ea3c96ad25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc405316bddec4ba1d5c228ecc0d9061"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afc405316bddec4ba1d5c228ecc0d9061"></a>
-std::unique_ptr&lt; UVArray &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>vertexUV</b></td></tr>
+<tr class="memitem:afc405316bddec4ba1d5c228ecc0d9061"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_rendering_object.html#a504ecd45ebe36dfa5b78c46d64d9904a">UVArray</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#afc405316bddec4ba1d5c228ecc0d9061">vertexUV</a></td></tr>
 <tr class="separator:afc405316bddec4ba1d5c228ecc0d9061"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb014a4ef24e2fc4665a769241660cad"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeb014a4ef24e2fc4665a769241660cad"></a>
-GLuint&#160;</td><td class="memItemRight" valign="bottom"><b>vertexColorBuffer</b></td></tr>
+<tr class="memitem:aeb014a4ef24e2fc4665a769241660cad"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#aeb014a4ef24e2fc4665a769241660cad">vertexColorBuffer</a></td></tr>
 <tr class="separator:aeb014a4ef24e2fc4665a769241660cad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65fc52e665791ce55e43106b603e917a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a65fc52e665791ce55e43106b603e917a"></a>
-std::unique_ptr&lt; ColorArray &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>vertexColors</b></td></tr>
+<tr class="memitem:a65fc52e665791ce55e43106b603e917a"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="class_rendering_object.html#a8a12e1f9be788d99af6c089e1c600022">ColorArray</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#a65fc52e665791ce55e43106b603e917a">vertexColors</a></td></tr>
 <tr class="separator:a65fc52e665791ce55e43106b603e917a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a96dd05670a977a949514a2c490c1c867"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a96dd05670a977a949514a2c490c1c867"></a>
-GLuint&#160;</td><td class="memItemRight" valign="bottom"><b>vao</b></td></tr>
+<tr class="memitem:a96dd05670a977a949514a2c490c1c867"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#a96dd05670a977a949514a2c490c1c867">vao</a></td></tr>
 <tr class="separator:a96dd05670a977a949514a2c490c1c867"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa67856a72705b54a5667e91e270d00b3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa67856a72705b54a5667e91e270d00b3"></a>
-GLenum&#160;</td><td class="memItemRight" valign="bottom"><b>drawMode</b></td></tr>
+<tr class="memitem:aa67856a72705b54a5667e91e270d00b3"><td class="memItemLeft" align="right" valign="top">GLenum&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#aa67856a72705b54a5667e91e270d00b3">drawMode</a></td></tr>
 <tr class="separator:aa67856a72705b54a5667e91e270d00b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-attribs"></a>
 Static Protected Attributes</h2></td></tr>
-<tr class="memitem:af270a476ba12c23fefbb034e21930add"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af270a476ba12c23fefbb034e21930add"></a>
-static glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><b>DEFAULT_NORMAL</b></td></tr>
+<tr class="memitem:af270a476ba12c23fefbb034e21930add"><td class="memItemLeft" align="right" valign="top">static glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#af270a476ba12c23fefbb034e21930add">DEFAULT_NORMAL</a></td></tr>
 <tr class="separator:af270a476ba12c23fefbb034e21930add"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3dcb28a12f578630aea75cc59ea39588"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3dcb28a12f578630aea75cc59ea39588"></a>
-static glm::vec2&#160;</td><td class="memItemRight" valign="bottom"><b>DEFAULT_UV</b></td></tr>
+<tr class="memitem:a3dcb28a12f578630aea75cc59ea39588"><td class="memItemLeft" align="right" valign="top">static glm::vec2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#a3dcb28a12f578630aea75cc59ea39588">DEFAULT_UV</a></td></tr>
 <tr class="separator:a3dcb28a12f578630aea75cc59ea39588"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3bf21996dc0ef604b2b81d95275c97f9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3bf21996dc0ef604b2b81d95275c97f9"></a>
-static glm::vec4&#160;</td><td class="memItemRight" valign="bottom"><b>DEFAULT_COLOR</b></td></tr>
+<tr class="memitem:a3bf21996dc0ef604b2b81d95275c97f9"><td class="memItemLeft" align="right" valign="top">static glm::vec4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rendering_object.html#a3bf21996dc0ef604b2b81d95275c97f9">DEFAULT_COLOR</a></td></tr>
 <tr class="separator:a3bf21996dc0ef604b2b81d95275c97f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
 <p>Definition at line <a class="el" href="_rendering_object_8h_source.html#l00009">9</a> of file <a class="el" href="_rendering_object_8h_source.html">RenderingObject.h</a>.</p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a class="anchor" id="a8a12e1f9be788d99af6c089e1c600022"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="class_rendering_object.html#a8a12e1f9be788d99af6c089e1c600022">RenderingObject::ColorArray</a> =  std::vector&lt;glm::vec4&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8h_source.html#l00016">16</a> of file <a class="el" href="_rendering_object_8h_source.html">RenderingObject.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9931c88bca3384065c6691dfe1e60af1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="class_rendering_object.html#a9931c88bca3384065c6691dfe1e60af1">RenderingObject::IndexArray</a> =  std::vector&lt;unsigned int&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8h_source.html#l00013">13</a> of file <a class="el" href="_rendering_object_8h_source.html">RenderingObject.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a327c4d892de8d6138fb59afa6d078257"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="class_rendering_object.html#a327c4d892de8d6138fb59afa6d078257">RenderingObject::NormalArray</a> =  std::vector&lt;glm::vec3&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8h_source.html#l00014">14</a> of file <a class="el" href="_rendering_object_8h_source.html">RenderingObject.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1223b9cf03f2029b9c43d71042c2a18e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="class_rendering_object.html#a1223b9cf03f2029b9c43d71042c2a18e">RenderingObject::PositionArray</a> =  std::vector&lt;glm::vec4&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8h_source.html#l00012">12</a> of file <a class="el" href="_rendering_object_8h_source.html">RenderingObject.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a504ecd45ebe36dfa5b78c46d64d9904a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="class_rendering_object.html#a504ecd45ebe36dfa5b78c46d64d9904a">RenderingObject::UVArray</a> =  std::vector&lt;glm::vec2&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8h_source.html#l00015">15</a> of file <a class="el" href="_rendering_object_8h_source.html">RenderingObject.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a class="anchor" id="ab772f569ef63a1db07db29a744b519ee"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_rendering_object.html#ab772f569ef63a1db07db29a744b519ee">RenderingObject::VertexAttributePositions</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="ab772f569ef63a1db07db29a744b519eea52f5e0bc3859bc5f5e25130b6c7e8881"></a>Position&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="ab772f569ef63a1db07db29a744b519eea4ab971a51f0335cbf8d9c2c65d379e99"></a>Normals&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="ab772f569ef63a1db07db29a744b519eeadeaa2adbeb26802ae61609c3f3642d82"></a>UV&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="ab772f569ef63a1db07db29a744b519eea5d50889672f6f860d14f502de3de1957"></a>Colors&#160;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+<p>Definition at line <a class="el" href="_rendering_object_8h_source.html#l00018">18</a> of file <a class="el" href="_rendering_object_8h_source.html">RenderingObject.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a0550d86d49a01032921150d1c09c378f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RenderingObject::RenderingObject </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; class <a class="el" href="class_shader_program.html">ShaderProgram</a> &gt;&#160;</td>
+          <td class="paramname"><em>inputShader</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="class_rendering_object.html#a1223b9cf03f2029b9c43d71042c2a18e">PositionArray</a> &gt;&#160;</td>
+          <td class="paramname"><em>inputPositions</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="class_rendering_object.html#a9931c88bca3384065c6691dfe1e60af1">IndexArray</a> &gt;&#160;</td>
+          <td class="paramname"><em>inputIndices</em> = <code>nullptr</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="class_rendering_object.html#a327c4d892de8d6138fb59afa6d078257">NormalArray</a> &gt;&#160;</td>
+          <td class="paramname"><em>inputNormals</em> = <code>nullptr</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="class_rendering_object.html#a504ecd45ebe36dfa5b78c46d64d9904a">UVArray</a> &gt;&#160;</td>
+          <td class="paramname"><em>inputUV</em> = <code>nullptr</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="class_rendering_object.html#a8a12e1f9be788d99af6c089e1c600022">ColorArray</a> &gt;&#160;</td>
+          <td class="paramname"><em>inputColors</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae4e8e14104ee3a587d10c9f90ec82048"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">RenderingObject::~RenderingObject </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8cpp_source.html#l00026">26</a> of file <a class="el" href="_rendering_object_8cpp_source.html">RenderingObject.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac702ac667116929234273ecdb99cf7d6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">RenderingObject::RenderingObject </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_rendering_object.html">RenderingObject</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="afa4510ba81fb7b17b940c92b27442d93"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RenderingObject::BeginRender </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8cpp_source.html#l00054">54</a> of file <a class="el" href="_rendering_object_8cpp_source.html">RenderingObject.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adce4a6d6406eb589b088bedd19127f32"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RenderingObject::CleanupVertexColors </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8cpp_source.html#l00258">258</a> of file <a class="el" href="_rendering_object_8cpp_source.html">RenderingObject.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac60c8a7f3d5678fd4aa8198f6c980e6e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RenderingObject::CleanupVertexIndices </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8cpp_source.html#l00240">240</a> of file <a class="el" href="_rendering_object_8cpp_source.html">RenderingObject.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad89bc24893f8fe32794f0686c2bb0da1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RenderingObject::CleanupVertexNormals </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8cpp_source.html#l00246">246</a> of file <a class="el" href="_rendering_object_8cpp_source.html">RenderingObject.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af9c1a07398071cdd0cca3ad36095fc85"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RenderingObject::CleanupVertexPositions </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8cpp_source.html#l00234">234</a> of file <a class="el" href="_rendering_object_8cpp_source.html">RenderingObject.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a776f54b41f9e9f0e55fc1104919c3e7c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RenderingObject::CleanupVertexUV </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8cpp_source.html#l00252">252</a> of file <a class="el" href="_rendering_object_8cpp_source.html">RenderingObject.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2a038472f934360acddd26f4e992b28b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RenderingObject::EndRender </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8cpp_source.html#l00073">73</a> of file <a class="el" href="_rendering_object_8cpp_source.html">RenderingObject.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a80658debd2668b55a3c9fe86ec9f49fb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLint RenderingObject::GetShaderProgram </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8cpp_source.html#l00079">79</a> of file <a class="el" href="_rendering_object_8cpp_source.html">RenderingObject.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac9187166c98131aab185111e105528c2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_shader_program.html">ShaderProgram</a> * RenderingObject::GetShaderProgramRaw </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8cpp_source.html#l00084">84</a> of file <a class="el" href="_rendering_object_8cpp_source.html">RenderingObject.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3bb36683836c8c177984aa928cb1fb04"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t RenderingObject::GetTotalVertices </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8h_source.html#l00049">49</a> of file <a class="el" href="_rendering_object_8h_source.html">RenderingObject.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a77c78d1b42ea2ebfdbf994b6b91ce805"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RenderingObject::InitializeOpenGL </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8cpp_source.html#l00041">41</a> of file <a class="el" href="_rendering_object_8cpp_source.html">RenderingObject.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab644292ac584d1a9813e5f30ad79c4f1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_rendering_object.html">RenderingObject</a>&amp; RenderingObject::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_rendering_object.html">RenderingObject</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5fdb7a1b2d53b7ce024a4eeabd9c86d3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RenderingObject::Render </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8cpp_source.html#l00061">61</a> of file <a class="el" href="_rendering_object_8cpp_source.html">RenderingObject.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa627eb310f11d0e04dbbb3665f58bb4e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RenderingObject::SetDrawMode </td>
+          <td>(</td>
+          <td class="paramtype">GLenum&#160;</td>
+          <td class="paramname"><em>inputMode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8h_source.html#l00042">42</a> of file <a class="el" href="_rendering_object_8h_source.html">RenderingObject.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a22311d08bb7559f6b913afe314a5031e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RenderingObject::SetShader </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; class <a class="el" href="class_shader_program.html">ShaderProgram</a> &gt;&#160;</td>
+          <td class="paramname"><em>inputShader</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8cpp_source.html#l00036">36</a> of file <a class="el" href="_rendering_object_8cpp_source.html">RenderingObject.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa1170c47ff02b2305a54c8aab3460201"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RenderingObject::SetVertexColors </td>
+          <td>(</td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="class_rendering_object.html#a8a12e1f9be788d99af6c089e1c600022">ColorArray</a> &gt;&#160;</td>
+          <td class="paramname"><em>colors</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8cpp_source.html#l00113">113</a> of file <a class="el" href="_rendering_object_8cpp_source.html">RenderingObject.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a61ea597df0c456834eac8eb4087fb573"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RenderingObject::SetVertexIndices </td>
+          <td>(</td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="class_rendering_object.html#a9931c88bca3384065c6691dfe1e60af1">IndexArray</a> &gt;&#160;</td>
+          <td class="paramname"><em>indices</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8cpp_source.html#l00095">95</a> of file <a class="el" href="_rendering_object_8cpp_source.html">RenderingObject.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4cd085aed01fbc5e4fae7076e00919d3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RenderingObject::SetVertexNormals </td>
+          <td>(</td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="class_rendering_object.html#a327c4d892de8d6138fb59afa6d078257">NormalArray</a> &gt;&#160;</td>
+          <td class="paramname"><em>normals</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8cpp_source.html#l00101">101</a> of file <a class="el" href="_rendering_object_8cpp_source.html">RenderingObject.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ada51886b7da1924a17d3a55e8fe90061"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RenderingObject::SetVertexPositions </td>
+          <td>(</td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="class_rendering_object.html#a1223b9cf03f2029b9c43d71042c2a18e">PositionArray</a> &gt;&#160;</td>
+          <td class="paramname"><em>positions</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8cpp_source.html#l00089">89</a> of file <a class="el" href="_rendering_object_8cpp_source.html">RenderingObject.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2a2b3c6ec2d13e8d3a4b6ac4c05ae11b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RenderingObject::SetVertexUV </td>
+          <td>(</td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="class_rendering_object.html#a504ecd45ebe36dfa5b78c46d64d9904a">UVArray</a> &gt;&#160;</td>
+          <td class="paramname"><em>uv</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8cpp_source.html#l00107">107</a> of file <a class="el" href="_rendering_object_8cpp_source.html">RenderingObject.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aca18dbb9252f27cef09df307dbcf02a9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RenderingObject::UpdateVertexColors </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8cpp_source.html#l00207">207</a> of file <a class="el" href="_rendering_object_8cpp_source.html">RenderingObject.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afb49054121b1b552bce58625db91b851"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RenderingObject::UpdateVertexIndices </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8cpp_source.html#l00136">136</a> of file <a class="el" href="_rendering_object_8cpp_source.html">RenderingObject.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae4b537e1c9b1c5c50cb7b0db83e6f190"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RenderingObject::UpdateVertexNormals </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8cpp_source.html#l00153">153</a> of file <a class="el" href="_rendering_object_8cpp_source.html">RenderingObject.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7a097727acf37f9671ddd5e3a9873771"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RenderingObject::UpdateVertexPositions </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8cpp_source.html#l00119">119</a> of file <a class="el" href="_rendering_object_8cpp_source.html">RenderingObject.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac00889f2afaa605b09164649ef68a1b6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RenderingObject::UpdateVertexUV </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8cpp_source.html#l00180">180</a> of file <a class="el" href="_rendering_object_8cpp_source.html">RenderingObject.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a3bf21996dc0ef604b2b81d95275c97f9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::vec4 RenderingObject::DEFAULT_COLOR</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8h_source.html#l00079">79</a> of file <a class="el" href="_rendering_object_8h_source.html">RenderingObject.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af270a476ba12c23fefbb034e21930add"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::vec3 RenderingObject::DEFAULT_NORMAL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8h_source.html#l00071">71</a> of file <a class="el" href="_rendering_object_8h_source.html">RenderingObject.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3dcb28a12f578630aea75cc59ea39588"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::vec2 RenderingObject::DEFAULT_UV</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8h_source.html#l00075">75</a> of file <a class="el" href="_rendering_object_8h_source.html">RenderingObject.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa67856a72705b54a5667e91e270d00b3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLenum RenderingObject::drawMode</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8h_source.html#l00096">96</a> of file <a class="el" href="_rendering_object_8h_source.html">RenderingObject.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae50e545ce2008ffa802478cd4316e82e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;class <a class="el" href="class_shader_program.html">ShaderProgram</a>&gt; RenderingObject::shader</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8h_source.html#l00061">61</a> of file <a class="el" href="_rendering_object_8h_source.html">RenderingObject.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a96dd05670a977a949514a2c490c1c867"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLuint RenderingObject::vao</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8h_source.html#l00095">95</a> of file <a class="el" href="_rendering_object_8h_source.html">RenderingObject.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aeb014a4ef24e2fc4665a769241660cad"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLuint RenderingObject::vertexColorBuffer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8h_source.html#l00077">77</a> of file <a class="el" href="_rendering_object_8h_source.html">RenderingObject.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a65fc52e665791ce55e43106b603e917a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_rendering_object.html#a8a12e1f9be788d99af6c089e1c600022">ColorArray</a>&gt; RenderingObject::vertexColors</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8h_source.html#l00078">78</a> of file <a class="el" href="_rendering_object_8h_source.html">RenderingObject.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6740a0a0e6bd4d841c9c211f2a31cca3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLuint RenderingObject::vertexIndexBuffer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8h_source.html#l00066">66</a> of file <a class="el" href="_rendering_object_8h_source.html">RenderingObject.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7b84487d3c34c1ca36b2ac6060b0f802"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_rendering_object.html#a9931c88bca3384065c6691dfe1e60af1">IndexArray</a>&gt; RenderingObject::vertexIndices</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8h_source.html#l00067">67</a> of file <a class="el" href="_rendering_object_8h_source.html">RenderingObject.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a91649e3a653f2266cd00c718f10849f9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLuint RenderingObject::vertexNormalBuffer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8h_source.html#l00069">69</a> of file <a class="el" href="_rendering_object_8h_source.html">RenderingObject.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac28d301f97d29ab603f65f8e823063b4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_rendering_object.html#a327c4d892de8d6138fb59afa6d078257">NormalArray</a>&gt; RenderingObject::vertexNormals</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8h_source.html#l00070">70</a> of file <a class="el" href="_rendering_object_8h_source.html">RenderingObject.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a473f623b39157288bef992e76ddc45a9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLuint RenderingObject::vertexPositionBuffer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8h_source.html#l00063">63</a> of file <a class="el" href="_rendering_object_8h_source.html">RenderingObject.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a14721712672d0421ed72a394e3131da0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_rendering_object.html#a1223b9cf03f2029b9c43d71042c2a18e">PositionArray</a>&gt; RenderingObject::vertexPositions</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8h_source.html#l00064">64</a> of file <a class="el" href="_rendering_object_8h_source.html">RenderingObject.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afc405316bddec4ba1d5c228ecc0d9061"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="class_rendering_object.html#a504ecd45ebe36dfa5b78c46d64d9904a">UVArray</a>&gt; RenderingObject::vertexUV</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8h_source.html#l00074">74</a> of file <a class="el" href="_rendering_object_8h_source.html">RenderingObject.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad583c70014e3f6ab0c9b62ea3c96ad25"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLuint RenderingObject::vertexUVBuffer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_rendering_object_8h_source.html#l00073">73</a> of file <a class="el" href="_rendering_object_8h_source.html">RenderingObject.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>/Users/michaelbao/workspace/cs148opengl4/source/common/Rendering/<a class="el" href="_rendering_object_8h_source.html">RenderingObject.h</a></li>
 <li>/Users/michaelbao/workspace/cs148opengl4/source/common/Rendering/<a class="el" href="_rendering_object_8cpp_source.html">RenderingObject.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 19 2015 01:03:43 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 19 2015 01:31:34 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

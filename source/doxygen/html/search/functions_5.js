@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['initialize',['Initialize',['../class_application.html#a17cf1ea4552d26a1c20f7d98d793d41d',1,'Application']]],
-  ['isfinished',['IsFinished',['../class_application.html#ae0019f2c58008791971e67f23f2d4182',1,'Application']]]
+  ['forwardrenderer',['ForwardRenderer',['../class_forward_renderer.html#af8ed84e45085c4dc60d565fcc3c198d1',1,'ForwardRenderer']]]
 ];

@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -86,11 +87,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_assignment3-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Assignment3 Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_assignment3_8h_source.html">Assignment3.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Assignment3:</div>
 <div class="dyncontent">
@@ -103,8 +108,7 @@ Inheritance diagram for Assignment3:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:adb8e9ac0681c600affc3370f5e5422b2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adb8e9ac0681c600affc3370f5e5422b2"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Assignment3</b> (std::shared_ptr&lt; class <a class="el" href="class_scene.html">Scene</a> &gt; inputScene, std::shared_ptr&lt; class <a class="el" href="class_camera.html">Camera</a> &gt; inputCamera)</td></tr>
+<tr class="memitem:adb8e9ac0681c600affc3370f5e5422b2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assignment3.html#adb8e9ac0681c600affc3370f5e5422b2">Assignment3</a> (std::shared_ptr&lt; class <a class="el" href="class_scene.html">Scene</a> &gt; inputScene, std::shared_ptr&lt; class <a class="el" href="class_camera.html">Camera</a> &gt; inputCamera)</td></tr>
 <tr class="separator:adb8e9ac0681c600affc3370f5e5422b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a895e38d50717c935706a719f4368f5e8"><td class="memItemLeft" align="right" valign="top">virtual glm::vec2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assignment3.html#a895e38d50717c935706a719f4368f5e8">GetWindowSize</a> () const </td></tr>
 <tr class="memdesc:a895e38d50717c935706a719f4368f5e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies the initial window size.  <a href="#a895e38d50717c935706a719f4368f5e8">More...</a><br /></td></tr>
@@ -119,9 +123,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a78cdcb03e6f06272f7c528fe407951c5 inherit pub_methods_class_application"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application.html#a78cdcb03e6f06272f7c528fe407951c5">Application</a> (std::shared_ptr&lt; class <a class="el" href="class_scene.html">Scene</a> &gt; inputScene, std::shared_ptr&lt; class <a class="el" href="class_camera.html">Camera</a> &gt; inputCamera)</td></tr>
 <tr class="memdesc:a78cdcb03e6f06272f7c528fe407951c5 inherit pub_methods_class_application"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an application with a pre-allocated scene and camera.  <a href="#a78cdcb03e6f06272f7c528fe407951c5">More...</a><br /></td></tr>
 <tr class="separator:a78cdcb03e6f06272f7c528fe407951c5 inherit pub_methods_class_application"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a748bca84fefb9c12661cfaa2f623748d inherit pub_methods_class_application"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a748bca84fefb9c12661cfaa2f623748d"></a>
-virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application.html#a748bca84fefb9c12661cfaa2f623748d">~Application</a> ()</td></tr>
-<tr class="memdesc:a748bca84fefb9c12661cfaa2f623748d inherit pub_methods_class_application"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual deconstrcutor to allow inheritance. <br /></td></tr>
+<tr class="memitem:a748bca84fefb9c12661cfaa2f623748d inherit pub_methods_class_application"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application.html#a748bca84fefb9c12661cfaa2f623748d">~Application</a> ()</td></tr>
+<tr class="memdesc:a748bca84fefb9c12661cfaa2f623748d inherit pub_methods_class_application"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual deconstrcutor to allow inheritance.  <a href="#a748bca84fefb9c12661cfaa2f623748d">More...</a><br /></td></tr>
 <tr class="separator:a748bca84fefb9c12661cfaa2f623748d inherit pub_methods_class_application"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17cf1ea4552d26a1c20f7d98d793d41d inherit pub_methods_class_application"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application.html#a17cf1ea4552d26a1c20f7d98d793d41d">Initialize</a> ()</td></tr>
 <tr class="memdesc:a17cf1ea4552d26a1c20f7d98d793d41d inherit pub_methods_class_application"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialization function to setup the stored camera and scene.  <a href="#a17cf1ea4552d26a1c20f7d98d793d41d">More...</a><br /></td></tr>
@@ -141,11 +144,9 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a12b30bd7b8a0bcefbd977f126ce00b25"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a12b30bd7b8a0bcefbd977f126ce00b25"></a>
-static std::unique_ptr&lt; <a class="el" href="class_application.html">Application</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>CreateApplication</b> (std::shared_ptr&lt; class <a class="el" href="class_scene.html">Scene</a> &gt; <a class="el" href="class_application.html#a88c6615107a5094bb93fa5f153f79554">scene</a>, std::shared_ptr&lt; class <a class="el" href="class_camera.html">Camera</a> &gt; <a class="el" href="class_application.html#a0e8589fcb13c520ba472473abe5a518d">camera</a>)</td></tr>
+<tr class="memitem:a12b30bd7b8a0bcefbd977f126ce00b25"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; <a class="el" href="class_application.html">Application</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assignment3.html#a12b30bd7b8a0bcefbd977f126ce00b25">CreateApplication</a> (std::shared_ptr&lt; class <a class="el" href="class_scene.html">Scene</a> &gt; <a class="el" href="class_application.html#a88c6615107a5094bb93fa5f153f79554">scene</a>, std::shared_ptr&lt; class <a class="el" href="class_camera.html">Camera</a> &gt; <a class="el" href="class_application.html#a0e8589fcb13c520ba472473abe5a518d">camera</a>)</td></tr>
 <tr class="separator:a12b30bd7b8a0bcefbd977f126ce00b25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47d1b58079eee3e135e08768cd2a2461"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a47d1b58079eee3e135e08768cd2a2461"></a>
-static std::shared_ptr&lt; class <a class="el" href="class_camera.html">Camera</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>CreateCamera</b> ()</td></tr>
+<tr class="memitem:a47d1b58079eee3e135e08768cd2a2461"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; class <a class="el" href="class_camera.html">Camera</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assignment3.html#a47d1b58079eee3e135e08768cd2a2461">CreateCamera</a> ()</td></tr>
 <tr class="separator:a47d1b58079eee3e135e08768cd2a2461"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_methods_class_application"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_class_application')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="class_application.html">Application</a></td></tr>
 <tr class="memitem:a727f63f898a68bddf6d88309195ef194 inherit pub_static_methods_class_application"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; <a class="el" href="class_application.html">Application</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application.html#a727f63f898a68bddf6d88309195ef194">CreateApplication</a> (std::shared_ptr&lt; class <a class="el" href="class_scene.html">Scene</a> &gt; <a class="el" href="class_application.html#a88c6615107a5094bb93fa5f153f79554">scene</a>, std::shared_ptr&lt; class <a class="el" href="class_camera.html">Camera</a> &gt; <a class="el" href="class_application.html#a0e8589fcb13c520ba472473abe5a518d">camera</a>)</td></tr>
@@ -164,6 +165,32 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:a851c637c83c8092d8adfb5c9f761daeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by <a class="el" href="class_application.html#a74d92db64e051efa56d0357989dcb755" title="Processes an SDL window event. Details about an SDL window event can be found here ...">HandleWindowEvent()</a> when the window is resized.  <a href="#a851c637c83c8092d8adfb5c9f761daeb">More...</a><br /></td></tr>
 <tr class="separator:a851c637c83c8092d8adfb5c9f761daeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a2dc29d9016a9d822ede84b9ef41429a5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assignment3.html#a2dc29d9016a9d822ede84b9ef41429a5">SetupScene</a> ()</td></tr>
+<tr class="memdesc:a2dc29d9016a9d822ede84b9ef41429a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by <a class="el" href="class_application.html#a17cf1ea4552d26a1c20f7d98d793d41d" title="Initialization function to setup the stored camera and scene. ">Initialize()</a> to populate the scene.  <a href="#a2dc29d9016a9d822ede84b9ef41429a5">More...</a><br /></td></tr>
+<tr class="separator:a2dc29d9016a9d822ede84b9ef41429a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a468c30083d6f75d99cd1fe41205983dc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assignment3.html#a468c30083d6f75d99cd1fe41205983dc">SetupExample1</a> ()</td></tr>
+<tr class="separator:a468c30083d6f75d99cd1fe41205983dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d23eb19973b78e516169f4a03954526"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assignment3.html#a1d23eb19973b78e516169f4a03954526">SetupCamera</a> ()</td></tr>
+<tr class="memdesc:a1d23eb19973b78e516169f4a03954526"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by <a class="el" href="class_application.html#a17cf1ea4552d26a1c20f7d98d793d41d" title="Initialization function to setup the stored camera and scene. ">Initialize()</a> to setup the camera.  <a href="#a1d23eb19973b78e516169f4a03954526">More...</a><br /></td></tr>
+<tr class="separator:a1d23eb19973b78e516169f4a03954526"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a0bc175d3efff30c5f4aa3ffa1272338a"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; class <a class="el" href="class_scene_object.html">SceneObject</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assignment3.html#a0bc175d3efff30c5f4aa3ffa1272338a">sceneObject</a></td></tr>
+<tr class="separator:a0bc175d3efff30c5f4aa3ffa1272338a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1cf5a76d62b5a1ed17e66c31e0feb98"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; class <a class="el" href="class_light.html">Light</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assignment3.html#ad1cf5a76d62b5a1ed17e66c31e0feb98">pointLight</a></td></tr>
+<tr class="separator:ad1cf5a76d62b5a1ed17e66c31e0feb98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6ea1201b058dbac9fd0e7b67015cf61"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; class <a class="el" href="class_light.html">Light</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assignment3.html#ad6ea1201b058dbac9fd0e7b67015cf61">pointLight2</a></td></tr>
+<tr class="separator:ad6ea1201b058dbac9fd0e7b67015cf61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59be58dbfebe4aa36097131bf654a7ae"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; class <a class="el" href="class_light.html">Light</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assignment3.html#a59be58dbfebe4aa36097131bf654a7ae">pointLight3</a></td></tr>
+<tr class="separator:a59be58dbfebe4aa36097131bf654a7ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af720bbd23f1f59d15908eb602a41725b"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; class <a class="el" href="class_light.html">Light</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assignment3.html#af720bbd23f1f59d15908eb602a41725b">pointLight4</a></td></tr>
+<tr class="separator:af720bbd23f1f59d15908eb602a41725b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac404a56071e2ab5e14289900b9034438"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_assignment3.html#ac404a56071e2ab5e14289900b9034438">elapsedTime</a></td></tr>
+<tr class="separator:ac404a56071e2ab5e14289900b9034438"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_class_application"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_application')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_application.html">Application</a></td></tr>
@@ -180,7 +207,97 @@ Additional Inherited Members</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
 <p>Definition at line <a class="el" href="_assignment3_8h_source.html#l00008">8</a> of file <a class="el" href="_assignment3_8h_source.html">Assignment3.h</a>.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="adb8e9ac0681c600affc3370f5e5422b2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Assignment3::Assignment3 </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; class <a class="el" href="class_scene.html">Scene</a> &gt;&#160;</td>
+          <td class="paramname"><em>inputScene</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; class <a class="el" href="class_camera.html">Camera</a> &gt;&#160;</td>
+          <td class="paramname"><em>inputCamera</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_assignment3_8cpp_source.html#l00008">8</a> of file <a class="el" href="_assignment3_8cpp_source.html">Assignment3.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a12b30bd7b8a0bcefbd977f126ce00b25"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="class_application.html">Application</a> &gt; Assignment3::CreateApplication </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; class <a class="el" href="class_scene.html">Scene</a> &gt;&#160;</td>
+          <td class="paramname"><em>scene</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; class <a class="el" href="class_camera.html">Camera</a> &gt;&#160;</td>
+          <td class="paramname"><em>camera</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_assignment3_8cpp_source.html#l00013">13</a> of file <a class="el" href="_assignment3_8cpp_source.html">Assignment3.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a47d1b58079eee3e135e08768cd2a2461"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; class <a class="el" href="class_camera.html">Camera</a> &gt; Assignment3::CreateCamera </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_assignment3_8cpp_source.html#l00018">18</a> of file <a class="el" href="_assignment3_8cpp_source.html">Assignment3.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a895e38d50717c935706a719f4368f5e8"></a>
 <div class="memitem">
 <div class="memproto">
@@ -328,6 +445,91 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a1d23eb19973b78e516169f4a03954526"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Assignment3::SetupCamera </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Called by <a class="el" href="class_application.html#a17cf1ea4552d26a1c20f7d98d793d41d" title="Initialization function to setup the stored camera and scene. ">Initialize()</a> to setup the camera. </p>
+<p>Note by the time this function is called, the <a class="el" href="class_application.html" title="Handles creating configurable objects (i.e. scene, camera, renderer), handling SDL events passed in b...">Application</a> sub-class is fully constructed and <a class="el" href="class_camera.html">Camera</a> object is already created. </p>
+
+<p>Reimplemented from <a class="el" href="class_application.html#a2eb61ca027f223a5c5ad1bf982481193">Application</a>.</p>
+
+<p>Definition at line <a class="el" href="_assignment3_8cpp_source.html#l00036">36</a> of file <a class="el" href="_assignment3_8cpp_source.html">Assignment3.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a468c30083d6f75d99cd1fe41205983dc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Assignment3::SetupExample1 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_assignment3_8cpp_source.html#l00102">102</a> of file <a class="el" href="_assignment3_8cpp_source.html">Assignment3.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2dc29d9016a9d822ede84b9ef41429a5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Assignment3::SetupScene </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Called by <a class="el" href="class_application.html#a17cf1ea4552d26a1c20f7d98d793d41d" title="Initialization function to setup the stored camera and scene. ">Initialize()</a> to populate the scene. </p>
+<p>Note by the time this function is called, the <a class="el" href="class_application.html" title="Handles creating configurable objects (i.e. scene, camera, renderer), handling SDL events passed in b...">Application</a> sub-class is fully constructed and <a class="el" href="class_scene.html">Scene</a> object is already created. </p>
+
+<p>Reimplemented from <a class="el" href="class_application.html#aa8e8017ef8dd86293c96d0645e66d440">Application</a>.</p>
+
+<p>Definition at line <a class="el" href="_assignment3_8cpp_source.html#l00031">31</a> of file <a class="el" href="_assignment3_8cpp_source.html">Assignment3.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a11256b6e7b38ab24baa92729cfb8ffe2"></a>
 <div class="memitem">
 <div class="memproto">
@@ -365,6 +567,139 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="ac404a56071e2ab5e14289900b9034438"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Assignment3::elapsedTime</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_assignment3_8h_source.html#l00035">35</a> of file <a class="el" href="_assignment3_8h_source.html">Assignment3.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad1cf5a76d62b5a1ed17e66c31e0feb98"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;class <a class="el" href="class_light.html">Light</a>&gt; Assignment3::pointLight</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_assignment3_8h_source.html#l00031">31</a> of file <a class="el" href="_assignment3_8h_source.html">Assignment3.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad6ea1201b058dbac9fd0e7b67015cf61"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;class <a class="el" href="class_light.html">Light</a>&gt; Assignment3::pointLight2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_assignment3_8h_source.html#l00032">32</a> of file <a class="el" href="_assignment3_8h_source.html">Assignment3.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a59be58dbfebe4aa36097131bf654a7ae"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;class <a class="el" href="class_light.html">Light</a>&gt; Assignment3::pointLight3</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_assignment3_8h_source.html#l00033">33</a> of file <a class="el" href="_assignment3_8h_source.html">Assignment3.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af720bbd23f1f59d15908eb602a41725b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;class <a class="el" href="class_light.html">Light</a>&gt; Assignment3::pointLight4</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_assignment3_8h_source.html#l00034">34</a> of file <a class="el" href="_assignment3_8h_source.html">Assignment3.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0bc175d3efff30c5f4aa3ffa1272338a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;class <a class="el" href="class_scene_object.html">SceneObject</a>&gt; Assignment3::sceneObject</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_assignment3_8h_source.html#l00029">29</a> of file <a class="el" href="_assignment3_8h_source.html">Assignment3.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/Users/michaelbao/workspace/cs148opengl4/source/assignment3/<a class="el" href="_assignment3_8h_source.html">Assignment3.h</a></li>
 <li>/Users/michaelbao/workspace/cs148opengl4/source/assignment3/<a class="el" href="_assignment3_8cpp_source.html">Assignment3.cpp</a></li>
@@ -372,7 +707,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 19 2015 01:03:42 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 19 2015 01:31:33 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

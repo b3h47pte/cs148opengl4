@@ -1,5 +1,9 @@
 \hypertarget{class_camera}{}\section{Camera Class Reference}
 \label{class_camera}\index{Camera@{Camera}}
+
+
+{\ttfamily \#include $<$Camera.\+h$>$}
+
 Inheritance diagram for Camera\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,14 +13,14 @@ Inheritance diagram for Camera\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_camera_a497efa3119ab4ae679d29badf6f25682}{}virtual glm\+::mat4 {\bfseries Get\+Projection\+Matrix} () const \label{class_camera_a497efa3119ab4ae679d29badf6f25682}
-
+\hyperlink{class_camera_a01f94c3543f56ede7af49dc778f19331}{Camera} ()
+\item 
+virtual glm\+::mat4 \hyperlink{class_camera_a497efa3119ab4ae679d29badf6f25682}{Get\+Projection\+Matrix} () const 
 \end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_camera_aea640c892a3807671d8ca49616d96eda}{}virtual void {\bfseries Update\+Transformation\+Matrix} ()\label{class_camera_aea640c892a3807671d8ca49616d96eda}
-
+virtual void \hyperlink{class_camera_aea640c892a3807671d8ca49616d96eda}{Update\+Transformation\+Matrix} ()
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
@@ -28,7 +32,58 @@ Definition at line 8 of file Camera.\+h.
 
 
 
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_camera_a01f94c3543f56ede7af49dc778f19331}{}\index{Camera@{Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!Camera@{Camera}}
+\subsubsection[{Camera}]{\setlength{\rightskip}{0pt plus 5cm}Camera\+::\+Camera (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_camera_a01f94c3543f56ede7af49dc778f19331}
+
+
+Definition at line 3 of file Camera.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_camera_a497efa3119ab4ae679d29badf6f25682}{}\index{Camera@{Camera}!Get\+Projection\+Matrix@{Get\+Projection\+Matrix}}
+\index{Get\+Projection\+Matrix@{Get\+Projection\+Matrix}!Camera@{Camera}}
+\subsubsection[{Get\+Projection\+Matrix}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::mat4 Camera\+::\+Get\+Projection\+Matrix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_camera_a497efa3119ab4ae679d29badf6f25682}
+
+
+Reimplemented in \hyperlink{class_perspective_camera_a24a338c552cede73ae7d69527ec85817}{Perspective\+Camera}.
+
+
+
+Definition at line 7 of file Camera.\+cpp.
+
+\hypertarget{class_camera_aea640c892a3807671d8ca49616d96eda}{}\index{Camera@{Camera}!Update\+Transformation\+Matrix@{Update\+Transformation\+Matrix}}
+\index{Update\+Transformation\+Matrix@{Update\+Transformation\+Matrix}!Camera@{Camera}}
+\subsubsection[{Update\+Transformation\+Matrix}]{\setlength{\rightskip}{0pt plus 5cm}void Camera\+::\+Update\+Transformation\+Matrix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_camera_aea640c892a3807671d8ca49616d96eda}
+
+
+Reimplemented from \hyperlink{class_scene_object_a20e31da3f9d2765de50cdb2d637ae6c9}{Scene\+Object}.
+
+
+
+Reimplemented in \hyperlink{class_perspective_camera_a2f17fb07425e2146d5692805753fa368}{Perspective\+Camera}.
+
+
+
+Definition at line 12 of file Camera.\+cpp.
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/michaelbao/workspace/cs148opengl4/source/common/\+Scene/\+Camera/Camera.\+h\item 
-/\+Users/michaelbao/workspace/cs148opengl4/source/common/\+Scene/\+Camera/Camera.\+cpp\end{DoxyCompactItemize}
+/\+Users/michaelbao/workspace/cs148opengl4/source/common/\+Scene/\+Camera/\hyperlink{_camera_8h}{Camera.\+h}\item 
+/\+Users/michaelbao/workspace/cs148opengl4/source/common/\+Scene/\+Camera/\hyperlink{_camera_8cpp}{Camera.\+cpp}\end{DoxyCompactItemize}

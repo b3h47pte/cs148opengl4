@@ -1,5 +1,9 @@
 \hypertarget{class_texture}{}\section{Texture Class Reference}
 \label{class_texture}\index{Texture@{Texture}}
+
+
+{\ttfamily \#include $<$Texture.\+h$>$}
+
 Inheritance diagram for Texture\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,14 +13,22 @@ Inheritance diagram for Texture\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_texture_ad2772674616f4956ba602d0853ca5585}{}{\bfseries Texture} (G\+Lubyte $\ast$raw\+Data, int width, int height)\label{class_texture_ad2772674616f4956ba602d0853ca5585}
-
+\hyperlink{class_texture_ad2772674616f4956ba602d0853ca5585}{Texture} (G\+Lubyte $\ast$raw\+Data, int width, int height)
 \item 
-\hypertarget{class_texture_a2da54ce7444fbc74beccb8d17283be7e}{}virtual void {\bfseries Begin\+Render} (int unit) const \label{class_texture_a2da54ce7444fbc74beccb8d17283be7e}
-
+virtual \hyperlink{class_texture_a09c4bcb7462f64c1d20fa69dba3cee8a}{$\sim$\+Texture} ()
 \item 
-\hypertarget{class_texture_a8e6ec1266ead2dcd262b025f90e99838}{}virtual void {\bfseries End\+Render} () const \label{class_texture_a8e6ec1266ead2dcd262b025f90e99838}
-
+virtual void \hyperlink{class_texture_a2da54ce7444fbc74beccb8d17283be7e}{Begin\+Render} (int unit) const 
+\item 
+virtual void \hyperlink{class_texture_a8e6ec1266ead2dcd262b025f90e99838}{End\+Render} () const 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_texture_a3ce375542bd2d62f6e1793558c934373}{tex\+Width}
+\item 
+int \hyperlink{class_texture_ac9ce8215cc356702b12a05a05ae3029a}{tex\+Height}
+\item 
+G\+Luint \hyperlink{class_texture_adbf320788255a426a0a60e35cd969bcd}{gl\+Texture}
 \end{DoxyCompactItemize}
 
 
@@ -27,7 +39,83 @@ Definition at line 8 of file Texture.\+h.
 
 
 
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_texture_ad2772674616f4956ba602d0853ca5585}{}\index{Texture@{Texture}!Texture@{Texture}}
+\index{Texture@{Texture}!Texture@{Texture}}
+\subsubsection[{Texture}]{\setlength{\rightskip}{0pt plus 5cm}Texture\+::\+Texture (
+\begin{DoxyParamCaption}
+\item[{G\+Lubyte $\ast$}]{raw\+Data, }
+\item[{int}]{width, }
+\item[{int}]{height}
+\end{DoxyParamCaption}
+)}\label{class_texture_ad2772674616f4956ba602d0853ca5585}
+
+
+Definition at line 3 of file Texture.\+cpp.
+
+\hypertarget{class_texture_a09c4bcb7462f64c1d20fa69dba3cee8a}{}\index{Texture@{Texture}!````~Texture@{$\sim$\+Texture}}
+\index{````~Texture@{$\sim$\+Texture}!Texture@{Texture}}
+\subsubsection[{$\sim$\+Texture}]{\setlength{\rightskip}{0pt plus 5cm}Texture\+::$\sim$\+Texture (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_texture_a09c4bcb7462f64c1d20fa69dba3cee8a}
+
+
+Definition at line 21 of file Texture.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_texture_a2da54ce7444fbc74beccb8d17283be7e}{}\index{Texture@{Texture}!Begin\+Render@{Begin\+Render}}
+\index{Begin\+Render@{Begin\+Render}!Texture@{Texture}}
+\subsubsection[{Begin\+Render}]{\setlength{\rightskip}{0pt plus 5cm}void Texture\+::\+Begin\+Render (
+\begin{DoxyParamCaption}
+\item[{int}]{unit}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_texture_a2da54ce7444fbc74beccb8d17283be7e}
+
+
+Definition at line 26 of file Texture.\+cpp.
+
+\hypertarget{class_texture_a8e6ec1266ead2dcd262b025f90e99838}{}\index{Texture@{Texture}!End\+Render@{End\+Render}}
+\index{End\+Render@{End\+Render}!Texture@{Texture}}
+\subsubsection[{End\+Render}]{\setlength{\rightskip}{0pt plus 5cm}void Texture\+::\+End\+Render (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_texture_a8e6ec1266ead2dcd262b025f90e99838}
+
+
+Definition at line 32 of file Texture.\+cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_texture_adbf320788255a426a0a60e35cd969bcd}{}\index{Texture@{Texture}!gl\+Texture@{gl\+Texture}}
+\index{gl\+Texture@{gl\+Texture}!Texture@{Texture}}
+\subsubsection[{gl\+Texture}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Texture\+::gl\+Texture\hspace{0.3cm}{\ttfamily [private]}}\label{class_texture_adbf320788255a426a0a60e35cd969bcd}
+
+
+Definition at line 20 of file Texture.\+h.
+
+\hypertarget{class_texture_ac9ce8215cc356702b12a05a05ae3029a}{}\index{Texture@{Texture}!tex\+Height@{tex\+Height}}
+\index{tex\+Height@{tex\+Height}!Texture@{Texture}}
+\subsubsection[{tex\+Height}]{\setlength{\rightskip}{0pt plus 5cm}int Texture\+::tex\+Height\hspace{0.3cm}{\ttfamily [private]}}\label{class_texture_ac9ce8215cc356702b12a05a05ae3029a}
+
+
+Definition at line 18 of file Texture.\+h.
+
+\hypertarget{class_texture_a3ce375542bd2d62f6e1793558c934373}{}\index{Texture@{Texture}!tex\+Width@{tex\+Width}}
+\index{tex\+Width@{tex\+Width}!Texture@{Texture}}
+\subsubsection[{tex\+Width}]{\setlength{\rightskip}{0pt plus 5cm}int Texture\+::tex\+Width\hspace{0.3cm}{\ttfamily [private]}}\label{class_texture_a3ce375542bd2d62f6e1793558c934373}
+
+
+Definition at line 17 of file Texture.\+h.
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/michaelbao/workspace/cs148opengl4/source/common/\+Rendering/\+Textures/Texture.\+h\item 
-/\+Users/michaelbao/workspace/cs148opengl4/source/common/\+Rendering/\+Textures/Texture.\+cpp\end{DoxyCompactItemize}
+/\+Users/michaelbao/workspace/cs148opengl4/source/common/\+Rendering/\+Textures/\hyperlink{_texture_8h}{Texture.\+h}\item 
+/\+Users/michaelbao/workspace/cs148opengl4/source/common/\+Rendering/\+Textures/\hyperlink{_texture_8cpp}{Texture.\+cpp}\end{DoxyCompactItemize}

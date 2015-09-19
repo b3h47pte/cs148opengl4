@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -88,19 +89,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">TextureLoader.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;common/Utility/Texture/TextureLoader.h&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;common/Rendering/Textures/Texture.h&quot;</span></div>
+<a href="_texture_loader_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_texture_loader_8h.html">common/Utility/Texture/TextureLoader.h</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_texture_8h.html">common/Rendering/Textures/Texture.h</a>&quot;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;FreeImage.h&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;bitset&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_texture_loader.html">TextureLoader</a></div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="namespace_texture_loader.html">    6</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_texture_loader.html">TextureLoader</a></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// The FreeImage PDF documentation is useful to parse what&#39;s going on here.</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">// Link to the download: http://sourceforge.net/projects/freeimage/files/Source%20Documentation/3.17.0/FreeImage3170.pdf/download?use_mirror=iweb</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// The PDF is also included in the external/freeimage folder.</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// This function is based off of: http://r3dux.org/2014/10/how-to-load-an-opengl-texture-using-the-freeimage-library-or-freeimageplus-technically/</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;std::shared_ptr&lt;Texture&gt; LoadTexture(<span class="keyword">const</span> std::string&amp; filename)</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="namespace_texture_loader.html#ae6ab87eb56c3e564187204e040569086">   13</a></span>&#160;std::shared_ptr&lt;Texture&gt; <a class="code" href="namespace_texture_loader.html#ae6ab87eb56c3e564187204e040569086">LoadTexture</a>(<span class="keyword">const</span> std::string&amp; filename)</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef ASSET_PATH</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    static_assert(<span class="keyword">false</span>, <span class="stringliteral">&quot;ASSET_PATH is not defined. Check to make sure your projects are setup correctly&quot;</span>);</div>
@@ -149,12 +150,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
+<div class="ttc" id="_texture_8h_html"><div class="ttname"><a href="_texture_8h.html">Texture.h</a></div></div>
+<div class="ttc" id="namespace_texture_loader_html_ae6ab87eb56c3e564187204e040569086"><div class="ttname"><a href="namespace_texture_loader.html#ae6ab87eb56c3e564187204e040569086">TextureLoader::LoadTexture</a></div><div class="ttdeci">std::shared_ptr&lt; Texture &gt; LoadTexture(const std::string &amp;filename)</div><div class="ttdef"><b>Definition:</b> <a href="_texture_loader_8cpp_source.html#l00013">TextureLoader.cpp:13</a></div></div>
+<div class="ttc" id="_texture_loader_8h_html"><div class="ttname"><a href="_texture_loader_8h.html">TextureLoader.h</a></div></div>
 <div class="ttc" id="namespace_texture_loader_html"><div class="ttname"><a href="namespace_texture_loader.html">TextureLoader</a></div><div class="ttdef"><b>Definition:</b> <a href="_texture_loader_8cpp_source.html#l00006">TextureLoader.cpp:6</a></div></div>
 <div class="ttc" id="common_8h_html_a6df1d22fb5f09eccc23b9f399670cfd7"><div class="ttname"><a href="common_8h.html#a6df1d22fb5f09eccc23b9f399670cfd7">STRINGIFY</a></div><div class="ttdeci">#define STRINGIFY(x)</div><div class="ttdoc">Stringify a macro. </div><div class="ttdef"><b>Definition:</b> <a href="common_8h_source.html#l00112">common.h:112</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 19 2015 01:03:41 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 19 2015 01:31:32 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

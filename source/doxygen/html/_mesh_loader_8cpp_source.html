@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -88,17 +89,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">MeshLoader.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;common/Utility/Mesh/Loading/MeshLoader.h&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;common/Rendering/RenderingObject.h&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;common/Rendering/Shaders/ShaderProgram.h&quot;</span></div>
+<a href="_mesh_loader_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_mesh_loader_8h.html">common/Utility/Mesh/Loading/MeshLoader.h</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_rendering_object_8h.html">common/Rendering/RenderingObject.h</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_shader_program_8h.html">common/Rendering/Shaders/ShaderProgram.h</a>&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;assimp/Importer.hpp&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;assimp/scene.h&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;assimp/postprocess.h&quot;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_mesh_loader.html">MeshLoader</a></div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="namespace_mesh_loader.html">    8</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_mesh_loader.html">MeshLoader</a></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;std::vector&lt;std::shared_ptr&lt;RenderingObject&gt;&gt; LoadMesh(std::shared_ptr&lt;ShaderProgram&gt; inputShader, <span class="keyword">const</span> std::string&amp; filename)</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="namespace_mesh_loader.html#aa3c176ea2f4dbb7ec6ae45441985b3d8">   11</a></span>&#160;std::vector&lt;std::shared_ptr&lt;RenderingObject&gt;&gt; <a class="code" href="namespace_mesh_loader.html#aa3c176ea2f4dbb7ec6ae45441985b3d8">LoadMesh</a>(std::shared_ptr&lt;ShaderProgram&gt; inputShader, <span class="keyword">const</span> std::string&amp; filename)</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#ifndef ASSET_PATH</span></div>
@@ -170,12 +171,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
+<div class="ttc" id="_rendering_object_8h_html"><div class="ttname"><a href="_rendering_object_8h.html">RenderingObject.h</a></div></div>
+<div class="ttc" id="_shader_program_8h_html"><div class="ttname"><a href="_shader_program_8h.html">ShaderProgram.h</a></div></div>
 <div class="ttc" id="namespace_mesh_loader_html"><div class="ttname"><a href="namespace_mesh_loader.html">MeshLoader</a></div><div class="ttdef"><b>Definition:</b> <a href="_mesh_loader_8cpp_source.html#l00008">MeshLoader.cpp:8</a></div></div>
+<div class="ttc" id="namespace_mesh_loader_html_aa3c176ea2f4dbb7ec6ae45441985b3d8"><div class="ttname"><a href="namespace_mesh_loader.html#aa3c176ea2f4dbb7ec6ae45441985b3d8">MeshLoader::LoadMesh</a></div><div class="ttdeci">std::vector&lt; std::shared_ptr&lt; RenderingObject &gt; &gt; LoadMesh(std::shared_ptr&lt; ShaderProgram &gt; inputShader, const std::string &amp;filename)</div><div class="ttdef"><b>Definition:</b> <a href="_mesh_loader_8cpp_source.html#l00011">MeshLoader.cpp:11</a></div></div>
 <div class="ttc" id="common_8h_html_a6df1d22fb5f09eccc23b9f399670cfd7"><div class="ttname"><a href="common_8h.html#a6df1d22fb5f09eccc23b9f399670cfd7">STRINGIFY</a></div><div class="ttdeci">#define STRINGIFY(x)</div><div class="ttdoc">Stringify a macro. </div><div class="ttdef"><b>Definition:</b> <a href="common_8h_source.html#l00112">common.h:112</a></div></div>
+<div class="ttc" id="_mesh_loader_8h_html"><div class="ttname"><a href="_mesh_loader_8h.html">MeshLoader.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 19 2015 01:03:41 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 19 2015 01:31:32 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

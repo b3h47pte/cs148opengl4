@@ -1,170 +1,127 @@
 \hypertarget{class_rendering_object}{}\section{Rendering\+Object Class Reference}
 \label{class_rendering_object}\index{Rendering\+Object@{Rendering\+Object}}
+
+
+{\ttfamily \#include $<$Rendering\+Object.\+h$>$}
+
 \subsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_rendering_object_ab772f569ef63a1db07db29a744b519ee}{}enum {\bfseries Vertex\+Attribute\+Positions} \{ {\bfseries Position} = 0, 
-{\bfseries Normals}, 
-{\bfseries U\+V}, 
-{\bfseries Colors}
- \}\label{class_rendering_object_ab772f569ef63a1db07db29a744b519ee}
-
+enum \hyperlink{class_rendering_object_ab772f569ef63a1db07db29a744b519ee}{Vertex\+Attribute\+Positions} \{ \hyperlink{class_rendering_object_ab772f569ef63a1db07db29a744b519eea52f5e0bc3859bc5f5e25130b6c7e8881}{Vertex\+Attribute\+Positions\+::\+Position} = 0, 
+\hyperlink{class_rendering_object_ab772f569ef63a1db07db29a744b519eea4ab971a51f0335cbf8d9c2c65d379e99}{Vertex\+Attribute\+Positions\+::\+Normals}, 
+\hyperlink{class_rendering_object_ab772f569ef63a1db07db29a744b519eeadeaa2adbeb26802ae61609c3f3642d82}{Vertex\+Attribute\+Positions\+::\+U\+V}, 
+\hyperlink{class_rendering_object_ab772f569ef63a1db07db29a744b519eea5d50889672f6f860d14f502de3de1957}{Vertex\+Attribute\+Positions\+::\+Colors}
+ \}
 \item 
-\hypertarget{class_rendering_object_a1223b9cf03f2029b9c43d71042c2a18e}{}using {\bfseries Position\+Array} = std\+::vector$<$ glm\+::vec4 $>$\label{class_rendering_object_a1223b9cf03f2029b9c43d71042c2a18e}
-
+using \hyperlink{class_rendering_object_a1223b9cf03f2029b9c43d71042c2a18e}{Position\+Array} = std\+::vector$<$ glm\+::vec4 $>$
 \item 
-\hypertarget{class_rendering_object_a9931c88bca3384065c6691dfe1e60af1}{}using {\bfseries Index\+Array} = std\+::vector$<$ unsigned int $>$\label{class_rendering_object_a9931c88bca3384065c6691dfe1e60af1}
-
+using \hyperlink{class_rendering_object_a9931c88bca3384065c6691dfe1e60af1}{Index\+Array} = std\+::vector$<$ unsigned int $>$
 \item 
-\hypertarget{class_rendering_object_a327c4d892de8d6138fb59afa6d078257}{}using {\bfseries Normal\+Array} = std\+::vector$<$ glm\+::vec3 $>$\label{class_rendering_object_a327c4d892de8d6138fb59afa6d078257}
-
+using \hyperlink{class_rendering_object_a327c4d892de8d6138fb59afa6d078257}{Normal\+Array} = std\+::vector$<$ glm\+::vec3 $>$
 \item 
-\hypertarget{class_rendering_object_a504ecd45ebe36dfa5b78c46d64d9904a}{}using {\bfseries U\+V\+Array} = std\+::vector$<$ glm\+::vec2 $>$\label{class_rendering_object_a504ecd45ebe36dfa5b78c46d64d9904a}
-
+using \hyperlink{class_rendering_object_a504ecd45ebe36dfa5b78c46d64d9904a}{U\+V\+Array} = std\+::vector$<$ glm\+::vec2 $>$
 \item 
-\hypertarget{class_rendering_object_a8a12e1f9be788d99af6c089e1c600022}{}using {\bfseries Color\+Array} = std\+::vector$<$ glm\+::vec4 $>$\label{class_rendering_object_a8a12e1f9be788d99af6c089e1c600022}
-
+using \hyperlink{class_rendering_object_a8a12e1f9be788d99af6c089e1c600022}{Color\+Array} = std\+::vector$<$ glm\+::vec4 $>$
 \end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_rendering_object_a0550d86d49a01032921150d1c09c378f}{}{\bfseries Rendering\+Object} (std\+::shared\+\_\+ptr$<$ class \hyperlink{class_shader_program}{Shader\+Program} $>$ input\+Shader, std\+::unique\+\_\+ptr$<$ Position\+Array $>$ input\+Positions, std\+::unique\+\_\+ptr$<$ Index\+Array $>$ input\+Indices=nullptr, std\+::unique\+\_\+ptr$<$ Normal\+Array $>$ input\+Normals=nullptr, std\+::unique\+\_\+ptr$<$ U\+V\+Array $>$ input\+U\+V=nullptr, std\+::unique\+\_\+ptr$<$ Color\+Array $>$ input\+Colors=nullptr)\label{class_rendering_object_a0550d86d49a01032921150d1c09c378f}
-
+\hyperlink{class_rendering_object_a0550d86d49a01032921150d1c09c378f}{Rendering\+Object} (std\+::shared\+\_\+ptr$<$ class \hyperlink{class_shader_program}{Shader\+Program} $>$ input\+Shader, std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a1223b9cf03f2029b9c43d71042c2a18e}{Position\+Array} $>$ input\+Positions, std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a9931c88bca3384065c6691dfe1e60af1}{Index\+Array} $>$ input\+Indices=nullptr, std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a327c4d892de8d6138fb59afa6d078257}{Normal\+Array} $>$ input\+Normals=nullptr, std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a504ecd45ebe36dfa5b78c46d64d9904a}{U\+V\+Array} $>$ input\+U\+V=nullptr, std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a8a12e1f9be788d99af6c089e1c600022}{Color\+Array} $>$ input\+Colors=nullptr)
 \item 
-\hypertarget{class_rendering_object_a22311d08bb7559f6b913afe314a5031e}{}virtual void {\bfseries Set\+Shader} (std\+::shared\+\_\+ptr$<$ class \hyperlink{class_shader_program}{Shader\+Program} $>$ input\+Shader)\label{class_rendering_object_a22311d08bb7559f6b913afe314a5031e}
-
+virtual \hyperlink{class_rendering_object_ae4e8e14104ee3a587d10c9f90ec82048}{$\sim$\+Rendering\+Object} ()
 \item 
-\hypertarget{class_rendering_object_ac702ac667116929234273ecdb99cf7d6}{}{\bfseries Rendering\+Object} (const \hyperlink{class_rendering_object}{Rendering\+Object} \&)=delete\label{class_rendering_object_ac702ac667116929234273ecdb99cf7d6}
-
+virtual void \hyperlink{class_rendering_object_a22311d08bb7559f6b913afe314a5031e}{Set\+Shader} (std\+::shared\+\_\+ptr$<$ class \hyperlink{class_shader_program}{Shader\+Program} $>$ input\+Shader)
 \item 
-\hypertarget{class_rendering_object_ab644292ac584d1a9813e5f30ad79c4f1}{}\hyperlink{class_rendering_object}{Rendering\+Object} \& {\bfseries operator=} (const \hyperlink{class_rendering_object}{Rendering\+Object} \&)=delete\label{class_rendering_object_ab644292ac584d1a9813e5f30ad79c4f1}
-
+\hyperlink{class_rendering_object_ac702ac667116929234273ecdb99cf7d6}{Rendering\+Object} (const \hyperlink{class_rendering_object}{Rendering\+Object} \&)=delete
 \item 
-\hypertarget{class_rendering_object_afa4510ba81fb7b17b940c92b27442d93}{}virtual void {\bfseries Begin\+Render} () const \label{class_rendering_object_afa4510ba81fb7b17b940c92b27442d93}
-
+\hyperlink{class_rendering_object}{Rendering\+Object} \& \hyperlink{class_rendering_object_ab644292ac584d1a9813e5f30ad79c4f1}{operator=} (const \hyperlink{class_rendering_object}{Rendering\+Object} \&)=delete
 \item 
-\hypertarget{class_rendering_object_a5fdb7a1b2d53b7ce024a4eeabd9c86d3}{}virtual void {\bfseries Render} () const \label{class_rendering_object_a5fdb7a1b2d53b7ce024a4eeabd9c86d3}
-
+virtual void \hyperlink{class_rendering_object_afa4510ba81fb7b17b940c92b27442d93}{Begin\+Render} () const 
 \item 
-\hypertarget{class_rendering_object_a2a038472f934360acddd26f4e992b28b}{}virtual void {\bfseries End\+Render} () const \label{class_rendering_object_a2a038472f934360acddd26f4e992b28b}
-
+virtual void \hyperlink{class_rendering_object_a5fdb7a1b2d53b7ce024a4eeabd9c86d3}{Render} () const 
 \item 
-\hypertarget{class_rendering_object_aa627eb310f11d0e04dbbb3665f58bb4e}{}void {\bfseries Set\+Draw\+Mode} (G\+Lenum input\+Mode)\label{class_rendering_object_aa627eb310f11d0e04dbbb3665f58bb4e}
-
+virtual void \hyperlink{class_rendering_object_a2a038472f934360acddd26f4e992b28b}{End\+Render} () const 
 \item 
-\hypertarget{class_rendering_object_a80658debd2668b55a3c9fe86ec9f49fb}{}G\+Lint {\bfseries Get\+Shader\+Program} () const \label{class_rendering_object_a80658debd2668b55a3c9fe86ec9f49fb}
-
+void \hyperlink{class_rendering_object_aa627eb310f11d0e04dbbb3665f58bb4e}{Set\+Draw\+Mode} (G\+Lenum input\+Mode)
 \item 
-\hypertarget{class_rendering_object_ac9187166c98131aab185111e105528c2}{}const class \hyperlink{class_shader_program}{Shader\+Program} $\ast$ {\bfseries Get\+Shader\+Program\+Raw} () const \label{class_rendering_object_ac9187166c98131aab185111e105528c2}
-
+G\+Lint \hyperlink{class_rendering_object_a80658debd2668b55a3c9fe86ec9f49fb}{Get\+Shader\+Program} () const 
 \item 
-\hypertarget{class_rendering_object_a3bb36683836c8c177984aa928cb1fb04}{}size\+\_\+t {\bfseries Get\+Total\+Vertices} () const \label{class_rendering_object_a3bb36683836c8c177984aa928cb1fb04}
-
+const class \hyperlink{class_shader_program}{Shader\+Program} $\ast$ \hyperlink{class_rendering_object_ac9187166c98131aab185111e105528c2}{Get\+Shader\+Program\+Raw} () const 
 \item 
-\hypertarget{class_rendering_object_ada51886b7da1924a17d3a55e8fe90061}{}virtual void {\bfseries Set\+Vertex\+Positions} (std\+::unique\+\_\+ptr$<$ Position\+Array $>$ positions)\label{class_rendering_object_ada51886b7da1924a17d3a55e8fe90061}
-
+size\+\_\+t \hyperlink{class_rendering_object_a3bb36683836c8c177984aa928cb1fb04}{Get\+Total\+Vertices} () const 
 \item 
-\hypertarget{class_rendering_object_a61ea597df0c456834eac8eb4087fb573}{}virtual void {\bfseries Set\+Vertex\+Indices} (std\+::unique\+\_\+ptr$<$ Index\+Array $>$ indices)\label{class_rendering_object_a61ea597df0c456834eac8eb4087fb573}
-
+virtual void \hyperlink{class_rendering_object_ada51886b7da1924a17d3a55e8fe90061}{Set\+Vertex\+Positions} (std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a1223b9cf03f2029b9c43d71042c2a18e}{Position\+Array} $>$ positions)
 \item 
-\hypertarget{class_rendering_object_a4cd085aed01fbc5e4fae7076e00919d3}{}virtual void {\bfseries Set\+Vertex\+Normals} (std\+::unique\+\_\+ptr$<$ Normal\+Array $>$ normals)\label{class_rendering_object_a4cd085aed01fbc5e4fae7076e00919d3}
-
+virtual void \hyperlink{class_rendering_object_a61ea597df0c456834eac8eb4087fb573}{Set\+Vertex\+Indices} (std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a9931c88bca3384065c6691dfe1e60af1}{Index\+Array} $>$ indices)
 \item 
-\hypertarget{class_rendering_object_a2a2b3c6ec2d13e8d3a4b6ac4c05ae11b}{}virtual void {\bfseries Set\+Vertex\+U\+V} (std\+::unique\+\_\+ptr$<$ U\+V\+Array $>$ uv)\label{class_rendering_object_a2a2b3c6ec2d13e8d3a4b6ac4c05ae11b}
-
+virtual void \hyperlink{class_rendering_object_a4cd085aed01fbc5e4fae7076e00919d3}{Set\+Vertex\+Normals} (std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a327c4d892de8d6138fb59afa6d078257}{Normal\+Array} $>$ normals)
 \item 
-\hypertarget{class_rendering_object_aa1170c47ff02b2305a54c8aab3460201}{}virtual void {\bfseries Set\+Vertex\+Colors} (std\+::unique\+\_\+ptr$<$ Color\+Array $>$ colors)\label{class_rendering_object_aa1170c47ff02b2305a54c8aab3460201}
-
+virtual void \hyperlink{class_rendering_object_a2a2b3c6ec2d13e8d3a4b6ac4c05ae11b}{Set\+Vertex\+U\+V} (std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a504ecd45ebe36dfa5b78c46d64d9904a}{U\+V\+Array} $>$ uv)
+\item 
+virtual void \hyperlink{class_rendering_object_aa1170c47ff02b2305a54c8aab3460201}{Set\+Vertex\+Colors} (std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a8a12e1f9be788d99af6c089e1c600022}{Color\+Array} $>$ colors)
 \end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_rendering_object_a77c78d1b42ea2ebfdbf994b6b91ce805}{}virtual void {\bfseries Initialize\+Open\+G\+L} ()\label{class_rendering_object_a77c78d1b42ea2ebfdbf994b6b91ce805}
-
+virtual void \hyperlink{class_rendering_object_a77c78d1b42ea2ebfdbf994b6b91ce805}{Initialize\+Open\+G\+L} ()
 \item 
-\hypertarget{class_rendering_object_a7a097727acf37f9671ddd5e3a9873771}{}virtual void {\bfseries Update\+Vertex\+Positions} ()\label{class_rendering_object_a7a097727acf37f9671ddd5e3a9873771}
-
+virtual void \hyperlink{class_rendering_object_a7a097727acf37f9671ddd5e3a9873771}{Update\+Vertex\+Positions} ()
 \item 
-\hypertarget{class_rendering_object_afb49054121b1b552bce58625db91b851}{}virtual void {\bfseries Update\+Vertex\+Indices} ()\label{class_rendering_object_afb49054121b1b552bce58625db91b851}
-
+virtual void \hyperlink{class_rendering_object_afb49054121b1b552bce58625db91b851}{Update\+Vertex\+Indices} ()
 \item 
-\hypertarget{class_rendering_object_ae4b537e1c9b1c5c50cb7b0db83e6f190}{}virtual void {\bfseries Update\+Vertex\+Normals} ()\label{class_rendering_object_ae4b537e1c9b1c5c50cb7b0db83e6f190}
-
+virtual void \hyperlink{class_rendering_object_ae4b537e1c9b1c5c50cb7b0db83e6f190}{Update\+Vertex\+Normals} ()
 \item 
-\hypertarget{class_rendering_object_ac00889f2afaa605b09164649ef68a1b6}{}virtual void {\bfseries Update\+Vertex\+U\+V} ()\label{class_rendering_object_ac00889f2afaa605b09164649ef68a1b6}
-
+virtual void \hyperlink{class_rendering_object_ac00889f2afaa605b09164649ef68a1b6}{Update\+Vertex\+U\+V} ()
 \item 
-\hypertarget{class_rendering_object_aca18dbb9252f27cef09df307dbcf02a9}{}virtual void {\bfseries Update\+Vertex\+Colors} ()\label{class_rendering_object_aca18dbb9252f27cef09df307dbcf02a9}
-
+virtual void \hyperlink{class_rendering_object_aca18dbb9252f27cef09df307dbcf02a9}{Update\+Vertex\+Colors} ()
 \item 
-\hypertarget{class_rendering_object_af9c1a07398071cdd0cca3ad36095fc85}{}virtual void {\bfseries Cleanup\+Vertex\+Positions} ()\label{class_rendering_object_af9c1a07398071cdd0cca3ad36095fc85}
-
+virtual void \hyperlink{class_rendering_object_af9c1a07398071cdd0cca3ad36095fc85}{Cleanup\+Vertex\+Positions} ()
 \item 
-\hypertarget{class_rendering_object_ac60c8a7f3d5678fd4aa8198f6c980e6e}{}virtual void {\bfseries Cleanup\+Vertex\+Indices} ()\label{class_rendering_object_ac60c8a7f3d5678fd4aa8198f6c980e6e}
-
+virtual void \hyperlink{class_rendering_object_ac60c8a7f3d5678fd4aa8198f6c980e6e}{Cleanup\+Vertex\+Indices} ()
 \item 
-\hypertarget{class_rendering_object_ad89bc24893f8fe32794f0686c2bb0da1}{}virtual void {\bfseries Cleanup\+Vertex\+Normals} ()\label{class_rendering_object_ad89bc24893f8fe32794f0686c2bb0da1}
-
+virtual void \hyperlink{class_rendering_object_ad89bc24893f8fe32794f0686c2bb0da1}{Cleanup\+Vertex\+Normals} ()
 \item 
-\hypertarget{class_rendering_object_a776f54b41f9e9f0e55fc1104919c3e7c}{}virtual void {\bfseries Cleanup\+Vertex\+U\+V} ()\label{class_rendering_object_a776f54b41f9e9f0e55fc1104919c3e7c}
-
+virtual void \hyperlink{class_rendering_object_a776f54b41f9e9f0e55fc1104919c3e7c}{Cleanup\+Vertex\+U\+V} ()
 \item 
-\hypertarget{class_rendering_object_adce4a6d6406eb589b088bedd19127f32}{}virtual void {\bfseries Cleanup\+Vertex\+Colors} ()\label{class_rendering_object_adce4a6d6406eb589b088bedd19127f32}
-
+virtual void \hyperlink{class_rendering_object_adce4a6d6406eb589b088bedd19127f32}{Cleanup\+Vertex\+Colors} ()
 \end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_rendering_object_ae50e545ce2008ffa802478cd4316e82e}{}std\+::shared\+\_\+ptr$<$ class \hyperlink{class_shader_program}{Shader\+Program} $>$ {\bfseries shader}\label{class_rendering_object_ae50e545ce2008ffa802478cd4316e82e}
-
+std\+::shared\+\_\+ptr$<$ class \hyperlink{class_shader_program}{Shader\+Program} $>$ \hyperlink{class_rendering_object_ae50e545ce2008ffa802478cd4316e82e}{shader}
 \item 
-\hypertarget{class_rendering_object_a473f623b39157288bef992e76ddc45a9}{}G\+Luint {\bfseries vertex\+Position\+Buffer}\label{class_rendering_object_a473f623b39157288bef992e76ddc45a9}
-
+G\+Luint \hyperlink{class_rendering_object_a473f623b39157288bef992e76ddc45a9}{vertex\+Position\+Buffer}
 \item 
-\hypertarget{class_rendering_object_a14721712672d0421ed72a394e3131da0}{}std\+::unique\+\_\+ptr$<$ Position\+Array $>$ {\bfseries vertex\+Positions}\label{class_rendering_object_a14721712672d0421ed72a394e3131da0}
-
+std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a1223b9cf03f2029b9c43d71042c2a18e}{Position\+Array} $>$ \hyperlink{class_rendering_object_a14721712672d0421ed72a394e3131da0}{vertex\+Positions}
 \item 
-\hypertarget{class_rendering_object_a6740a0a0e6bd4d841c9c211f2a31cca3}{}G\+Luint {\bfseries vertex\+Index\+Buffer}\label{class_rendering_object_a6740a0a0e6bd4d841c9c211f2a31cca3}
-
+G\+Luint \hyperlink{class_rendering_object_a6740a0a0e6bd4d841c9c211f2a31cca3}{vertex\+Index\+Buffer}
 \item 
-\hypertarget{class_rendering_object_a7b84487d3c34c1ca36b2ac6060b0f802}{}std\+::unique\+\_\+ptr$<$ Index\+Array $>$ {\bfseries vertex\+Indices}\label{class_rendering_object_a7b84487d3c34c1ca36b2ac6060b0f802}
-
+std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a9931c88bca3384065c6691dfe1e60af1}{Index\+Array} $>$ \hyperlink{class_rendering_object_a7b84487d3c34c1ca36b2ac6060b0f802}{vertex\+Indices}
 \item 
-\hypertarget{class_rendering_object_a91649e3a653f2266cd00c718f10849f9}{}G\+Luint {\bfseries vertex\+Normal\+Buffer}\label{class_rendering_object_a91649e3a653f2266cd00c718f10849f9}
-
+G\+Luint \hyperlink{class_rendering_object_a91649e3a653f2266cd00c718f10849f9}{vertex\+Normal\+Buffer}
 \item 
-\hypertarget{class_rendering_object_ac28d301f97d29ab603f65f8e823063b4}{}std\+::unique\+\_\+ptr$<$ Normal\+Array $>$ {\bfseries vertex\+Normals}\label{class_rendering_object_ac28d301f97d29ab603f65f8e823063b4}
-
+std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a327c4d892de8d6138fb59afa6d078257}{Normal\+Array} $>$ \hyperlink{class_rendering_object_ac28d301f97d29ab603f65f8e823063b4}{vertex\+Normals}
 \item 
-\hypertarget{class_rendering_object_ad583c70014e3f6ab0c9b62ea3c96ad25}{}G\+Luint {\bfseries vertex\+U\+V\+Buffer}\label{class_rendering_object_ad583c70014e3f6ab0c9b62ea3c96ad25}
-
+G\+Luint \hyperlink{class_rendering_object_ad583c70014e3f6ab0c9b62ea3c96ad25}{vertex\+U\+V\+Buffer}
 \item 
-\hypertarget{class_rendering_object_afc405316bddec4ba1d5c228ecc0d9061}{}std\+::unique\+\_\+ptr$<$ U\+V\+Array $>$ {\bfseries vertex\+U\+V}\label{class_rendering_object_afc405316bddec4ba1d5c228ecc0d9061}
-
+std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a504ecd45ebe36dfa5b78c46d64d9904a}{U\+V\+Array} $>$ \hyperlink{class_rendering_object_afc405316bddec4ba1d5c228ecc0d9061}{vertex\+U\+V}
 \item 
-\hypertarget{class_rendering_object_aeb014a4ef24e2fc4665a769241660cad}{}G\+Luint {\bfseries vertex\+Color\+Buffer}\label{class_rendering_object_aeb014a4ef24e2fc4665a769241660cad}
-
+G\+Luint \hyperlink{class_rendering_object_aeb014a4ef24e2fc4665a769241660cad}{vertex\+Color\+Buffer}
 \item 
-\hypertarget{class_rendering_object_a65fc52e665791ce55e43106b603e917a}{}std\+::unique\+\_\+ptr$<$ Color\+Array $>$ {\bfseries vertex\+Colors}\label{class_rendering_object_a65fc52e665791ce55e43106b603e917a}
-
+std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a8a12e1f9be788d99af6c089e1c600022}{Color\+Array} $>$ \hyperlink{class_rendering_object_a65fc52e665791ce55e43106b603e917a}{vertex\+Colors}
 \item 
-\hypertarget{class_rendering_object_a96dd05670a977a949514a2c490c1c867}{}G\+Luint {\bfseries vao}\label{class_rendering_object_a96dd05670a977a949514a2c490c1c867}
-
+G\+Luint \hyperlink{class_rendering_object_a96dd05670a977a949514a2c490c1c867}{vao}
 \item 
-\hypertarget{class_rendering_object_aa67856a72705b54a5667e91e270d00b3}{}G\+Lenum {\bfseries draw\+Mode}\label{class_rendering_object_aa67856a72705b54a5667e91e270d00b3}
-
+G\+Lenum \hyperlink{class_rendering_object_aa67856a72705b54a5667e91e270d00b3}{draw\+Mode}
 \end{DoxyCompactItemize}
 \subsection*{Static Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_rendering_object_af270a476ba12c23fefbb034e21930add}{}static glm\+::vec3 {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+N\+O\+R\+M\+A\+L}\label{class_rendering_object_af270a476ba12c23fefbb034e21930add}
-
+static glm\+::vec3 \hyperlink{class_rendering_object_af270a476ba12c23fefbb034e21930add}{D\+E\+F\+A\+U\+L\+T\+\_\+\+N\+O\+R\+M\+A\+L}
 \item 
-\hypertarget{class_rendering_object_a3dcb28a12f578630aea75cc59ea39588}{}static glm\+::vec2 {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+U\+V}\label{class_rendering_object_a3dcb28a12f578630aea75cc59ea39588}
-
+static glm\+::vec2 \hyperlink{class_rendering_object_a3dcb28a12f578630aea75cc59ea39588}{D\+E\+F\+A\+U\+L\+T\+\_\+\+U\+V}
 \item 
-\hypertarget{class_rendering_object_a3bf21996dc0ef604b2b81d95275c97f9}{}static glm\+::vec4 {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+O\+R}\label{class_rendering_object_a3bf21996dc0ef604b2b81d95275c97f9}
-
+static glm\+::vec4 \hyperlink{class_rendering_object_a3bf21996dc0ef604b2b81d95275c97f9}{D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+O\+R}
 \end{DoxyCompactItemize}
 
 
@@ -175,7 +132,490 @@ Definition at line 9 of file Rendering\+Object.\+h.
 
 
 
+\subsection{Member Typedef Documentation}
+\hypertarget{class_rendering_object_a8a12e1f9be788d99af6c089e1c600022}{}\index{Rendering\+Object@{Rendering\+Object}!Color\+Array@{Color\+Array}}
+\index{Color\+Array@{Color\+Array}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Color\+Array}]{\setlength{\rightskip}{0pt plus 5cm}using {\bf Rendering\+Object\+::\+Color\+Array} =  std\+::vector$<$glm\+::vec4$>$}\label{class_rendering_object_a8a12e1f9be788d99af6c089e1c600022}
+
+
+Definition at line 16 of file Rendering\+Object.\+h.
+
+\hypertarget{class_rendering_object_a9931c88bca3384065c6691dfe1e60af1}{}\index{Rendering\+Object@{Rendering\+Object}!Index\+Array@{Index\+Array}}
+\index{Index\+Array@{Index\+Array}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Index\+Array}]{\setlength{\rightskip}{0pt plus 5cm}using {\bf Rendering\+Object\+::\+Index\+Array} =  std\+::vector$<$unsigned int$>$}\label{class_rendering_object_a9931c88bca3384065c6691dfe1e60af1}
+
+
+Definition at line 13 of file Rendering\+Object.\+h.
+
+\hypertarget{class_rendering_object_a327c4d892de8d6138fb59afa6d078257}{}\index{Rendering\+Object@{Rendering\+Object}!Normal\+Array@{Normal\+Array}}
+\index{Normal\+Array@{Normal\+Array}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Normal\+Array}]{\setlength{\rightskip}{0pt plus 5cm}using {\bf Rendering\+Object\+::\+Normal\+Array} =  std\+::vector$<$glm\+::vec3$>$}\label{class_rendering_object_a327c4d892de8d6138fb59afa6d078257}
+
+
+Definition at line 14 of file Rendering\+Object.\+h.
+
+\hypertarget{class_rendering_object_a1223b9cf03f2029b9c43d71042c2a18e}{}\index{Rendering\+Object@{Rendering\+Object}!Position\+Array@{Position\+Array}}
+\index{Position\+Array@{Position\+Array}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Position\+Array}]{\setlength{\rightskip}{0pt plus 5cm}using {\bf Rendering\+Object\+::\+Position\+Array} =  std\+::vector$<$glm\+::vec4$>$}\label{class_rendering_object_a1223b9cf03f2029b9c43d71042c2a18e}
+
+
+Definition at line 12 of file Rendering\+Object.\+h.
+
+\hypertarget{class_rendering_object_a504ecd45ebe36dfa5b78c46d64d9904a}{}\index{Rendering\+Object@{Rendering\+Object}!U\+V\+Array@{U\+V\+Array}}
+\index{U\+V\+Array@{U\+V\+Array}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{U\+V\+Array}]{\setlength{\rightskip}{0pt plus 5cm}using {\bf Rendering\+Object\+::\+U\+V\+Array} =  std\+::vector$<$glm\+::vec2$>$}\label{class_rendering_object_a504ecd45ebe36dfa5b78c46d64d9904a}
+
+
+Definition at line 15 of file Rendering\+Object.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_rendering_object_ab772f569ef63a1db07db29a744b519ee}{}\index{Rendering\+Object@{Rendering\+Object}!Vertex\+Attribute\+Positions@{Vertex\+Attribute\+Positions}}
+\index{Vertex\+Attribute\+Positions@{Vertex\+Attribute\+Positions}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Vertex\+Attribute\+Positions}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Rendering\+Object\+::\+Vertex\+Attribute\+Positions}\hspace{0.3cm}{\ttfamily [strong]}}\label{class_rendering_object_ab772f569ef63a1db07db29a744b519ee}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Position@{Position}!Rendering\+Object@{Rendering\+Object}}\index{Rendering\+Object@{Rendering\+Object}!Position@{Position}}\item[{\em 
+\hypertarget{class_rendering_object_ab772f569ef63a1db07db29a744b519eea52f5e0bc3859bc5f5e25130b6c7e8881}{}Position\label{class_rendering_object_ab772f569ef63a1db07db29a744b519eea52f5e0bc3859bc5f5e25130b6c7e8881}
+}]\index{Normals@{Normals}!Rendering\+Object@{Rendering\+Object}}\index{Rendering\+Object@{Rendering\+Object}!Normals@{Normals}}\item[{\em 
+\hypertarget{class_rendering_object_ab772f569ef63a1db07db29a744b519eea4ab971a51f0335cbf8d9c2c65d379e99}{}Normals\label{class_rendering_object_ab772f569ef63a1db07db29a744b519eea4ab971a51f0335cbf8d9c2c65d379e99}
+}]\index{U\+V@{U\+V}!Rendering\+Object@{Rendering\+Object}}\index{Rendering\+Object@{Rendering\+Object}!U\+V@{U\+V}}\item[{\em 
+\hypertarget{class_rendering_object_ab772f569ef63a1db07db29a744b519eeadeaa2adbeb26802ae61609c3f3642d82}{}U\+V\label{class_rendering_object_ab772f569ef63a1db07db29a744b519eeadeaa2adbeb26802ae61609c3f3642d82}
+}]\index{Colors@{Colors}!Rendering\+Object@{Rendering\+Object}}\index{Rendering\+Object@{Rendering\+Object}!Colors@{Colors}}\item[{\em 
+\hypertarget{class_rendering_object_ab772f569ef63a1db07db29a744b519eea5d50889672f6f860d14f502de3de1957}{}Colors\label{class_rendering_object_ab772f569ef63a1db07db29a744b519eea5d50889672f6f860d14f502de3de1957}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 18 of file Rendering\+Object.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_rendering_object_a0550d86d49a01032921150d1c09c378f}{}\index{Rendering\+Object@{Rendering\+Object}!Rendering\+Object@{Rendering\+Object}}
+\index{Rendering\+Object@{Rendering\+Object}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Rendering\+Object}]{\setlength{\rightskip}{0pt plus 5cm}Rendering\+Object\+::\+Rendering\+Object (
+\begin{DoxyParamCaption}
+\item[{std\+::shared\+\_\+ptr$<$ class {\bf Shader\+Program} $>$}]{input\+Shader, }
+\item[{std\+::unique\+\_\+ptr$<$ {\bf Position\+Array} $>$}]{input\+Positions, }
+\item[{std\+::unique\+\_\+ptr$<$ {\bf Index\+Array} $>$}]{input\+Indices = {\ttfamily nullptr}, }
+\item[{std\+::unique\+\_\+ptr$<$ {\bf Normal\+Array} $>$}]{input\+Normals = {\ttfamily nullptr}, }
+\item[{std\+::unique\+\_\+ptr$<$ {\bf U\+V\+Array} $>$}]{input\+U\+V = {\ttfamily nullptr}, }
+\item[{std\+::unique\+\_\+ptr$<$ {\bf Color\+Array} $>$}]{input\+Colors = {\ttfamily nullptr}}
+\end{DoxyParamCaption}
+)}\label{class_rendering_object_a0550d86d49a01032921150d1c09c378f}
+\hypertarget{class_rendering_object_ae4e8e14104ee3a587d10c9f90ec82048}{}\index{Rendering\+Object@{Rendering\+Object}!````~Rendering\+Object@{$\sim$\+Rendering\+Object}}
+\index{````~Rendering\+Object@{$\sim$\+Rendering\+Object}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{$\sim$\+Rendering\+Object}]{\setlength{\rightskip}{0pt plus 5cm}Rendering\+Object\+::$\sim$\+Rendering\+Object (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_rendering_object_ae4e8e14104ee3a587d10c9f90ec82048}
+
+
+Definition at line 26 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_ac702ac667116929234273ecdb99cf7d6}{}\index{Rendering\+Object@{Rendering\+Object}!Rendering\+Object@{Rendering\+Object}}
+\index{Rendering\+Object@{Rendering\+Object}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Rendering\+Object}]{\setlength{\rightskip}{0pt plus 5cm}Rendering\+Object\+::\+Rendering\+Object (
+\begin{DoxyParamCaption}
+\item[{const {\bf Rendering\+Object} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}\label{class_rendering_object_ac702ac667116929234273ecdb99cf7d6}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_rendering_object_afa4510ba81fb7b17b940c92b27442d93}{}\index{Rendering\+Object@{Rendering\+Object}!Begin\+Render@{Begin\+Render}}
+\index{Begin\+Render@{Begin\+Render}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Begin\+Render}]{\setlength{\rightskip}{0pt plus 5cm}void Rendering\+Object\+::\+Begin\+Render (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_rendering_object_afa4510ba81fb7b17b940c92b27442d93}
+
+
+Definition at line 54 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_adce4a6d6406eb589b088bedd19127f32}{}\index{Rendering\+Object@{Rendering\+Object}!Cleanup\+Vertex\+Colors@{Cleanup\+Vertex\+Colors}}
+\index{Cleanup\+Vertex\+Colors@{Cleanup\+Vertex\+Colors}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Cleanup\+Vertex\+Colors}]{\setlength{\rightskip}{0pt plus 5cm}void Rendering\+Object\+::\+Cleanup\+Vertex\+Colors (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_rendering_object_adce4a6d6406eb589b088bedd19127f32}
+
+
+Definition at line 258 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_ac60c8a7f3d5678fd4aa8198f6c980e6e}{}\index{Rendering\+Object@{Rendering\+Object}!Cleanup\+Vertex\+Indices@{Cleanup\+Vertex\+Indices}}
+\index{Cleanup\+Vertex\+Indices@{Cleanup\+Vertex\+Indices}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Cleanup\+Vertex\+Indices}]{\setlength{\rightskip}{0pt plus 5cm}void Rendering\+Object\+::\+Cleanup\+Vertex\+Indices (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_rendering_object_ac60c8a7f3d5678fd4aa8198f6c980e6e}
+
+
+Definition at line 240 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_ad89bc24893f8fe32794f0686c2bb0da1}{}\index{Rendering\+Object@{Rendering\+Object}!Cleanup\+Vertex\+Normals@{Cleanup\+Vertex\+Normals}}
+\index{Cleanup\+Vertex\+Normals@{Cleanup\+Vertex\+Normals}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Cleanup\+Vertex\+Normals}]{\setlength{\rightskip}{0pt plus 5cm}void Rendering\+Object\+::\+Cleanup\+Vertex\+Normals (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_rendering_object_ad89bc24893f8fe32794f0686c2bb0da1}
+
+
+Definition at line 246 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_af9c1a07398071cdd0cca3ad36095fc85}{}\index{Rendering\+Object@{Rendering\+Object}!Cleanup\+Vertex\+Positions@{Cleanup\+Vertex\+Positions}}
+\index{Cleanup\+Vertex\+Positions@{Cleanup\+Vertex\+Positions}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Cleanup\+Vertex\+Positions}]{\setlength{\rightskip}{0pt plus 5cm}void Rendering\+Object\+::\+Cleanup\+Vertex\+Positions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_rendering_object_af9c1a07398071cdd0cca3ad36095fc85}
+
+
+Definition at line 234 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_a776f54b41f9e9f0e55fc1104919c3e7c}{}\index{Rendering\+Object@{Rendering\+Object}!Cleanup\+Vertex\+U\+V@{Cleanup\+Vertex\+U\+V}}
+\index{Cleanup\+Vertex\+U\+V@{Cleanup\+Vertex\+U\+V}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Cleanup\+Vertex\+U\+V}]{\setlength{\rightskip}{0pt plus 5cm}void Rendering\+Object\+::\+Cleanup\+Vertex\+U\+V (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_rendering_object_a776f54b41f9e9f0e55fc1104919c3e7c}
+
+
+Definition at line 252 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_a2a038472f934360acddd26f4e992b28b}{}\index{Rendering\+Object@{Rendering\+Object}!End\+Render@{End\+Render}}
+\index{End\+Render@{End\+Render}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{End\+Render}]{\setlength{\rightskip}{0pt plus 5cm}void Rendering\+Object\+::\+End\+Render (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_rendering_object_a2a038472f934360acddd26f4e992b28b}
+
+
+Definition at line 73 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_a80658debd2668b55a3c9fe86ec9f49fb}{}\index{Rendering\+Object@{Rendering\+Object}!Get\+Shader\+Program@{Get\+Shader\+Program}}
+\index{Get\+Shader\+Program@{Get\+Shader\+Program}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Get\+Shader\+Program}]{\setlength{\rightskip}{0pt plus 5cm}G\+Lint Rendering\+Object\+::\+Get\+Shader\+Program (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_rendering_object_a80658debd2668b55a3c9fe86ec9f49fb}
+
+
+Definition at line 79 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_ac9187166c98131aab185111e105528c2}{}\index{Rendering\+Object@{Rendering\+Object}!Get\+Shader\+Program\+Raw@{Get\+Shader\+Program\+Raw}}
+\index{Get\+Shader\+Program\+Raw@{Get\+Shader\+Program\+Raw}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Get\+Shader\+Program\+Raw}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Shader\+Program} $\ast$ Rendering\+Object\+::\+Get\+Shader\+Program\+Raw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_rendering_object_ac9187166c98131aab185111e105528c2}
+
+
+Definition at line 84 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_a3bb36683836c8c177984aa928cb1fb04}{}\index{Rendering\+Object@{Rendering\+Object}!Get\+Total\+Vertices@{Get\+Total\+Vertices}}
+\index{Get\+Total\+Vertices@{Get\+Total\+Vertices}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Get\+Total\+Vertices}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t Rendering\+Object\+::\+Get\+Total\+Vertices (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_rendering_object_a3bb36683836c8c177984aa928cb1fb04}
+
+
+Definition at line 49 of file Rendering\+Object.\+h.
+
+\hypertarget{class_rendering_object_a77c78d1b42ea2ebfdbf994b6b91ce805}{}\index{Rendering\+Object@{Rendering\+Object}!Initialize\+Open\+G\+L@{Initialize\+Open\+G\+L}}
+\index{Initialize\+Open\+G\+L@{Initialize\+Open\+G\+L}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Initialize\+Open\+G\+L}]{\setlength{\rightskip}{0pt plus 5cm}void Rendering\+Object\+::\+Initialize\+Open\+G\+L (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_rendering_object_a77c78d1b42ea2ebfdbf994b6b91ce805}
+
+
+Definition at line 41 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_ab644292ac584d1a9813e5f30ad79c4f1}{}\index{Rendering\+Object@{Rendering\+Object}!operator=@{operator=}}
+\index{operator=@{operator=}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Rendering\+Object}\& Rendering\+Object\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Rendering\+Object} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}\label{class_rendering_object_ab644292ac584d1a9813e5f30ad79c4f1}
+\hypertarget{class_rendering_object_a5fdb7a1b2d53b7ce024a4eeabd9c86d3}{}\index{Rendering\+Object@{Rendering\+Object}!Render@{Render}}
+\index{Render@{Render}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Render}]{\setlength{\rightskip}{0pt plus 5cm}void Rendering\+Object\+::\+Render (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_rendering_object_a5fdb7a1b2d53b7ce024a4eeabd9c86d3}
+
+
+Definition at line 61 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_aa627eb310f11d0e04dbbb3665f58bb4e}{}\index{Rendering\+Object@{Rendering\+Object}!Set\+Draw\+Mode@{Set\+Draw\+Mode}}
+\index{Set\+Draw\+Mode@{Set\+Draw\+Mode}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Set\+Draw\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}void Rendering\+Object\+::\+Set\+Draw\+Mode (
+\begin{DoxyParamCaption}
+\item[{G\+Lenum}]{input\+Mode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_rendering_object_aa627eb310f11d0e04dbbb3665f58bb4e}
+
+
+Definition at line 42 of file Rendering\+Object.\+h.
+
+\hypertarget{class_rendering_object_a22311d08bb7559f6b913afe314a5031e}{}\index{Rendering\+Object@{Rendering\+Object}!Set\+Shader@{Set\+Shader}}
+\index{Set\+Shader@{Set\+Shader}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Set\+Shader}]{\setlength{\rightskip}{0pt plus 5cm}void Rendering\+Object\+::\+Set\+Shader (
+\begin{DoxyParamCaption}
+\item[{std\+::shared\+\_\+ptr$<$ class {\bf Shader\+Program} $>$}]{input\+Shader}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_rendering_object_a22311d08bb7559f6b913afe314a5031e}
+
+
+Definition at line 36 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_aa1170c47ff02b2305a54c8aab3460201}{}\index{Rendering\+Object@{Rendering\+Object}!Set\+Vertex\+Colors@{Set\+Vertex\+Colors}}
+\index{Set\+Vertex\+Colors@{Set\+Vertex\+Colors}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Set\+Vertex\+Colors}]{\setlength{\rightskip}{0pt plus 5cm}void Rendering\+Object\+::\+Set\+Vertex\+Colors (
+\begin{DoxyParamCaption}
+\item[{std\+::unique\+\_\+ptr$<$ {\bf Color\+Array} $>$}]{colors}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_rendering_object_aa1170c47ff02b2305a54c8aab3460201}
+
+
+Definition at line 113 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_a61ea597df0c456834eac8eb4087fb573}{}\index{Rendering\+Object@{Rendering\+Object}!Set\+Vertex\+Indices@{Set\+Vertex\+Indices}}
+\index{Set\+Vertex\+Indices@{Set\+Vertex\+Indices}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Set\+Vertex\+Indices}]{\setlength{\rightskip}{0pt plus 5cm}void Rendering\+Object\+::\+Set\+Vertex\+Indices (
+\begin{DoxyParamCaption}
+\item[{std\+::unique\+\_\+ptr$<$ {\bf Index\+Array} $>$}]{indices}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_rendering_object_a61ea597df0c456834eac8eb4087fb573}
+
+
+Definition at line 95 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_a4cd085aed01fbc5e4fae7076e00919d3}{}\index{Rendering\+Object@{Rendering\+Object}!Set\+Vertex\+Normals@{Set\+Vertex\+Normals}}
+\index{Set\+Vertex\+Normals@{Set\+Vertex\+Normals}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Set\+Vertex\+Normals}]{\setlength{\rightskip}{0pt plus 5cm}void Rendering\+Object\+::\+Set\+Vertex\+Normals (
+\begin{DoxyParamCaption}
+\item[{std\+::unique\+\_\+ptr$<$ {\bf Normal\+Array} $>$}]{normals}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_rendering_object_a4cd085aed01fbc5e4fae7076e00919d3}
+
+
+Definition at line 101 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_ada51886b7da1924a17d3a55e8fe90061}{}\index{Rendering\+Object@{Rendering\+Object}!Set\+Vertex\+Positions@{Set\+Vertex\+Positions}}
+\index{Set\+Vertex\+Positions@{Set\+Vertex\+Positions}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Set\+Vertex\+Positions}]{\setlength{\rightskip}{0pt plus 5cm}void Rendering\+Object\+::\+Set\+Vertex\+Positions (
+\begin{DoxyParamCaption}
+\item[{std\+::unique\+\_\+ptr$<$ {\bf Position\+Array} $>$}]{positions}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_rendering_object_ada51886b7da1924a17d3a55e8fe90061}
+
+
+Definition at line 89 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_a2a2b3c6ec2d13e8d3a4b6ac4c05ae11b}{}\index{Rendering\+Object@{Rendering\+Object}!Set\+Vertex\+U\+V@{Set\+Vertex\+U\+V}}
+\index{Set\+Vertex\+U\+V@{Set\+Vertex\+U\+V}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Set\+Vertex\+U\+V}]{\setlength{\rightskip}{0pt plus 5cm}void Rendering\+Object\+::\+Set\+Vertex\+U\+V (
+\begin{DoxyParamCaption}
+\item[{std\+::unique\+\_\+ptr$<$ {\bf U\+V\+Array} $>$}]{uv}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_rendering_object_a2a2b3c6ec2d13e8d3a4b6ac4c05ae11b}
+
+
+Definition at line 107 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_aca18dbb9252f27cef09df307dbcf02a9}{}\index{Rendering\+Object@{Rendering\+Object}!Update\+Vertex\+Colors@{Update\+Vertex\+Colors}}
+\index{Update\+Vertex\+Colors@{Update\+Vertex\+Colors}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Update\+Vertex\+Colors}]{\setlength{\rightskip}{0pt plus 5cm}void Rendering\+Object\+::\+Update\+Vertex\+Colors (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_rendering_object_aca18dbb9252f27cef09df307dbcf02a9}
+
+
+Definition at line 207 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_afb49054121b1b552bce58625db91b851}{}\index{Rendering\+Object@{Rendering\+Object}!Update\+Vertex\+Indices@{Update\+Vertex\+Indices}}
+\index{Update\+Vertex\+Indices@{Update\+Vertex\+Indices}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Update\+Vertex\+Indices}]{\setlength{\rightskip}{0pt plus 5cm}void Rendering\+Object\+::\+Update\+Vertex\+Indices (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_rendering_object_afb49054121b1b552bce58625db91b851}
+
+
+Definition at line 136 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_ae4b537e1c9b1c5c50cb7b0db83e6f190}{}\index{Rendering\+Object@{Rendering\+Object}!Update\+Vertex\+Normals@{Update\+Vertex\+Normals}}
+\index{Update\+Vertex\+Normals@{Update\+Vertex\+Normals}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Update\+Vertex\+Normals}]{\setlength{\rightskip}{0pt plus 5cm}void Rendering\+Object\+::\+Update\+Vertex\+Normals (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_rendering_object_ae4b537e1c9b1c5c50cb7b0db83e6f190}
+
+
+Definition at line 153 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_a7a097727acf37f9671ddd5e3a9873771}{}\index{Rendering\+Object@{Rendering\+Object}!Update\+Vertex\+Positions@{Update\+Vertex\+Positions}}
+\index{Update\+Vertex\+Positions@{Update\+Vertex\+Positions}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Update\+Vertex\+Positions}]{\setlength{\rightskip}{0pt plus 5cm}void Rendering\+Object\+::\+Update\+Vertex\+Positions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_rendering_object_a7a097727acf37f9671ddd5e3a9873771}
+
+
+Definition at line 119 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_ac00889f2afaa605b09164649ef68a1b6}{}\index{Rendering\+Object@{Rendering\+Object}!Update\+Vertex\+U\+V@{Update\+Vertex\+U\+V}}
+\index{Update\+Vertex\+U\+V@{Update\+Vertex\+U\+V}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Update\+Vertex\+U\+V}]{\setlength{\rightskip}{0pt plus 5cm}void Rendering\+Object\+::\+Update\+Vertex\+U\+V (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_rendering_object_ac00889f2afaa605b09164649ef68a1b6}
+
+
+Definition at line 180 of file Rendering\+Object.\+cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_rendering_object_a3bf21996dc0ef604b2b81d95275c97f9}{}\index{Rendering\+Object@{Rendering\+Object}!D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+O\+R@{D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+O\+R}}
+\index{D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+O\+R@{D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+O\+R}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+O\+R}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec4 Rendering\+Object\+::\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+O\+R\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{class_rendering_object_a3bf21996dc0ef604b2b81d95275c97f9}
+
+
+Definition at line 79 of file Rendering\+Object.\+h.
+
+\hypertarget{class_rendering_object_af270a476ba12c23fefbb034e21930add}{}\index{Rendering\+Object@{Rendering\+Object}!D\+E\+F\+A\+U\+L\+T\+\_\+\+N\+O\+R\+M\+A\+L@{D\+E\+F\+A\+U\+L\+T\+\_\+\+N\+O\+R\+M\+A\+L}}
+\index{D\+E\+F\+A\+U\+L\+T\+\_\+\+N\+O\+R\+M\+A\+L@{D\+E\+F\+A\+U\+L\+T\+\_\+\+N\+O\+R\+M\+A\+L}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{D\+E\+F\+A\+U\+L\+T\+\_\+\+N\+O\+R\+M\+A\+L}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Rendering\+Object\+::\+D\+E\+F\+A\+U\+L\+T\+\_\+\+N\+O\+R\+M\+A\+L\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{class_rendering_object_af270a476ba12c23fefbb034e21930add}
+
+
+Definition at line 71 of file Rendering\+Object.\+h.
+
+\hypertarget{class_rendering_object_a3dcb28a12f578630aea75cc59ea39588}{}\index{Rendering\+Object@{Rendering\+Object}!D\+E\+F\+A\+U\+L\+T\+\_\+\+U\+V@{D\+E\+F\+A\+U\+L\+T\+\_\+\+U\+V}}
+\index{D\+E\+F\+A\+U\+L\+T\+\_\+\+U\+V@{D\+E\+F\+A\+U\+L\+T\+\_\+\+U\+V}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{D\+E\+F\+A\+U\+L\+T\+\_\+\+U\+V}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec2 Rendering\+Object\+::\+D\+E\+F\+A\+U\+L\+T\+\_\+\+U\+V\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{class_rendering_object_a3dcb28a12f578630aea75cc59ea39588}
+
+
+Definition at line 75 of file Rendering\+Object.\+h.
+
+\hypertarget{class_rendering_object_aa67856a72705b54a5667e91e270d00b3}{}\index{Rendering\+Object@{Rendering\+Object}!draw\+Mode@{draw\+Mode}}
+\index{draw\+Mode@{draw\+Mode}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{draw\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}G\+Lenum Rendering\+Object\+::draw\+Mode\hspace{0.3cm}{\ttfamily [protected]}}\label{class_rendering_object_aa67856a72705b54a5667e91e270d00b3}
+
+
+Definition at line 96 of file Rendering\+Object.\+h.
+
+\hypertarget{class_rendering_object_ae50e545ce2008ffa802478cd4316e82e}{}\index{Rendering\+Object@{Rendering\+Object}!shader@{shader}}
+\index{shader@{shader}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{shader}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<$class {\bf Shader\+Program}$>$ Rendering\+Object\+::shader\hspace{0.3cm}{\ttfamily [protected]}}\label{class_rendering_object_ae50e545ce2008ffa802478cd4316e82e}
+
+
+Definition at line 61 of file Rendering\+Object.\+h.
+
+\hypertarget{class_rendering_object_a96dd05670a977a949514a2c490c1c867}{}\index{Rendering\+Object@{Rendering\+Object}!vao@{vao}}
+\index{vao@{vao}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{vao}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Rendering\+Object\+::vao\hspace{0.3cm}{\ttfamily [protected]}}\label{class_rendering_object_a96dd05670a977a949514a2c490c1c867}
+
+
+Definition at line 95 of file Rendering\+Object.\+h.
+
+\hypertarget{class_rendering_object_aeb014a4ef24e2fc4665a769241660cad}{}\index{Rendering\+Object@{Rendering\+Object}!vertex\+Color\+Buffer@{vertex\+Color\+Buffer}}
+\index{vertex\+Color\+Buffer@{vertex\+Color\+Buffer}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{vertex\+Color\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Rendering\+Object\+::vertex\+Color\+Buffer\hspace{0.3cm}{\ttfamily [protected]}}\label{class_rendering_object_aeb014a4ef24e2fc4665a769241660cad}
+
+
+Definition at line 77 of file Rendering\+Object.\+h.
+
+\hypertarget{class_rendering_object_a65fc52e665791ce55e43106b603e917a}{}\index{Rendering\+Object@{Rendering\+Object}!vertex\+Colors@{vertex\+Colors}}
+\index{vertex\+Colors@{vertex\+Colors}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{vertex\+Colors}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unique\+\_\+ptr$<${\bf Color\+Array}$>$ Rendering\+Object\+::vertex\+Colors\hspace{0.3cm}{\ttfamily [protected]}}\label{class_rendering_object_a65fc52e665791ce55e43106b603e917a}
+
+
+Definition at line 78 of file Rendering\+Object.\+h.
+
+\hypertarget{class_rendering_object_a6740a0a0e6bd4d841c9c211f2a31cca3}{}\index{Rendering\+Object@{Rendering\+Object}!vertex\+Index\+Buffer@{vertex\+Index\+Buffer}}
+\index{vertex\+Index\+Buffer@{vertex\+Index\+Buffer}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{vertex\+Index\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Rendering\+Object\+::vertex\+Index\+Buffer\hspace{0.3cm}{\ttfamily [protected]}}\label{class_rendering_object_a6740a0a0e6bd4d841c9c211f2a31cca3}
+
+
+Definition at line 66 of file Rendering\+Object.\+h.
+
+\hypertarget{class_rendering_object_a7b84487d3c34c1ca36b2ac6060b0f802}{}\index{Rendering\+Object@{Rendering\+Object}!vertex\+Indices@{vertex\+Indices}}
+\index{vertex\+Indices@{vertex\+Indices}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{vertex\+Indices}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unique\+\_\+ptr$<${\bf Index\+Array}$>$ Rendering\+Object\+::vertex\+Indices\hspace{0.3cm}{\ttfamily [protected]}}\label{class_rendering_object_a7b84487d3c34c1ca36b2ac6060b0f802}
+
+
+Definition at line 67 of file Rendering\+Object.\+h.
+
+\hypertarget{class_rendering_object_a91649e3a653f2266cd00c718f10849f9}{}\index{Rendering\+Object@{Rendering\+Object}!vertex\+Normal\+Buffer@{vertex\+Normal\+Buffer}}
+\index{vertex\+Normal\+Buffer@{vertex\+Normal\+Buffer}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{vertex\+Normal\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Rendering\+Object\+::vertex\+Normal\+Buffer\hspace{0.3cm}{\ttfamily [protected]}}\label{class_rendering_object_a91649e3a653f2266cd00c718f10849f9}
+
+
+Definition at line 69 of file Rendering\+Object.\+h.
+
+\hypertarget{class_rendering_object_ac28d301f97d29ab603f65f8e823063b4}{}\index{Rendering\+Object@{Rendering\+Object}!vertex\+Normals@{vertex\+Normals}}
+\index{vertex\+Normals@{vertex\+Normals}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{vertex\+Normals}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unique\+\_\+ptr$<${\bf Normal\+Array}$>$ Rendering\+Object\+::vertex\+Normals\hspace{0.3cm}{\ttfamily [protected]}}\label{class_rendering_object_ac28d301f97d29ab603f65f8e823063b4}
+
+
+Definition at line 70 of file Rendering\+Object.\+h.
+
+\hypertarget{class_rendering_object_a473f623b39157288bef992e76ddc45a9}{}\index{Rendering\+Object@{Rendering\+Object}!vertex\+Position\+Buffer@{vertex\+Position\+Buffer}}
+\index{vertex\+Position\+Buffer@{vertex\+Position\+Buffer}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{vertex\+Position\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Rendering\+Object\+::vertex\+Position\+Buffer\hspace{0.3cm}{\ttfamily [protected]}}\label{class_rendering_object_a473f623b39157288bef992e76ddc45a9}
+
+
+Definition at line 63 of file Rendering\+Object.\+h.
+
+\hypertarget{class_rendering_object_a14721712672d0421ed72a394e3131da0}{}\index{Rendering\+Object@{Rendering\+Object}!vertex\+Positions@{vertex\+Positions}}
+\index{vertex\+Positions@{vertex\+Positions}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{vertex\+Positions}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unique\+\_\+ptr$<${\bf Position\+Array}$>$ Rendering\+Object\+::vertex\+Positions\hspace{0.3cm}{\ttfamily [protected]}}\label{class_rendering_object_a14721712672d0421ed72a394e3131da0}
+
+
+Definition at line 64 of file Rendering\+Object.\+h.
+
+\hypertarget{class_rendering_object_afc405316bddec4ba1d5c228ecc0d9061}{}\index{Rendering\+Object@{Rendering\+Object}!vertex\+U\+V@{vertex\+U\+V}}
+\index{vertex\+U\+V@{vertex\+U\+V}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{vertex\+U\+V}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unique\+\_\+ptr$<${\bf U\+V\+Array}$>$ Rendering\+Object\+::vertex\+U\+V\hspace{0.3cm}{\ttfamily [protected]}}\label{class_rendering_object_afc405316bddec4ba1d5c228ecc0d9061}
+
+
+Definition at line 74 of file Rendering\+Object.\+h.
+
+\hypertarget{class_rendering_object_ad583c70014e3f6ab0c9b62ea3c96ad25}{}\index{Rendering\+Object@{Rendering\+Object}!vertex\+U\+V\+Buffer@{vertex\+U\+V\+Buffer}}
+\index{vertex\+U\+V\+Buffer@{vertex\+U\+V\+Buffer}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{vertex\+U\+V\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Rendering\+Object\+::vertex\+U\+V\+Buffer\hspace{0.3cm}{\ttfamily [protected]}}\label{class_rendering_object_ad583c70014e3f6ab0c9b62ea3c96ad25}
+
+
+Definition at line 73 of file Rendering\+Object.\+h.
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/michaelbao/workspace/cs148opengl4/source/common/\+Rendering/Rendering\+Object.\+h\item 
-/\+Users/michaelbao/workspace/cs148opengl4/source/common/\+Rendering/Rendering\+Object.\+cpp\end{DoxyCompactItemize}
+/\+Users/michaelbao/workspace/cs148opengl4/source/common/\+Rendering/\hyperlink{_rendering_object_8h}{Rendering\+Object.\+h}\item 
+/\+Users/michaelbao/workspace/cs148opengl4/source/common/\+Rendering/\hyperlink{_rendering_object_8cpp}{Rendering\+Object.\+cpp}\end{DoxyCompactItemize}

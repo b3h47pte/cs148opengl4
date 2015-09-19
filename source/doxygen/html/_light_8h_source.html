@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -88,53 +89,69 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Light.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<a href="_light_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#ifndef __LIGHT__</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#define __LIGHT__</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="_light_8h.html#a2dbeff5117c65c1658cd4a4945926840">    4</a></span>&#160;<span class="preprocessor">#define __LIGHT__</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;common/Scene/SceneObject.h&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_scene_object_8h.html">common/Scene/SceneObject.h</a>&quot;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// By default the light acts like a point light.</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_light.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_light.html">Light</a>: <span class="keyword">public</span> <a class="code" href="class_scene_object.html">SceneObject</a></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">enum class</span> LightType {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        GLOBAL = 0,</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        POINT</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_light.html#a661d9480e01af8b1612860b9630ef5f8">   12</a></span>&#160;    <span class="keyword">enum class</span> <a class="code" href="class_light.html#a661d9480e01af8b1612860b9630ef5f8">LightType</a> {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <a class="code" href="class_light.html#a661d9480e01af8b1612860b9630ef5f8a6eecfba72d12922ee1dead07a0ef3334">GLOBAL</a> = 0,</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <a class="code" href="class_light.html#a661d9480e01af8b1612860b9630ef5f8aaebdbcb765394d25d6a604589a890f82">POINT</a></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    };</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="class_light.html">Light</a>(std::unique_ptr&lt;struct LightProperties&gt; inProperties, LightType type = LightType::POINT);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="class_light.html">Light</a>();</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="class_light.html#adca12f0d5470bc3f2e6e77233ab3dcf1">Light</a>(std::unique_ptr&lt;struct LightProperties&gt; inProperties, <a class="code" href="class_light.html#a661d9480e01af8b1612860b9630ef5f8">LightType</a> type = <a class="code" href="class_light.html#a661d9480e01af8b1612860b9630ef5f8aaebdbcb765394d25d6a604589a890f82">LightType::POINT</a>);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_light.html#ad0e59fad13bb6cfadc25b2c477e9ddc7">~Light</a>();</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">void</span> GetAttenuation(<span class="keywordtype">float</span>&amp; constant, <span class="keywordtype">float</span>&amp; linear, <span class="keywordtype">float</span>&amp; quadratic) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_light.html#a2d3f34b821c0cb0b5baa664ee91d309f">GetAttenuation</a>(<span class="keywordtype">float</span>&amp; constant, <span class="keywordtype">float</span>&amp; linear, <span class="keywordtype">float</span>&amp; quadratic) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    LightType GetLightType()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> lightType; }</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_light.html#a393ede80ccba5f4314135011a665afab">   22</a></span>&#160;    <a class="code" href="class_light.html#a661d9480e01af8b1612860b9630ef5f8">LightType</a> <a class="code" href="class_light.html#a393ede80ccba5f4314135011a665afab">GetLightType</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="class_light.html#ab0c279c927973443f7b52fc924b489aa">lightType</a>; }</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">const</span> <span class="keyword">struct </span><a class="code" href="struct_light_properties.html">LightProperties</a>* GetPropertiesRaw() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">const</span> <span class="keyword">struct </span><a class="code" href="struct_light_properties.html">LightProperties</a>* <a class="code" href="class_light.html#a074230bc62c5bf705bc39c1de64474c0">GetPropertiesRaw</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetupShaderUniforms(<span class="keyword">const</span> <span class="keyword">class</span> <a class="code" href="class_shader_program.html">ShaderProgram</a>* program) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_light.html#a360ea479af434502737f6b5c0b0ff3d9">SetupShaderUniforms</a>(<span class="keyword">const</span> <span class="keyword">class</span> <a class="code" href="class_shader_program.html">ShaderProgram</a>* program) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> std::string LIGHT_UNIFORM_NAME;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    std::unique_ptr&lt;struct LightProperties&gt; properties;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_light.html#ab2d40f6c364cf728d03a90ff885e37cb">   28</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="class_light.html#ab2d40f6c364cf728d03a90ff885e37cb">LIGHT_UNIFORM_NAME</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_light.html#a74eba4cac1cc27e741230fbda32fceef">   29</a></span>&#160;    std::unique_ptr&lt;struct LightProperties&gt; <a class="code" href="class_light.html#a74eba4cac1cc27e741230fbda32fceef">properties</a>;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    LightType lightType;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_light.html#ab0c279c927973443f7b52fc924b489aa">   31</a></span>&#160;    <a class="code" href="class_light.html#a661d9480e01af8b1612860b9630ef5f8">LightType</a> <a class="code" href="class_light.html#ab0c279c927973443f7b52fc924b489aa">lightType</a>;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">// Attenuation</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">float</span> constantAttenuation;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">float</span> linearAttenuation;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">float</span> quadraticAttenuation;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_light.html#afef6c00a21aa16dc6cc7a7fb1639d2fa">   34</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="class_light.html#afef6c00a21aa16dc6cc7a7fb1639d2fa">constantAttenuation</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_light.html#afcb2da592197efae015ae16c1c5bfceb">   35</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="class_light.html#afcb2da592197efae015ae16c1c5bfceb">linearAttenuation</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_light.html#a0f24dde11cbbd12d0f0309e189f3640c">   36</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="class_light.html#a0f24dde11cbbd12d0f0309e189f3640c">quadraticAttenuation</a>;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;};</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="class_light_html_ab0c279c927973443f7b52fc924b489aa"><div class="ttname"><a href="class_light.html#ab0c279c927973443f7b52fc924b489aa">Light::lightType</a></div><div class="ttdeci">LightType lightType</div><div class="ttdef"><b>Definition:</b> <a href="_light_8h_source.html#l00031">Light.h:31</a></div></div>
+<div class="ttc" id="class_light_html_a0f24dde11cbbd12d0f0309e189f3640c"><div class="ttname"><a href="class_light.html#a0f24dde11cbbd12d0f0309e189f3640c">Light::quadraticAttenuation</a></div><div class="ttdeci">float quadraticAttenuation</div><div class="ttdef"><b>Definition:</b> <a href="_light_8h_source.html#l00036">Light.h:36</a></div></div>
+<div class="ttc" id="class_light_html_afef6c00a21aa16dc6cc7a7fb1639d2fa"><div class="ttname"><a href="class_light.html#afef6c00a21aa16dc6cc7a7fb1639d2fa">Light::constantAttenuation</a></div><div class="ttdeci">float constantAttenuation</div><div class="ttdef"><b>Definition:</b> <a href="_light_8h_source.html#l00034">Light.h:34</a></div></div>
+<div class="ttc" id="class_light_html_afcb2da592197efae015ae16c1c5bfceb"><div class="ttname"><a href="class_light.html#afcb2da592197efae015ae16c1c5bfceb">Light::linearAttenuation</a></div><div class="ttdeci">float linearAttenuation</div><div class="ttdef"><b>Definition:</b> <a href="_light_8h_source.html#l00035">Light.h:35</a></div></div>
+<div class="ttc" id="class_light_html_a074230bc62c5bf705bc39c1de64474c0"><div class="ttname"><a href="class_light.html#a074230bc62c5bf705bc39c1de64474c0">Light::GetPropertiesRaw</a></div><div class="ttdeci">const struct LightProperties * GetPropertiesRaw() const </div><div class="ttdef"><b>Definition:</b> <a href="_light_8cpp_source.html#l00023">Light.cpp:23</a></div></div>
+<div class="ttc" id="_scene_object_8h_html"><div class="ttname"><a href="_scene_object_8h.html">SceneObject.h</a></div></div>
+<div class="ttc" id="class_light_html_a661d9480e01af8b1612860b9630ef5f8aaebdbcb765394d25d6a604589a890f82"><div class="ttname"><a href="class_light.html#a661d9480e01af8b1612860b9630ef5f8aaebdbcb765394d25d6a604589a890f82">Light::LightType::POINT</a></div></div>
 <div class="ttc" id="class_light_html"><div class="ttname"><a href="class_light.html">Light</a></div><div class="ttdef"><b>Definition:</b> <a href="_light_8h_source.html#l00009">Light.h:9</a></div></div>
 <div class="ttc" id="struct_light_properties_html"><div class="ttname"><a href="struct_light_properties.html">LightProperties</a></div><div class="ttdef"><b>Definition:</b> <a href="_light_properties_8h_source.html#l00008">LightProperties.h:8</a></div></div>
+<div class="ttc" id="class_light_html_a74eba4cac1cc27e741230fbda32fceef"><div class="ttname"><a href="class_light.html#a74eba4cac1cc27e741230fbda32fceef">Light::properties</a></div><div class="ttdeci">std::unique_ptr&lt; struct LightProperties &gt; properties</div><div class="ttdef"><b>Definition:</b> <a href="_light_8h_source.html#l00029">Light.h:29</a></div></div>
+<div class="ttc" id="class_light_html_a661d9480e01af8b1612860b9630ef5f8"><div class="ttname"><a href="class_light.html#a661d9480e01af8b1612860b9630ef5f8">Light::LightType</a></div><div class="ttdeci">LightType</div><div class="ttdef"><b>Definition:</b> <a href="_light_8h_source.html#l00012">Light.h:12</a></div></div>
+<div class="ttc" id="class_light_html_a393ede80ccba5f4314135011a665afab"><div class="ttname"><a href="class_light.html#a393ede80ccba5f4314135011a665afab">Light::GetLightType</a></div><div class="ttdeci">LightType GetLightType() const </div><div class="ttdef"><b>Definition:</b> <a href="_light_8h_source.html#l00022">Light.h:22</a></div></div>
+<div class="ttc" id="class_light_html_ad0e59fad13bb6cfadc25b2c477e9ddc7"><div class="ttname"><a href="class_light.html#ad0e59fad13bb6cfadc25b2c477e9ddc7">Light::~Light</a></div><div class="ttdeci">virtual ~Light()</div><div class="ttdef"><b>Definition:</b> <a href="_light_8cpp_source.html#l00012">Light.cpp:12</a></div></div>
+<div class="ttc" id="class_light_html_a2d3f34b821c0cb0b5baa664ee91d309f"><div class="ttname"><a href="class_light.html#a2d3f34b821c0cb0b5baa664ee91d309f">Light::GetAttenuation</a></div><div class="ttdeci">void GetAttenuation(float &amp;constant, float &amp;linear, float &amp;quadratic) const </div><div class="ttdef"><b>Definition:</b> <a href="_light_8cpp_source.html#l00016">Light.cpp:16</a></div></div>
+<div class="ttc" id="class_light_html_a360ea479af434502737f6b5c0b0ff3d9"><div class="ttname"><a href="class_light.html#a360ea479af434502737f6b5c0b0ff3d9">Light::SetupShaderUniforms</a></div><div class="ttdeci">virtual void SetupShaderUniforms(const class ShaderProgram *program) const </div><div class="ttdef"><b>Definition:</b> <a href="_light_8cpp_source.html#l00028">Light.cpp:28</a></div></div>
 <div class="ttc" id="class_scene_object_html"><div class="ttname"><a href="class_scene_object.html">SceneObject</a></div><div class="ttdef"><b>Definition:</b> <a href="_scene_object_8h_source.html#l00008">SceneObject.h:8</a></div></div>
 <div class="ttc" id="class_shader_program_html"><div class="ttname"><a href="class_shader_program.html">ShaderProgram</a></div><div class="ttdef"><b>Definition:</b> <a href="_shader_program_8h_source.html#l00008">ShaderProgram.h:8</a></div></div>
+<div class="ttc" id="class_light_html_adca12f0d5470bc3f2e6e77233ab3dcf1"><div class="ttname"><a href="class_light.html#adca12f0d5470bc3f2e6e77233ab3dcf1">Light::Light</a></div><div class="ttdeci">Light(std::unique_ptr&lt; struct LightProperties &gt; inProperties, LightType type=LightType::POINT)</div><div class="ttdef"><b>Definition:</b> <a href="_light_8cpp_source.html#l00007">Light.cpp:7</a></div></div>
+<div class="ttc" id="class_light_html_a661d9480e01af8b1612860b9630ef5f8a6eecfba72d12922ee1dead07a0ef3334"><div class="ttname"><a href="class_light.html#a661d9480e01af8b1612860b9630ef5f8a6eecfba72d12922ee1dead07a0ef3334">Light::LightType::GLOBAL</a></div></div>
+<div class="ttc" id="class_light_html_ab2d40f6c364cf728d03a90ff885e37cb"><div class="ttname"><a href="class_light.html#ab2d40f6c364cf728d03a90ff885e37cb">Light::LIGHT_UNIFORM_NAME</a></div><div class="ttdeci">static const std::string LIGHT_UNIFORM_NAME</div><div class="ttdef"><b>Definition:</b> <a href="_light_8h_source.html#l00028">Light.h:28</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 19 2015 01:03:41 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 19 2015 01:31:32 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

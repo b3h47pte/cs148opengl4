@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -88,13 +89,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">PrimitiveCreator.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<a href="_primitive_creator_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#ifndef __PRIMITIVE_CREATOR__</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#define __PRIMITIVE_CREATOR__</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="_primitive_creator_8h.html#ab3e814bbbeed580bfd7f3dad467108e1">    4</a></span>&#160;<span class="preprocessor">#define __PRIMITIVE_CREATOR__</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="common_8h.html">common/common.h</a>&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;common/Rendering/RenderingObject.h&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_rendering_object_8h.html">common/Rendering/RenderingObject.h</a>&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_primitive_creator.html">PrimitiveCreator</a></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
@@ -102,24 +103,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// Utility</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keywordtype">void</span> AddTriangleIndices(<span class="keyword">const</span> glm::uvec3&amp; triangle, RenderingObject::IndexArray&amp; indices);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespace_primitive_creator.html#acbc473c3e4d3b99d8e2b9d302e095978">AddTriangleIndices</a>(<span class="keyword">const</span> glm::uvec3&amp; triangle, <a class="code" href="class_rendering_object.html#a9931c88bca3384065c6691dfe1e60af1">RenderingObject::IndexArray</a>&amp; indices);</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">// Primitive Generation</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;std::shared_ptr&lt;RenderingObject&gt; CreateCube(std::shared_ptr&lt;ShaderProgram&gt; inputShader, <span class="keywordtype">float</span> sideLength);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;std::shared_ptr&lt;RenderingObject&gt; CreateIcoSphere(std::shared_ptr&lt;ShaderProgram&gt; inputShader, <span class="keywordtype">float</span> radius, <span class="keywordtype">int</span> refinementSteps = 0);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;std::shared_ptr&lt;RenderingObject&gt; <a class="code" href="namespace_primitive_creator.html#a4fcaafc02f9b75b4e6e9720e7c15c079">CreateCube</a>(std::shared_ptr&lt;ShaderProgram&gt; inputShader, <span class="keywordtype">float</span> sideLength);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;std::shared_ptr&lt;RenderingObject&gt; <a class="code" href="namespace_primitive_creator.html#a770df5fa811fe0c5d54db95d20164f71">CreateIcoSphere</a>(std::shared_ptr&lt;ShaderProgram&gt; inputShader, <span class="keywordtype">float</span> radius, <span class="keywordtype">int</span> refinementSteps = 0);</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="_rendering_object_8h_html"><div class="ttname"><a href="_rendering_object_8h.html">RenderingObject.h</a></div></div>
+<div class="ttc" id="class_rendering_object_html_a9931c88bca3384065c6691dfe1e60af1"><div class="ttname"><a href="class_rendering_object.html#a9931c88bca3384065c6691dfe1e60af1">RenderingObject::IndexArray</a></div><div class="ttdeci">std::vector&lt; unsigned int &gt; IndexArray</div><div class="ttdef"><b>Definition:</b> <a href="_rendering_object_8h_source.html#l00013">RenderingObject.h:13</a></div></div>
 <div class="ttc" id="namespace_primitive_creator_html"><div class="ttname"><a href="namespace_primitive_creator.html">PrimitiveCreator</a></div><div class="ttdef"><b>Definition:</b> <a href="_primitive_creator_8cpp_source.html#l00005">PrimitiveCreator.cpp:5</a></div></div>
+<div class="ttc" id="namespace_primitive_creator_html_acbc473c3e4d3b99d8e2b9d302e095978"><div class="ttname"><a href="namespace_primitive_creator.html#acbc473c3e4d3b99d8e2b9d302e095978">PrimitiveCreator::AddTriangleIndices</a></div><div class="ttdeci">void AddTriangleIndices(const glm::uvec3 &amp;triangle, RenderingObject::IndexArray &amp;indices)</div><div class="ttdef"><b>Definition:</b> <a href="_primitive_creator_8cpp_source.html#l00007">PrimitiveCreator.cpp:7</a></div></div>
+<div class="ttc" id="namespace_primitive_creator_html_a4fcaafc02f9b75b4e6e9720e7c15c079"><div class="ttname"><a href="namespace_primitive_creator.html#a4fcaafc02f9b75b4e6e9720e7c15c079">PrimitiveCreator::CreateCube</a></div><div class="ttdeci">std::shared_ptr&lt; RenderingObject &gt; CreateCube(std::shared_ptr&lt; ShaderProgram &gt; inputShader, float sideLength)</div><div class="ttdef"><b>Definition:</b> <a href="_primitive_creator_8cpp_source.html#l00014">PrimitiveCreator.cpp:14</a></div></div>
 <div class="ttc" id="common_8h_html"><div class="ttname"><a href="common_8h.html">common.h</a></div><div class="ttdoc">A file included across the application framework to include common header files and other useful func...</div></div>
+<div class="ttc" id="namespace_primitive_creator_html_a770df5fa811fe0c5d54db95d20164f71"><div class="ttname"><a href="namespace_primitive_creator.html#a770df5fa811fe0c5d54db95d20164f71">PrimitiveCreator::CreateIcoSphere</a></div><div class="ttdeci">std::shared_ptr&lt; RenderingObject &gt; CreateIcoSphere(std::shared_ptr&lt; ShaderProgram &gt; inputShader, float radius, int refinementSteps)</div><div class="ttdef"><b>Definition:</b> <a href="_primitive_creator_8cpp_source.html#l00019">PrimitiveCreator.cpp:19</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 19 2015 01:03:41 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 19 2015 01:31:32 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

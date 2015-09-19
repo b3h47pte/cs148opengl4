@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -88,25 +89,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">PrimitiveCreator.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;common/Utility/Mesh/Simple/PrimitiveCreator.h&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;common/Rendering/RenderingObject.h&quot;</span></div>
+<a href="_primitive_creator_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_primitive_creator_8h.html">common/Utility/Mesh/Simple/PrimitiveCreator.h</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_rendering_object_8h.html">common/Rendering/RenderingObject.h</a>&quot;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_primitive_creator.html">PrimitiveCreator</a> </div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="namespace_primitive_creator.html">    5</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_primitive_creator.html">PrimitiveCreator</a> </div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keywordtype">void</span> AddTriangleIndices(<span class="keyword">const</span> glm::uvec3&amp; triangle, RenderingObject::IndexArray&amp; indices)</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="namespace_primitive_creator.html#acbc473c3e4d3b99d8e2b9d302e095978">    7</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespace_primitive_creator.html#acbc473c3e4d3b99d8e2b9d302e095978">AddTriangleIndices</a>(<span class="keyword">const</span> glm::uvec3&amp; triangle, <a class="code" href="class_rendering_object.html#a9931c88bca3384065c6691dfe1e60af1">RenderingObject::IndexArray</a>&amp; indices)</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 3; ++i) {</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        indices.push_back(triangle[i]);</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    }</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;std::shared_ptr&lt;RenderingObject&gt; CreateCube(std::shared_ptr&lt;ShaderProgram&gt; inputShader, <span class="keywordtype">float</span> sideLength)</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="namespace_primitive_creator.html#a4fcaafc02f9b75b4e6e9720e7c15c079">   14</a></span>&#160;std::shared_ptr&lt;RenderingObject&gt; <a class="code" href="namespace_primitive_creator.html#a4fcaafc02f9b75b4e6e9720e7c15c079">CreateCube</a>(std::shared_ptr&lt;ShaderProgram&gt; inputShader, <span class="keywordtype">float</span> sideLength)</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;std::shared_ptr&lt;RenderingObject&gt; CreateIcoSphere(std::shared_ptr&lt;ShaderProgram&gt; inputShader, <span class="keywordtype">float</span> radius, <span class="keywordtype">int</span> refinementSteps)</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="namespace_primitive_creator.html#a770df5fa811fe0c5d54db95d20164f71">   19</a></span>&#160;std::shared_ptr&lt;RenderingObject&gt; <a class="code" href="namespace_primitive_creator.html#a770df5fa811fe0c5d54db95d20164f71">CreateIcoSphere</a>(std::shared_ptr&lt;ShaderProgram&gt; inputShader, <span class="keywordtype">float</span> radius, <span class="keywordtype">int</span> refinementSteps)</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">// First generate an icosahedron and then subdivide it to get the final sphere.</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">// More specifics in generating the icosahedron can be found at: </span></div>
@@ -139,7 +140,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        }</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    );</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    RenderingObject::IndexArray vertexIndices = {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="class_rendering_object.html#a9931c88bca3384065c6691dfe1e60af1">RenderingObject::IndexArray</a> vertexIndices = {</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        0, 11, 5,</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        0, 5, 1,</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        0, 1, 7,</div>
@@ -169,7 +170,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; refinementSteps; ++i) {</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> totalTriangles = vertexIndices.size() / 3;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        RenderingObject::IndexArray newVertexIndices;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <a class="code" href="class_rendering_object.html#a9931c88bca3384065c6691dfe1e60af1">RenderingObject::IndexArray</a> newVertexIndices;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        newVertexIndices.reserve(totalTriangles * 4);</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> t = 0; t &lt; totalTriangles; ++t) {</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> triangleOffset = t * 3;</div>
@@ -212,10 +213,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                cIndex = vertexPositions-&gt;size() - 1;</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            }</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            AddTriangleIndices(glm::uvec3(vertexIndices[triangleOffset], aIndex, cIndex), newVertexIndices);</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            AddTriangleIndices(glm::uvec3(vertexIndices[triangleOffset + 1], bIndex, aIndex), newVertexIndices);</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            AddTriangleIndices(glm::uvec3(vertexIndices[triangleOffset + 2], cIndex, bIndex), newVertexIndices);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            AddTriangleIndices(glm::uvec3(aIndex, bIndex, cIndex), newVertexIndices);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            <a class="code" href="namespace_primitive_creator.html#acbc473c3e4d3b99d8e2b9d302e095978">AddTriangleIndices</a>(glm::uvec3(vertexIndices[triangleOffset], aIndex, cIndex), newVertexIndices);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            <a class="code" href="namespace_primitive_creator.html#acbc473c3e4d3b99d8e2b9d302e095978">AddTriangleIndices</a>(glm::uvec3(vertexIndices[triangleOffset + 1], bIndex, aIndex), newVertexIndices);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <a class="code" href="namespace_primitive_creator.html#acbc473c3e4d3b99d8e2b9d302e095978">AddTriangleIndices</a>(glm::uvec3(vertexIndices[triangleOffset + 2], cIndex, bIndex), newVertexIndices);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            <a class="code" href="namespace_primitive_creator.html#acbc473c3e4d3b99d8e2b9d302e095978">AddTriangleIndices</a>(glm::uvec3(aIndex, bIndex, cIndex), newVertexIndices);</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        }</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        vertexIndices = std::move(newVertexIndices);</div>
@@ -235,11 +236,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordflow">return</span> newObj;</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;}</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;}</div>
+<div class="ttc" id="_rendering_object_8h_html"><div class="ttname"><a href="_rendering_object_8h.html">RenderingObject.h</a></div></div>
+<div class="ttc" id="_primitive_creator_8h_html"><div class="ttname"><a href="_primitive_creator_8h.html">PrimitiveCreator.h</a></div></div>
+<div class="ttc" id="class_rendering_object_html_a9931c88bca3384065c6691dfe1e60af1"><div class="ttname"><a href="class_rendering_object.html#a9931c88bca3384065c6691dfe1e60af1">RenderingObject::IndexArray</a></div><div class="ttdeci">std::vector&lt; unsigned int &gt; IndexArray</div><div class="ttdef"><b>Definition:</b> <a href="_rendering_object_8h_source.html#l00013">RenderingObject.h:13</a></div></div>
 <div class="ttc" id="namespace_primitive_creator_html"><div class="ttname"><a href="namespace_primitive_creator.html">PrimitiveCreator</a></div><div class="ttdef"><b>Definition:</b> <a href="_primitive_creator_8cpp_source.html#l00005">PrimitiveCreator.cpp:5</a></div></div>
+<div class="ttc" id="namespace_primitive_creator_html_acbc473c3e4d3b99d8e2b9d302e095978"><div class="ttname"><a href="namespace_primitive_creator.html#acbc473c3e4d3b99d8e2b9d302e095978">PrimitiveCreator::AddTriangleIndices</a></div><div class="ttdeci">void AddTriangleIndices(const glm::uvec3 &amp;triangle, RenderingObject::IndexArray &amp;indices)</div><div class="ttdef"><b>Definition:</b> <a href="_primitive_creator_8cpp_source.html#l00007">PrimitiveCreator.cpp:7</a></div></div>
+<div class="ttc" id="namespace_primitive_creator_html_a4fcaafc02f9b75b4e6e9720e7c15c079"><div class="ttname"><a href="namespace_primitive_creator.html#a4fcaafc02f9b75b4e6e9720e7c15c079">PrimitiveCreator::CreateCube</a></div><div class="ttdeci">std::shared_ptr&lt; RenderingObject &gt; CreateCube(std::shared_ptr&lt; ShaderProgram &gt; inputShader, float sideLength)</div><div class="ttdef"><b>Definition:</b> <a href="_primitive_creator_8cpp_source.html#l00014">PrimitiveCreator.cpp:14</a></div></div>
+<div class="ttc" id="namespace_primitive_creator_html_a770df5fa811fe0c5d54db95d20164f71"><div class="ttname"><a href="namespace_primitive_creator.html#a770df5fa811fe0c5d54db95d20164f71">PrimitiveCreator::CreateIcoSphere</a></div><div class="ttdeci">std::shared_ptr&lt; RenderingObject &gt; CreateIcoSphere(std::shared_ptr&lt; ShaderProgram &gt; inputShader, float radius, int refinementSteps)</div><div class="ttdef"><b>Definition:</b> <a href="_primitive_creator_8cpp_source.html#l00019">PrimitiveCreator.cpp:19</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 19 2015 01:03:41 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 19 2015 01:31:32 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

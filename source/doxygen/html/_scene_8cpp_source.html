@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -88,33 +89,39 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Scene.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;common/Scene/Scene.h&quot;</span></div>
+<a href="_scene_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_scene_8h.html">common/Scene/Scene.h</a>&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keywordtype">void</span> Scene::AddSceneObject(std::shared_ptr&lt;SceneObject&gt; <span class="keywordtype">object</span>)</div>
+<div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="class_scene.html#a6e51f14c74c252d231b73d7109b8117e">    3</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_scene.html#a6e51f14c74c252d231b73d7109b8117e">Scene::AddSceneObject</a>(std::shared_ptr&lt;SceneObject&gt; <span class="keywordtype">object</span>)</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <span class="keywordflow">if</span> (!<span class="keywordtype">object</span>) {</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    }</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    sceneObjects.emplace_back(std::move(<span class="keywordtype">object</span>));</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <a class="code" href="class_scene.html#a871382922b2a04d7883cf6d34529b5df">sceneObjects</a>.emplace_back(std::move(<span class="keywordtype">object</span>));</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;}</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keywordtype">void</span> Scene::AddLight(std::shared_ptr&lt;Light&gt; light)</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="class_scene.html#ab9b1a906b16bf867600fc3f5b734c1d4">   11</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_scene.html#ab9b1a906b16bf867600fc3f5b734c1d4">Scene::AddLight</a>(std::shared_ptr&lt;Light&gt; light)</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordflow">if</span> (!light) {</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    }</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    sceneLights.emplace_back(std::move(light));</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="class_scene.html#a847f4f9c485a56b084a1340811f0e726">sceneLights</a>.emplace_back(std::move(light));</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keywordtype">void</span> Scene::ClearScene()</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_scene.html#ac3b0f6126be07f78a61abfac3487e4df">   19</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_scene.html#ac3b0f6126be07f78a61abfac3487e4df">Scene::ClearScene</a>()</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    sceneObjects.clear();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    sceneLights.clear();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="class_scene.html#a871382922b2a04d7883cf6d34529b5df">sceneObjects</a>.clear();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="class_scene.html#a847f4f9c485a56b084a1340811f0e726">sceneLights</a>.clear();</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
+<div class="ttc" id="class_scene_html_ac3b0f6126be07f78a61abfac3487e4df"><div class="ttname"><a href="class_scene.html#ac3b0f6126be07f78a61abfac3487e4df">Scene::ClearScene</a></div><div class="ttdeci">void ClearScene()</div><div class="ttdef"><b>Definition:</b> <a href="_scene_8cpp_source.html#l00019">Scene.cpp:19</a></div></div>
+<div class="ttc" id="class_scene_html_a6e51f14c74c252d231b73d7109b8117e"><div class="ttname"><a href="class_scene.html#a6e51f14c74c252d231b73d7109b8117e">Scene::AddSceneObject</a></div><div class="ttdeci">void AddSceneObject(std::shared_ptr&lt; SceneObject &gt; object)</div><div class="ttdef"><b>Definition:</b> <a href="_scene_8cpp_source.html#l00003">Scene.cpp:3</a></div></div>
+<div class="ttc" id="_scene_8h_html"><div class="ttname"><a href="_scene_8h.html">Scene.h</a></div></div>
+<div class="ttc" id="class_scene_html_a871382922b2a04d7883cf6d34529b5df"><div class="ttname"><a href="class_scene.html#a871382922b2a04d7883cf6d34529b5df">Scene::sceneObjects</a></div><div class="ttdeci">std::vector&lt; std::shared_ptr&lt; SceneObject &gt; &gt; sceneObjects</div><div class="ttdef"><b>Definition:</b> <a href="_scene_8h_source.html#l00048">Scene.h:48</a></div></div>
+<div class="ttc" id="class_scene_html_ab9b1a906b16bf867600fc3f5b734c1d4"><div class="ttname"><a href="class_scene.html#ab9b1a906b16bf867600fc3f5b734c1d4">Scene::AddLight</a></div><div class="ttdeci">void AddLight(std::shared_ptr&lt; Light &gt; light)</div><div class="ttdef"><b>Definition:</b> <a href="_scene_8cpp_source.html#l00011">Scene.cpp:11</a></div></div>
+<div class="ttc" id="class_scene_html_a847f4f9c485a56b084a1340811f0e726"><div class="ttname"><a href="class_scene.html#a847f4f9c485a56b084a1340811f0e726">Scene::sceneLights</a></div><div class="ttdeci">std::vector&lt; std::shared_ptr&lt; Light &gt; &gt; sceneLights</div><div class="ttdef"><b>Definition:</b> <a href="_scene_8h_source.html#l00049">Scene.h:49</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 19 2015 01:03:41 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 19 2015 01:31:32 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

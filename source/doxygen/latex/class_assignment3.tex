@@ -1,5 +1,9 @@
 \hypertarget{class_assignment3}{}\section{Assignment3 Class Reference}
 \label{class_assignment3}\index{Assignment3@{Assignment3}}
+
+
+{\ttfamily \#include $<$Assignment3.\+h$>$}
+
 Inheritance diagram for Assignment3\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,8 +13,7 @@ Inheritance diagram for Assignment3\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_assignment3_adb8e9ac0681c600affc3370f5e5422b2}{}{\bfseries Assignment3} (std\+::shared\+\_\+ptr$<$ class \hyperlink{class_scene}{Scene} $>$ input\+Scene, std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$ input\+Camera)\label{class_assignment3_adb8e9ac0681c600affc3370f5e5422b2}
-
+\hyperlink{class_assignment3_adb8e9ac0681c600affc3370f5e5422b2}{Assignment3} (std\+::shared\+\_\+ptr$<$ class \hyperlink{class_scene}{Scene} $>$ input\+Scene, std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$ input\+Camera)
 \item 
 virtual glm\+::vec2 \hyperlink{class_assignment3_a895e38d50717c935706a719f4368f5e8}{Get\+Window\+Size} () const 
 \begin{DoxyCompactList}\small\item\em Specifies the initial window size. \end{DoxyCompactList}\item 
@@ -21,17 +24,39 @@ virtual void \hyperlink{class_assignment3_a11256b6e7b38ab24baa92729cfb8ffe2}{Tic
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_assignment3_a12b30bd7b8a0bcefbd977f126ce00b25}{}static std\+::unique\+\_\+ptr$<$ \hyperlink{class_application}{Application} $>$ {\bfseries Create\+Application} (std\+::shared\+\_\+ptr$<$ class \hyperlink{class_scene}{Scene} $>$ \hyperlink{class_application_a88c6615107a5094bb93fa5f153f79554}{scene}, std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$ \hyperlink{class_application_a0e8589fcb13c520ba472473abe5a518d}{camera})\label{class_assignment3_a12b30bd7b8a0bcefbd977f126ce00b25}
-
+static std\+::unique\+\_\+ptr$<$ \hyperlink{class_application}{Application} $>$ \hyperlink{class_assignment3_a12b30bd7b8a0bcefbd977f126ce00b25}{Create\+Application} (std\+::shared\+\_\+ptr$<$ class \hyperlink{class_scene}{Scene} $>$ \hyperlink{class_application_a88c6615107a5094bb93fa5f153f79554}{scene}, std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$ \hyperlink{class_application_a0e8589fcb13c520ba472473abe5a518d}{camera})
 \item 
-\hypertarget{class_assignment3_a47d1b58079eee3e135e08768cd2a2461}{}static std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$ {\bfseries Create\+Camera} ()\label{class_assignment3_a47d1b58079eee3e135e08768cd2a2461}
-
+static std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$ \hyperlink{class_assignment3_a47d1b58079eee3e135e08768cd2a2461}{Create\+Camera} ()
 \end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 virtual void \hyperlink{class_assignment3_a851c637c83c8092d8adfb5c9f761daeb}{Handle\+Window\+Resize} (float x, float y)
 \begin{DoxyCompactList}\small\item\em Called by \hyperlink{class_application_a74d92db64e051efa56d0357989dcb755}{Handle\+Window\+Event()} when the window is resized. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_assignment3_a2dc29d9016a9d822ede84b9ef41429a5}{Setup\+Scene} ()
+\begin{DoxyCompactList}\small\item\em Called by \hyperlink{class_application_a17cf1ea4552d26a1c20f7d98d793d41d}{Initialize()} to populate the scene. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_assignment3_a468c30083d6f75d99cd1fe41205983dc}{Setup\+Example1} ()
+\item 
+virtual void \hyperlink{class_assignment3_a1d23eb19973b78e516169f4a03954526}{Setup\+Camera} ()
+\begin{DoxyCompactList}\small\item\em Called by \hyperlink{class_application_a17cf1ea4552d26a1c20f7d98d793d41d}{Initialize()} to setup the camera. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ class \hyperlink{class_scene_object}{Scene\+Object} $>$ \hyperlink{class_assignment3_a0bc175d3efff30c5f4aa3ffa1272338a}{scene\+Object}
+\item 
+std\+::shared\+\_\+ptr$<$ class \hyperlink{class_light}{Light} $>$ \hyperlink{class_assignment3_ad1cf5a76d62b5a1ed17e66c31e0feb98}{point\+Light}
+\item 
+std\+::shared\+\_\+ptr$<$ class \hyperlink{class_light}{Light} $>$ \hyperlink{class_assignment3_ad6ea1201b058dbac9fd0e7b67015cf61}{point\+Light2}
+\item 
+std\+::shared\+\_\+ptr$<$ class \hyperlink{class_light}{Light} $>$ \hyperlink{class_assignment3_a59be58dbfebe4aa36097131bf654a7ae}{point\+Light3}
+\item 
+std\+::shared\+\_\+ptr$<$ class \hyperlink{class_light}{Light} $>$ \hyperlink{class_assignment3_af720bbd23f1f59d15908eb602a41725b}{point\+Light4}
+\item 
+float \hyperlink{class_assignment3_ac404a56071e2ab5e14289900b9034438}{elapsed\+Time}
+\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
@@ -42,7 +67,45 @@ Definition at line 8 of file Assignment3.\+h.
 
 
 
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_assignment3_adb8e9ac0681c600affc3370f5e5422b2}{}\index{Assignment3@{Assignment3}!Assignment3@{Assignment3}}
+\index{Assignment3@{Assignment3}!Assignment3@{Assignment3}}
+\subsubsection[{Assignment3}]{\setlength{\rightskip}{0pt plus 5cm}Assignment3\+::\+Assignment3 (
+\begin{DoxyParamCaption}
+\item[{std\+::shared\+\_\+ptr$<$ class {\bf Scene} $>$}]{input\+Scene, }
+\item[{std\+::shared\+\_\+ptr$<$ class {\bf Camera} $>$}]{input\+Camera}
+\end{DoxyParamCaption}
+)}\label{class_assignment3_adb8e9ac0681c600affc3370f5e5422b2}
+
+
+Definition at line 8 of file Assignment3.\+cpp.
+
+
+
 \subsection{Member Function Documentation}
+\hypertarget{class_assignment3_a12b30bd7b8a0bcefbd977f126ce00b25}{}\index{Assignment3@{Assignment3}!Create\+Application@{Create\+Application}}
+\index{Create\+Application@{Create\+Application}!Assignment3@{Assignment3}}
+\subsubsection[{Create\+Application}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unique\+\_\+ptr$<$ {\bf Application} $>$ Assignment3\+::\+Create\+Application (
+\begin{DoxyParamCaption}
+\item[{std\+::shared\+\_\+ptr$<$ class {\bf Scene} $>$}]{scene, }
+\item[{std\+::shared\+\_\+ptr$<$ class {\bf Camera} $>$}]{camera}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_assignment3_a12b30bd7b8a0bcefbd977f126ce00b25}
+
+
+Definition at line 13 of file Assignment3.\+cpp.
+
+\hypertarget{class_assignment3_a47d1b58079eee3e135e08768cd2a2461}{}\index{Assignment3@{Assignment3}!Create\+Camera@{Create\+Camera}}
+\index{Create\+Camera@{Create\+Camera}!Assignment3@{Assignment3}}
+\subsubsection[{Create\+Camera}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<$ class {\bf Camera} $>$ Assignment3\+::\+Create\+Camera (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_assignment3_a47d1b58079eee3e135e08768cd2a2461}
+
+
+Definition at line 18 of file Assignment3.\+cpp.
+
 \hypertarget{class_assignment3_a895e38d50717c935706a719f4368f5e8}{}\index{Assignment3@{Assignment3}!Get\+Window\+Size@{Get\+Window\+Size}}
 \index{Get\+Window\+Size@{Get\+Window\+Size}!Assignment3@{Assignment3}}
 \subsubsection[{Get\+Window\+Size}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec2 Assignment3\+::\+Get\+Window\+Size (
@@ -128,6 +191,55 @@ Reimplemented from \hyperlink{class_application_abdba284a0f075ee1d4a2108c3a5236a
 
 Definition at line 96 of file Assignment3.\+cpp.
 
+\hypertarget{class_assignment3_a1d23eb19973b78e516169f4a03954526}{}\index{Assignment3@{Assignment3}!Setup\+Camera@{Setup\+Camera}}
+\index{Setup\+Camera@{Setup\+Camera}!Assignment3@{Assignment3}}
+\subsubsection[{Setup\+Camera}]{\setlength{\rightskip}{0pt plus 5cm}void Assignment3\+::\+Setup\+Camera (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{class_assignment3_a1d23eb19973b78e516169f4a03954526}
+
+
+Called by \hyperlink{class_application_a17cf1ea4552d26a1c20f7d98d793d41d}{Initialize()} to setup the camera. 
+
+Note by the time this function is called, the \hyperlink{class_application}{Application} sub-\/class is fully constructed and \hyperlink{class_camera}{Camera} object is already created. 
+
+Reimplemented from \hyperlink{class_application_a2eb61ca027f223a5c5ad1bf982481193}{Application}.
+
+
+
+Definition at line 36 of file Assignment3.\+cpp.
+
+\hypertarget{class_assignment3_a468c30083d6f75d99cd1fe41205983dc}{}\index{Assignment3@{Assignment3}!Setup\+Example1@{Setup\+Example1}}
+\index{Setup\+Example1@{Setup\+Example1}!Assignment3@{Assignment3}}
+\subsubsection[{Setup\+Example1}]{\setlength{\rightskip}{0pt plus 5cm}void Assignment3\+::\+Setup\+Example1 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{class_assignment3_a468c30083d6f75d99cd1fe41205983dc}
+
+
+Definition at line 102 of file Assignment3.\+cpp.
+
+\hypertarget{class_assignment3_a2dc29d9016a9d822ede84b9ef41429a5}{}\index{Assignment3@{Assignment3}!Setup\+Scene@{Setup\+Scene}}
+\index{Setup\+Scene@{Setup\+Scene}!Assignment3@{Assignment3}}
+\subsubsection[{Setup\+Scene}]{\setlength{\rightskip}{0pt plus 5cm}void Assignment3\+::\+Setup\+Scene (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{class_assignment3_a2dc29d9016a9d822ede84b9ef41429a5}
+
+
+Called by \hyperlink{class_application_a17cf1ea4552d26a1c20f7d98d793d41d}{Initialize()} to populate the scene. 
+
+Note by the time this function is called, the \hyperlink{class_application}{Application} sub-\/class is fully constructed and \hyperlink{class_scene}{Scene} object is already created. 
+
+Reimplemented from \hyperlink{class_application_aa8e8017ef8dd86293c96d0645e66d440}{Application}.
+
+
+
+Definition at line 31 of file Assignment3.\+cpp.
+
 \hypertarget{class_assignment3_a11256b6e7b38ab24baa92729cfb8ffe2}{}\index{Assignment3@{Assignment3}!Tick@{Tick}}
 \index{Tick@{Tick}!Assignment3@{Assignment3}}
 \subsubsection[{Tick}]{\setlength{\rightskip}{0pt plus 5cm}void Assignment3\+::\+Tick (
@@ -154,7 +266,52 @@ Definition at line 179 of file Assignment3.\+cpp.
 
 
 
+\subsection{Member Data Documentation}
+\hypertarget{class_assignment3_ac404a56071e2ab5e14289900b9034438}{}\index{Assignment3@{Assignment3}!elapsed\+Time@{elapsed\+Time}}
+\index{elapsed\+Time@{elapsed\+Time}!Assignment3@{Assignment3}}
+\subsubsection[{elapsed\+Time}]{\setlength{\rightskip}{0pt plus 5cm}float Assignment3\+::elapsed\+Time\hspace{0.3cm}{\ttfamily [private]}}\label{class_assignment3_ac404a56071e2ab5e14289900b9034438}
+
+
+Definition at line 35 of file Assignment3.\+h.
+
+\hypertarget{class_assignment3_ad1cf5a76d62b5a1ed17e66c31e0feb98}{}\index{Assignment3@{Assignment3}!point\+Light@{point\+Light}}
+\index{point\+Light@{point\+Light}!Assignment3@{Assignment3}}
+\subsubsection[{point\+Light}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<$class {\bf Light}$>$ Assignment3\+::point\+Light\hspace{0.3cm}{\ttfamily [private]}}\label{class_assignment3_ad1cf5a76d62b5a1ed17e66c31e0feb98}
+
+
+Definition at line 31 of file Assignment3.\+h.
+
+\hypertarget{class_assignment3_ad6ea1201b058dbac9fd0e7b67015cf61}{}\index{Assignment3@{Assignment3}!point\+Light2@{point\+Light2}}
+\index{point\+Light2@{point\+Light2}!Assignment3@{Assignment3}}
+\subsubsection[{point\+Light2}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<$class {\bf Light}$>$ Assignment3\+::point\+Light2\hspace{0.3cm}{\ttfamily [private]}}\label{class_assignment3_ad6ea1201b058dbac9fd0e7b67015cf61}
+
+
+Definition at line 32 of file Assignment3.\+h.
+
+\hypertarget{class_assignment3_a59be58dbfebe4aa36097131bf654a7ae}{}\index{Assignment3@{Assignment3}!point\+Light3@{point\+Light3}}
+\index{point\+Light3@{point\+Light3}!Assignment3@{Assignment3}}
+\subsubsection[{point\+Light3}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<$class {\bf Light}$>$ Assignment3\+::point\+Light3\hspace{0.3cm}{\ttfamily [private]}}\label{class_assignment3_a59be58dbfebe4aa36097131bf654a7ae}
+
+
+Definition at line 33 of file Assignment3.\+h.
+
+\hypertarget{class_assignment3_af720bbd23f1f59d15908eb602a41725b}{}\index{Assignment3@{Assignment3}!point\+Light4@{point\+Light4}}
+\index{point\+Light4@{point\+Light4}!Assignment3@{Assignment3}}
+\subsubsection[{point\+Light4}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<$class {\bf Light}$>$ Assignment3\+::point\+Light4\hspace{0.3cm}{\ttfamily [private]}}\label{class_assignment3_af720bbd23f1f59d15908eb602a41725b}
+
+
+Definition at line 34 of file Assignment3.\+h.
+
+\hypertarget{class_assignment3_a0bc175d3efff30c5f4aa3ffa1272338a}{}\index{Assignment3@{Assignment3}!scene\+Object@{scene\+Object}}
+\index{scene\+Object@{scene\+Object}!Assignment3@{Assignment3}}
+\subsubsection[{scene\+Object}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<$class {\bf Scene\+Object}$>$ Assignment3\+::scene\+Object\hspace{0.3cm}{\ttfamily [private]}}\label{class_assignment3_a0bc175d3efff30c5f4aa3ffa1272338a}
+
+
+Definition at line 29 of file Assignment3.\+h.
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/michaelbao/workspace/cs148opengl4/source/assignment3/Assignment3.\+h\item 
-/\+Users/michaelbao/workspace/cs148opengl4/source/assignment3/Assignment3.\+cpp\end{DoxyCompactItemize}
+/\+Users/michaelbao/workspace/cs148opengl4/source/assignment3/\hyperlink{_assignment3_8h}{Assignment3.\+h}\item 
+/\+Users/michaelbao/workspace/cs148opengl4/source/assignment3/\hyperlink{_assignment3_8cpp}{Assignment3.\+cpp}\end{DoxyCompactItemize}

@@ -1,5 +1,9 @@
 \hypertarget{class_forward_renderer}{}\section{Forward\+Renderer Class Reference}
 \label{class_forward_renderer}\index{Forward\+Renderer@{Forward\+Renderer}}
+
+
+{\ttfamily \#include $<$Forward\+Renderer.\+h$>$}
+
 Inheritance diagram for Forward\+Renderer\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,20 +13,18 @@ Inheritance diagram for Forward\+Renderer\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_forward_renderer_af8ed84e45085c4dc60d565fcc3c198d1}{}{\bfseries Forward\+Renderer} (std\+::shared\+\_\+ptr$<$ class \hyperlink{class_scene}{Scene} $>$ input\+Scene, std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$ input\+Camera)\label{class_forward_renderer_af8ed84e45085c4dc60d565fcc3c198d1}
-
+\hyperlink{class_forward_renderer_af8ed84e45085c4dc60d565fcc3c198d1}{Forward\+Renderer} (std\+::shared\+\_\+ptr$<$ class \hyperlink{class_scene}{Scene} $>$ input\+Scene, std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$ input\+Camera)
 \item 
-\hypertarget{class_forward_renderer_a99c523e11a4335d061da8bdba51f1c9a}{}virtual void {\bfseries Initialize} ()\label{class_forward_renderer_a99c523e11a4335d061da8bdba51f1c9a}
-
+virtual \hyperlink{class_forward_renderer_ab27ea6139730631d79488cec3c564597}{$\sim$\+Forward\+Renderer} ()
 \item 
-\hypertarget{class_forward_renderer_a3693c5cd68afffc14652f24fcdc62abc}{}virtual void {\bfseries Render} ()\label{class_forward_renderer_a3693c5cd68afffc14652f24fcdc62abc}
-
+virtual void \hyperlink{class_forward_renderer_a99c523e11a4335d061da8bdba51f1c9a}{Initialize} ()
+\item 
+virtual void \hyperlink{class_forward_renderer_a3693c5cd68afffc14652f24fcdc62abc}{Render} ()
 \end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_forward_renderer_a8f703bc4c646416804bc82f4d220a648}{}std\+::shared\+\_\+ptr$<$ class \hyperlink{class_shader_program}{Shader\+Program} $>$ {\bfseries depth\+Prepass\+Shader}\label{class_forward_renderer_a8f703bc4c646416804bc82f4d220a648}
-
+std\+::shared\+\_\+ptr$<$ class \hyperlink{class_shader_program}{Shader\+Program} $>$ \hyperlink{class_forward_renderer_a8f703bc4c646416804bc82f4d220a648}{depth\+Prepass\+Shader}
 \end{DoxyCompactItemize}
 
 
@@ -33,7 +35,76 @@ Definition at line 9 of file Forward\+Renderer.\+h.
 
 
 
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_forward_renderer_af8ed84e45085c4dc60d565fcc3c198d1}{}\index{Forward\+Renderer@{Forward\+Renderer}!Forward\+Renderer@{Forward\+Renderer}}
+\index{Forward\+Renderer@{Forward\+Renderer}!Forward\+Renderer@{Forward\+Renderer}}
+\subsubsection[{Forward\+Renderer}]{\setlength{\rightskip}{0pt plus 5cm}Forward\+Renderer\+::\+Forward\+Renderer (
+\begin{DoxyParamCaption}
+\item[{std\+::shared\+\_\+ptr$<$ class {\bf Scene} $>$}]{input\+Scene, }
+\item[{std\+::shared\+\_\+ptr$<$ class {\bf Camera} $>$}]{input\+Camera}
+\end{DoxyParamCaption}
+)}\label{class_forward_renderer_af8ed84e45085c4dc60d565fcc3c198d1}
+
+
+Definition at line 10 of file Forward\+Renderer.\+cpp.
+
+\hypertarget{class_forward_renderer_ab27ea6139730631d79488cec3c564597}{}\index{Forward\+Renderer@{Forward\+Renderer}!````~Forward\+Renderer@{$\sim$\+Forward\+Renderer}}
+\index{````~Forward\+Renderer@{$\sim$\+Forward\+Renderer}!Forward\+Renderer@{Forward\+Renderer}}
+\subsubsection[{$\sim$\+Forward\+Renderer}]{\setlength{\rightskip}{0pt plus 5cm}Forward\+Renderer\+::$\sim$\+Forward\+Renderer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_forward_renderer_ab27ea6139730631d79488cec3c564597}
+
+
+Definition at line 15 of file Forward\+Renderer.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_forward_renderer_a99c523e11a4335d061da8bdba51f1c9a}{}\index{Forward\+Renderer@{Forward\+Renderer}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Forward\+Renderer@{Forward\+Renderer}}
+\subsubsection[{Initialize}]{\setlength{\rightskip}{0pt plus 5cm}void Forward\+Renderer\+::\+Initialize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_forward_renderer_a99c523e11a4335d061da8bdba51f1c9a}
+
+
+Implements \hyperlink{class_renderer_a7cb221f355f181d84d66e8c09f50f04a}{Renderer}.
+
+
+
+Definition at line 19 of file Forward\+Renderer.\+cpp.
+
+\hypertarget{class_forward_renderer_a3693c5cd68afffc14652f24fcdc62abc}{}\index{Forward\+Renderer@{Forward\+Renderer}!Render@{Render}}
+\index{Render@{Render}!Forward\+Renderer@{Forward\+Renderer}}
+\subsubsection[{Render}]{\setlength{\rightskip}{0pt plus 5cm}void Forward\+Renderer\+::\+Render (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_forward_renderer_a3693c5cd68afffc14652f24fcdc62abc}
+
+
+Implements \hyperlink{class_renderer_a38623da22aa718cfa41e2514ebd269f5}{Renderer}.
+
+
+
+Definition at line 28 of file Forward\+Renderer.\+cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_forward_renderer_a8f703bc4c646416804bc82f4d220a648}{}\index{Forward\+Renderer@{Forward\+Renderer}!depth\+Prepass\+Shader@{depth\+Prepass\+Shader}}
+\index{depth\+Prepass\+Shader@{depth\+Prepass\+Shader}!Forward\+Renderer@{Forward\+Renderer}}
+\subsubsection[{depth\+Prepass\+Shader}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<$class {\bf Shader\+Program}$>$ Forward\+Renderer\+::depth\+Prepass\+Shader\hspace{0.3cm}{\ttfamily [protected]}}\label{class_forward_renderer_a8f703bc4c646416804bc82f4d220a648}
+
+
+Definition at line 19 of file Forward\+Renderer.\+h.
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/michaelbao/workspace/cs148opengl4/source/common/\+Rendering/Forward\+Renderer.\+h\item 
-/\+Users/michaelbao/workspace/cs148opengl4/source/common/\+Rendering/Forward\+Renderer.\+cpp\end{DoxyCompactItemize}
+/\+Users/michaelbao/workspace/cs148opengl4/source/common/\+Rendering/\hyperlink{_forward_renderer_8h}{Forward\+Renderer.\+h}\item 
+/\+Users/michaelbao/workspace/cs148opengl4/source/common/\+Rendering/\hyperlink{_forward_renderer_8cpp}{Forward\+Renderer.\+cpp}\end{DoxyCompactItemize}

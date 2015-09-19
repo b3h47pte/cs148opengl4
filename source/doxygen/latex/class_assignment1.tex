@@ -1,5 +1,9 @@
 \hypertarget{class_assignment1}{}\section{Assignment1 Class Reference}
 \label{class_assignment1}\index{Assignment1@{Assignment1}}
+
+
+{\ttfamily \#include $<$Assignment1.\+h$>$}
+
 Inheritance diagram for Assignment1\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,8 +13,7 @@ Inheritance diagram for Assignment1\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_assignment1_ade9ef18c233dab37d37f20760fe7674d}{}{\bfseries Assignment1} (std\+::shared\+\_\+ptr$<$ class \hyperlink{class_scene}{Scene} $>$ input\+Scene, std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$ input\+Camera)\label{class_assignment1_ade9ef18c233dab37d37f20760fe7674d}
-
+\hyperlink{class_assignment1_ade9ef18c233dab37d37f20760fe7674d}{Assignment1} (std\+::shared\+\_\+ptr$<$ class \hyperlink{class_scene}{Scene} $>$ input\+Scene, std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$ input\+Camera)
 \item 
 virtual glm\+::vec2 \hyperlink{class_assignment1_a27daa24c1afe9e10bd6615dfa250473e}{Get\+Window\+Size} () const 
 \begin{DoxyCompactList}\small\item\em Specifies the initial window size. \end{DoxyCompactList}\item 
@@ -19,8 +22,18 @@ virtual void \hyperlink{class_assignment1_ab9db4f51e177dd72130cd61d86b97535}{Han
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_assignment1_ae1952b4904620a16c4f2c098bf061c68}{}static std\+::unique\+\_\+ptr$<$ \hyperlink{class_application}{Application} $>$ {\bfseries Create\+Application} (std\+::shared\+\_\+ptr$<$ class \hyperlink{class_scene}{Scene} $>$ \hyperlink{class_application_a88c6615107a5094bb93fa5f153f79554}{scene}, std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$ \hyperlink{class_application_a0e8589fcb13c520ba472473abe5a518d}{camera})\label{class_assignment1_ae1952b4904620a16c4f2c098bf061c68}
-
+static std\+::unique\+\_\+ptr$<$ \hyperlink{class_application}{Application} $>$ \hyperlink{class_assignment1_ae1952b4904620a16c4f2c098bf061c68}{Create\+Application} (std\+::shared\+\_\+ptr$<$ class \hyperlink{class_scene}{Scene} $>$ \hyperlink{class_application_a88c6615107a5094bb93fa5f153f79554}{scene}, std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$ \hyperlink{class_application_a0e8589fcb13c520ba472473abe5a518d}{camera})
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_assignment1_a8d12cf21f1463caa5a8da45110b50103}{Setup\+Scene} ()
+\begin{DoxyCompactList}\small\item\em Called by \hyperlink{class_application_a17cf1ea4552d26a1c20f7d98d793d41d}{Initialize()} to populate the scene. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_assignment1_a07743a6d86f7603dd58339c4db1de192}{Setup\+Example1} ()
+\item 
+virtual void \hyperlink{class_assignment1_aeabed7b579d59a6fdacaeab468afba29}{Setup\+Example2} ()
+\item 
+virtual void \hyperlink{class_assignment1_afbb3cb7765b899e69c9847d29f045392}{Setup\+Example3} ()
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
@@ -32,7 +45,34 @@ Definition at line 8 of file Assignment1.\+h.
 
 
 
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_assignment1_ade9ef18c233dab37d37f20760fe7674d}{}\index{Assignment1@{Assignment1}!Assignment1@{Assignment1}}
+\index{Assignment1@{Assignment1}!Assignment1@{Assignment1}}
+\subsubsection[{Assignment1}]{\setlength{\rightskip}{0pt plus 5cm}Assignment1\+::\+Assignment1 (
+\begin{DoxyParamCaption}
+\item[{std\+::shared\+\_\+ptr$<$ class {\bf Scene} $>$}]{input\+Scene, }
+\item[{std\+::shared\+\_\+ptr$<$ class {\bf Camera} $>$}]{input\+Camera}
+\end{DoxyParamCaption}
+)}\label{class_assignment1_ade9ef18c233dab37d37f20760fe7674d}
+
+
+Definition at line 4 of file Assignment1.\+cpp.
+
+
+
 \subsection{Member Function Documentation}
+\hypertarget{class_assignment1_ae1952b4904620a16c4f2c098bf061c68}{}\index{Assignment1@{Assignment1}!Create\+Application@{Create\+Application}}
+\index{Create\+Application@{Create\+Application}!Assignment1@{Assignment1}}
+\subsubsection[{Create\+Application}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unique\+\_\+ptr$<$ {\bf Application} $>$ Assignment1\+::\+Create\+Application (
+\begin{DoxyParamCaption}
+\item[{std\+::shared\+\_\+ptr$<$ class {\bf Scene} $>$}]{scene, }
+\item[{std\+::shared\+\_\+ptr$<$ class {\bf Camera} $>$}]{camera}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_assignment1_ae1952b4904620a16c4f2c098bf061c68}
+
+
+Definition at line 9 of file Assignment1.\+cpp.
+
 \hypertarget{class_assignment1_a27daa24c1afe9e10bd6615dfa250473e}{}\index{Assignment1@{Assignment1}!Get\+Window\+Size@{Get\+Window\+Size}}
 \index{Get\+Window\+Size@{Get\+Window\+Size}!Assignment1@{Assignment1}}
 \subsubsection[{Get\+Window\+Size}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec2 Assignment1\+::\+Get\+Window\+Size (
@@ -91,9 +131,61 @@ Reimplemented from \hyperlink{class_application_ae6074c3f102de1cb2fe4c81b545679d
 
 Definition at line 171 of file Assignment1.\+cpp.
 
+\hypertarget{class_assignment1_a07743a6d86f7603dd58339c4db1de192}{}\index{Assignment1@{Assignment1}!Setup\+Example1@{Setup\+Example1}}
+\index{Setup\+Example1@{Setup\+Example1}!Assignment1@{Assignment1}}
+\subsubsection[{Setup\+Example1}]{\setlength{\rightskip}{0pt plus 5cm}void Assignment1\+::\+Setup\+Example1 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{class_assignment1_a07743a6d86f7603dd58339c4db1de192}
+
+
+Definition at line 24 of file Assignment1.\+cpp.
+
+\hypertarget{class_assignment1_aeabed7b579d59a6fdacaeab468afba29}{}\index{Assignment1@{Assignment1}!Setup\+Example2@{Setup\+Example2}}
+\index{Setup\+Example2@{Setup\+Example2}!Assignment1@{Assignment1}}
+\subsubsection[{Setup\+Example2}]{\setlength{\rightskip}{0pt plus 5cm}void Assignment1\+::\+Setup\+Example2 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{class_assignment1_aeabed7b579d59a6fdacaeab468afba29}
+
+
+Definition at line 64 of file Assignment1.\+cpp.
+
+\hypertarget{class_assignment1_afbb3cb7765b899e69c9847d29f045392}{}\index{Assignment1@{Assignment1}!Setup\+Example3@{Setup\+Example3}}
+\index{Setup\+Example3@{Setup\+Example3}!Assignment1@{Assignment1}}
+\subsubsection[{Setup\+Example3}]{\setlength{\rightskip}{0pt plus 5cm}void Assignment1\+::\+Setup\+Example3 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{class_assignment1_afbb3cb7765b899e69c9847d29f045392}
+
+
+Definition at line 106 of file Assignment1.\+cpp.
+
+\hypertarget{class_assignment1_a8d12cf21f1463caa5a8da45110b50103}{}\index{Assignment1@{Assignment1}!Setup\+Scene@{Setup\+Scene}}
+\index{Setup\+Scene@{Setup\+Scene}!Assignment1@{Assignment1}}
+\subsubsection[{Setup\+Scene}]{\setlength{\rightskip}{0pt plus 5cm}void Assignment1\+::\+Setup\+Scene (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{class_assignment1_a8d12cf21f1463caa5a8da45110b50103}
+
+
+Called by \hyperlink{class_application_a17cf1ea4552d26a1c20f7d98d793d41d}{Initialize()} to populate the scene. 
+
+Note by the time this function is called, the \hyperlink{class_application}{Application} sub-\/class is fully constructed and \hyperlink{class_scene}{Scene} object is already created. 
+
+Reimplemented from \hyperlink{class_application_aa8e8017ef8dd86293c96d0645e66d440}{Application}.
+
+
+
+Definition at line 19 of file Assignment1.\+cpp.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/michaelbao/workspace/cs148opengl4/source/assignment1/Assignment1.\+h\item 
-/\+Users/michaelbao/workspace/cs148opengl4/source/assignment1/Assignment1.\+cpp\end{DoxyCompactItemize}
+/\+Users/michaelbao/workspace/cs148opengl4/source/assignment1/\hyperlink{_assignment1_8h}{Assignment1.\+h}\item 
+/\+Users/michaelbao/workspace/cs148opengl4/source/assignment1/\hyperlink{_assignment1_8cpp}{Assignment1.\+cpp}\end{DoxyCompactItemize}

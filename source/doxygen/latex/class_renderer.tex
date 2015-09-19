@@ -1,5 +1,9 @@
 \hypertarget{class_renderer}{}\section{Renderer Class Reference}
 \label{class_renderer}\index{Renderer@{Renderer}}
+
+
+{\ttfamily \#include $<$Renderer.\+h$>$}
+
 Inheritance diagram for Renderer\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,23 +13,20 @@ Inheritance diagram for Renderer\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_renderer_adc8ce31cd649bdf220ca8355809b1d06}{}{\bfseries Renderer} (std\+::shared\+\_\+ptr$<$ class \hyperlink{class_scene}{Scene} $>$ input\+Scene, std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$ input\+Camera)\label{class_renderer_adc8ce31cd649bdf220ca8355809b1d06}
-
+\hyperlink{class_renderer_adc8ce31cd649bdf220ca8355809b1d06}{Renderer} (std\+::shared\+\_\+ptr$<$ class \hyperlink{class_scene}{Scene} $>$ input\+Scene, std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$ input\+Camera)
 \item 
-\hypertarget{class_renderer_a7cb221f355f181d84d66e8c09f50f04a}{}virtual void {\bfseries Initialize} ()=0\label{class_renderer_a7cb221f355f181d84d66e8c09f50f04a}
-
+virtual \hyperlink{class_renderer_afeee408862d5bd6255a6882d47e6d5cd}{$\sim$\+Renderer} ()
 \item 
-\hypertarget{class_renderer_a38623da22aa718cfa41e2514ebd269f5}{}virtual void {\bfseries Render} ()=0\label{class_renderer_a38623da22aa718cfa41e2514ebd269f5}
-
+virtual void \hyperlink{class_renderer_a7cb221f355f181d84d66e8c09f50f04a}{Initialize} ()=0
+\item 
+virtual void \hyperlink{class_renderer_a38623da22aa718cfa41e2514ebd269f5}{Render} ()=0
 \end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_renderer_a65178695d48824d3afd6fe40fd4915b6}{}std\+::shared\+\_\+ptr$<$ class \hyperlink{class_scene}{Scene} $>$ {\bfseries scene}\label{class_renderer_a65178695d48824d3afd6fe40fd4915b6}
-
+std\+::shared\+\_\+ptr$<$ class \hyperlink{class_scene}{Scene} $>$ \hyperlink{class_renderer_a65178695d48824d3afd6fe40fd4915b6}{scene}
 \item 
-\hypertarget{class_renderer_a7a08c6489c1ffe8e346b9f205b4014ca}{}std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$ {\bfseries camera}\label{class_renderer_a7a08c6489c1ffe8e346b9f205b4014ca}
-
+std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$ \hyperlink{class_renderer_a7a08c6489c1ffe8e346b9f205b4014ca}{camera}
 \end{DoxyCompactItemize}
 
 
@@ -36,7 +37,75 @@ Definition at line 8 of file Renderer.\+h.
 
 
 
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_renderer_adc8ce31cd649bdf220ca8355809b1d06}{}\index{Renderer@{Renderer}!Renderer@{Renderer}}
+\index{Renderer@{Renderer}!Renderer@{Renderer}}
+\subsubsection[{Renderer}]{\setlength{\rightskip}{0pt plus 5cm}Renderer\+::\+Renderer (
+\begin{DoxyParamCaption}
+\item[{std\+::shared\+\_\+ptr$<$ class {\bf Scene} $>$}]{input\+Scene, }
+\item[{std\+::shared\+\_\+ptr$<$ class {\bf Camera} $>$}]{input\+Camera}
+\end{DoxyParamCaption}
+)}\label{class_renderer_adc8ce31cd649bdf220ca8355809b1d06}
+
+
+Definition at line 6 of file Renderer.\+cpp.
+
+\hypertarget{class_renderer_afeee408862d5bd6255a6882d47e6d5cd}{}\index{Renderer@{Renderer}!````~Renderer@{$\sim$\+Renderer}}
+\index{````~Renderer@{$\sim$\+Renderer}!Renderer@{Renderer}}
+\subsubsection[{$\sim$\+Renderer}]{\setlength{\rightskip}{0pt plus 5cm}Renderer\+::$\sim$\+Renderer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_renderer_afeee408862d5bd6255a6882d47e6d5cd}
+
+
+Definition at line 11 of file Renderer.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_renderer_a7cb221f355f181d84d66e8c09f50f04a}{}\index{Renderer@{Renderer}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Renderer@{Renderer}}
+\subsubsection[{Initialize}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Renderer\+::\+Initialize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_renderer_a7cb221f355f181d84d66e8c09f50f04a}
+
+
+Implemented in \hyperlink{class_forward_renderer_a99c523e11a4335d061da8bdba51f1c9a}{Forward\+Renderer}.
+
+\hypertarget{class_renderer_a38623da22aa718cfa41e2514ebd269f5}{}\index{Renderer@{Renderer}!Render@{Render}}
+\index{Render@{Render}!Renderer@{Renderer}}
+\subsubsection[{Render}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Renderer\+::\+Render (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_renderer_a38623da22aa718cfa41e2514ebd269f5}
+
+
+Implemented in \hyperlink{class_forward_renderer_a3693c5cd68afffc14652f24fcdc62abc}{Forward\+Renderer}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_renderer_a7a08c6489c1ffe8e346b9f205b4014ca}{}\index{Renderer@{Renderer}!camera@{camera}}
+\index{camera@{camera}!Renderer@{Renderer}}
+\subsubsection[{camera}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<$class {\bf Camera}$>$ Renderer\+::camera\hspace{0.3cm}{\ttfamily [protected]}}\label{class_renderer_a7a08c6489c1ffe8e346b9f205b4014ca}
+
+
+Definition at line 19 of file Renderer.\+h.
+
+\hypertarget{class_renderer_a65178695d48824d3afd6fe40fd4915b6}{}\index{Renderer@{Renderer}!scene@{scene}}
+\index{scene@{scene}!Renderer@{Renderer}}
+\subsubsection[{scene}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<$class {\bf Scene}$>$ Renderer\+::scene\hspace{0.3cm}{\ttfamily [protected]}}\label{class_renderer_a65178695d48824d3afd6fe40fd4915b6}
+
+
+Definition at line 18 of file Renderer.\+h.
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/michaelbao/workspace/cs148opengl4/source/common/\+Rendering/Renderer.\+h\item 
-/\+Users/michaelbao/workspace/cs148opengl4/source/common/\+Rendering/Renderer.\+cpp\end{DoxyCompactItemize}
+/\+Users/michaelbao/workspace/cs148opengl4/source/common/\+Rendering/\hyperlink{_renderer_8h}{Renderer.\+h}\item 
+/\+Users/michaelbao/workspace/cs148opengl4/source/common/\+Rendering/\hyperlink{_renderer_8cpp}{Renderer.\+cpp}\end{DoxyCompactItemize}

@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -87,13 +88,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="class_application-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Application Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Handles creating configurable objects (i.e. scene, camera, renderer), handling SDL events passed in by the <a class="el" href="class_media_layer.html">MediaLayer</a>, and handles creating the scene to be display.  
+<p>Handles creating configurable objects (i.e. scene, camera, renderer), handling SDL events passed in by the <a class="el" href="class_media_layer.html" title="Class that initializes the application and makes it ready to process OpenGL commands. ">MediaLayer</a>, and handles creating the scene to be display.  
  <a href="class_application.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_application_8h_source.html">Application.h</a>&gt;</code></p>
@@ -114,9 +116,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a78cdcb03e6f06272f7c528fe407951c5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application.html#a78cdcb03e6f06272f7c528fe407951c5">Application</a> (std::shared_ptr&lt; class <a class="el" href="class_scene.html">Scene</a> &gt; inputScene, std::shared_ptr&lt; class <a class="el" href="class_camera.html">Camera</a> &gt; inputCamera)</td></tr>
 <tr class="memdesc:a78cdcb03e6f06272f7c528fe407951c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an application with a pre-allocated scene and camera.  <a href="#a78cdcb03e6f06272f7c528fe407951c5">More...</a><br /></td></tr>
 <tr class="separator:a78cdcb03e6f06272f7c528fe407951c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a748bca84fefb9c12661cfaa2f623748d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a748bca84fefb9c12661cfaa2f623748d"></a>
-virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application.html#a748bca84fefb9c12661cfaa2f623748d">~Application</a> ()</td></tr>
-<tr class="memdesc:a748bca84fefb9c12661cfaa2f623748d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual deconstrcutor to allow inheritance. <br /></td></tr>
+<tr class="memitem:a748bca84fefb9c12661cfaa2f623748d"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application.html#a748bca84fefb9c12661cfaa2f623748d">~Application</a> ()</td></tr>
+<tr class="memdesc:a748bca84fefb9c12661cfaa2f623748d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual deconstrcutor to allow inheritance.  <a href="#a748bca84fefb9c12661cfaa2f623748d">More...</a><br /></td></tr>
 <tr class="separator:a748bca84fefb9c12661cfaa2f623748d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17cf1ea4552d26a1c20f7d98d793d41d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application.html#a17cf1ea4552d26a1c20f7d98d793d41d">Initialize</a> ()</td></tr>
 <tr class="memdesc:a17cf1ea4552d26a1c20f7d98d793d41d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialization function to setup the stored camera and scene.  <a href="#a17cf1ea4552d26a1c20f7d98d793d41d">More...</a><br /></td></tr>
@@ -172,10 +173,19 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a0e8589fcb13c520ba472473abe5a518d"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; class <a class="el" href="class_camera.html">Camera</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application.html#a0e8589fcb13c520ba472473abe5a518d">camera</a></td></tr>
 <tr class="memdesc:a0e8589fcb13c520ba472473abe5a518d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A shared pointer to the camera.  <a href="#a0e8589fcb13c520ba472473abe5a518d">More...</a><br /></td></tr>
 <tr class="separator:a0e8589fcb13c520ba472473abe5a518d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:aa8e8017ef8dd86293c96d0645e66d440"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application.html#aa8e8017ef8dd86293c96d0645e66d440">SetupScene</a> ()</td></tr>
+<tr class="memdesc:aa8e8017ef8dd86293c96d0645e66d440"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by <a class="el" href="class_application.html#a17cf1ea4552d26a1c20f7d98d793d41d" title="Initialization function to setup the stored camera and scene. ">Initialize()</a> to populate the scene.  <a href="#aa8e8017ef8dd86293c96d0645e66d440">More...</a><br /></td></tr>
+<tr class="separator:aa8e8017ef8dd86293c96d0645e66d440"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2eb61ca027f223a5c5ad1bf982481193"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application.html#a2eb61ca027f223a5c5ad1bf982481193">SetupCamera</a> ()</td></tr>
+<tr class="memdesc:a2eb61ca027f223a5c5ad1bf982481193"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by <a class="el" href="class_application.html#a17cf1ea4552d26a1c20f7d98d793d41d" title="Initialization function to setup the stored camera and scene. ">Initialize()</a> to setup the camera.  <a href="#a2eb61ca027f223a5c5ad1bf982481193">More...</a><br /></td></tr>
+<tr class="separator:a2eb61ca027f223a5c5ad1bf982481193"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Handles creating configurable objects (i.e. scene, camera, renderer), handling SDL events passed in by the <a class="el" href="class_media_layer.html">MediaLayer</a>, and handles creating the scene to be display. </p>
-<p>An '<a class="el" href="class_application.html" title="Handles creating configurable objects (i.e. scene, camera, renderer), handling SDL events passed in b...">Application</a>' MUST be created to run the assignment framework. By default, the application will create a 1280x720 window that is completely black. After the '<a class="el" href="class_application.html" title="Handles creating configurable objects (i.e. scene, camera, renderer), handling SDL events passed in b...">Application</a>' is created, it must be passed to the '<a class="el" href="class_media_layer.html">MediaLayer</a>' who will call the '<a class="el" href="class_application.html" title="Handles creating configurable objects (i.e. scene, camera, renderer), handling SDL events passed in b...">Application</a>'s tick function every frame. </p>
+<div class="textblock"><p>Handles creating configurable objects (i.e. scene, camera, renderer), handling SDL events passed in by the <a class="el" href="class_media_layer.html" title="Class that initializes the application and makes it ready to process OpenGL commands. ">MediaLayer</a>, and handles creating the scene to be display. </p>
+<p>An '<a class="el" href="class_application.html" title="Handles creating configurable objects (i.e. scene, camera, renderer), handling SDL events passed in b...">Application</a>' MUST be created to run the assignment framework. By default, the application will create a 1280x720 window that is completely black. After the '<a class="el" href="class_application.html" title="Handles creating configurable objects (i.e. scene, camera, renderer), handling SDL events passed in b...">Application</a>' is created, it must be passed to the '<a class="el" href="class_media_layer.html" title="Class that initializes the application and makes it ready to process OpenGL commands. ">MediaLayer</a>' who will call the '<a class="el" href="class_application.html" title="Handles creating configurable objects (i.e. scene, camera, renderer), handling SDL events passed in b...">Application</a>'s tick function every frame. </p>
 
 <p>Definition at line <a class="el" href="_application_8h_source.html#l00013">13</a> of file <a class="el" href="_application_8h_source.html">Application.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -214,6 +224,33 @@ Protected Attributes</h2></td></tr>
 <dl class="section warning"><dt>Warning</dt><dd>Do not use directly. Use CreateApplication instead. </dd></dl>
 
 <p>Definition at line <a class="el" href="_application_8cpp_source.html#l00006">6</a> of file <a class="el" href="_application_8cpp_source.html">Application.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a748bca84fefb9c12661cfaa2f623748d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Application::~Application </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Virtual deconstrcutor to allow inheritance. </p>
+
+<p>Definition at line <a class="el" href="_application_8cpp_source.html#l00011">11</a> of file <a class="el" href="_application_8cpp_source.html">Application.cpp</a>.</p>
 
 </div>
 </div>
@@ -574,7 +611,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initialization function to setup the stored camera and scene. </p>
-<p>This initialization function exists because the SetupScene() and SetupCamera() functions are virtual and thus can not exist within the constructor. This function is called in MediaLayer::MediaLayer(). </p>
+<p>This initialization function exists because the <a class="el" href="class_application.html#aa8e8017ef8dd86293c96d0645e66d440" title="Called by Initialize() to populate the scene. ">SetupScene()</a> and <a class="el" href="class_application.html#a2eb61ca027f223a5c5ad1bf982481193" title="Called by Initialize() to setup the camera. ">SetupCamera()</a> functions are virtual and thus can not exist within the constructor. This function is called in <a class="el" href="class_media_layer.html#aea3b3bc36411af90517692b110d2829a" title="Constructs a MediaLayer object and readies the Application and Renderer for immediate use...">MediaLayer::MediaLayer()</a>. </p>
 
 <p>Definition at line <a class="el" href="_application_8cpp_source.html#l00015">15</a> of file <a class="el" href="_application_8cpp_source.html">Application.cpp</a>.</p>
 
@@ -603,7 +640,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Whether or not the application is finished running. </p>
 <dl class="section return"><dt>Returns</dt><dd>Whether the application is finished running.</dd></dl>
-<p>When the MediaLayer::Tick() function detects that the application is finished, the program will exit. </p>
+<p>When the <a class="el" href="class_media_layer.html#a570ff8c3fc3e8f3e720d9dcebafba143" title="Handles what happens every frame. ">MediaLayer::Tick()</a> function detects that the application is finished, the program will exit. </p>
 
 <p>Definition at line <a class="el" href="_application_8cpp_source.html#l00056">56</a> of file <a class="el" href="_application_8cpp_source.html">Application.cpp</a>.</p>
 
@@ -631,9 +668,69 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Notifies the <a class="el" href="class_application.html" title="Handles creating configurable objects (i.e. scene, camera, renderer), handling SDL events passed in b...">Application</a> that it should finish. </p>
-<p>An external source (i.e. the <a class="el" href="class_media_layer.html">MediaLayer</a>) may request for the <a class="el" href="class_application.html" title="Handles creating configurable objects (i.e. scene, camera, renderer), handling SDL events passed in b...">Application</a> to finish. This lets the <a class="el" href="class_application.html" title="Handles creating configurable objects (i.e. scene, camera, renderer), handling SDL events passed in b...">Application</a> exit gracefully. The <a class="el" href="class_application.html" title="Handles creating configurable objects (i.e. scene, camera, renderer), handling SDL events passed in b...">Application</a> can choose to ignore the request (thought that is not recommended). After this function is called, <a class="el" href="class_application.html#ae0019f2c58008791971e67f23f2d4182" title="Whether or not the application is finished running. ">IsFinished()</a> should return true. </p>
+<p>An external source (i.e. the <a class="el" href="class_media_layer.html" title="Class that initializes the application and makes it ready to process OpenGL commands. ">MediaLayer</a>) may request for the <a class="el" href="class_application.html" title="Handles creating configurable objects (i.e. scene, camera, renderer), handling SDL events passed in b...">Application</a> to finish. This lets the <a class="el" href="class_application.html" title="Handles creating configurable objects (i.e. scene, camera, renderer), handling SDL events passed in b...">Application</a> exit gracefully. The <a class="el" href="class_application.html" title="Handles creating configurable objects (i.e. scene, camera, renderer), handling SDL events passed in b...">Application</a> can choose to ignore the request (thought that is not recommended). After this function is called, <a class="el" href="class_application.html#ae0019f2c58008791971e67f23f2d4182" title="Whether or not the application is finished running. ">IsFinished()</a> should return true. </p>
 
 <p>Definition at line <a class="el" href="_application_8cpp_source.html#l00061">61</a> of file <a class="el" href="_application_8cpp_source.html">Application.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2eb61ca027f223a5c5ad1bf982481193"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Application::SetupCamera </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Called by <a class="el" href="class_application.html#a17cf1ea4552d26a1c20f7d98d793d41d" title="Initialization function to setup the stored camera and scene. ">Initialize()</a> to setup the camera. </p>
+<p>Note by the time this function is called, the <a class="el" href="class_application.html" title="Handles creating configurable objects (i.e. scene, camera, renderer), handling SDL events passed in b...">Application</a> sub-class is fully constructed and <a class="el" href="class_camera.html">Camera</a> object is already created. </p>
+
+<p>Reimplemented in <a class="el" href="class_assignment2.html#ab9ace1ffdac8f7425c64d661f3d13acd">Assignment2</a>, and <a class="el" href="class_assignment3.html#a1d23eb19973b78e516169f4a03954526">Assignment3</a>.</p>
+
+<p>Definition at line <a class="el" href="_application_8cpp_source.html#l00051">51</a> of file <a class="el" href="_application_8cpp_source.html">Application.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa8e8017ef8dd86293c96d0645e66d440"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Application::SetupScene </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Called by <a class="el" href="class_application.html#a17cf1ea4552d26a1c20f7d98d793d41d" title="Initialization function to setup the stored camera and scene. ">Initialize()</a> to populate the scene. </p>
+<p>Note by the time this function is called, the <a class="el" href="class_application.html" title="Handles creating configurable objects (i.e. scene, camera, renderer), handling SDL events passed in b...">Application</a> sub-class is fully constructed and <a class="el" href="class_scene.html">Scene</a> object is already created. </p>
+
+<p>Reimplemented in <a class="el" href="class_assignment2.html#aa4f8ccd09a7accbdf093394c6ee4f63f">Assignment2</a>, <a class="el" href="class_assignment3.html#a2dc29d9016a9d822ede84b9ef41429a5">Assignment3</a>, and <a class="el" href="class_assignment1.html#a8d12cf21f1463caa5a8da45110b50103">Assignment1</a>.</p>
+
+<p>Definition at line <a class="el" href="_application_8cpp_source.html#l00046">46</a> of file <a class="el" href="_application_8cpp_source.html">Application.cpp</a>.</p>
 
 </div>
 </div>
@@ -757,7 +854,7 @@ Protected Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 19 2015 01:03:41 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 19 2015 01:31:33 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

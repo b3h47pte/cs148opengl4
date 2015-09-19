@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -88,37 +89,37 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">ForwardRenderer.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;common/Rendering/ForwardRenderer.h&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;common/Scene/Scene.h&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;common/Scene/SceneObject.h&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;common/Scene/Camera/Camera.h&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;common/Rendering/RenderingObject.h&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;common/Rendering/Shaders/ShaderProgram.h&quot;</span></div>
+<a href="_forward_renderer_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_forward_renderer_8h.html">common/Rendering/ForwardRenderer.h</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_scene_8h.html">common/Scene/Scene.h</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_scene_object_8h.html">common/Scene/SceneObject.h</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_camera_8h.html">common/Scene/Camera/Camera.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_rendering_object_8h.html">common/Rendering/RenderingObject.h</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_shader_program_8h.html">common/Rendering/Shaders/ShaderProgram.h</a>&quot;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;ForwardRenderer::ForwardRenderer(std::shared_ptr&lt;class Scene&gt; inputScene, std::shared_ptr&lt;class Camera&gt; inputCamera):</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_forward_renderer.html#af8ed84e45085c4dc60d565fcc3c198d1">   10</a></span>&#160;<a class="code" href="class_forward_renderer.html#af8ed84e45085c4dc60d565fcc3c198d1">ForwardRenderer::ForwardRenderer</a>(std::shared_ptr&lt;class Scene&gt; inputScene, std::shared_ptr&lt;class Camera&gt; inputCamera):</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="class_renderer.html">Renderer</a>(std::move(inputScene), std::move(inputCamera))</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;ForwardRenderer::~ForwardRenderer()</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_forward_renderer.html#ab27ea6139730631d79488cec3c564597">   15</a></span>&#160;<a class="code" href="class_forward_renderer.html#ab27ea6139730631d79488cec3c564597">ForwardRenderer::~ForwardRenderer</a>()</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keywordtype">void</span> ForwardRenderer::Initialize()</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_forward_renderer.html#a99c523e11a4335d061da8bdba51f1c9a">   19</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_forward_renderer.html#a99c523e11a4335d061da8bdba51f1c9a">ForwardRenderer::Initialize</a>()</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    std::unordered_map&lt;GLenum, std::string&gt; shaderSpec = {</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        { GL_VERTEX_SHADER, <span class="stringliteral">&quot;required/pass/pass.vert&quot;</span> },</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        { GL_FRAGMENT_SHADER, <span class="stringliteral">&quot;required/pass/pass.frag&quot;</span>}</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    };</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    depthPrepassShader = std::make_shared&lt;ShaderProgram&gt;(shaderSpec);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="class_forward_renderer.html#a8f703bc4c646416804bc82f4d220a648">depthPrepassShader</a> = std::make_shared&lt;ShaderProgram&gt;(shaderSpec);</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">void</span> ForwardRenderer::Render()</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_forward_renderer.html#a3693c5cd68afffc14652f24fcdc62abc">   28</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_forward_renderer.html#a3693c5cd68afffc14652f24fcdc62abc">ForwardRenderer::Render</a>()</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">auto</span> totalObjects = scene-&gt;GetTotalObjects();</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">auto</span> totalLights = scene-&gt;GetTotalLights();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">auto</span> totalObjects = <a class="code" href="class_renderer.html#a65178695d48824d3afd6fe40fd4915b6">scene</a>-&gt;GetTotalObjects();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">auto</span> totalLights = <a class="code" href="class_renderer.html#a65178695d48824d3afd6fe40fd4915b6">scene</a>-&gt;GetTotalLights();</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">auto</span> totalRenderingPasses = totalLights + 2;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// Render passes:</span></div>
@@ -136,47 +137,69 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0; i &lt; totalObjects; ++i) {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keyword">const</span> <a class="code" href="class_scene_object.html">SceneObject</a>&amp; sceneObject = scene-&gt;GetSceneObject(i); </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keyword">const</span> <a class="code" href="class_scene_object.html">SceneObject</a>&amp; sceneObject = <a class="code" href="class_renderer.html#a65178695d48824d3afd6fe40fd4915b6">scene</a>-&gt;GetSceneObject(i); </div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keyword">auto</span> totalRenderObjects = sceneObject.GetTotalRenderObjects();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keyword">auto</span> totalRenderObjects = sceneObject.<a class="code" href="class_scene_object.html#ac2873f8a613bd4b161a1ea605888d6e7">GetTotalRenderObjects</a>();</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> r = 0; r &lt; totalRenderObjects; ++r) {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <span class="keyword">const</span> <a class="code" href="class_rendering_object.html">RenderingObject</a>* renderObject = sceneObject.GetRenderObject(r);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <span class="keyword">const</span> <a class="code" href="class_rendering_object.html">RenderingObject</a>* renderObject = sceneObject.<a class="code" href="class_scene_object.html#a29b15adf1faeceef0b3f5b1c36e34d5c">GetRenderObject</a>(r);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <span class="keywordflow">if</span> (!renderObject) {</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                    <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                }</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <span class="keyword">const</span> <a class="code" href="class_shader_program.html">ShaderProgram</a>* shaderToUse = (p == 0) ? depthPrepassShader.get() : renderObject-&gt;GetShaderProgramRaw();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <span class="keyword">const</span> <a class="code" href="class_shader_program.html">ShaderProgram</a>* shaderToUse = (p == 0) ? <a class="code" href="class_forward_renderer.html#a8f703bc4c646416804bc82f4d220a648">depthPrepassShader</a>.get() : renderObject-&gt;<a class="code" href="class_rendering_object.html#ac9187166c98131aab185111e105528c2">GetShaderProgramRaw</a>();</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                assert(shaderToUse);</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                shaderToUse-&gt;StartUseShader();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                shaderToUse-&gt;<a class="code" href="class_shader_program.html#a906b0232f27663b28cc800ac2851541f">StartUseShader</a>();</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                renderObject-&gt;BeginRender();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                renderObject-&gt;<a class="code" href="class_rendering_object.html#afa4510ba81fb7b17b940c92b27442d93">BeginRender</a>();</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="comment">// Make the scene object setup its shader with any data its shader might need.</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <span class="comment">// Start from the end because the very &#39;last&#39; light handles the global lighting for the object.</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <span class="comment">// A light that is a nullptr will cause the shader to perform default behavior, whatever that may be.</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <span class="keyword">const</span> <a class="code" href="class_light.html">Light</a>* lightObject = scene-&gt;GetLightObject(totalRenderingPasses - p - 1);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                sceneObject.PrepareShaderForRendering(shaderToUse, camera.get(), lightObject);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <span class="keyword">const</span> <a class="code" href="class_light.html">Light</a>* lightObject = <a class="code" href="class_renderer.html#a65178695d48824d3afd6fe40fd4915b6">scene</a>-&gt;GetLightObject(totalRenderingPasses - p - 1);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                sceneObject.<a class="code" href="class_scene_object.html#a5ab56b2b2997f96aed97415185beec41">PrepareShaderForRendering</a>(shaderToUse, <a class="code" href="class_renderer.html#a7a08c6489c1ffe8e346b9f205b4014ca">camera</a>.get(), lightObject);</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                renderObject-&gt;Render();</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                renderObject-&gt;EndRender();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                renderObject-&gt;<a class="code" href="class_rendering_object.html#a5fdb7a1b2d53b7ce024a4eeabd9c86d3">Render</a>();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                renderObject-&gt;<a class="code" href="class_rendering_object.html#a2a038472f934360acddd26f4e992b28b">EndRender</a>();</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                shaderToUse-&gt;StopUseShader();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                shaderToUse-&gt;<a class="code" href="class_shader_program.html#a5afb6f91d30b6e197fab0827c416c51f">StopUseShader</a>();</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            }</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        }</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="common_8h.html#ab76e9d812060d1ba7e166d5b3e75355b">OGL_CALL</a>(glDepthMask(GL_TRUE));</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
+<div class="ttc" id="_scene_object_8h_html"><div class="ttname"><a href="_scene_object_8h.html">SceneObject.h</a></div></div>
+<div class="ttc" id="class_forward_renderer_html_ab27ea6139730631d79488cec3c564597"><div class="ttname"><a href="class_forward_renderer.html#ab27ea6139730631d79488cec3c564597">ForwardRenderer::~ForwardRenderer</a></div><div class="ttdeci">virtual ~ForwardRenderer()</div><div class="ttdef"><b>Definition:</b> <a href="_forward_renderer_8cpp_source.html#l00015">ForwardRenderer.cpp:15</a></div></div>
+<div class="ttc" id="class_rendering_object_html_afa4510ba81fb7b17b940c92b27442d93"><div class="ttname"><a href="class_rendering_object.html#afa4510ba81fb7b17b940c92b27442d93">RenderingObject::BeginRender</a></div><div class="ttdeci">virtual void BeginRender() const </div><div class="ttdef"><b>Definition:</b> <a href="_rendering_object_8cpp_source.html#l00054">RenderingObject.cpp:54</a></div></div>
+<div class="ttc" id="_rendering_object_8h_html"><div class="ttname"><a href="_rendering_object_8h.html">RenderingObject.h</a></div></div>
+<div class="ttc" id="_forward_renderer_8h_html"><div class="ttname"><a href="_forward_renderer_8h.html">ForwardRenderer.h</a></div></div>
 <div class="ttc" id="class_light_html"><div class="ttname"><a href="class_light.html">Light</a></div><div class="ttdef"><b>Definition:</b> <a href="_light_8h_source.html#l00009">Light.h:9</a></div></div>
+<div class="ttc" id="class_renderer_html_a65178695d48824d3afd6fe40fd4915b6"><div class="ttname"><a href="class_renderer.html#a65178695d48824d3afd6fe40fd4915b6">Renderer::scene</a></div><div class="ttdeci">std::shared_ptr&lt; class Scene &gt; scene</div><div class="ttdef"><b>Definition:</b> <a href="_renderer_8h_source.html#l00018">Renderer.h:18</a></div></div>
 <div class="ttc" id="class_renderer_html"><div class="ttname"><a href="class_renderer.html">Renderer</a></div><div class="ttdef"><b>Definition:</b> <a href="_renderer_8h_source.html#l00008">Renderer.h:8</a></div></div>
+<div class="ttc" id="class_shader_program_html_a906b0232f27663b28cc800ac2851541f"><div class="ttname"><a href="class_shader_program.html#a906b0232f27663b28cc800ac2851541f">ShaderProgram::StartUseShader</a></div><div class="ttdeci">virtual void StartUseShader() const </div><div class="ttdef"><b>Definition:</b> <a href="_shader_program_8cpp_source.html#l00103">ShaderProgram.cpp:103</a></div></div>
+<div class="ttc" id="_shader_program_8h_html"><div class="ttname"><a href="_shader_program_8h.html">ShaderProgram.h</a></div></div>
 <div class="ttc" id="class_rendering_object_html"><div class="ttname"><a href="class_rendering_object.html">RenderingObject</a></div><div class="ttdef"><b>Definition:</b> <a href="_rendering_object_8h_source.html#l00009">RenderingObject.h:9</a></div></div>
+<div class="ttc" id="class_forward_renderer_html_af8ed84e45085c4dc60d565fcc3c198d1"><div class="ttname"><a href="class_forward_renderer.html#af8ed84e45085c4dc60d565fcc3c198d1">ForwardRenderer::ForwardRenderer</a></div><div class="ttdeci">ForwardRenderer(std::shared_ptr&lt; class Scene &gt; inputScene, std::shared_ptr&lt; class Camera &gt; inputCamera)</div><div class="ttdef"><b>Definition:</b> <a href="_forward_renderer_8cpp_source.html#l00010">ForwardRenderer.cpp:10</a></div></div>
+<div class="ttc" id="class_rendering_object_html_ac9187166c98131aab185111e105528c2"><div class="ttname"><a href="class_rendering_object.html#ac9187166c98131aab185111e105528c2">RenderingObject::GetShaderProgramRaw</a></div><div class="ttdeci">const class ShaderProgram * GetShaderProgramRaw() const </div><div class="ttdef"><b>Definition:</b> <a href="_rendering_object_8cpp_source.html#l00084">RenderingObject.cpp:84</a></div></div>
+<div class="ttc" id="class_renderer_html_a7a08c6489c1ffe8e346b9f205b4014ca"><div class="ttname"><a href="class_renderer.html#a7a08c6489c1ffe8e346b9f205b4014ca">Renderer::camera</a></div><div class="ttdeci">std::shared_ptr&lt; class Camera &gt; camera</div><div class="ttdef"><b>Definition:</b> <a href="_renderer_8h_source.html#l00019">Renderer.h:19</a></div></div>
+<div class="ttc" id="class_scene_object_html_a5ab56b2b2997f96aed97415185beec41"><div class="ttname"><a href="class_scene_object.html#a5ab56b2b2997f96aed97415185beec41">SceneObject::PrepareShaderForRendering</a></div><div class="ttdeci">virtual void PrepareShaderForRendering(const class ShaderProgram *shader, const class Camera *currentCamera, const class Light *currentLight) const </div><div class="ttdef"><b>Definition:</b> <a href="_scene_object_8cpp_source.html#l00032">SceneObject.cpp:32</a></div></div>
+<div class="ttc" id="class_rendering_object_html_a5fdb7a1b2d53b7ce024a4eeabd9c86d3"><div class="ttname"><a href="class_rendering_object.html#a5fdb7a1b2d53b7ce024a4eeabd9c86d3">RenderingObject::Render</a></div><div class="ttdeci">virtual void Render() const </div><div class="ttdef"><b>Definition:</b> <a href="_rendering_object_8cpp_source.html#l00061">RenderingObject.cpp:61</a></div></div>
+<div class="ttc" id="class_scene_object_html_a29b15adf1faeceef0b3f5b1c36e34d5c"><div class="ttname"><a href="class_scene_object.html#a29b15adf1faeceef0b3f5b1c36e34d5c">SceneObject::GetRenderObject</a></div><div class="ttdeci">virtual const class RenderingObject * GetRenderObject(int index=0) const </div><div class="ttdef"><b>Definition:</b> <a href="_scene_object_8cpp_source.html#l00046">SceneObject.cpp:46</a></div></div>
+<div class="ttc" id="_scene_8h_html"><div class="ttname"><a href="_scene_8h.html">Scene.h</a></div></div>
+<div class="ttc" id="class_forward_renderer_html_a99c523e11a4335d061da8bdba51f1c9a"><div class="ttname"><a href="class_forward_renderer.html#a99c523e11a4335d061da8bdba51f1c9a">ForwardRenderer::Initialize</a></div><div class="ttdeci">virtual void Initialize()</div><div class="ttdef"><b>Definition:</b> <a href="_forward_renderer_8cpp_source.html#l00019">ForwardRenderer.cpp:19</a></div></div>
 <div class="ttc" id="common_8h_html_ab76e9d812060d1ba7e166d5b3e75355b"><div class="ttname"><a href="common_8h.html#ab76e9d812060d1ba7e166d5b3e75355b">OGL_CALL</a></div><div class="ttdeci">#define OGL_CALL(x)</div><div class="ttdoc">Provides an easy to use macro that wraps around OpenGL calls and checks their error. </div><div class="ttdef"><b>Definition:</b> <a href="common_8h_source.html#l00091">common.h:91</a></div></div>
+<div class="ttc" id="class_shader_program_html_a5afb6f91d30b6e197fab0827c416c51f"><div class="ttname"><a href="class_shader_program.html#a5afb6f91d30b6e197fab0827c416c51f">ShaderProgram::StopUseShader</a></div><div class="ttdeci">virtual void StopUseShader() const </div><div class="ttdef"><b>Definition:</b> <a href="_shader_program_8cpp_source.html#l00108">ShaderProgram.cpp:108</a></div></div>
 <div class="ttc" id="class_scene_object_html"><div class="ttname"><a href="class_scene_object.html">SceneObject</a></div><div class="ttdef"><b>Definition:</b> <a href="_scene_object_8h_source.html#l00008">SceneObject.h:8</a></div></div>
+<div class="ttc" id="class_scene_object_html_ac2873f8a613bd4b161a1ea605888d6e7"><div class="ttname"><a href="class_scene_object.html#ac2873f8a613bd4b161a1ea605888d6e7">SceneObject::GetTotalRenderObjects</a></div><div class="ttdeci">size_t GetTotalRenderObjects() const </div><div class="ttdef"><b>Definition:</b> <a href="_scene_object_8h_source.html#l00018">SceneObject.h:18</a></div></div>
 <div class="ttc" id="class_shader_program_html"><div class="ttname"><a href="class_shader_program.html">ShaderProgram</a></div><div class="ttdef"><b>Definition:</b> <a href="_shader_program_8h_source.html#l00008">ShaderProgram.h:8</a></div></div>
+<div class="ttc" id="_camera_8h_html"><div class="ttname"><a href="_camera_8h.html">Camera.h</a></div></div>
+<div class="ttc" id="class_forward_renderer_html_a3693c5cd68afffc14652f24fcdc62abc"><div class="ttname"><a href="class_forward_renderer.html#a3693c5cd68afffc14652f24fcdc62abc">ForwardRenderer::Render</a></div><div class="ttdeci">virtual void Render()</div><div class="ttdef"><b>Definition:</b> <a href="_forward_renderer_8cpp_source.html#l00028">ForwardRenderer.cpp:28</a></div></div>
+<div class="ttc" id="class_rendering_object_html_a2a038472f934360acddd26f4e992b28b"><div class="ttname"><a href="class_rendering_object.html#a2a038472f934360acddd26f4e992b28b">RenderingObject::EndRender</a></div><div class="ttdeci">virtual void EndRender() const </div><div class="ttdef"><b>Definition:</b> <a href="_rendering_object_8cpp_source.html#l00073">RenderingObject.cpp:73</a></div></div>
+<div class="ttc" id="class_forward_renderer_html_a8f703bc4c646416804bc82f4d220a648"><div class="ttname"><a href="class_forward_renderer.html#a8f703bc4c646416804bc82f4d220a648">ForwardRenderer::depthPrepassShader</a></div><div class="ttdeci">std::shared_ptr&lt; class ShaderProgram &gt; depthPrepassShader</div><div class="ttdef"><b>Definition:</b> <a href="_forward_renderer_8h_source.html#l00019">ForwardRenderer.h:19</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 19 2015 01:03:41 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 19 2015 01:31:32 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

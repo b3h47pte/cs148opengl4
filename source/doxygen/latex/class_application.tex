@@ -20,8 +20,7 @@ Inheritance diagram for Application\+:\begin{figure}[H]
 \item 
 \hyperlink{class_application_a78cdcb03e6f06272f7c528fe407951c5}{Application} (std\+::shared\+\_\+ptr$<$ class \hyperlink{class_scene}{Scene} $>$ input\+Scene, std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$ input\+Camera)
 \begin{DoxyCompactList}\small\item\em Create an application with a pre-\/allocated scene and camera. \end{DoxyCompactList}\item 
-\hypertarget{class_application_a748bca84fefb9c12661cfaa2f623748d}{}virtual \hyperlink{class_application_a748bca84fefb9c12661cfaa2f623748d}{$\sim$\+Application} ()\label{class_application_a748bca84fefb9c12661cfaa2f623748d}
-
+virtual \hyperlink{class_application_a748bca84fefb9c12661cfaa2f623748d}{$\sim$\+Application} ()
 \begin{DoxyCompactList}\small\item\em Virtual deconstrcutor to allow inheritance. \end{DoxyCompactList}\item 
 virtual void \hyperlink{class_application_a17cf1ea4552d26a1c20f7d98d793d41d}{Initialize} ()
 \begin{DoxyCompactList}\small\item\em Initialization function to setup the stored camera and scene. \end{DoxyCompactList}\item 
@@ -62,6 +61,13 @@ std\+::shared\+\_\+ptr$<$ class \hyperlink{class_scene}{Scene} $>$ \hyperlink{cl
 \begin{DoxyCompactList}\small\item\em A shared pointer to the scene. \end{DoxyCompactList}\item 
 std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$ \hyperlink{class_application_a0e8589fcb13c520ba472473abe5a518d}{camera}
 \begin{DoxyCompactList}\small\item\em A shared pointer to the camera. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_application_aa8e8017ef8dd86293c96d0645e66d440}{Setup\+Scene} ()
+\begin{DoxyCompactList}\small\item\em Called by \hyperlink{class_application_a17cf1ea4552d26a1c20f7d98d793d41d}{Initialize()} to populate the scene. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_application_a2eb61ca027f223a5c5ad1bf982481193}{Setup\+Camera} ()
+\begin{DoxyCompactList}\small\item\em Called by \hyperlink{class_application_a17cf1ea4552d26a1c20f7d98d793d41d}{Initialize()} to setup the camera. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -99,6 +105,21 @@ Do not use directly. Use Create\+Application instead.
 
 
 Definition at line 6 of file Application.\+cpp.
+
+\hypertarget{class_application_a748bca84fefb9c12661cfaa2f623748d}{}\index{Application@{Application}!````~Application@{$\sim$\+Application}}
+\index{````~Application@{$\sim$\+Application}!Application@{Application}}
+\subsubsection[{$\sim$\+Application}]{\setlength{\rightskip}{0pt plus 5cm}Application\+::$\sim$\+Application (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_application_a748bca84fefb9c12661cfaa2f623748d}
+
+
+Virtual deconstrcutor to allow inheritance. 
+
+
+
+Definition at line 11 of file Application.\+cpp.
 
 
 
@@ -301,7 +322,7 @@ Definition at line 89 of file Application.\+cpp.
 
 Initialization function to setup the stored camera and scene. 
 
-This initialization function exists because the Setup\+Scene() and Setup\+Camera() functions are virtual and thus can not exist within the constructor. This function is called in Media\+Layer\+::\+Media\+Layer(). 
+This initialization function exists because the \hyperlink{class_application_aa8e8017ef8dd86293c96d0645e66d440}{Setup\+Scene()} and \hyperlink{class_application_a2eb61ca027f223a5c5ad1bf982481193}{Setup\+Camera()} functions are virtual and thus can not exist within the constructor. This function is called in \hyperlink{class_media_layer_aea3b3bc36411af90517692b110d2829a}{Media\+Layer\+::\+Media\+Layer()}. 
 
 Definition at line 15 of file Application.\+cpp.
 
@@ -319,7 +340,7 @@ Whether or not the application is finished running.
 \begin{DoxyReturn}{Returns}
 Whether the application is finished running.
 \end{DoxyReturn}
-When the Media\+Layer\+::\+Tick() function detects that the application is finished, the program will exit. 
+When the \hyperlink{class_media_layer_a570ff8c3fc3e8f3e720d9dcebafba143}{Media\+Layer\+::\+Tick()} function detects that the application is finished, the program will exit. 
 
 Definition at line 56 of file Application.\+cpp.
 
@@ -337,6 +358,44 @@ Notifies the \hyperlink{class_application}{Application} that it should finish.
 An external source (i.\+e. the \hyperlink{class_media_layer}{Media\+Layer}) may request for the \hyperlink{class_application}{Application} to finish. This lets the \hyperlink{class_application}{Application} exit gracefully. The \hyperlink{class_application}{Application} can choose to ignore the request (thought that is not recommended). After this function is called, \hyperlink{class_application_ae0019f2c58008791971e67f23f2d4182}{Is\+Finished()} should return true. 
 
 Definition at line 61 of file Application.\+cpp.
+
+\hypertarget{class_application_a2eb61ca027f223a5c5ad1bf982481193}{}\index{Application@{Application}!Setup\+Camera@{Setup\+Camera}}
+\index{Setup\+Camera@{Setup\+Camera}!Application@{Application}}
+\subsubsection[{Setup\+Camera}]{\setlength{\rightskip}{0pt plus 5cm}void Application\+::\+Setup\+Camera (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{class_application_a2eb61ca027f223a5c5ad1bf982481193}
+
+
+Called by \hyperlink{class_application_a17cf1ea4552d26a1c20f7d98d793d41d}{Initialize()} to setup the camera. 
+
+Note by the time this function is called, the \hyperlink{class_application}{Application} sub-\/class is fully constructed and \hyperlink{class_camera}{Camera} object is already created. 
+
+Reimplemented in \hyperlink{class_assignment2_ab9ace1ffdac8f7425c64d661f3d13acd}{Assignment2}, and \hyperlink{class_assignment3_a1d23eb19973b78e516169f4a03954526}{Assignment3}.
+
+
+
+Definition at line 51 of file Application.\+cpp.
+
+\hypertarget{class_application_aa8e8017ef8dd86293c96d0645e66d440}{}\index{Application@{Application}!Setup\+Scene@{Setup\+Scene}}
+\index{Setup\+Scene@{Setup\+Scene}!Application@{Application}}
+\subsubsection[{Setup\+Scene}]{\setlength{\rightskip}{0pt plus 5cm}void Application\+::\+Setup\+Scene (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{class_application_aa8e8017ef8dd86293c96d0645e66d440}
+
+
+Called by \hyperlink{class_application_a17cf1ea4552d26a1c20f7d98d793d41d}{Initialize()} to populate the scene. 
+
+Note by the time this function is called, the \hyperlink{class_application}{Application} sub-\/class is fully constructed and \hyperlink{class_scene}{Scene} object is already created. 
+
+Reimplemented in \hyperlink{class_assignment2_aa4f8ccd09a7accbdf093394c6ee4f63f}{Assignment2}, \hyperlink{class_assignment3_a2dc29d9016a9d822ede84b9ef41429a5}{Assignment3}, and \hyperlink{class_assignment1_a8d12cf21f1463caa5a8da45110b50103}{Assignment1}.
+
+
+
+Definition at line 46 of file Application.\+cpp.
 
 \hypertarget{class_application_a0800afd5651153d31fa775a8048d14dd}{}\index{Application@{Application}!Tick@{Tick}}
 \index{Tick@{Tick}!Application@{Application}}
@@ -402,5 +461,5 @@ Definition at line 128 of file Application.\+h.
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/michaelbao/workspace/cs148opengl4/source/common/Application.\+h\item 
-/\+Users/michaelbao/workspace/cs148opengl4/source/common/Application.\+cpp\end{DoxyCompactItemize}
+/\+Users/michaelbao/workspace/cs148opengl4/source/common/\hyperlink{_application_8h}{Application.\+h}\item 
+/\+Users/michaelbao/workspace/cs148opengl4/source/common/\hyperlink{_application_8cpp}{Application.\+cpp}\end{DoxyCompactItemize}
