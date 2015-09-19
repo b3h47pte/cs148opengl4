@@ -137,7 +137,7 @@ void ShaderProgram::SetShaderUniform(const std::string& location, const glm::vec
 // Currently only supports 1 subroutine per shader...
 void ShaderProgram::SetShaderSubroutine(const std::string& location, const std::string& subroutine, GLenum substage) const
 {
-#ifdef DISABLE_OPENGL_SUBROUTINES
+#ifndef DISABLE_OPENGL_SUBROUTINES
     GLint uniformLocation = OGL_CALL(glGetSubroutineUniformLocation(shaderProgram, substage, location.c_str()));
     if (uniformLocation != 0) {
         return;

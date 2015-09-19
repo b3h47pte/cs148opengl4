@@ -2,6 +2,12 @@ cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
 
 project("cs148-opengl4")
 
+# Import utility cmake scripts...mainly useful for Linux systems since we provide
+# the external libraries elsewhere.
+if (NOT WIN32 AND NOT APPLE)
+    set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+endif()
+
 if (NOT CMAKE_BUILD_TYPE)
     message(STATUS "No build type selected, default to Release")
     set(CMAKE_BUILD_TYPE "Release")
@@ -22,14 +28,29 @@ file(GLOB_RECURSE COMMON_HEADERS "common/*.h")
 include_directories("./external/glm")
 
 # GLEW Headers
-include_directories("./external/glew/include")
+if (WIN32 OR APPLE)
+    include_directories("./external/glew/include")
+else()
+    find_package(GLEW REQUIRED)
+    include_directories(${GLEW_INCLUDE_DIRS})
+endif()
 
 # Open Asset Import Headers
 include_directories("./external/assimp/include")
 
 # FreeImage Header
-if (APPLE)
-include_directories("./external/freeimage/distrib/osx")
+if (WIN32)
+elseif (APPLE)
+    include_directories("./external/freeimage/distrib/osx")
+else()
+    find_package(FreeImage REQUIRED)
+    include_directories(${FREEIMAGE_INCLUDE_DIRS})
+endif()
+
+# SDL Shenanigans
+if (NOT WIN32 AND NOT APPLE)
+    find_package(SDL2 REQUIRED)
+    include_directories(${SDL2_INCLUDE_DIR})
 endif()
 
 # OpenGL Shenanigans
@@ -77,27 +98,39 @@ add_dependencies(cs148opengl4 shaderHandler)
 target_link_libraries(cs148opengl4 ${OPENGL_LIBRARIES})
 
 # SDL2 Library
-if (APPLE)
-    target_link_libraries(cs148opengl4 "${CMAKE_SOURCE_DIR}/external/SDL2/osx/SDL2.framework")
+if (WIN32)
+elseif (APPLE)
+    target_link_libraries(cs148opengl4 "${CMAKE_CURRENT_SOURCE_DIR}/external/SDL2/osx/SDL2.framework")
 
     # Need to code sign for use with XCode!
     add_custom_command(TARGET cs148opengl4 POST_BUILD
-        COMMAND codesign -f -s - "${CMAKE_SOURCE_DIR}/external/SDL2/osx/SDL2.framework")
+        COMMAND codesign -f -s - "${CMAKE_CURRENT_SOURCE_DIR}/external/SDL2/osx/SDL2.framework")
+else()
+    target_link_libraries(cs148opengl4 ${SDL2_LIBRARY})
 endif()
 
 # GLEW Library
-if (APPLE)
-    target_link_libraries(cs148opengl4 "${CMAKE_SOURCE_DIR}/external/glew/distrib/osx/lib/libGLEW.a")
+if (WIN32)
+elseif (APPLE)
+    target_link_libraries(cs148opengl4 "${CMAKE_CURRENT_SOURCE_DIR}/external/glew/distrib/osx/lib/libGLEW.a")
+else()
+    target_link_libraries(cs148opengl4 ${GLEW_LIBRARIES})
 endif()
 
 # Open Asset Import Library
-if (APPLE)
-    target_link_libraries(cs148opengl4 "${CMAKE_SOURCE_DIR}/external/assimp/distrib/osx/libassimp.dylib")
+if (WIN32)
+elseif (APPLE)
+    target_link_libraries(cs148opengl4 "${CMAKE_CURRENT_SOURCE_DIR}/external/assimp/distrib/osx/libassimp.dylib")
+else()
+    target_link_libraries(cs148opengl4 "${CMAKE_CURRENT_SOURCE_DIR}/external/assimp/distrib/unix/libassimp.so")
 endif()
 
 # FreeImage Library
-if (APPLE)
-    target_link_libraries(cs148opengl4 "${CMAKE_SOURCE_DIR}/external/freeimage/distrib/osx/libfreeimage.a")
+if (WIN32)
+elseif (APPLE)
+    target_link_libraries(cs148opengl4 "${CMAKE_CURRENT_SOURCE_DIR}/external/freeimage/distrib/osx/libfreeimage.a")
+else()
+    target_link_libraries(cs148opengl4 ${FREEIMAGE_LIBRARY})
 endif()
 
 # Source Group Folders for IDE Usage

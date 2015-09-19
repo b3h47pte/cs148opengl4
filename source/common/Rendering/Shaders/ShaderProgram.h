@@ -29,7 +29,7 @@ public:
 
     template<int N>
     void SetupUniformBlock(const std::string& blockName,
-        const std::array<const char*, N>& names, 
+        std::array<const char*, N>& names, 
         std::array<GLuint, N>& indices,
         std::array<GLint, N>& offsets,
         std::vector<GLubyte>& data,

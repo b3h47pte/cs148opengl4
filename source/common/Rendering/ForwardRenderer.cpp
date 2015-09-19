@@ -35,7 +35,7 @@ void ForwardRenderer::Render()
     //   0 - Depth Prepass
     //   1 - Global Light for the Objects (Ambient, Emissive)
     //   Rest - Diffuse/Specular/etc Lighting for Objects
-    for (auto p = 0; p < totalRenderingPasses; ++p) {
+    for (decltype(totalRenderingPasses) p = 0; p < totalRenderingPasses; ++p) {
         OGL_CALL(glDepthMask((p == 0) ? GL_TRUE : GL_FALSE));
         if (p == 0) {
             OGL_CALL(glDisable(GL_POLYGON_OFFSET_FILL));
@@ -45,11 +45,11 @@ void ForwardRenderer::Render()
             OGL_CALL(glPolygonOffset(-1.f, -1.f));
         }
 
-        for (auto i = 0; i < totalObjects; ++i) {
+        for (decltype(totalObjects) i = 0; i < totalObjects; ++i) {
             const SceneObject& sceneObject = scene->GetSceneObject(i); 
 
             auto totalRenderObjects = sceneObject.GetTotalRenderObjects();
-            for (auto r = 0; r < totalRenderObjects; ++r) {
+            for (decltype(totalRenderObjects) r = 0; r < totalRenderObjects; ++r) {
                 const RenderingObject* renderObject = sceneObject.GetRenderObject(r);
                 if (!renderObject) {
                     continue;

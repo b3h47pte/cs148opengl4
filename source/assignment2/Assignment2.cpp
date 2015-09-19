@@ -130,12 +130,12 @@ void Assignment2::SetupExample1()
     std::shared_ptr<RenderingObject> sphereTemplate = PrimitiveCreator::CreateIcoSphere(shader, 5.f, 4);
 
     // Give a R/G/B color to each vertex to visualize the sphere.
-    const auto totalVertices = sphereTemplate->GetTotalVertices();
+    auto totalVertices = sphereTemplate->GetTotalVertices();
 
     std::unique_ptr<RenderingObject::ColorArray> vertexColors = make_unique<RenderingObject::ColorArray>();
     vertexColors->reserve(totalVertices);
 
-    for (auto i = 0; i < totalVertices; ++i) {
+    for (decltype(totalVertices) i = 0; i < totalVertices; ++i) {
         vertexColors->emplace_back(0.5f, 0.5f, 0.5f, 1.f);
     }
     
@@ -187,12 +187,12 @@ void Assignment2::SetupExample2()
     std::shared_ptr<RenderingObject> sphereTemplate = PrimitiveCreator::CreateIcoSphere(shader, 5.f, 4);
 
     // Give a R/G/B color to each vertex to visualize the sphere.
-    const auto totalVertices = sphereTemplate->GetTotalVertices();
+    auto totalVertices = sphereTemplate->GetTotalVertices();
 
     std::unique_ptr<RenderingObject::ColorArray> vertexColors = make_unique<RenderingObject::ColorArray>();
     vertexColors->reserve(totalVertices);
 
-    for (auto i = 0; i < totalVertices; ++i) {
+    for (decltype(totalVertices) i = 0; i < totalVertices; ++i) {
         vertexColors->emplace_back(0.5f, 0.5f, 0.5f, 1.f);
     }
     sphereTemplate->SetVertexColors(std::move(vertexColors));

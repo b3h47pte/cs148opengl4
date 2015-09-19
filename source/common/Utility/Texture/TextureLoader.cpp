@@ -42,8 +42,8 @@ std::shared_ptr<Texture> LoadTexture(const std::string& filename)
     GLubyte* textureRawData = new GLubyte[width * height * 4];
 
     RGBQUAD rgb;
-    for (unsigned int y = 0; y < height; ++y) {
-        for (unsigned int x = 0; x < width; ++x) {
+    for (int y = 0; y < height; ++y) {
+        for (int x = 0; x < width; ++x) {
             FreeImage_GetPixelColor(inputImage, x, y, &rgb);
             int idx = x * 4 + y * width * 4;
             textureRawData[idx] = (int)rgb.rgbRed;

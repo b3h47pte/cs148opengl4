@@ -5,7 +5,7 @@
 #include "common/Scene/Camera/Camera.h"
 #include "common/Utility/Texture/TextureLoader.h"
 
-const std::array<const char*, 4> BlinnPhongShader::MATERIAL_PROPERTY_NAMES = {
+std::array<const char*, 4> BlinnPhongShader::MATERIAL_PROPERTY_NAMES = {
     "InputMaterial.matDiffuse", 
     "InputMaterial.matSpecular", 
     "InputMaterial.matShininess", 

@@ -30,7 +30,7 @@ std::vector<std::shared_ptr<RenderingObject>> LoadMesh(std::shared_ptr<ShaderPro
     }
 
     std::vector<std::shared_ptr<RenderingObject>> loadedMeshes;
-    for (auto i = 0; i < scene->mNumMeshes; ++i) {
+    for (decltype(scene->mNumMeshes) i = 0; i < scene->mNumMeshes; ++i) {
         const aiMesh* mesh = scene->mMeshes[i];
         if (!mesh->HasPositions()) {
             std::cerr << "WARNING: A mesh in " << filename << " does not have positions. Skipping." << std::endl;
@@ -44,7 +44,7 @@ std::vector<std::shared_ptr<RenderingObject>> LoadMesh(std::shared_ptr<ShaderPro
         std::unique_ptr<RenderingObject::ColorArray> colors = mesh->HasVertexColors(0) ? make_unique<RenderingObject::ColorArray>(totalVertices) : nullptr;
         std::unique_ptr<RenderingObject::IndexArray> indices = mesh->HasFaces() ? make_unique<RenderingObject::IndexArray>(mesh->mNumFaces * 3) : nullptr;
 
-        for (auto v = 0; v < totalVertices; ++v) {
+        for (decltype(totalVertices) v = 0; v < totalVertices; ++v) {
             positions->at(v) = glm::vec4(mesh->mVertices[v].x, mesh->mVertices[v].y, mesh->mVertices[v].z, 1.f);
             
             if (normals) {
@@ -60,7 +60,7 @@ std::vector<std::shared_ptr<RenderingObject>> LoadMesh(std::shared_ptr<ShaderPro
             }
         }
 
-        for (auto f = 0; f < mesh->mNumFaces && indices; ++f) {
+        for (decltype(mesh->mNumFaces) f = 0; f < mesh->mNumFaces && indices; ++f) {
             const aiFace& face =  mesh->mFaces[f];
             if (face.mNumIndices != 3) {
                 std::cerr << "WARNING: Input mesh may not be triangulated. Skipping face." << std::endl;
