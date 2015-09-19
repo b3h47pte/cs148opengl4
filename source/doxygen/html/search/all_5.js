@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['handleinput',['HandleInput',['../class_application.html#ae6074c3f102de1cb2fe4c81b545679db',1,'Application::HandleInput()'],['../class_assignment1.html#ab9db4f51e177dd72130cd61d86b97535',1,'Assignment1::HandleInput()'],['../class_assignment2.html#a3ee099a8ba45db14103541981e3c4fe8',1,'Assignment2::HandleInput()'],['../class_assignment3.html#a1cc65ca321f39eb7092959b2dada8d31',1,'Assignment3::HandleInput()']]],
-  ['handlewindowevent',['HandleWindowEvent',['../class_application.html#a74d92db64e051efa56d0357989dcb755',1,'Application']]],
-  ['handlewindowresize',['HandleWindowResize',['../class_application.html#abdba284a0f075ee1d4a2108c3a5236a2',1,'Application::HandleWindowResize()'],['../class_assignment2.html#a1af734567de5e8e73a2fd726fe3914f2',1,'Assignment2::HandleWindowResize()'],['../class_assignment3.html#a851c637c83c8092d8adfb5c9f761daeb',1,'Assignment3::HandleWindowResize()']]]
+  ['getwindowsize',['GetWindowSize',['../class_application.html#a3e9992f0ceae0d8beda7debccdb00534',1,'Application::GetWindowSize()'],['../class_assignment1.html#a27daa24c1afe9e10bd6615dfa250473e',1,'Assignment1::GetWindowSize()'],['../class_assignment2.html#ae7ae8c9e7eb64cf9661d9ddb1992f314',1,'Assignment2::GetWindowSize()'],['../class_assignment3.html#a895e38d50717c935706a719f4368f5e8',1,'Assignment3::GetWindowSize()']]]
 ];

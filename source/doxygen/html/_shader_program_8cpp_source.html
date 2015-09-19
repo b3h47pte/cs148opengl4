@@ -61,6 +61,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -122,36 +123,36 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// Now link the vertex and fragment shader together to create the shader program.</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    shaderProgram = OGL_CALL(glCreateProgram());</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    shaderProgram = <a class="code" href="common_8h.html#ab76e9d812060d1ba7e166d5b3e75355b">OGL_CALL</a>(glCreateProgram());</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    OGL_CALL(glAttachShader(shaderProgram, shaderObjects[GL_VERTEX_SHADER]));</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="common_8h.html#ab76e9d812060d1ba7e166d5b3e75355b">OGL_CALL</a>(glAttachShader(shaderProgram, shaderObjects[GL_VERTEX_SHADER]));</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">if</span> (hasFragmentShader) {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        OGL_CALL(glAttachShader(shaderProgram, shaderObjects[GL_FRAGMENT_SHADER]));</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="common_8h.html#ab76e9d812060d1ba7e166d5b3e75355b">OGL_CALL</a>(glAttachShader(shaderProgram, shaderObjects[GL_FRAGMENT_SHADER]));</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    OGL_CALL(glLinkProgram(shaderProgram));</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="common_8h.html#ab76e9d812060d1ba7e166d5b3e75355b">OGL_CALL</a>(glLinkProgram(shaderProgram));</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">// Check if any errors happened during the linker stage.</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    GLint linkStatus;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    OGL_CALL(glGetProgramiv(shaderProgram, GL_LINK_STATUS, &amp;linkStatus));</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="common_8h.html#ab76e9d812060d1ba7e166d5b3e75355b">OGL_CALL</a>(glGetProgramiv(shaderProgram, GL_LINK_STATUS, &amp;linkStatus));</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">if</span> (linkStatus != GL_TRUE) {</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">char</span> errorLogBuffer[SHADER_ERROR_LOG_SIZE];</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        OGL_CALL(glGetProgramInfoLog(shaderProgram, SHADER_ERROR_LOG_SIZE, NULL, errorLogBuffer));</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="common_8h.html#ab76e9d812060d1ba7e166d5b3e75355b">OGL_CALL</a>(glGetProgramInfoLog(shaderProgram, SHADER_ERROR_LOG_SIZE, NULL, errorLogBuffer));</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;ERROR: Program link compilation failure -- &quot;</span> &lt;&lt; std::endl &lt;&lt; errorLogBuffer &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        shaderProgram = 0;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    OGL_CALL(glDetachShader(shaderProgram, shaderObjects[GL_VERTEX_SHADER]));</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    OGL_CALL(glDeleteShader(shaderObjects[GL_FRAGMENT_SHADER]));</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="common_8h.html#ab76e9d812060d1ba7e166d5b3e75355b">OGL_CALL</a>(glDetachShader(shaderProgram, shaderObjects[GL_VERTEX_SHADER]));</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="common_8h.html#ab76e9d812060d1ba7e166d5b3e75355b">OGL_CALL</a>(glDeleteShader(shaderObjects[GL_FRAGMENT_SHADER]));</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">if</span> (hasFragmentShader) {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        OGL_CALL(glDetachShader(shaderProgram, shaderObjects[GL_FRAGMENT_SHADER]));</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        OGL_CALL(glDeleteShader(shaderObjects[GL_VERTEX_SHADER]));</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="common_8h.html#ab76e9d812060d1ba7e166d5b3e75355b">OGL_CALL</a>(glDetachShader(shaderProgram, shaderObjects[GL_FRAGMENT_SHADER]));</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <a class="code" href="common_8h.html#ab76e9d812060d1ba7e166d5b3e75355b">OGL_CALL</a>(glDeleteShader(shaderObjects[GL_VERTEX_SHADER]));</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;ShaderProgram::~ShaderProgram()</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    OGL_CALL(glDeleteProgram(shaderProgram));</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="common_8h.html#ab76e9d812060d1ba7e166d5b3e75355b">OGL_CALL</a>(glDeleteProgram(shaderProgram));</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;GLuint ShaderProgram::LoadShaderObject(GLenum type, <span class="keyword">const</span> std::string&amp; filename)</div>
@@ -167,21 +168,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    std::string shaderText((std::istreambuf_iterator&lt;char&gt;(fs)), </div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        std::istreambuf_iterator&lt;char&gt;());</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    GLuint newShaderObject = OGL_CALL(glCreateShader(type));</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    GLuint newShaderObject = <a class="code" href="common_8h.html#ab76e9d812060d1ba7e166d5b3e75355b">OGL_CALL</a>(glCreateShader(type));</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">// Need to associate the actual shader text we loaded (&#39;shaderText&#39;) with the shader we just</span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">// made so that the driver knows what to compile!</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* shaderTextStr = shaderText.c_str();</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    OGL_CALL(glShaderSource(newShaderObject, 1, &amp;shaderTextStr, NULL));</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="common_8h.html#ab76e9d812060d1ba7e166d5b3e75355b">OGL_CALL</a>(glShaderSource(newShaderObject, 1, &amp;shaderTextStr, NULL));</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="comment">// Compile the shader and make sure compilation passes! Will spit out compilation debugging information if it does not.</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    OGL_CALL(glCompileShader(newShaderObject));</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <a class="code" href="common_8h.html#ab76e9d812060d1ba7e166d5b3e75355b">OGL_CALL</a>(glCompileShader(newShaderObject));</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    GLint compileStatus;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    OGL_CALL(glGetShaderiv(newShaderObject, GL_COMPILE_STATUS, &amp;compileStatus));</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <a class="code" href="common_8h.html#ab76e9d812060d1ba7e166d5b3e75355b">OGL_CALL</a>(glGetShaderiv(newShaderObject, GL_COMPILE_STATUS, &amp;compileStatus));</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">if</span> (compileStatus != GL_TRUE) {</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordtype">char</span> errorLogBuffer[SHADER_ERROR_LOG_SIZE];</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        OGL_CALL(glGetShaderInfoLog(newShaderObject, SHADER_ERROR_LOG_SIZE, NULL, errorLogBuffer));</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <a class="code" href="common_8h.html#ab76e9d812060d1ba7e166d5b3e75355b">OGL_CALL</a>(glGetShaderInfoLog(newShaderObject, SHADER_ERROR_LOG_SIZE, NULL, errorLogBuffer));</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;ERROR: Shader compilation failure -- &quot;</span> &lt;&lt; std::endl &lt;&lt; errorLogBuffer &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
@@ -191,53 +192,53 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keywordtype">void</span> ShaderProgram::StartUseShader()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    OGL_CALL(glUseProgram(shaderProgram));</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <a class="code" href="common_8h.html#ab76e9d812060d1ba7e166d5b3e75355b">OGL_CALL</a>(glUseProgram(shaderProgram));</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="keywordtype">void</span> ShaderProgram::StopUseShader()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    OGL_CALL(glUseProgram(0));</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <a class="code" href="common_8h.html#ab76e9d812060d1ba7e166d5b3e75355b">OGL_CALL</a>(glUseProgram(0));</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="keywordtype">void</span> ShaderProgram::SetShaderUniform(<span class="keyword">const</span> std::string&amp; location, <span class="keyword">const</span> glm::mat4&amp; value)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    VERIFY_SHADER_UNIFORM_EXISTS(shaderProgram, location.c_str(), uniformLocation);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    OGL_CALL(glUniformMatrix4fv(uniformLocation, 1, GL_FALSE, glm::value_ptr(value)));</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <a class="code" href="common_8h.html#ab76e9d812060d1ba7e166d5b3e75355b">OGL_CALL</a>(glUniformMatrix4fv(uniformLocation, 1, GL_FALSE, glm::value_ptr(value)));</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keywordtype">void</span> ShaderProgram::SetShaderUniform(<span class="keyword">const</span> std::string&amp; location, <span class="keywordtype">int</span> value)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    VERIFY_SHADER_UNIFORM_EXISTS(shaderProgram, location.c_str(), uniformLocation);</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    OGL_CALL(glUniform1i(uniformLocation, value));</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <a class="code" href="common_8h.html#ab76e9d812060d1ba7e166d5b3e75355b">OGL_CALL</a>(glUniform1i(uniformLocation, value));</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;}</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="keywordtype">void</span> ShaderProgram::SetShaderUniform(<span class="keyword">const</span> std::string&amp; location, <span class="keywordtype">float</span> value)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    VERIFY_SHADER_UNIFORM_EXISTS(shaderProgram, location.c_str(), uniformLocation);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    OGL_CALL(glUniform1f(uniformLocation, value));</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <a class="code" href="common_8h.html#ab76e9d812060d1ba7e166d5b3e75355b">OGL_CALL</a>(glUniform1f(uniformLocation, value));</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;}</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="keywordtype">void</span> ShaderProgram::SetShaderUniform(<span class="keyword">const</span> std::string&amp; location, <span class="keyword">const</span> glm::vec4&amp; value)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    VERIFY_SHADER_UNIFORM_EXISTS(shaderProgram, location.c_str(), uniformLocation);</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    OGL_CALL(glUniform4fv(uniformLocation, 1, glm::value_ptr(value)));</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <a class="code" href="common_8h.html#ab76e9d812060d1ba7e166d5b3e75355b">OGL_CALL</a>(glUniform4fv(uniformLocation, 1, glm::value_ptr(value)));</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;}</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="comment">// Currently only supports 1 subroutine per shader...</span></div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="keywordtype">void</span> ShaderProgram::SetShaderSubroutine(<span class="keyword">const</span> std::string&amp; location, <span class="keyword">const</span> std::string&amp; subroutine, GLenum substage)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="preprocessor">#ifdef DISABLE_OPENGL_SUBROUTINES</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    GLint uniformLocation = OGL_CALL(glGetSubroutineUniformLocation(shaderProgram, substage, location.c_str()));</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    GLint uniformLocation = <a class="code" href="common_8h.html#ab76e9d812060d1ba7e166d5b3e75355b">OGL_CALL</a>(glGetSubroutineUniformLocation(shaderProgram, substage, location.c_str()));</div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordflow">if</span> (uniformLocation != 0) {</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    }</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    GLuint subroutineIndex = OGL_CALL(glGetSubroutineIndex(shaderProgram, substage, subroutine.c_str()));</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    GLuint subroutineIndex = <a class="code" href="common_8h.html#ab76e9d812060d1ba7e166d5b3e75355b">OGL_CALL</a>(glGetSubroutineIndex(shaderProgram, substage, subroutine.c_str()));</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordflow">if</span> (subroutineIndex == GL_INVALID_INDEX) {</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    }</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    </div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    OGL_CALL(glUniformSubroutinesuiv(substage, 1, &amp;subroutineIndex));</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <a class="code" href="common_8h.html#ab76e9d812060d1ba7e166d5b3e75355b">OGL_CALL</a>(glUniformSubroutinesuiv(substage, 1, &amp;subroutineIndex));</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    static_assert(<span class="keyword">false</span>, <span class="stringliteral">&quot;Subroutines are disabled via the &#39;DISABLE_OPENGL_SUBROUTINES&#39; macro in common.h. Please undefine that macro to use subroutines. Do note that NVIDIA devices running on Apple do not properly support subroutines.&quot;</span>);</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="preprocessor">#endif</span></div>
@@ -261,10 +262,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;}</div>
 <div class="ttc" id="class_light_html"><div class="ttname"><a href="class_light.html">Light</a></div><div class="ttdef"><b>Definition:</b> <a href="_light_8h_source.html#l00009">Light.h:9</a></div></div>
 <div class="ttc" id="class_camera_html"><div class="ttname"><a href="class_camera.html">Camera</a></div><div class="ttdef"><b>Definition:</b> <a href="_camera_8h_source.html#l00008">Camera.h:8</a></div></div>
+<div class="ttc" id="common_8h_html_ab76e9d812060d1ba7e166d5b3e75355b"><div class="ttname"><a href="common_8h.html#ab76e9d812060d1ba7e166d5b3e75355b">OGL_CALL</a></div><div class="ttdeci">#define OGL_CALL(x)</div><div class="ttdoc">Provides an easy to use macro that wraps around OpenGL calls and checks their error. </div><div class="ttdef"><b>Definition:</b> <a href="common_8h_source.html#l00091">common.h:91</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 19 2015 00:46:29 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 19 2015 01:01:10 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

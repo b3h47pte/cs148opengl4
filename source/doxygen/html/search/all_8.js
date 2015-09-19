@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['medialayer',['MediaLayer',['../class_media_layer.html',1,'']]]
+  ['light',['Light',['../class_light.html',1,'']]],
+  ['lightproperties',['LightProperties',['../struct_light_properties.html',1,'']]]
 ];

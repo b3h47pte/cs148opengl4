@@ -61,6 +61,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -92,7 +93,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#ifndef __APPLICATION__</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#define __APPLICATION__</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;common/common.h&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="common_8h.html">common/common.h</a>&quot;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
 <div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_application.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_application.html">Application</a></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
@@ -152,6 +153,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="class_application_html_a0e8589fcb13c520ba472473abe5a518d"><div class="ttname"><a href="class_application.html#a0e8589fcb13c520ba472473abe5a518d">Application::camera</a></div><div class="ttdeci">std::shared_ptr&lt; class Camera &gt; camera</div><div class="ttdoc">A shared pointer to the camera. </div><div class="ttdef"><b>Definition:</b> <a href="_application_8h_source.html#l00135">Application.h:135</a></div></div>
 <div class="ttc" id="class_application_html_a90c7fd9ecb6c8923948078903d442919"><div class="ttname"><a href="class_application.html#a90c7fd9ecb6c8923948078903d442919">Application::CreateRenderer</a></div><div class="ttdeci">virtual std::unique_ptr&lt; class Renderer &gt; CreateRenderer()</div><div class="ttdoc">Creates a shared pointer of type Renderer. </div><div class="ttdef"><b>Definition:</b> <a href="_application_8cpp_source.html#l00036">Application.cpp:36</a></div></div>
 <div class="ttc" id="class_application_html_a17cf1ea4552d26a1c20f7d98d793d41d"><div class="ttname"><a href="class_application.html#a17cf1ea4552d26a1c20f7d98d793d41d">Application::Initialize</a></div><div class="ttdeci">virtual void Initialize()</div><div class="ttdoc">Initialization function to setup the stored camera and scene. </div><div class="ttdef"><b>Definition:</b> <a href="_application_8cpp_source.html#l00015">Application.cpp:15</a></div></div>
+<div class="ttc" id="common_8h_html"><div class="ttname"><a href="common_8h.html">common.h</a></div><div class="ttdoc">A file included across the application framework to include common header files and other useful func...</div></div>
 <div class="ttc" id="class_application_html"><div class="ttname"><a href="class_application.html">Application</a></div><div class="ttdoc">Handles creating configurable objects (i.e. scene, camera, renderer), handling SDL events passed in b...</div><div class="ttdef"><b>Definition:</b> <a href="_application_8h_source.html#l00013">Application.h:13</a></div></div>
 <div class="ttc" id="class_application_html_a78cdcb03e6f06272f7c528fe407951c5"><div class="ttname"><a href="class_application.html#a78cdcb03e6f06272f7c528fe407951c5">Application::Application</a></div><div class="ttdeci">Application(std::shared_ptr&lt; class Scene &gt; inputScene, std::shared_ptr&lt; class Camera &gt; inputCamera)</div><div class="ttdoc">Create an application with a pre-allocated scene and camera. </div><div class="ttdef"><b>Definition:</b> <a href="_application_8cpp_source.html#l00006">Application.cpp:6</a></div></div>
 <div class="ttc" id="class_application_html_a74d92db64e051efa56d0357989dcb755"><div class="ttname"><a href="class_application.html#a74d92db64e051efa56d0357989dcb755">Application::HandleWindowEvent</a></div><div class="ttdeci">virtual void HandleWindowEvent(SDL_WindowEventID eventId, Sint32 data1, Sint32 data2, double timestamp)</div><div class="ttdoc">Processes an SDL window event. Details about an SDL window event can be found here ...</div><div class="ttdef"><b>Definition:</b> <a href="_application_8cpp_source.html#l00076">Application.cpp:76</a></div></div>
@@ -159,7 +161,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 19 2015 00:46:29 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 19 2015 01:01:10 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

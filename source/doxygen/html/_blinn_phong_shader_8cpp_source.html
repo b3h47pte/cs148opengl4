@@ -61,6 +61,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -126,7 +127,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;BlinnPhongShader::~BlinnPhongShader()</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    OGL_CALL(glDeleteBuffers(1, &amp;materialBuffer));</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="common_8h.html#ab76e9d812060d1ba7e166d5b3e75355b">OGL_CALL</a>(glDeleteBuffers(1, &amp;materialBuffer));</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keywordtype">void</span> BlinnPhongShader::SetupShaderLighting(<span class="keyword">const</span> <a class="code" href="class_light.html">Light</a>* light)<span class="keyword"> const</span></div>
@@ -176,11 +177,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    memcpy((<span class="keywordtype">void</span>*)(materialStorage.data() + materialOffsets[3]), glm::value_ptr(ambient), <span class="keyword">sizeof</span>(glm::vec4));</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">if</span> (materialBuffer &amp;&amp; materialBlockLocation != GL_INVALID_INDEX) {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        OGL_CALL(glBindBuffer(GL_UNIFORM_BUFFER, materialBuffer));</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        OGL_CALL(glBufferData(GL_UNIFORM_BUFFER, materialBlockSize, materialStorage.data(), GL_STATIC_DRAW));</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        OGL_CALL(glBindBufferBase(GL_UNIFORM_BUFFER, MATERIAL_BINDING_POINT, materialBuffer));</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        OGL_CALL(glUniformBlockBinding(shaderProgram, materialBlockLocation, MATERIAL_BINDING_POINT));</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        OGL_CALL(glBindBuffer(GL_UNIFORM_BUFFER, 0));</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <a class="code" href="common_8h.html#ab76e9d812060d1ba7e166d5b3e75355b">OGL_CALL</a>(glBindBuffer(GL_UNIFORM_BUFFER, materialBuffer));</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <a class="code" href="common_8h.html#ab76e9d812060d1ba7e166d5b3e75355b">OGL_CALL</a>(glBufferData(GL_UNIFORM_BUFFER, materialBlockSize, materialStorage.data(), GL_STATIC_DRAW));</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <a class="code" href="common_8h.html#ab76e9d812060d1ba7e166d5b3e75355b">OGL_CALL</a>(glBindBufferBase(GL_UNIFORM_BUFFER, MATERIAL_BINDING_POINT, materialBuffer));</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <a class="code" href="common_8h.html#ab76e9d812060d1ba7e166d5b3e75355b">OGL_CALL</a>(glUniformBlockBinding(shaderProgram, materialBlockLocation, MATERIAL_BINDING_POINT));</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <a class="code" href="common_8h.html#ab76e9d812060d1ba7e166d5b3e75355b">OGL_CALL</a>(glBindBuffer(GL_UNIFORM_BUFFER, 0));</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">// While we&#39;re here, also setup the textures too.</span></div>
@@ -205,7 +206,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="keywordtype">void</span> BlinnPhongShader::SetupShaderMaterials()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="comment">// Need to make sure the material buffer is bound.</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    OGL_CALL(glBindBufferBase(GL_UNIFORM_BUFFER, MATERIAL_BINDING_POINT, materialBuffer));</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <a class="code" href="common_8h.html#ab76e9d812060d1ba7e166d5b3e75355b">OGL_CALL</a>(glBindBufferBase(GL_UNIFORM_BUFFER, MATERIAL_BINDING_POINT, materialBuffer));</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="comment">// Make sure the right textures are bound.</span></div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keyword">const</span> <a class="code" href="class_texture.html">Texture</a>* diffuseTexture = defaultTexture.get();</div>
@@ -259,12 +260,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="class_light_html"><div class="ttname"><a href="class_light.html">Light</a></div><div class="ttdef"><b>Definition:</b> <a href="_light_8h_source.html#l00009">Light.h:9</a></div></div>
 <div class="ttc" id="struct_blinn_phong_light_properties_html"><div class="ttname"><a href="struct_blinn_phong_light_properties.html">BlinnPhongLightProperties</a></div><div class="ttdef"><b>Definition:</b> <a href="_blinn_phong_light_properties_8h_source.html#l00008">BlinnPhongLightProperties.h:8</a></div></div>
 <div class="ttc" id="class_camera_html"><div class="ttname"><a href="class_camera.html">Camera</a></div><div class="ttdef"><b>Definition:</b> <a href="_camera_8h_source.html#l00008">Camera.h:8</a></div></div>
+<div class="ttc" id="common_8h_html_ab76e9d812060d1ba7e166d5b3e75355b"><div class="ttname"><a href="common_8h.html#ab76e9d812060d1ba7e166d5b3e75355b">OGL_CALL</a></div><div class="ttdeci">#define OGL_CALL(x)</div><div class="ttdoc">Provides an easy to use macro that wraps around OpenGL calls and checks their error. </div><div class="ttdef"><b>Definition:</b> <a href="common_8h_source.html#l00091">common.h:91</a></div></div>
 <div class="ttc" id="class_texture_html"><div class="ttname"><a href="class_texture.html">Texture</a></div><div class="ttdef"><b>Definition:</b> <a href="_texture_8h_source.html#l00008">Texture.h:8</a></div></div>
 <div class="ttc" id="class_shader_program_html"><div class="ttname"><a href="class_shader_program.html">ShaderProgram</a></div><div class="ttdef"><b>Definition:</b> <a href="_shader_program_8h_source.html#l00008">ShaderProgram.h:8</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 19 2015 00:46:29 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 19 2015 01:01:10 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

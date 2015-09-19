@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['getwindowsize',['GetWindowSize',['../class_application.html#a3e9992f0ceae0d8beda7debccdb00534',1,'Application::GetWindowSize()'],['../class_assignment1.html#a27daa24c1afe9e10bd6615dfa250473e',1,'Assignment1::GetWindowSize()'],['../class_assignment2.html#ae7ae8c9e7eb64cf9661d9ddb1992f314',1,'Assignment2::GetWindowSize()'],['../class_assignment3.html#a895e38d50717c935706a719f4368f5e8',1,'Assignment3::GetWindowSize()']]]
+  ['createapplication',['CreateApplication',['../class_application.html#a727f63f898a68bddf6d88309195ef194',1,'Application']]],
+  ['createcamera',['CreateCamera',['../class_application.html#a53c0a539fd2c4fe2cc48143cc0a3ea24',1,'Application']]],
+  ['createrenderer',['CreateRenderer',['../class_application.html#a90c7fd9ecb6c8923948078903d442919',1,'Application']]],
+  ['createscene',['CreateScene',['../class_application.html#a511e638cf5748e10151f17d6140b9119',1,'Application']]]
 ];

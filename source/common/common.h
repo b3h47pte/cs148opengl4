@@ -1,3 +1,6 @@
+/*! \file common.h
+ *  \brief A file included across the application framework to include common header files and other useful functions and macros.
+ */
 #pragma once
 
 #ifndef __COMMON__
@@ -25,6 +28,13 @@
 #include <cassert>
 #include <unordered_map>
 
+/*! \func _OpenGLErrorToString
+ *  \brief Converts an OpenGL error to an std::string.
+ *  \param err The OpenGL error returned by <a href="https://www.opengl.org/sdk/docs/man/html/glGetError.xhtml">glGetError</a>.
+ *  \returns A string that explain the OpenGL error. These are copied directly from the OpenGL documentation.
+ * 
+ * This function is called by _DisplayOpenGLError to get a user-friendly message in addition to an errror code.
+ */
 inline std::string _OpenGLErrorToString(GLenum err) {
     // Error messages copied from the glGetError documentation: https://www.opengl.org/sdk/docs/man/docbook4/xhtml/glGetError.xml
     switch (err) {
@@ -50,7 +60,15 @@ inline std::string _OpenGLErrorToString(GLenum err) {
     return "Unspecified error";
 }
 
-// Error Detection for OpenGL
+/*! \func _DisplayOpenGLError
+ *  \brief Prints a user friendly message for the most recent OpenGL error (if any) to stdout.
+ *  \param command The command that was run.
+ *  \param file The file from which the command was run.
+ *  \param line The line in the file where the command was fun.
+ * 
+ *  This function is used by the OGL_CALL macro to provide debugging information in stdout when an OpenGL API call fails.
+ */
+
 inline void _DisplayOpenGLError(std::string command, std::string file, int line) {
     GLenum err = glGetError();
     if (err != GL_NO_ERROR) {
@@ -60,17 +78,42 @@ inline void _DisplayOpenGLError(std::string command, std::string file, int line)
     }
 }
 
+
+/*! \def OGL_CALL
+ *  \brief Provides an easy to use macro that wraps around OpenGL calls and checks their error.
+ *  \param x The OpenGL command.
+ *  
+ *  This is only defined in the Debug build when NDEBUG is NOT defined. If you are unfamiliar with C++
+ *  preprocess macros, the __FILE__ macro, or the __LINE__ macro, you can read <a href="http://www.cplusplus.com/doc/tutorial/preprocessor/">this</a>
+ *  for more information.
+ */
 #ifndef NDEBUG
 #define OGL_CALL(x) x; _DisplayOpenGLError(#x, __FILE__, __LINE__);
 #else
 #define OGL_CALL(x) x;
 #endif
 
+/* \brief The PI constant.
+ */
 constexpr float PI = 3.14159265359f;
 
+/* \brief Help stringify a macro.
+ */
 #define STRINGIFY_HELPER(x) #x
+
+/* \brief Stringify a macro.
+ * 
+ * This takes in a macro that was defined to be a string and actually converts it into a string that can be used by the application. See MeshLoader::LoadMesh for an example.
+ * Why is this nested macro necessary? You can read about it here: <a href="https://gcc.gnu.org/onlinedocs/cpp/Stringification.html">link</a>.
+ */
 #define STRINGIFY(x) STRINGIFY_HELPER(x)
 
+/* \brief Create a std::unique_ptr much like std::make_shared.
+ *
+ * To avoid too many compilation problems I stuck with using C++11 where the committee forgot to include std::make_unique (it's there in C++14). This is a convenience function.
+ * Curious about Modern C++? The book <a href="http://www.amazon.com/Effective-Modern-Specific-Ways-Improve/dp/1491903996">Effective Modern C++</a> by Scott Meyes is a great
+ * book if you are already familiar with C++.
+ */
 template<typename T, typename... Ts>
 std::unique_ptr<T> make_unique(Ts&&... params)
 {

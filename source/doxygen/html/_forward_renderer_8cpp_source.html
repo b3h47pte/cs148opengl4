@@ -61,6 +61,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -125,13 +126,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">//   1 - Global Light for the Objects (Ambient, Emissive)</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">//   Rest - Diffuse/Specular/etc Lighting for Objects</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> p = 0; p &lt; totalRenderingPasses; ++p) {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        OGL_CALL(glDepthMask((p == 0) ? GL_TRUE : GL_FALSE));</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="common_8h.html#ab76e9d812060d1ba7e166d5b3e75355b">OGL_CALL</a>(glDepthMask((p == 0) ? GL_TRUE : GL_FALSE));</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">if</span> (p == 0) {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            OGL_CALL(glDisable(GL_POLYGON_OFFSET_FILL));</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <a class="code" href="common_8h.html#ab76e9d812060d1ba7e166d5b3e75355b">OGL_CALL</a>(glDisable(GL_POLYGON_OFFSET_FILL));</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="comment">// Need this to prevent z-fighting with the depth prepass!</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            OGL_CALL(glEnable(GL_POLYGON_OFFSET_FILL));</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            OGL_CALL(glPolygonOffset(-1.f, -1.f));</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <a class="code" href="common_8h.html#ab76e9d812060d1ba7e166d5b3e75355b">OGL_CALL</a>(glEnable(GL_POLYGON_OFFSET_FILL));</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <a class="code" href="common_8h.html#ab76e9d812060d1ba7e166d5b3e75355b">OGL_CALL</a>(glPolygonOffset(-1.f, -1.f));</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0; i &lt; totalObjects; ++i) {</div>
@@ -164,17 +165,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            }</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        }</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    OGL_CALL(glDepthMask(GL_TRUE));</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="common_8h.html#ab76e9d812060d1ba7e166d5b3e75355b">OGL_CALL</a>(glDepthMask(GL_TRUE));</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
 <div class="ttc" id="class_light_html"><div class="ttname"><a href="class_light.html">Light</a></div><div class="ttdef"><b>Definition:</b> <a href="_light_8h_source.html#l00009">Light.h:9</a></div></div>
 <div class="ttc" id="class_renderer_html"><div class="ttname"><a href="class_renderer.html">Renderer</a></div><div class="ttdef"><b>Definition:</b> <a href="_renderer_8h_source.html#l00008">Renderer.h:8</a></div></div>
 <div class="ttc" id="class_rendering_object_html"><div class="ttname"><a href="class_rendering_object.html">RenderingObject</a></div><div class="ttdef"><b>Definition:</b> <a href="_rendering_object_8h_source.html#l00009">RenderingObject.h:9</a></div></div>
+<div class="ttc" id="common_8h_html_ab76e9d812060d1ba7e166d5b3e75355b"><div class="ttname"><a href="common_8h.html#ab76e9d812060d1ba7e166d5b3e75355b">OGL_CALL</a></div><div class="ttdeci">#define OGL_CALL(x)</div><div class="ttdoc">Provides an easy to use macro that wraps around OpenGL calls and checks their error. </div><div class="ttdef"><b>Definition:</b> <a href="common_8h_source.html#l00091">common.h:91</a></div></div>
 <div class="ttc" id="class_scene_object_html"><div class="ttname"><a href="class_scene_object.html">SceneObject</a></div><div class="ttdef"><b>Definition:</b> <a href="_scene_object_8h_source.html#l00008">SceneObject.h:8</a></div></div>
 <div class="ttc" id="class_shader_program_html"><div class="ttname"><a href="class_shader_program.html">ShaderProgram</a></div><div class="ttdef"><b>Definition:</b> <a href="_shader_program_8h_source.html#l00008">ShaderProgram.h:8</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 19 2015 00:46:29 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 19 2015 01:01:10 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>
