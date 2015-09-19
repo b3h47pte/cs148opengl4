@@ -97,7 +97,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;glm::mat4 PerspectiveCamera::GetProjectionMatrix()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordflow">return</span> glm::perspective(GetFOV() * PI / 180.f, GetAspectRatio(), GetZNear(), GetZFar());</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordflow">return</span> glm::perspective(GetFOV() * <a class="code" href="common_8h.html#a6a1e5c0227931d99b703e1fd3adebf52">PI</a> / 180.f, GetAspectRatio(), GetZNear(), GetZFar());</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;}</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keywordtype">void</span> PerspectiveCamera::UpdateTransformationMatrix()</div>
@@ -105,10 +105,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    SceneObject::UpdateTransformationMatrix();</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    cachedTransformationMatrix = glm::inverse(cachedTransformationMatrix);</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
+<div class="ttc" id="common_8h_html_a6a1e5c0227931d99b703e1fd3adebf52"><div class="ttname"><a href="common_8h.html#a6a1e5c0227931d99b703e1fd3adebf52">PI</a></div><div class="ttdeci">constexpr float PI</div><div class="ttdoc">The PI constant. </div><div class="ttdef"><b>Definition:</b> <a href="common_8h_source.html#l00099">common.h:99</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 19 2015 01:01:10 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 19 2015 01:03:41 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

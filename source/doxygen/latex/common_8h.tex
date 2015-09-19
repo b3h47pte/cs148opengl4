@@ -27,12 +27,11 @@ A file included across the application framework to include common header files 
 \item 
 \#define \hyperlink{common_8h_ab76e9d812060d1ba7e166d5b3e75355b}{O\+G\+L\+\_\+\+C\+A\+L\+L}(x)~x; \hyperlink{common_8h_ab11db0eff470ddd4d5f1e0dfc3786dd3}{\+\_\+\+Display\+Open\+G\+L\+Error}(\#x, \+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+);
 \begin{DoxyCompactList}\small\item\em Provides an easy to use macro that wraps around Open\+G\+L calls and checks their error. \end{DoxyCompactList}\item 
-\hypertarget{common_8h_a2d743b5950d82c9ca4071ca3217a8315}{}\#define {\bfseries S\+T\+R\+I\+N\+G\+I\+F\+Y\+\_\+\+H\+E\+L\+P\+E\+R}(x)~\#x\label{common_8h_a2d743b5950d82c9ca4071ca3217a8315}
+\hypertarget{common_8h_a2d743b5950d82c9ca4071ca3217a8315}{}\#define \hyperlink{common_8h_a2d743b5950d82c9ca4071ca3217a8315}{S\+T\+R\+I\+N\+G\+I\+F\+Y\+\_\+\+H\+E\+L\+P\+E\+R}(x)~\#x\label{common_8h_a2d743b5950d82c9ca4071ca3217a8315}
 
-\item 
-\hypertarget{common_8h_a6df1d22fb5f09eccc23b9f399670cfd7}{}\#define {\bfseries S\+T\+R\+I\+N\+G\+I\+F\+Y}(x)~S\+T\+R\+I\+N\+G\+I\+F\+Y\+\_\+\+H\+E\+L\+P\+E\+R(x)\label{common_8h_a6df1d22fb5f09eccc23b9f399670cfd7}
-
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Help stringify a macro. \end{DoxyCompactList}\item 
+\#define \hyperlink{common_8h_a6df1d22fb5f09eccc23b9f399670cfd7}{S\+T\+R\+I\+N\+G\+I\+F\+Y}(x)~\hyperlink{common_8h_a2d743b5950d82c9ca4071ca3217a8315}{S\+T\+R\+I\+N\+G\+I\+F\+Y\+\_\+\+H\+E\+L\+P\+E\+R}(x)
+\begin{DoxyCompactList}\small\item\em Stringify a macro. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -40,15 +39,14 @@ std\+::string \hyperlink{common_8h_afce9600873f5e1c38abefadd838fbed3}{\+\_\+\+Op
 \begin{DoxyCompactList}\small\item\em Converts an Open\+G\+L error to an std\+::string. \end{DoxyCompactList}\item 
 void \hyperlink{common_8h_ab11db0eff470ddd4d5f1e0dfc3786dd3}{\+\_\+\+Display\+Open\+G\+L\+Error} (std\+::string command, std\+::string file, int line)
 \begin{DoxyCompactList}\small\item\em Prints a user friendly message for the most recent Open\+G\+L error (if any) to stdout. \end{DoxyCompactList}\item 
-\hypertarget{common_8h_acf8b9d05e9e6ed6aa9ffe9f317aa8fd3}{}{\footnotesize template$<$typename T , typename... Ts$>$ }\\std\+::unique\+\_\+ptr$<$ T $>$ {\bfseries make\+\_\+unique} (Ts \&\&...params)\label{common_8h_acf8b9d05e9e6ed6aa9ffe9f317aa8fd3}
-
-\end{DoxyCompactItemize}
+{\footnotesize template$<$typename T , typename... Ts$>$ }\\std\+::unique\+\_\+ptr$<$ T $>$ \hyperlink{common_8h_acf8b9d05e9e6ed6aa9ffe9f317aa8fd3}{make\+\_\+unique} (Ts \&\&...params)
+\begin{DoxyCompactList}\small\item\em Create a std\+::unique\+\_\+ptr much like std\+::make\+\_\+shared. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{common_8h_ac01434fcf858bd4b50b62784079ad3c0}{}constexpr float {\bfseries P\+I} = 3.\+14159265359f\label{common_8h_ac01434fcf858bd4b50b62784079ad3c0}
+\hypertarget{common_8h_a6a1e5c0227931d99b703e1fd3adebf52}{}constexpr float \hyperlink{common_8h_a6a1e5c0227931d99b703e1fd3adebf52}{P\+I} = 3.\+14159265359f\label{common_8h_a6a1e5c0227931d99b703e1fd3adebf52}
 
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The P\+I constant. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -76,6 +74,21 @@ Provides an easy to use macro that wraps around Open\+G\+L calls and checks thei
 This is only defined in the Debug build when N\+D\+E\+B\+U\+G is N\+O\+T defined. If you are unfamiliar with C++ preprocess macros, the {\bfseries F\+I\+L\+E} macro, or the {\bfseries L\+I\+N\+E} macro, you can read \href{http://www.cplusplus.com/doc/tutorial/preprocessor/}{\tt this} for more information. 
 
 Definition at line 91 of file common.\+h.
+
+\hypertarget{common_8h_a6df1d22fb5f09eccc23b9f399670cfd7}{}\index{common.\+h@{common.\+h}!S\+T\+R\+I\+N\+G\+I\+F\+Y@{S\+T\+R\+I\+N\+G\+I\+F\+Y}}
+\index{S\+T\+R\+I\+N\+G\+I\+F\+Y@{S\+T\+R\+I\+N\+G\+I\+F\+Y}!common.\+h@{common.\+h}}
+\subsubsection[{S\+T\+R\+I\+N\+G\+I\+F\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+T\+R\+I\+N\+G\+I\+F\+Y(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~{\bf S\+T\+R\+I\+N\+G\+I\+F\+Y\+\_\+\+H\+E\+L\+P\+E\+R}(x)}\label{common_8h_a6df1d22fb5f09eccc23b9f399670cfd7}
+
+
+Stringify a macro. 
+
+This takes in a macro that was defined to be a string and actually converts it into a string that can be used by the application. See Mesh\+Loader\+::\+Load\+Mesh for an example. Why is this nested macro necessary? You can read about it here\+: \href{https://gcc.gnu.org/onlinedocs/cpp/Stringification.html}{\tt link}. 
+
+Definition at line 112 of file common.\+h.
 
 
 
@@ -128,4 +141,19 @@ A string that explain the Open\+G\+L error. These are copied directly from the O
 This function is called by \+\_\+\+Display\+Open\+G\+L\+Error to get a user-\/friendly message in addition to an errror code. 
 
 Definition at line 38 of file common.\+h.
+
+\hypertarget{common_8h_acf8b9d05e9e6ed6aa9ffe9f317aa8fd3}{}\index{common.\+h@{common.\+h}!make\+\_\+unique@{make\+\_\+unique}}
+\index{make\+\_\+unique@{make\+\_\+unique}!common.\+h@{common.\+h}}
+\subsubsection[{make\+\_\+unique}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename... Ts$>$ std\+::unique\+\_\+ptr$<$T$>$ make\+\_\+unique (
+\begin{DoxyParamCaption}
+\item[{Ts \&\&...}]{params}
+\end{DoxyParamCaption}
+)}\label{common_8h_acf8b9d05e9e6ed6aa9ffe9f317aa8fd3}
+
+
+Create a std\+::unique\+\_\+ptr much like std\+::make\+\_\+shared. 
+
+To avoid too many compilation problems I stuck with using C++11 where the committee forgot to include std\+::make\+\_\+unique (it\textquotesingle{}s there in C++14). This is a convenience function. Curious about Modern C++? The book \href{http://www.amazon.com/Effective-Modern-Specific-Ways-Improve/dp/1491903996}{\tt Effective Modern C++} by Scott Meyes is a great book if you are already familiar with C++. 
+
+Definition at line 121 of file common.\+h.
 

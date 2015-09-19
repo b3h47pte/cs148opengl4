@@ -107,7 +107,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    Assimp::Importer importer;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">const</span> std::string completeFilename = std::string(STRINGIFY(ASSET_PATH)) + <span class="stringliteral">&quot;/&quot;</span> + filename;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">const</span> std::string completeFilename = std::string(<a class="code" href="common_8h.html#a6df1d22fb5f09eccc23b9f399670cfd7">STRINGIFY</a>(ASSET_PATH)) + <span class="stringliteral">&quot;/&quot;</span> + filename;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">const</span> aiScene* scene = importer.ReadFile(completeFilename.c_str(),</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            aiProcess_CalcTangentSpace       | </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            aiProcess_Triangulate            |</div>
@@ -171,10 +171,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
 <div class="ttc" id="namespace_mesh_loader_html"><div class="ttname"><a href="namespace_mesh_loader.html">MeshLoader</a></div><div class="ttdef"><b>Definition:</b> <a href="_mesh_loader_8cpp_source.html#l00008">MeshLoader.cpp:8</a></div></div>
+<div class="ttc" id="common_8h_html_a6df1d22fb5f09eccc23b9f399670cfd7"><div class="ttname"><a href="common_8h.html#a6df1d22fb5f09eccc23b9f399670cfd7">STRINGIFY</a></div><div class="ttdeci">#define STRINGIFY(x)</div><div class="ttdoc">Stringify a macro. </div><div class="ttdef"><b>Definition:</b> <a href="common_8h_source.html#l00112">common.h:112</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 19 2015 01:01:10 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 19 2015 01:03:41 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

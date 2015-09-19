@@ -93,22 +93,25 @@ inline void _DisplayOpenGLError(std::string command, std::string file, int line)
 #define OGL_CALL(x) x;
 #endif
 
-/* \brief The PI constant.
+/*! \var PI
+ * \brief The PI constant.
  */
 constexpr float PI = 3.14159265359f;
 
-/* \brief Help stringify a macro.
+/*! \def STRINGIFY_HELPER
+ * \brief Help stringify a macro.
  */
 #define STRINGIFY_HELPER(x) #x
 
-/* \brief Stringify a macro.
+/*! \def STRINGIFY
+ * \brief Stringify a macro.
  * 
  * This takes in a macro that was defined to be a string and actually converts it into a string that can be used by the application. See MeshLoader::LoadMesh for an example.
  * Why is this nested macro necessary? You can read about it here: <a href="https://gcc.gnu.org/onlinedocs/cpp/Stringification.html">link</a>.
  */
 #define STRINGIFY(x) STRINGIFY_HELPER(x)
 
-/* \brief Create a std::unique_ptr much like std::make_shared.
+/*! \brief Create a std::unique_ptr much like std::make_shared.
  *
  * To avoid too many compilation problems I stuck with using C++11 where the committee forgot to include std::make_unique (it's there in C++14). This is a convenience function.
  * Curious about Modern C++? The book <a href="http://www.amazon.com/Effective-Modern-Specific-Ways-Improve/dp/1491903996">Effective Modern C++</a> by Scott Meyes is a great

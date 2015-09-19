@@ -3,9 +3,9 @@ var indexSectionsWithContent =
   0: "_abcfghilmoprst~",
   1: "abcflmprst",
   2: "c",
-  3: "_acghirt~",
-  4: "cis",
-  5: "o"
+  3: "_acghimrt~",
+  4: "cips",
+  5: "os"
 };
 
 var indexSectionNames =

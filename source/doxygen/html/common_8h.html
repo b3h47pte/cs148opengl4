@@ -121,10 +121,11 @@ Macros</h2></td></tr>
 <tr class="memdesc:ab76e9d812060d1ba7e166d5b3e75355b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides an easy to use macro that wraps around OpenGL calls and checks their error.  <a href="#ab76e9d812060d1ba7e166d5b3e75355b">More...</a><br /></td></tr>
 <tr class="separator:ab76e9d812060d1ba7e166d5b3e75355b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d743b5950d82c9ca4071ca3217a8315"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2d743b5950d82c9ca4071ca3217a8315"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>STRINGIFY_HELPER</b>(x)&#160;&#160;&#160;#x</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_8h.html#a2d743b5950d82c9ca4071ca3217a8315">STRINGIFY_HELPER</a>(x)&#160;&#160;&#160;#x</td></tr>
+<tr class="memdesc:a2d743b5950d82c9ca4071ca3217a8315"><td class="mdescLeft">&#160;</td><td class="mdescRight">Help stringify a macro. <br /></td></tr>
 <tr class="separator:a2d743b5950d82c9ca4071ca3217a8315"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6df1d22fb5f09eccc23b9f399670cfd7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6df1d22fb5f09eccc23b9f399670cfd7"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>STRINGIFY</b>(x)&#160;&#160;&#160;STRINGIFY_HELPER(x)</td></tr>
+<tr class="memitem:a6df1d22fb5f09eccc23b9f399670cfd7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_8h.html#a6df1d22fb5f09eccc23b9f399670cfd7">STRINGIFY</a>(x)&#160;&#160;&#160;<a class="el" href="common_8h.html#a2d743b5950d82c9ca4071ca3217a8315">STRINGIFY_HELPER</a>(x)</td></tr>
+<tr class="memdesc:a6df1d22fb5f09eccc23b9f399670cfd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stringify a macro.  <a href="#a6df1d22fb5f09eccc23b9f399670cfd7">More...</a><br /></td></tr>
 <tr class="separator:a6df1d22fb5f09eccc23b9f399670cfd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -135,16 +136,17 @@ Functions</h2></td></tr>
 <tr class="memitem:ab11db0eff470ddd4d5f1e0dfc3786dd3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_8h.html#ab11db0eff470ddd4d5f1e0dfc3786dd3">_DisplayOpenGLError</a> (std::string command, std::string file, int line)</td></tr>
 <tr class="memdesc:ab11db0eff470ddd4d5f1e0dfc3786dd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a user friendly message for the most recent OpenGL error (if any) to stdout.  <a href="#ab11db0eff470ddd4d5f1e0dfc3786dd3">More...</a><br /></td></tr>
 <tr class="separator:ab11db0eff470ddd4d5f1e0dfc3786dd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf8b9d05e9e6ed6aa9ffe9f317aa8fd3"><td class="memTemplParams" colspan="2"><a class="anchor" id="acf8b9d05e9e6ed6aa9ffe9f317aa8fd3"></a>
-template&lt;typename T , typename... Ts&gt; </td></tr>
-<tr class="memitem:acf8b9d05e9e6ed6aa9ffe9f317aa8fd3"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>make_unique</b> (Ts &amp;&amp;...params)</td></tr>
+<tr class="memitem:acf8b9d05e9e6ed6aa9ffe9f317aa8fd3"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Ts&gt; </td></tr>
+<tr class="memitem:acf8b9d05e9e6ed6aa9ffe9f317aa8fd3"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="common_8h.html#acf8b9d05e9e6ed6aa9ffe9f317aa8fd3">make_unique</a> (Ts &amp;&amp;...params)</td></tr>
+<tr class="memdesc:acf8b9d05e9e6ed6aa9ffe9f317aa8fd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a std::unique_ptr much like std::make_shared.  <a href="#acf8b9d05e9e6ed6aa9ffe9f317aa8fd3">More...</a><br /></td></tr>
 <tr class="separator:acf8b9d05e9e6ed6aa9ffe9f317aa8fd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ac01434fcf858bd4b50b62784079ad3c0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac01434fcf858bd4b50b62784079ad3c0"></a>
-constexpr float&#160;</td><td class="memItemRight" valign="bottom"><b>PI</b> = 3.14159265359f</td></tr>
-<tr class="separator:ac01434fcf858bd4b50b62784079ad3c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a1e5c0227931d99b703e1fd3adebf52"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6a1e5c0227931d99b703e1fd3adebf52"></a>
+constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_8h.html#a6a1e5c0227931d99b703e1fd3adebf52">PI</a> = 3.14159265359f</td></tr>
+<tr class="memdesc:a6a1e5c0227931d99b703e1fd3adebf52"><td class="mdescLeft">&#160;</td><td class="mdescRight">The PI constant. <br /></td></tr>
+<tr class="separator:a6a1e5c0227931d99b703e1fd3adebf52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A file included across the application framework to include common header files and other useful functions and macros. </p>
@@ -175,6 +177,27 @@ constexpr float&#160;</td><td class="memItemRight" valign="bottom"><b>PI</b> = 3
 <p>This is only defined in the Debug build when NDEBUG is NOT defined. If you are unfamiliar with C++ preprocess macros, the <b>FILE</b> macro, or the <b>LINE</b> macro, you can read <a href="http://www.cplusplus.com/doc/tutorial/preprocessor/">this</a> for more information. </p>
 
 <p>Definition at line <a class="el" href="common_8h_source.html#l00091">91</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6df1d22fb5f09eccc23b9f399670cfd7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STRINGIFY</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="common_8h.html#a2d743b5950d82c9ca4071ca3217a8315">STRINGIFY_HELPER</a>(x)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Stringify a macro. </p>
+<p>This takes in a macro that was defined to be a string and actually converts it into a string that can be used by the application. See MeshLoader::LoadMesh for an example. Why is this nested macro necessary? You can read about it here: <a href="https://gcc.gnu.org/onlinedocs/cpp/Stringification.html">link</a>. </p>
+
+<p>Definition at line <a class="el" href="common_8h_source.html#l00112">112</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
 
 </div>
 </div>
@@ -268,10 +291,33 @@ constexpr float&#160;</td><td class="memItemRight" valign="bottom"><b>PI</b> = 3
 
 </div>
 </div>
+<a class="anchor" id="acf8b9d05e9e6ed6aa9ffe9f317aa8fd3"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename... Ts&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;T&gt; make_unique </td>
+          <td>(</td>
+          <td class="paramtype">Ts &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>params</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a std::unique_ptr much like std::make_shared. </p>
+<p>To avoid too many compilation problems I stuck with using C++11 where the committee forgot to include std::make_unique (it's there in C++14). This is a convenience function. Curious about Modern C++? The book <a href="http://www.amazon.com/Effective-Modern-Specific-Ways-Improve/dp/1491903996">Effective Modern C++</a> by Scott Meyes is a great book if you are already familiar with C++. </p>
+
+<p>Definition at line <a class="el" href="common_8h_source.html#l00121">121</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 19 2015 01:01:10 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 19 2015 01:03:41 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

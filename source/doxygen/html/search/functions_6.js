@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['requestexit',['RequestExit',['../class_application.html#a9cbe96f94653eae2bb6ad5857b00fa10',1,'Application']]]
+  ['make_5funique',['make_unique',['../common_8h.html#acf8b9d05e9e6ed6aa9ffe9f317aa8fd3',1,'common.h']]]
 ];
