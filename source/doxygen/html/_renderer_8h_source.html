@@ -96,33 +96,36 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="common_8h.html">common/common.h</a>&quot;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="class_renderer.html">    8</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_renderer.html">Renderer</a></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="class_renderer.html#adc8ce31cd649bdf220ca8355809b1d06">Renderer</a>(std::shared_ptr&lt;class Scene&gt; inputScene, std::shared_ptr&lt;class Camera&gt; inputCamera);</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_renderer.html#afeee408862d5bd6255a6882d47e6d5cd">~Renderer</a>();</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_renderer.html#a7cb221f355f181d84d66e8c09f50f04a">Initialize</a>() = 0;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_renderer.html#a38623da22aa718cfa41e2514ebd269f5">Render</a>() = 0;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_renderer.html#a65178695d48824d3afd6fe40fd4915b6">   18</a></span>&#160;    std::shared_ptr&lt;class Scene&gt; <a class="code" href="class_renderer.html#a65178695d48824d3afd6fe40fd4915b6">scene</a>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_renderer.html#a7a08c6489c1ffe8e346b9f205b4014ca">   19</a></span>&#160;    std::shared_ptr&lt;class Camera&gt; <a class="code" href="class_renderer.html#a7a08c6489c1ffe8e346b9f205b4014ca">camera</a>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;};</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_renderer.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_renderer.html">Renderer</a></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="class_renderer.html#adc8ce31cd649bdf220ca8355809b1d06">Renderer</a>(std::shared_ptr&lt;class Scene&gt; inputScene, std::shared_ptr&lt;class Camera&gt; inputCamera);</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="class_renderer_html_a65178695d48824d3afd6fe40fd4915b6"><div class="ttname"><a href="class_renderer.html#a65178695d48824d3afd6fe40fd4915b6">Renderer::scene</a></div><div class="ttdeci">std::shared_ptr&lt; class Scene &gt; scene</div><div class="ttdef"><b>Definition:</b> <a href="_renderer_8h_source.html#l00018">Renderer.h:18</a></div></div>
-<div class="ttc" id="class_renderer_html"><div class="ttname"><a href="class_renderer.html">Renderer</a></div><div class="ttdef"><b>Definition:</b> <a href="_renderer_8h_source.html#l00008">Renderer.h:8</a></div></div>
-<div class="ttc" id="class_renderer_html_a7a08c6489c1ffe8e346b9f205b4014ca"><div class="ttname"><a href="class_renderer.html#a7a08c6489c1ffe8e346b9f205b4014ca">Renderer::camera</a></div><div class="ttdeci">std::shared_ptr&lt; class Camera &gt; camera</div><div class="ttdef"><b>Definition:</b> <a href="_renderer_8h_source.html#l00019">Renderer.h:19</a></div></div>
-<div class="ttc" id="class_renderer_html_adc8ce31cd649bdf220ca8355809b1d06"><div class="ttname"><a href="class_renderer.html#adc8ce31cd649bdf220ca8355809b1d06">Renderer::Renderer</a></div><div class="ttdeci">Renderer(std::shared_ptr&lt; class Scene &gt; inputScene, std::shared_ptr&lt; class Camera &gt; inputCamera)</div><div class="ttdef"><b>Definition:</b> <a href="_renderer_8cpp_source.html#l00006">Renderer.cpp:6</a></div></div>
-<div class="ttc" id="class_renderer_html_a38623da22aa718cfa41e2514ebd269f5"><div class="ttname"><a href="class_renderer.html#a38623da22aa718cfa41e2514ebd269f5">Renderer::Render</a></div><div class="ttdeci">virtual void Render()=0</div></div>
-<div class="ttc" id="class_renderer_html_afeee408862d5bd6255a6882d47e6d5cd"><div class="ttname"><a href="class_renderer.html#afeee408862d5bd6255a6882d47e6d5cd">Renderer::~Renderer</a></div><div class="ttdeci">virtual ~Renderer()</div><div class="ttdef"><b>Definition:</b> <a href="_renderer_8cpp_source.html#l00011">Renderer.cpp:11</a></div></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_renderer.html#afeee408862d5bd6255a6882d47e6d5cd">~Renderer</a>();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_renderer.html#a7cb221f355f181d84d66e8c09f50f04a">Initialize</a>() = 0;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_renderer.html#a38623da22aa718cfa41e2514ebd269f5">Render</a>() = 0;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_renderer.html#a65178695d48824d3afd6fe40fd4915b6">   39</a></span>&#160;    std::shared_ptr&lt;class Scene&gt; <a class="code" href="class_renderer.html#a65178695d48824d3afd6fe40fd4915b6">scene</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_renderer.html#a7a08c6489c1ffe8e346b9f205b4014ca">   43</a></span>&#160;    std::shared_ptr&lt;class Camera&gt; <a class="code" href="class_renderer.html#a7a08c6489c1ffe8e346b9f205b4014ca">camera</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;};</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="class_renderer_html_a65178695d48824d3afd6fe40fd4915b6"><div class="ttname"><a href="class_renderer.html#a65178695d48824d3afd6fe40fd4915b6">Renderer::scene</a></div><div class="ttdeci">std::shared_ptr&lt; class Scene &gt; scene</div><div class="ttdoc">Shared pointer to the scene. Should not be a null pointer when you go to render. </div><div class="ttdef"><b>Definition:</b> <a href="_renderer_8h_source.html#l00039">Renderer.h:39</a></div></div>
+<div class="ttc" id="class_renderer_html"><div class="ttname"><a href="class_renderer.html">Renderer</a></div><div class="ttdoc">A generic rendering interface. </div><div class="ttdef"><b>Definition:</b> <a href="_renderer_8h_source.html#l00013">Renderer.h:13</a></div></div>
+<div class="ttc" id="class_renderer_html_a7a08c6489c1ffe8e346b9f205b4014ca"><div class="ttname"><a href="class_renderer.html#a7a08c6489c1ffe8e346b9f205b4014ca">Renderer::camera</a></div><div class="ttdeci">std::shared_ptr&lt; class Camera &gt; camera</div><div class="ttdoc">Shared pointer to the camera. Should not be a null pointer when you go to render. ...</div><div class="ttdef"><b>Definition:</b> <a href="_renderer_8h_source.html#l00043">Renderer.h:43</a></div></div>
+<div class="ttc" id="class_renderer_html_adc8ce31cd649bdf220ca8355809b1d06"><div class="ttname"><a href="class_renderer.html#adc8ce31cd649bdf220ca8355809b1d06">Renderer::Renderer</a></div><div class="ttdeci">Renderer(std::shared_ptr&lt; class Scene &gt; inputScene, std::shared_ptr&lt; class Camera &gt; inputCamera)</div><div class="ttdoc">The Renderer constructor takes in a scene to be rendered and the camera from which to render the scen...</div><div class="ttdef"><b>Definition:</b> <a href="_renderer_8cpp_source.html#l00006">Renderer.cpp:6</a></div></div>
+<div class="ttc" id="class_renderer_html_a38623da22aa718cfa41e2514ebd269f5"><div class="ttname"><a href="class_renderer.html#a38623da22aa718cfa41e2514ebd269f5">Renderer::Render</a></div><div class="ttdeci">virtual void Render()=0</div><div class="ttdoc">This function should be used to render everything onto the screen. </div></div>
+<div class="ttc" id="class_renderer_html_afeee408862d5bd6255a6882d47e6d5cd"><div class="ttname"><a href="class_renderer.html#afeee408862d5bd6255a6882d47e6d5cd">Renderer::~Renderer</a></div><div class="ttdeci">virtual ~Renderer()</div><div class="ttdoc">A virtual destructor to allow for safe inheritance. </div><div class="ttdef"><b>Definition:</b> <a href="_renderer_8cpp_source.html#l00011">Renderer.cpp:11</a></div></div>
 <div class="ttc" id="common_8h_html"><div class="ttname"><a href="common_8h.html">common.h</a></div><div class="ttdoc">A file included across the application framework to include common header files and other useful func...</div></div>
-<div class="ttc" id="class_renderer_html_a7cb221f355f181d84d66e8c09f50f04a"><div class="ttname"><a href="class_renderer.html#a7cb221f355f181d84d66e8c09f50f04a">Renderer::Initialize</a></div><div class="ttdeci">virtual void Initialize()=0</div></div>
+<div class="ttc" id="class_renderer_html_a7cb221f355f181d84d66e8c09f50f04a"><div class="ttname"><a href="class_renderer.html#a7cb221f355f181d84d66e8c09f50f04a">Renderer::Initialize</a></div><div class="ttdeci">virtual void Initialize()=0</div><div class="ttdoc">Prepares the renderer for usage. </div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 19 2015 01:31:32 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 19 2015 02:23:59 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

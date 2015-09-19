@@ -92,6 +92,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>A generic rendering interface.  
+ <a href="class_renderer.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_renderer_8h_source.html">Renderer.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Renderer:</div>
@@ -99,31 +102,39 @@ Inheritance diagram for Renderer:</div>
  <div class="center">
   <img src="class_renderer.png" usemap="#Renderer_map" alt=""/>
   <map id="Renderer_map" name="Renderer_map">
-<area href="class_forward_renderer.html" alt="ForwardRenderer" shape="rect" coords="0,56,113,80"/>
+<area href="class_forward_renderer.html" title="A multi-pass forward renderer with lights. " alt="ForwardRenderer" shape="rect" coords="0,56,113,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:adc8ce31cd649bdf220ca8355809b1d06"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_renderer.html#adc8ce31cd649bdf220ca8355809b1d06">Renderer</a> (std::shared_ptr&lt; class <a class="el" href="class_scene.html">Scene</a> &gt; inputScene, std::shared_ptr&lt; class <a class="el" href="class_camera.html">Camera</a> &gt; inputCamera)</td></tr>
+<tr class="memdesc:adc8ce31cd649bdf220ca8355809b1d06"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="class_renderer.html" title="A generic rendering interface. ">Renderer</a> constructor takes in a scene to be rendered and the camera from which to render the scene.  <a href="#adc8ce31cd649bdf220ca8355809b1d06">More...</a><br /></td></tr>
 <tr class="separator:adc8ce31cd649bdf220ca8355809b1d06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afeee408862d5bd6255a6882d47e6d5cd"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_renderer.html#afeee408862d5bd6255a6882d47e6d5cd">~Renderer</a> ()</td></tr>
+<tr class="memdesc:afeee408862d5bd6255a6882d47e6d5cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">A virtual destructor to allow for safe inheritance.  <a href="#afeee408862d5bd6255a6882d47e6d5cd">More...</a><br /></td></tr>
 <tr class="separator:afeee408862d5bd6255a6882d47e6d5cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7cb221f355f181d84d66e8c09f50f04a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_renderer.html#a7cb221f355f181d84d66e8c09f50f04a">Initialize</a> ()=0</td></tr>
+<tr class="memdesc:a7cb221f355f181d84d66e8c09f50f04a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepares the renderer for usage.  <a href="#a7cb221f355f181d84d66e8c09f50f04a">More...</a><br /></td></tr>
 <tr class="separator:a7cb221f355f181d84d66e8c09f50f04a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38623da22aa718cfa41e2514ebd269f5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_renderer.html#a38623da22aa718cfa41e2514ebd269f5">Render</a> ()=0</td></tr>
+<tr class="memdesc:a38623da22aa718cfa41e2514ebd269f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function should be used to render everything onto the screen.  <a href="#a38623da22aa718cfa41e2514ebd269f5">More...</a><br /></td></tr>
 <tr class="separator:a38623da22aa718cfa41e2514ebd269f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a65178695d48824d3afd6fe40fd4915b6"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; class <a class="el" href="class_scene.html">Scene</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_renderer.html#a65178695d48824d3afd6fe40fd4915b6">scene</a></td></tr>
+<tr class="memdesc:a65178695d48824d3afd6fe40fd4915b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared pointer to the scene. Should not be a null pointer when you go to render.  <a href="#a65178695d48824d3afd6fe40fd4915b6">More...</a><br /></td></tr>
 <tr class="separator:a65178695d48824d3afd6fe40fd4915b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a08c6489c1ffe8e346b9f205b4014ca"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; class <a class="el" href="class_camera.html">Camera</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_renderer.html#a7a08c6489c1ffe8e346b9f205b4014ca">camera</a></td></tr>
+<tr class="memdesc:a7a08c6489c1ffe8e346b9f205b4014ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared pointer to the camera. Should not be a null pointer when you go to render.  <a href="#a7a08c6489c1ffe8e346b9f205b4014ca">More...</a><br /></td></tr>
 <tr class="separator:a7a08c6489c1ffe8e346b9f205b4014ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_renderer_8h_source.html#l00008">8</a> of file <a class="el" href="_renderer_8h_source.html">Renderer.h</a>.</p>
+<div class="textblock"><p>A generic rendering interface. </p>
+<p>The renderer will be used by the <a class="el" href="class_media_layer.html" title="Class that initializes the application and makes it ready to process OpenGL commands. ">MediaLayer</a> and will be told to <a class="el" href="class_renderer.html#a38623da22aa718cfa41e2514ebd269f5" title="This function should be used to render everything onto the screen. ">Render()</a> every frame. It is the renderer's responsibility to make sure everything in the scene gets rendered properly with the right shader using all the lights. </p>
+
+<p>Definition at line <a class="el" href="_renderer_8h_source.html#l00013">13</a> of file <a class="el" href="_renderer_8h_source.html">Renderer.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="adc8ce31cd649bdf220ca8355809b1d06"></a>
 <div class="memitem">
@@ -149,6 +160,15 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>The <a class="el" href="class_renderer.html" title="A generic rendering interface. ">Renderer</a> constructor takes in a scene to be rendered and the camera from which to render the scene. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inputScene</td><td>A shared pointer to the scene. This can be a null pointer but you would need to introduce functions to set it later. </td></tr>
+    <tr><td class="paramname">inputCamera</td><td>A shared pointer to the camera. This can be a null pointer but you would need to introduce functions to set it later. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Definition at line <a class="el" href="_renderer_8cpp_source.html#l00006">6</a> of file <a class="el" href="_renderer_8cpp_source.html">Renderer.cpp</a>.</p>
 
 </div>
@@ -173,6 +193,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>A virtual destructor to allow for safe inheritance. </p>
 
 <p>Definition at line <a class="el" href="_renderer_8cpp_source.html#l00011">11</a> of file <a class="el" href="_renderer_8cpp_source.html">Renderer.cpp</a>.</p>
 
@@ -200,6 +222,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Prepares the renderer for usage. </p>
+<p>Called in the <a class="el" href="class_media_layer.html" title="Class that initializes the application and makes it ready to process OpenGL commands. ">MediaLayer</a> constructor. </p>
+
 <p>Implemented in <a class="el" href="class_forward_renderer.html#a99c523e11a4335d061da8bdba51f1c9a">ForwardRenderer</a>.</p>
 
 </div>
@@ -225,6 +250,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>This function should be used to render everything onto the screen. </p>
+
 <p>Implemented in <a class="el" href="class_forward_renderer.html#a3693c5cd68afffc14652f24fcdc62abc">ForwardRenderer</a>.</p>
 
 </div>
@@ -248,7 +275,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_renderer_8h_source.html#l00019">19</a> of file <a class="el" href="_renderer_8h_source.html">Renderer.h</a>.</p>
+<p>Shared pointer to the camera. Should not be a null pointer when you go to render. </p>
+
+<p>Definition at line <a class="el" href="_renderer_8h_source.html#l00043">43</a> of file <a class="el" href="_renderer_8h_source.html">Renderer.h</a>.</p>
 
 </div>
 </div>
@@ -270,7 +299,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_renderer_8h_source.html#l00018">18</a> of file <a class="el" href="_renderer_8h_source.html">Renderer.h</a>.</p>
+<p>Shared pointer to the scene. Should not be a null pointer when you go to render. </p>
+
+<p>Definition at line <a class="el" href="_renderer_8h_source.html#l00039">39</a> of file <a class="el" href="_renderer_8h_source.html">Renderer.h</a>.</p>
 
 </div>
 </div>
@@ -281,7 +312,7 @@ Protected Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 19 2015 01:31:34 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 19 2015 02:24:01 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

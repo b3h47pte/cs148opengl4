@@ -1,3 +1,6 @@
+/*! \file core.h
+ *  \brief The file to include to include all relevant classes of the assignment framework.
+ */
 #pragma once
 
 #ifndef __CORE__

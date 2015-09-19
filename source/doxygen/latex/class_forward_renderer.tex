@@ -2,6 +2,11 @@
 \label{class_forward_renderer}\index{Forward\+Renderer@{Forward\+Renderer}}
 
 
+A multi-\/pass forward renderer with lights.  
+
+
+
+
 {\ttfamily \#include $<$Forward\+Renderer.\+h$>$}
 
 Inheritance diagram for Forward\+Renderer\+:\begin{figure}[H]
@@ -14,24 +19,26 @@ Inheritance diagram for Forward\+Renderer\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_forward_renderer_af8ed84e45085c4dc60d565fcc3c198d1}{Forward\+Renderer} (std\+::shared\+\_\+ptr$<$ class \hyperlink{class_scene}{Scene} $>$ input\+Scene, std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$ input\+Camera)
-\item 
+\begin{DoxyCompactList}\small\item\em Stores the input scene and the input camera for use for rendering. \end{DoxyCompactList}\item 
 virtual \hyperlink{class_forward_renderer_ab27ea6139730631d79488cec3c564597}{$\sim$\+Forward\+Renderer} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Just a day in the life of a destructor. \end{DoxyCompactList}\item 
 virtual void \hyperlink{class_forward_renderer_a99c523e11a4335d061da8bdba51f1c9a}{Initialize} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Loads the data that the forward renderer needs. \end{DoxyCompactList}\item 
 virtual void \hyperlink{class_forward_renderer_a3693c5cd68afffc14652f24fcdc62abc}{Render} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Renders a frame using a multi-\/pass forward renderer with all the lights in the scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 std\+::shared\+\_\+ptr$<$ class \hyperlink{class_shader_program}{Shader\+Program} $>$ \hyperlink{class_forward_renderer_a8f703bc4c646416804bc82f4d220a648}{depth\+Prepass\+Shader}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The depth prepass shader. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
+A multi-\/pass forward renderer with lights. 
 
+More details about what a multi-\/pass forward renderer is can be found in the documentation for the \hyperlink{class_forward_renderer_a3693c5cd68afffc14652f24fcdc62abc}{Render()} function. Do note that this class will not support transparent objects out of the box! You will have to find a way to handle them if you want to display transparent objects properly. 
 
-Definition at line 9 of file Forward\+Renderer.\+h.
+Definition at line 13 of file Forward\+Renderer.\+h.
 
 
 
@@ -46,6 +53,10 @@ Definition at line 9 of file Forward\+Renderer.\+h.
 )}\label{class_forward_renderer_af8ed84e45085c4dc60d565fcc3c198d1}
 
 
+Stores the input scene and the input camera for use for rendering. 
+
+Calls the base class constructor, \hyperlink{class_renderer_adc8ce31cd649bdf220ca8355809b1d06}{Renderer\+::\+Renderer()}. 
+
 Definition at line 10 of file Forward\+Renderer.\+cpp.
 
 \hypertarget{class_forward_renderer_ab27ea6139730631d79488cec3c564597}{}\index{Forward\+Renderer@{Forward\+Renderer}!````~Forward\+Renderer@{$\sim$\+Forward\+Renderer}}
@@ -55,6 +66,10 @@ Definition at line 10 of file Forward\+Renderer.\+cpp.
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_forward_renderer_ab27ea6139730631d79488cec3c564597}
+
+
+Just a day in the life of a destructor. 
+
 
 
 Definition at line 15 of file Forward\+Renderer.\+cpp.
@@ -71,6 +86,10 @@ Definition at line 15 of file Forward\+Renderer.\+cpp.
 )\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_forward_renderer_a99c523e11a4335d061da8bdba51f1c9a}
 
 
+Loads the data that the forward renderer needs. 
+
+Loads the depth prepass shader. See the documentation of \hyperlink{class_forward_renderer_a3693c5cd68afffc14652f24fcdc62abc}{Render()} for why it is necessary. 
+
 Implements \hyperlink{class_renderer_a7cb221f355f181d84d66e8c09f50f04a}{Renderer}.
 
 
@@ -86,6 +105,19 @@ Definition at line 19 of file Forward\+Renderer.\+cpp.
 )\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_forward_renderer_a3693c5cd68afffc14652f24fcdc62abc}
 
 
+Renders a frame using a multi-\/pass forward renderer with all the lights in the scene. 
+
+Note that in the multi-\/pass forward renderer, there is no limit to how many lights you may use; however, once the number of lights becomes too high, you will start to see a significant drop in frames per second. In our implementation of the multi-\/pass forward renderer, assuming that there are $N$ lights, the renderer will perform $ N + 2 $ passes through every object in the scene. For every draw call, the multi-\/pass forward renderer will perform additive blending of both the R\+G\+B and alpha channels to compute the new color in the color buffer. The render pass stages are as follows\+:
+
+
+\begin{DoxyEnumerate}
+\item The depth preprocess stage. Without this stage, some objects will transparent even if they are not actually. Let\textquotesingle{}s say a relative large and complex object has parts that are facing towards the camera but are occluded. Then let\textquotesingle{}s say that the light vertex/fragment shader processes that part first and then processes the occluder parts later. With additive blending turned on, the colors will be mixed! Turning additive blending is not an option for a multi-\/pass forward renderer. Instead what we want to do is to perform an initial \char`\"{}depth preprocess\char`\"{} pass through every object in the scene. By doing this, we write the final depth of an object to the depth buffer. In the subsequent render passes, we will only write to the color buffer is the depth value is less than or equal to the value already stored in the depth buffer. Since we ran the depth preprocess pass on E\+V\+E\+R\+Y object in the scene, we are guaranteed that the value stored in the depth buffer is the smallest possible value for that pixel. So if a render pass passes the depth buffer check, it can know for sure that it is safe to write to the color buffer and that there won\textquotesingle{}t be another object occluding it. It is important to note that depth is stored as a floating point value and with floating point values comes numerical imprecision which can result in \href{https://en.wikipedia.org/wiki/Z-fighting}{\tt z-\/fighting}. As a result, we use \href{https://www.opengl.org/sdk/docs/man/html/glPolygonOffset.xhtml}{\tt gl\+Polygon\+Offset} to offset the depth values ever so slightly to prevent z-\/fighting from occurring. The amount that we offset $\sim$should$\sim$ not be enough to cause problems with fragments passing the depth buffer test that otherwise should not.
+\item The \char`\"{}global lighting\char`\"{} phase. This phase takes care of the ambient color of the material (Note\+: it might make more sense for the ambient color be a property of the light and not the material). Regardless, this phase will take care of the color that should only be added to the object once regardless of how many lights shine upon it. Good examples of things that would go in this stage are the ambient and emissive colors.
+\item Finally, the rest of the lighting passes are dedicated to performing a normal render pass with a light in the scene. The rendering object in question is queried for the correct shader to use, the shader is then setup by the rendering object and the scene object, and finally the object is rendered and the resulting fragment colors are correctly blended into the color buffer.
+\end{DoxyEnumerate}
+
+Still confused? Ask on Piazza! 
+
 Implements \hyperlink{class_renderer_a38623da22aa718cfa41e2514ebd269f5}{Renderer}.
 
 
@@ -100,7 +132,11 @@ Definition at line 28 of file Forward\+Renderer.\+cpp.
 \subsubsection[{depth\+Prepass\+Shader}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<$class {\bf Shader\+Program}$>$ Forward\+Renderer\+::depth\+Prepass\+Shader\hspace{0.3cm}{\ttfamily [protected]}}\label{class_forward_renderer_a8f703bc4c646416804bc82f4d220a648}
 
 
-Definition at line 19 of file Forward\+Renderer.\+h.
+The depth prepass shader. 
+
+The depth prepass shader is constructed from the shaders loaded in \char`\"{}shaders/required/pass\char`\"{}. The vertex shader applies the M\+V\+P transformations to the input vertex and stores it in gl\+\_\+\+Position. The fragment shader will write (0, 0, 0, 0) to the color buffer to not affect the results of the following render passes. 
+
+Definition at line 70 of file Forward\+Renderer.\+h.
 
 
 
