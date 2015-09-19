@@ -120,9 +120,9 @@ endif()
 # Open Asset Import Library
 if (WIN32)
 elseif (APPLE)
-    target_link_libraries(cs148opengl4 "${CMAKE_CURRENT_SOURCE_DIR}/external/assimp/distrib/osx/libassimp.dylib")
+    target_link_libraries(cs148opengl4 "${CMAKE_CURRENT_SOURCE_DIR}/external/assimp/distrib/osx/libassimp.a")
 else()
-    target_link_libraries(cs148opengl4 "${CMAKE_CURRENT_SOURCE_DIR}/external/assimp/distrib/unix/libassimp.so")
+    target_link_libraries(cs148opengl4 "${CMAKE_CURRENT_SOURCE_DIR}/external/assimp/distrib/unix/libassimp.a")
 endif()
 
 # FreeImage Library

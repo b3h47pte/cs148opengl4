@@ -150,7 +150,8 @@ void ShaderProgram::SetShaderSubroutine(const std::string& location, const std::
     
     OGL_CALL(glUniformSubroutinesuiv(substage, 1, &subroutineIndex));
 #else
-    static_assert(false, "Subroutines are disabled via the 'DISABLE_OPENGL_SUBROUTINES' macro in common.h. Please undefine that macro to use subroutines. Do note that NVIDIA devices running on Apple do not properly support subroutines.");
+    assert(false);
+    std::cerr << "Subroutines are disabled via the 'DISABLE_OPENGL_SUBROUTINES' macro in common.h. Please undefine that macro to use subroutines. Do note that NVIDIA devices running on Apple do not properly support subroutines." << std::endl;
 #endif
 }
 
