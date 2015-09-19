@@ -145,11 +145,11 @@ If it is not in the repository, you will have to compile manually. See a CA if y
 I have provided the Open Asset Import library source code with the assignment framework under "source/external/assimp" as well as a convenient build folder "source/external/assimp/build/unix". In your terminal, go to the build folder and run:
 
 \begin{lstlisting}
-cmake -G "Unix Makefiles" ../../
+cmake -G "Unix Makefiles" ../../ -DASSIMP_BUILD_STATIC_LIB=ON
 make -jN
 \end{lstlisting}
 
-Where N is the number of cores you want to use for compilation. Afterwards, in the 'code' folder, there should be a 'libassimp.a' file, move this into 'source/external/assimp/distrib/unix'.
+Where N is the number of cores you want to use for compilation. Afterwards, in the 'source/external/assimp/build/unix/code' folder, there should be a 'libassimp.so' file, copy this into 'source/external/assimp/distrib/unix'.
 
 \paragraph{\textbf{FreeImage}}
 
