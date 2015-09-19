@@ -41,7 +41,12 @@ If you are on Linux, you will also need to get the following dependencies on you
     \item GLEW
 \end{enumerate}
 
-On the other operating systems, I have provided pre-built binaries.
+If you are on Mac OSX, you will need to manually compile the following libraries:
+\begin{enumerate}
+    \item Open Asset Import Library
+\end{enumerate}
+
+On the other operating systems/libraries, we have provided pre-built binaries.
 
 If any of the instructions below are unclear, ask a CA or post on Piazza.
 
@@ -86,6 +91,24 @@ Download the latest CMake binaries from the CMake website: \href{http://www.cmak
 \subsubsection*{Python 2.7}
 
 Download Python 2.7 from \href{https://www.python.org/download/releases/2.7/}{here} and install it. Running "python --version" in the terminal should display 2.7.x.
+
+\subsubsection*{Other Dependencies}
+
+\paragraph{\textbf{Open Asset Import Library}}
+
+Open up CMake (which you should have already installed) and point 'Where is the source code' to 'source/external/assimp' and 'Where to build the binaries' to 'source/external/assimp/build/osx'. 
+
+\includegraphics[width=\linewidth]{assimp1.png}
+
+Then, hit the "Configure" button. At the screen that follows, choose "XCode" when it asks you to specify the generator for this project (feel free to choose Unix Makefiles if that is what you are comfortable with). Click "Generate" and then go to 'source/external/assimp/build/osx' using the Finder and open "Assimp.xcodeproj." In the top left, change the build target from ALL\_BUILD (click on ALL\_BUILD) and switch to "assimp".
+
+\includegraphics[]{assimp2.png}
+
+Now you want to change the Debug build to be a Release build. You can find this option by clicking on "assimp" in the top left of XCode and then clicking on "Edit Scheme...". Under "Run" you will want to click on the "Info" tab and change the "Build Configuration" to "Release".
+
+\includegraphics[width=\linewidth]{assimp3.png}
+
+Now you can go to Product -> Build to compile the library. Then, go into "source/external/assimp/build/osx/code/Release" and copy libassimp.dylib to "source/external/assimp/distrib/osx". 
 
 \subsection*{Linux}
 
@@ -203,7 +226,7 @@ Afterwards, click the 'Add Entry' button with 'Name' set to "ASSIGNMENT", 'Type'
 
 \includegraphics[width=\linewidth]{cmake2.png}
 
-At this point, you can click the Configure button and then the Generate button. Now your Visual Studio solution or XCode project should exist within your previously selected build folder.
+At this point, you can click the Configure button. You should be greeted by a screen to choose the generator for the project. On Mac OSX you will want to choose "Xcode" (or Unix Makefiles, only do this if you know what you are doing!) and on Windows you will want to choose whatever version of Visual Studio you have. Now press the Generate button. Now your Visual Studio solution or XCode project should exist within your previously selected build folder.
 
 \subsubsection*{CLI (Linux, Mac OS X)}
 
