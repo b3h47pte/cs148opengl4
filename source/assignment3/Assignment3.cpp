@@ -119,7 +119,7 @@ void Assignment3::SetupExample1()
         return;
     }
 
-    for (auto i = 0; i < meshTemplate.size(); ++i) {
+    for (decltype(meshTemplate.size()) i = 0; i < meshTemplate.size(); ++i) {
         std::shared_ptr<BlinnPhongShader> shader = std::make_shared<BlinnPhongShader>(shaderSpec, GL_FRAGMENT_SHADER);
         shader->SetDiffuse(glm::vec4(0.3f, 0.3f, 0.3f, 1.f));
         shader->SetSpecular(glm::vec4(0.9f, 0.9f, 0.9f, 1.f), 40.f);

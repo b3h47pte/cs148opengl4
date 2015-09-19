@@ -78,11 +78,11 @@ std::shared_ptr<RenderingObject> CreateIcoSphere(std::shared_ptr<ShaderProgram> 
 
     // Subdivide each triangle into 4 different triangles by adding the midpoints of on each edge. Force the one vertex to be on the sphere of the given radius.
     for (int i = 0; i < refinementSteps; ++i) {
-        const auto totalTriangles = vertexIndices.size() / 3;
+        auto totalTriangles = vertexIndices.size() / 3;
 
         RenderingObject::IndexArray newVertexIndices;
         newVertexIndices.reserve(totalTriangles * 4);
-        for (auto t = 0; t < totalTriangles; ++t) {
+        for (decltype(totalTriangles) t = 0; t < totalTriangles; ++t) {
             const int triangleOffset = t * 3;
             const glm::vec4 midpointA = glm::vec4(glm::normalize(glm::vec3(vertexPositions->at(vertexIndices[triangleOffset]) + vertexPositions->at(vertexIndices[triangleOffset  + 1])) / 2.f) * radius, 1.f);
             const glm::vec4 midpointB = glm::vec4(glm::normalize(glm::vec3(vertexPositions->at(vertexIndices[triangleOffset + 1]) + vertexPositions->at(vertexIndices[triangleOffset  + 2])) / 2.f) * radius, 1.f);
@@ -94,7 +94,7 @@ std::shared_ptr<RenderingObject> CreateIcoSphere(std::shared_ptr<ShaderProgram> 
 
             // NOTE: Slow. VERY SLOW. O(n^2) SLOW. :((
             // TODO: Use a KD-Tree to speed this up.
-            for (auto j = 0; j < vertexPositions->size(); ++j) {
+            for (decltype(vertexPositions->size()) j = 0; j < vertexPositions->size(); ++j) {
                 if (aIndex >= vertexPositions->size() && glm::distance(midpointA, vertexPositions->at(j)) < 1e-6f) {
                     aIndex = j;
                 }
@@ -133,7 +133,7 @@ std::shared_ptr<RenderingObject> CreateIcoSphere(std::shared_ptr<ShaderProgram> 
     }
 
     std::unique_ptr<RenderingObject::NormalArray> vertexNormals = make_unique<RenderingObject::NormalArray>(vertexPositions->size());
-    for (auto i = 0; i < vertexNormals->size(); ++i) {
+    for (decltype(vertexNormals->size()) i = 0; i < vertexNormals->size(); ++i) {
         vertexNormals->at(i) = glm::normalize(glm::vec3(vertexPositions->at(i)));
     }
 
