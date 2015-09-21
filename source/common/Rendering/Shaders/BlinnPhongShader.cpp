@@ -11,6 +11,7 @@ std::array<const char*, 4> BlinnPhongShader::MATERIAL_PROPERTY_NAMES = {
     "InputMaterial.matShininess", 
     "InputMaterial.matAmbient"
 };
+const int BlinnPhongShader::MATERIAL_BINDING_POINT = 0;
 
 BlinnPhongShader::BlinnPhongShader(const std::unordered_map<GLenum, std::string>& inputShaders, GLenum lightingStage):
     ShaderProgram(inputShaders), diffuse(glm::vec3(0.f), 1.f), specular(glm::vec3(0.f), 1.f), shininess(1.f), ambient(glm::vec3(0.1f), 1.f), 

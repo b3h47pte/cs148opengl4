@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.9.1"/>
-<title>CS148 OpenGL 4 Assignments: /Users/michaelbao/workspace/cs148opengl4/source/common/Utility/Texture/TextureLoader.cpp Source File</title>
+<title>CS148 OpenGL 4 Assignments: /Users/michaelbao/PhysBAM/Courses/2015/cs148/cs148opengl4/source/common/Utility/Texture/TextureLoader.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -133,8 +133,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    GLubyte* textureRawData = <span class="keyword">new</span> GLubyte[width * height * 4];</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    RGBQUAD rgb;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> y = 0; y &lt; height; ++y) {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> x = 0; x &lt; width; ++x) {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> y = 0; y &lt; height; ++y) {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = 0; x &lt; width; ++x) {</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            FreeImage_GetPixelColor(inputImage, x, y, &amp;rgb);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordtype">int</span> idx = x * 4 + y * width * 4;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            textureRawData[idx] = (int)rgb.rgbRed;</div>
@@ -154,11 +154,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="namespace_texture_loader_html_ae6ab87eb56c3e564187204e040569086"><div class="ttname"><a href="namespace_texture_loader.html#ae6ab87eb56c3e564187204e040569086">TextureLoader::LoadTexture</a></div><div class="ttdeci">std::shared_ptr&lt; Texture &gt; LoadTexture(const std::string &amp;filename)</div><div class="ttdef"><b>Definition:</b> <a href="_texture_loader_8cpp_source.html#l00013">TextureLoader.cpp:13</a></div></div>
 <div class="ttc" id="_texture_loader_8h_html"><div class="ttname"><a href="_texture_loader_8h.html">TextureLoader.h</a></div></div>
 <div class="ttc" id="namespace_texture_loader_html"><div class="ttname"><a href="namespace_texture_loader.html">TextureLoader</a></div><div class="ttdef"><b>Definition:</b> <a href="_texture_loader_8cpp_source.html#l00006">TextureLoader.cpp:6</a></div></div>
-<div class="ttc" id="common_8h_html_a6df1d22fb5f09eccc23b9f399670cfd7"><div class="ttname"><a href="common_8h.html#a6df1d22fb5f09eccc23b9f399670cfd7">STRINGIFY</a></div><div class="ttdeci">#define STRINGIFY(x)</div><div class="ttdoc">Stringify a macro. </div><div class="ttdef"><b>Definition:</b> <a href="common_8h_source.html#l00112">common.h:112</a></div></div>
+<div class="ttc" id="common_8h_html_a6df1d22fb5f09eccc23b9f399670cfd7"><div class="ttname"><a href="common_8h.html#a6df1d22fb5f09eccc23b9f399670cfd7">STRINGIFY</a></div><div class="ttdeci">#define STRINGIFY(x)</div><div class="ttdoc">Stringify a macro. </div><div class="ttdef"><b>Definition:</b> <a href="common_8h_source.html#l00117">common.h:117</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 19 2015 02:23:59 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Sep 21 2015 00:25:57 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

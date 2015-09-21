@@ -2,6 +2,19 @@ cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
 
 project("cs148-opengl4")
 
+# Check system
+if( CMAKE_SIZEOF_VOID_P EQUAL 8 )
+    MESSAGE(STATUS "64 bits compiler detected" )
+    SET( EX_PLATFORM 64 )
+    SET( EX_PLATFORM_NAME "x64" )
+    SET( EX_PLATFORM_STR "64" )
+else( CMAKE_SIZEOF_VOID_P EQUAL 8 ) 
+    MESSAGE(STATUS "32 bits compiler detected" )
+    SET( EX_PLATFORM 32 )
+    SET( EX_PLATFORM_NAME "x86" )
+    SET( EX_PLATFORM_STR "32" )
+endif( CMAKE_SIZEOF_VOID_P EQUAL 8 )
+
 # Import utility cmake scripts...mainly useful for Linux systems since we provide
 # the external libraries elsewhere.
 if (NOT WIN32 AND NOT APPLE)
@@ -14,7 +27,9 @@ if (NOT CMAKE_BUILD_TYPE)
 endif()
 
 # CPP Flags
-set(CXX_FLAGS "-Wall -std=c++11 -Wno-missing-braces")
+if (NOT WIN32)
+	set(CXX_FLAGS "-Wall -std=c++11 -Wno-missing-braces")
+endif()
 
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -O0")
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3")
@@ -40,6 +55,7 @@ include_directories("./external/assimp/include")
 
 # FreeImage Header
 if (WIN32)
+    include_directories("./external/freeimage/distrib/windows/${EX_PLATFORM_NAME}")
 elseif (APPLE)
     include_directories("./external/freeimage/distrib/osx")
 else()
@@ -48,7 +64,9 @@ else()
 endif()
 
 # SDL Shenanigans
-if (NOT WIN32 AND NOT APPLE)
+if (WIN32)
+	include_directories("./external/SDL2/windows/include")
+elseif (NOT APPLE)
     find_package(SDL2 REQUIRED)
     include_directories(${SDL2_INCLUDE_DIR})
 endif()
@@ -69,18 +87,8 @@ add_definitions("-DASSIGNMENT=${ASSIGNMENT}")
 file(GLOB_RECURSE ASSIGNMENT_SOURCES "./assignment${ASSIGNMENT}/*.cpp")
 file(GLOB_RECURSE ASSIGNMENT_HEADERS "./assignment${ASSIGNMENT}/*.h")
 
-# Shaders. Need to copy shaders to the executables working directory. 
-file(GLOB_RECURSE SHADERS "./shaders/*.vert" "./shaders/*.frag")
-
-set(SHADER_TARGET_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
-if (${CMAKE_GENERATOR} STREQUAL "Unix Makefiles")
-    set(SHADER_TARGET_DIRECTORY ${SHADER_TARGET_DIRECTORY}/../)
-endif()
-
-add_custom_target(shaderHandler ALL 
-    python ${CMAKE_CURRENT_SOURCE_DIR}/scripts/dirCopy.py ${CMAKE_CURRENT_SOURCE_DIR}/shaders ${SHADER_TARGET_DIRECTORY}/shaders
-    DEPENDS ${SHADERS}
-    SOURCES ${SHADERS})
+# Path to Shaders
+add_definitions("-DSHADER_PATH=${CMAKE_CURRENT_SOURCE_DIR}/shaders")
 
 # Path to Assets
 add_definitions("-DASSET_PATH=${CMAKE_CURRENT_SOURCE_DIR}/assets")
@@ -92,13 +100,13 @@ add_definitions("-DASSET_PATH=${CMAKE_CURRENT_SOURCE_DIR}/assets")
 add_definitions(${CXX_FLAGS})
 add_executable(cs148opengl4 main.cpp ${COMMON_SOURCES} ${COMMON_HEADERS}
     ${ASSIGNMENT_SOURCES} ${ASSIGNMENT_HEADERS})
-add_dependencies(cs148opengl4 shaderHandler)
 
 # OpenGL
 target_link_libraries(cs148opengl4 ${OPENGL_LIBRARIES})
 
 # SDL2 Library
 if (WIN32)
+	target_link_libraries(cs148opengl4 "${CMAKE_CURRENT_SOURCE_DIR}/external/SDL2/windows/lib/${EX_PLATFORM_NAME}/SDL2.lib")
 elseif (APPLE)
     target_link_libraries(cs148opengl4 "${CMAKE_CURRENT_SOURCE_DIR}/external/SDL2/osx/SDL2.framework")
 
@@ -111,6 +119,7 @@ endif()
 
 # GLEW Library
 if (WIN32)
+	target_link_libraries(cs148opengl4 "${CMAKE_CURRENT_SOURCE_DIR}/external/glew/distrib/windows/lib/${EX_PLATFORM_NAME}/glew32.lib")
 elseif (APPLE)
     target_link_libraries(cs148opengl4 "${CMAKE_CURRENT_SOURCE_DIR}/external/glew/distrib/osx/lib/libGLEW.a")
 else()
@@ -119,6 +128,7 @@ endif()
 
 # Open Asset Import Library
 if (WIN32)
+    target_link_libraries(cs148opengl4 "${CMAKE_CURRENT_SOURCE_DIR}/external/assimp/distrib/windows/lib${EX_PLATFORM_STR}/assimp.lib")
 elseif (APPLE)
     target_link_libraries(cs148opengl4 "${CMAKE_CURRENT_SOURCE_DIR}/external/assimp/distrib/osx/libassimp.dylib")
 else()
@@ -127,6 +137,7 @@ endif()
 
 # FreeImage Library
 if (WIN32)
+	target_link_libraries(cs148opengl4 "${CMAKE_CURRENT_SOURCE_DIR}/external/freeimage/distrib/windows/${EX_PLATFORM_NAME}/FreeImage.lib")
 elseif (APPLE)
     target_link_libraries(cs148opengl4 "${CMAKE_CURRENT_SOURCE_DIR}/external/freeimage/distrib/osx/libfreeimage.a")
 else()
@@ -163,4 +174,10 @@ source_group(common\\Utility\\Mesh\\Loading REGULAR_EXPRESSION common/Utility/Me
 source_group(common\\Utility\\Mesh\\Simple REGULAR_EXPRESSION common/Utility/Mesh/Simple/.*)
 source_group(common\\Utility\\Texture REGULAR_EXPRESSION common/Utility/Texture/.*)
 
-
+# Copy dlls
+if (WIN32)
+	add_custom_command(TARGET cs148opengl4 POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_if_different "${CMAKE_CURRENT_SOURCE_DIR}/external/assimp/distrib/windows/bin${EX_PLATFORM_STR}/assimp.dll" "$<TARGET_FILE_DIR:cs148opengl4>")
+	add_custom_command(TARGET cs148opengl4 POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_if_different "${CMAKE_CURRENT_SOURCE_DIR}/external/freeimage/distrib/windows/${EX_PLATFORM_NAME}/FreeImage.dll" "$<TARGET_FILE_DIR:cs148opengl4>")
+	add_custom_command(TARGET cs148opengl4 POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_if_different "${CMAKE_CURRENT_SOURCE_DIR}/external/glew/distrib/windows/bin/${EX_PLATFORM_NAME}/glew32.dll" "$<TARGET_FILE_DIR:cs148opengl4>")
+	add_custom_command(TARGET cs148opengl4 POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_if_different "${CMAKE_CURRENT_SOURCE_DIR}/external/SDL2/windows/lib/${EX_PLATFORM_NAME}/SDL2.dll" "$<TARGET_FILE_DIR:cs148opengl4>")
+endif()

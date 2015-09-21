@@ -22,9 +22,9 @@ Inheritance diagram for Forward\+Renderer\+:\begin{figure}[H]
 \begin{DoxyCompactList}\small\item\em Stores the input scene and the input camera for use for rendering. \end{DoxyCompactList}\item 
 virtual \hyperlink{class_forward_renderer_ab27ea6139730631d79488cec3c564597}{$\sim$\+Forward\+Renderer} ()
 \begin{DoxyCompactList}\small\item\em Just a day in the life of a destructor. \end{DoxyCompactList}\item 
-virtual void \hyperlink{class_forward_renderer_a99c523e11a4335d061da8bdba51f1c9a}{Initialize} ()
+virtual void \hyperlink{class_forward_renderer_a5cbca647822780d6cfbd39552d73ee06}{Initialize} () override
 \begin{DoxyCompactList}\small\item\em Loads the data that the forward renderer needs. \end{DoxyCompactList}\item 
-virtual void \hyperlink{class_forward_renderer_a3693c5cd68afffc14652f24fcdc62abc}{Render} ()
+virtual void \hyperlink{class_forward_renderer_a1a5deafa5deaf1e0abaab0e2074928c1}{Render} () override
 \begin{DoxyCompactList}\small\item\em Renders a frame using a multi-\/pass forward renderer with all the lights in the scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -36,7 +36,7 @@ std\+::shared\+\_\+ptr$<$ class \hyperlink{class_shader_program}{Shader\+Program
 \subsection{Detailed Description}
 A multi-\/pass forward renderer with lights. 
 
-More details about what a multi-\/pass forward renderer is can be found in the documentation for the \hyperlink{class_forward_renderer_a3693c5cd68afffc14652f24fcdc62abc}{Render()} function. Do note that this class will not support transparent objects out of the box! You will have to find a way to handle them if you want to display transparent objects properly. 
+More details about what a multi-\/pass forward renderer is can be found in the documentation for the \hyperlink{class_forward_renderer_a1a5deafa5deaf1e0abaab0e2074928c1}{Render()} function. Do note that this class will not support transparent objects out of the box! You will have to find a way to handle them if you want to display transparent objects properly. 
 
 Definition at line 13 of file Forward\+Renderer.\+h.
 
@@ -77,18 +77,18 @@ Definition at line 15 of file Forward\+Renderer.\+cpp.
 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_forward_renderer_a99c523e11a4335d061da8bdba51f1c9a}{}\index{Forward\+Renderer@{Forward\+Renderer}!Initialize@{Initialize}}
+\hypertarget{class_forward_renderer_a5cbca647822780d6cfbd39552d73ee06}{}\index{Forward\+Renderer@{Forward\+Renderer}!Initialize@{Initialize}}
 \index{Initialize@{Initialize}!Forward\+Renderer@{Forward\+Renderer}}
 \subsubsection[{Initialize}]{\setlength{\rightskip}{0pt plus 5cm}void Forward\+Renderer\+::\+Initialize (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_forward_renderer_a99c523e11a4335d061da8bdba51f1c9a}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\label{class_forward_renderer_a5cbca647822780d6cfbd39552d73ee06}
 
 
 Loads the data that the forward renderer needs. 
 
-Loads the depth prepass shader. See the documentation of \hyperlink{class_forward_renderer_a3693c5cd68afffc14652f24fcdc62abc}{Render()} for why it is necessary. 
+Loads the depth prepass shader. See the documentation of \hyperlink{class_forward_renderer_a1a5deafa5deaf1e0abaab0e2074928c1}{Render()} for why it is necessary. 
 
 Implements \hyperlink{class_renderer_a7cb221f355f181d84d66e8c09f50f04a}{Renderer}.
 
@@ -96,13 +96,13 @@ Implements \hyperlink{class_renderer_a7cb221f355f181d84d66e8c09f50f04a}{Renderer
 
 Definition at line 19 of file Forward\+Renderer.\+cpp.
 
-\hypertarget{class_forward_renderer_a3693c5cd68afffc14652f24fcdc62abc}{}\index{Forward\+Renderer@{Forward\+Renderer}!Render@{Render}}
+\hypertarget{class_forward_renderer_a1a5deafa5deaf1e0abaab0e2074928c1}{}\index{Forward\+Renderer@{Forward\+Renderer}!Render@{Render}}
 \index{Render@{Render}!Forward\+Renderer@{Forward\+Renderer}}
 \subsubsection[{Render}]{\setlength{\rightskip}{0pt plus 5cm}void Forward\+Renderer\+::\+Render (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_forward_renderer_a3693c5cd68afffc14652f24fcdc62abc}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\label{class_forward_renderer_a1a5deafa5deaf1e0abaab0e2074928c1}
 
 
 Renders a frame using a multi-\/pass forward renderer with all the lights in the scene. 
@@ -142,5 +142,5 @@ Definition at line 70 of file Forward\+Renderer.\+h.
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/michaelbao/workspace/cs148opengl4/source/common/\+Rendering/\hyperlink{_forward_renderer_8h}{Forward\+Renderer.\+h}\item 
-/\+Users/michaelbao/workspace/cs148opengl4/source/common/\+Rendering/\hyperlink{_forward_renderer_8cpp}{Forward\+Renderer.\+cpp}\end{DoxyCompactItemize}
+/\+Users/michaelbao/\+Phys\+B\+A\+M/\+Courses/2015/cs148/cs148opengl4/source/common/\+Rendering/\hyperlink{_forward_renderer_8h}{Forward\+Renderer.\+h}\item 
+/\+Users/michaelbao/\+Phys\+B\+A\+M/\+Courses/2015/cs148/cs148opengl4/source/common/\+Rendering/\hyperlink{_forward_renderer_8cpp}{Forward\+Renderer.\+cpp}\end{DoxyCompactItemize}

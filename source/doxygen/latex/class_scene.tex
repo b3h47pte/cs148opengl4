@@ -2,6 +2,11 @@
 \label{class_scene}\index{Scene@{Scene}}
 
 
+Contains all the objects that need to be rendered as well as the lights.  
+
+
+
+
 {\ttfamily \#include $<$Scene.\+h$>$}
 
 Inheritance diagram for Scene\+:\begin{figure}[H]
@@ -42,9 +47,11 @@ class \hyperlink{class_scene_a70538530bc36e033e360880ef311df61}{Renderer}
 
 
 \subsection{Detailed Description}
+Contains all the objects that need to be rendered as well as the lights. 
 
+A \hyperlink{class_scene}{Scene} object functions more or less as a giant container. It stores all the objects and lights that will be used for rendering. 
 
-Definition at line 11 of file Scene.\+h.
+Definition at line 16 of file Scene.\+h.
 
 
 
@@ -91,7 +98,7 @@ Definition at line 19 of file Scene.\+cpp.
 ) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_scene_abb610e4c698b3c2ebfb922b5352eba36}
 
 
-Definition at line 33 of file Scene.\+h.
+Definition at line 38 of file Scene.\+h.
 
 \hypertarget{class_scene_acfd7dbaefb2feb8233d2a07d497542d7}{}\index{Scene@{Scene}!Get\+Scene\+Object@{Get\+Scene\+Object}}
 \index{Get\+Scene\+Object@{Get\+Scene\+Object}!Scene@{Scene}}
@@ -102,7 +109,7 @@ Definition at line 33 of file Scene.\+h.
 ) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_scene_acfd7dbaefb2feb8233d2a07d497542d7}
 
 
-Definition at line 25 of file Scene.\+h.
+Definition at line 30 of file Scene.\+h.
 
 \hypertarget{class_scene_ab9d522852e85884def3d10600106d724}{}\index{Scene@{Scene}!Get\+Total\+Lights@{Get\+Total\+Lights}}
 \index{Get\+Total\+Lights@{Get\+Total\+Lights}!Scene@{Scene}}
@@ -113,7 +120,7 @@ Definition at line 25 of file Scene.\+h.
 ) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_scene_ab9d522852e85884def3d10600106d724}
 
 
-Definition at line 19 of file Scene.\+h.
+Definition at line 24 of file Scene.\+h.
 
 \hypertarget{class_scene_a23da430906feb967d70195ef26ba7a88}{}\index{Scene@{Scene}!Get\+Total\+Objects@{Get\+Total\+Objects}}
 \index{Get\+Total\+Objects@{Get\+Total\+Objects}!Scene@{Scene}}
@@ -124,7 +131,7 @@ Definition at line 19 of file Scene.\+h.
 ) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_scene_a23da430906feb967d70195ef26ba7a88}
 
 
-Definition at line 14 of file Scene.\+h.
+Definition at line 19 of file Scene.\+h.
 
 
 
@@ -134,7 +141,7 @@ Definition at line 14 of file Scene.\+h.
 \subsubsection[{Renderer}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Renderer}\hspace{0.3cm}{\ttfamily [friend]}}\label{class_scene_a70538530bc36e033e360880ef311df61}
 
 
-Definition at line 46 of file Scene.\+h.
+Definition at line 51 of file Scene.\+h.
 
 
 
@@ -144,18 +151,18 @@ Definition at line 46 of file Scene.\+h.
 \subsubsection[{scene\+Lights}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$std\+::shared\+\_\+ptr$<${\bf Light}$>$ $>$ Scene\+::scene\+Lights\hspace{0.3cm}{\ttfamily [private]}}\label{class_scene_a847f4f9c485a56b084a1340811f0e726}
 
 
-Definition at line 49 of file Scene.\+h.
+Definition at line 54 of file Scene.\+h.
 
 \hypertarget{class_scene_a871382922b2a04d7883cf6d34529b5df}{}\index{Scene@{Scene}!scene\+Objects@{scene\+Objects}}
 \index{scene\+Objects@{scene\+Objects}!Scene@{Scene}}
 \subsubsection[{scene\+Objects}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$std\+::shared\+\_\+ptr$<${\bf Scene\+Object}$>$ $>$ Scene\+::scene\+Objects\hspace{0.3cm}{\ttfamily [private]}}\label{class_scene_a871382922b2a04d7883cf6d34529b5df}
 
 
-Definition at line 48 of file Scene.\+h.
+Definition at line 53 of file Scene.\+h.
 
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/\+Users/michaelbao/workspace/cs148opengl4/source/common/\+Scene/\hyperlink{_scene_8h}{Scene.\+h}\item 
-/\+Users/michaelbao/workspace/cs148opengl4/source/common/\+Scene/\hyperlink{_scene_8cpp}{Scene.\+cpp}\end{DoxyCompactItemize}
+/\+Users/michaelbao/\+Phys\+B\+A\+M/\+Courses/2015/cs148/cs148opengl4/source/common/\+Scene/\hyperlink{_scene_8h}{Scene.\+h}\item 
+/\+Users/michaelbao/\+Phys\+B\+A\+M/\+Courses/2015/cs148/cs148opengl4/source/common/\+Scene/\hyperlink{_scene_8cpp}{Scene.\+cpp}\end{DoxyCompactItemize}

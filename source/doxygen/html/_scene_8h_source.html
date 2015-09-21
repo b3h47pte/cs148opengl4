@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.9.1"/>
-<title>CS148 OpenGL 4 Assignments: /Users/michaelbao/workspace/cs148opengl4/source/common/Scene/Scene.h Source File</title>
+<title>CS148 OpenGL 4 Assignments: /Users/michaelbao/PhysBAM/Courses/2015/cs148/cs148opengl4/source/common/Scene/Scene.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -99,66 +99,66 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">class </span><a class="code" href="class_scene_object.html">SceneObject</a>;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">class </span><a class="code" href="class_light.html">Light</a>;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="class_scene.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_scene.html">Scene</a>: <span class="keyword">public</span> std::enable_shared_from_this&lt;Scene&gt;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_scene.html#a23da430906feb967d70195ef26ba7a88">   14</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="class_scene.html#a23da430906feb967d70195ef26ba7a88">GetTotalObjects</a>()<span class="keyword"> const </span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">    </span>{ </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_scene.html#a871382922b2a04d7883cf6d34529b5df">sceneObjects</a>.size(); </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    }</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_scene.html#ab9d522852e85884def3d10600106d724">   19</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="class_scene.html#ab9d522852e85884def3d10600106d724">GetTotalLights</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_scene.html#a847f4f9c485a56b084a1340811f0e726">sceneLights</a>.size();</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_scene.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_scene.html">Scene</a>: <span class="keyword">public</span> std::enable_shared_from_this&lt;Scene&gt;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_scene.html#a23da430906feb967d70195ef26ba7a88">   19</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="class_scene.html#a23da430906feb967d70195ef26ba7a88">GetTotalObjects</a>()<span class="keyword"> const </span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">    </span>{ </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_scene.html#a871382922b2a04d7883cf6d34529b5df">sceneObjects</a>.size(); </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    template&lt;typename T, typename std::enable_if&lt;std::is_integral&lt;T&gt;::value&gt;::type* = <span class="keyword">nullptr</span>&gt;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="class_scene.html#acfd7dbaefb2feb8233d2a07d497542d7">   25</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="class_scene_object.html">SceneObject</a>&amp; <a class="code" href="class_scene.html#acfd7dbaefb2feb8233d2a07d497542d7">GetSceneObject</a>(T index)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        assert(index &gt;= 0 &amp;&amp; index &lt; <a class="code" href="class_scene.html#a871382922b2a04d7883cf6d34529b5df">sceneObjects</a>.size());</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">const</span> std::shared_ptr&lt;SceneObject&gt;&amp; internalObject = <a class="code" href="class_scene.html#a871382922b2a04d7883cf6d34529b5df">sceneObjects</a>[index];</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">return</span> *internalObject.get();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    template&lt;typename T, typename std::enable_if&lt;std::is_integral&lt;T&gt;::value&gt;::type* = <span class="keyword">nullptr</span>&gt;</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_scene.html#abb610e4c698b3c2ebfb922b5352eba36">   33</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="class_light.html">Light</a>* <a class="code" href="class_scene.html#abb610e4c698b3c2ebfb922b5352eba36">GetLightObject</a>(T index)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">if</span> (index &gt;= 0 &amp;&amp; index &lt; <a class="code" href="class_scene.html#a847f4f9c485a56b084a1340811f0e726">sceneLights</a>.size()) {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="class_scene.html#a847f4f9c485a56b084a1340811f0e726">sceneLights</a>[index].get();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_scene.html#a6e51f14c74c252d231b73d7109b8117e">AddSceneObject</a>(std::shared_ptr&lt;SceneObject&gt; <span class="keywordtype">object</span>);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_scene.html#ab9b1a906b16bf867600fc3f5b734c1d4">AddLight</a>(std::shared_ptr&lt;Light&gt; light);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_scene.html#ac3b0f6126be07f78a61abfac3487e4df">ClearScene</a>();</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_scene.html#ab9d522852e85884def3d10600106d724">   24</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="class_scene.html#ab9d522852e85884def3d10600106d724">GetTotalLights</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_scene.html#a847f4f9c485a56b084a1340811f0e726">sceneLights</a>.size();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    template&lt;typename T, typename std::enable_if&lt;std::is_integral&lt;T&gt;::value&gt;::type* = <span class="keyword">nullptr</span>&gt;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_scene.html#acfd7dbaefb2feb8233d2a07d497542d7">   30</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="class_scene_object.html">SceneObject</a>&amp; <a class="code" href="class_scene.html#acfd7dbaefb2feb8233d2a07d497542d7">GetSceneObject</a>(T index)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        assert(index &gt;= 0 &amp;&amp; index &lt; <a class="code" href="class_scene.html#a871382922b2a04d7883cf6d34529b5df">sceneObjects</a>.size());</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keyword">const</span> std::shared_ptr&lt;SceneObject&gt;&amp; internalObject = <a class="code" href="class_scene.html#a871382922b2a04d7883cf6d34529b5df">sceneObjects</a>[index];</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">return</span> *internalObject.get();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    template&lt;typename T, typename std::enable_if&lt;std::is_integral&lt;T&gt;::value&gt;::type* = <span class="keyword">nullptr</span>&gt;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_scene.html#abb610e4c698b3c2ebfb922b5352eba36">   38</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="class_light.html">Light</a>* <a class="code" href="class_scene.html#abb610e4c698b3c2ebfb922b5352eba36">GetLightObject</a>(T index)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">if</span> (index &gt;= 0 &amp;&amp; index &lt; <a class="code" href="class_scene.html#a847f4f9c485a56b084a1340811f0e726">sceneLights</a>.size()) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="class_scene.html#a847f4f9c485a56b084a1340811f0e726">sceneLights</a>[index].get();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_scene.html#a70538530bc36e033e360880ef311df61">   46</a></span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_renderer.html">Renderer</a>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="class_scene.html#a871382922b2a04d7883cf6d34529b5df">   48</a></span>&#160;    std::vector&lt;std::shared_ptr&lt;SceneObject&gt;&gt; <a class="code" href="class_scene.html#a871382922b2a04d7883cf6d34529b5df">sceneObjects</a>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="class_scene.html#a847f4f9c485a56b084a1340811f0e726">   49</a></span>&#160;    std::vector&lt;std::shared_ptr&lt;Light&gt;&gt; <a class="code" href="class_scene.html#a847f4f9c485a56b084a1340811f0e726">sceneLights</a>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;};</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="class_scene_html_a23da430906feb967d70195ef26ba7a88"><div class="ttname"><a href="class_scene.html#a23da430906feb967d70195ef26ba7a88">Scene::GetTotalObjects</a></div><div class="ttdeci">size_t GetTotalObjects() const </div><div class="ttdef"><b>Definition:</b> <a href="_scene_8h_source.html#l00014">Scene.h:14</a></div></div>
-<div class="ttc" id="class_scene_html_acfd7dbaefb2feb8233d2a07d497542d7"><div class="ttname"><a href="class_scene.html#acfd7dbaefb2feb8233d2a07d497542d7">Scene::GetSceneObject</a></div><div class="ttdeci">const SceneObject &amp; GetSceneObject(T index) const </div><div class="ttdef"><b>Definition:</b> <a href="_scene_8h_source.html#l00025">Scene.h:25</a></div></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_scene.html#a6e51f14c74c252d231b73d7109b8117e">AddSceneObject</a>(std::shared_ptr&lt;SceneObject&gt; <span class="keywordtype">object</span>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_scene.html#ab9b1a906b16bf867600fc3f5b734c1d4">AddLight</a>(std::shared_ptr&lt;Light&gt; light);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_scene.html#ac3b0f6126be07f78a61abfac3487e4df">ClearScene</a>();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="class_scene.html#a70538530bc36e033e360880ef311df61">   51</a></span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_renderer.html">Renderer</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="class_scene.html#a871382922b2a04d7883cf6d34529b5df">   53</a></span>&#160;    std::vector&lt;std::shared_ptr&lt;SceneObject&gt;&gt; <a class="code" href="class_scene.html#a871382922b2a04d7883cf6d34529b5df">sceneObjects</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="class_scene.html#a847f4f9c485a56b084a1340811f0e726">   54</a></span>&#160;    std::vector&lt;std::shared_ptr&lt;Light&gt;&gt; <a class="code" href="class_scene.html#a847f4f9c485a56b084a1340811f0e726">sceneLights</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;};</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="class_scene_html_a23da430906feb967d70195ef26ba7a88"><div class="ttname"><a href="class_scene.html#a23da430906feb967d70195ef26ba7a88">Scene::GetTotalObjects</a></div><div class="ttdeci">size_t GetTotalObjects() const </div><div class="ttdef"><b>Definition:</b> <a href="_scene_8h_source.html#l00019">Scene.h:19</a></div></div>
+<div class="ttc" id="class_scene_html_acfd7dbaefb2feb8233d2a07d497542d7"><div class="ttname"><a href="class_scene.html#acfd7dbaefb2feb8233d2a07d497542d7">Scene::GetSceneObject</a></div><div class="ttdeci">const SceneObject &amp; GetSceneObject(T index) const </div><div class="ttdef"><b>Definition:</b> <a href="_scene_8h_source.html#l00030">Scene.h:30</a></div></div>
 <div class="ttc" id="class_light_html"><div class="ttname"><a href="class_light.html">Light</a></div><div class="ttdef"><b>Definition:</b> <a href="_light_8h_source.html#l00009">Light.h:9</a></div></div>
 <div class="ttc" id="class_renderer_html"><div class="ttname"><a href="class_renderer.html">Renderer</a></div><div class="ttdoc">A generic rendering interface. </div><div class="ttdef"><b>Definition:</b> <a href="_renderer_8h_source.html#l00013">Renderer.h:13</a></div></div>
 <div class="ttc" id="class_scene_html_ac3b0f6126be07f78a61abfac3487e4df"><div class="ttname"><a href="class_scene.html#ac3b0f6126be07f78a61abfac3487e4df">Scene::ClearScene</a></div><div class="ttdeci">void ClearScene()</div><div class="ttdef"><b>Definition:</b> <a href="_scene_8cpp_source.html#l00019">Scene.cpp:19</a></div></div>
-<div class="ttc" id="class_scene_html_abb610e4c698b3c2ebfb922b5352eba36"><div class="ttname"><a href="class_scene.html#abb610e4c698b3c2ebfb922b5352eba36">Scene::GetLightObject</a></div><div class="ttdeci">const Light * GetLightObject(T index) const </div><div class="ttdef"><b>Definition:</b> <a href="_scene_8h_source.html#l00033">Scene.h:33</a></div></div>
+<div class="ttc" id="class_scene_html_abb610e4c698b3c2ebfb922b5352eba36"><div class="ttname"><a href="class_scene.html#abb610e4c698b3c2ebfb922b5352eba36">Scene::GetLightObject</a></div><div class="ttdeci">const Light * GetLightObject(T index) const </div><div class="ttdef"><b>Definition:</b> <a href="_scene_8h_source.html#l00038">Scene.h:38</a></div></div>
 <div class="ttc" id="class_scene_html_a6e51f14c74c252d231b73d7109b8117e"><div class="ttname"><a href="class_scene.html#a6e51f14c74c252d231b73d7109b8117e">Scene::AddSceneObject</a></div><div class="ttdeci">void AddSceneObject(std::shared_ptr&lt; SceneObject &gt; object)</div><div class="ttdef"><b>Definition:</b> <a href="_scene_8cpp_source.html#l00003">Scene.cpp:3</a></div></div>
-<div class="ttc" id="class_scene_html_a871382922b2a04d7883cf6d34529b5df"><div class="ttname"><a href="class_scene.html#a871382922b2a04d7883cf6d34529b5df">Scene::sceneObjects</a></div><div class="ttdeci">std::vector&lt; std::shared_ptr&lt; SceneObject &gt; &gt; sceneObjects</div><div class="ttdef"><b>Definition:</b> <a href="_scene_8h_source.html#l00048">Scene.h:48</a></div></div>
+<div class="ttc" id="class_scene_html_a871382922b2a04d7883cf6d34529b5df"><div class="ttname"><a href="class_scene.html#a871382922b2a04d7883cf6d34529b5df">Scene::sceneObjects</a></div><div class="ttdeci">std::vector&lt; std::shared_ptr&lt; SceneObject &gt; &gt; sceneObjects</div><div class="ttdef"><b>Definition:</b> <a href="_scene_8h_source.html#l00053">Scene.h:53</a></div></div>
 <div class="ttc" id="class_scene_html_ab9b1a906b16bf867600fc3f5b734c1d4"><div class="ttname"><a href="class_scene.html#ab9b1a906b16bf867600fc3f5b734c1d4">Scene::AddLight</a></div><div class="ttdeci">void AddLight(std::shared_ptr&lt; Light &gt; light)</div><div class="ttdef"><b>Definition:</b> <a href="_scene_8cpp_source.html#l00011">Scene.cpp:11</a></div></div>
-<div class="ttc" id="class_scene_html"><div class="ttname"><a href="class_scene.html">Scene</a></div><div class="ttdef"><b>Definition:</b> <a href="_scene_8h_source.html#l00011">Scene.h:11</a></div></div>
+<div class="ttc" id="class_scene_html"><div class="ttname"><a href="class_scene.html">Scene</a></div><div class="ttdoc">Contains all the objects that need to be rendered as well as the lights. </div><div class="ttdef"><b>Definition:</b> <a href="_scene_8h_source.html#l00016">Scene.h:16</a></div></div>
 <div class="ttc" id="class_scene_object_html"><div class="ttname"><a href="class_scene_object.html">SceneObject</a></div><div class="ttdef"><b>Definition:</b> <a href="_scene_object_8h_source.html#l00008">SceneObject.h:8</a></div></div>
 <div class="ttc" id="common_8h_html"><div class="ttname"><a href="common_8h.html">common.h</a></div><div class="ttdoc">A file included across the application framework to include common header files and other useful func...</div></div>
-<div class="ttc" id="class_scene_html_a847f4f9c485a56b084a1340811f0e726"><div class="ttname"><a href="class_scene.html#a847f4f9c485a56b084a1340811f0e726">Scene::sceneLights</a></div><div class="ttdeci">std::vector&lt; std::shared_ptr&lt; Light &gt; &gt; sceneLights</div><div class="ttdef"><b>Definition:</b> <a href="_scene_8h_source.html#l00049">Scene.h:49</a></div></div>
-<div class="ttc" id="class_scene_html_ab9d522852e85884def3d10600106d724"><div class="ttname"><a href="class_scene.html#ab9d522852e85884def3d10600106d724">Scene::GetTotalLights</a></div><div class="ttdeci">size_t GetTotalLights() const </div><div class="ttdef"><b>Definition:</b> <a href="_scene_8h_source.html#l00019">Scene.h:19</a></div></div>
+<div class="ttc" id="class_scene_html_a847f4f9c485a56b084a1340811f0e726"><div class="ttname"><a href="class_scene.html#a847f4f9c485a56b084a1340811f0e726">Scene::sceneLights</a></div><div class="ttdeci">std::vector&lt; std::shared_ptr&lt; Light &gt; &gt; sceneLights</div><div class="ttdef"><b>Definition:</b> <a href="_scene_8h_source.html#l00054">Scene.h:54</a></div></div>
+<div class="ttc" id="class_scene_html_ab9d522852e85884def3d10600106d724"><div class="ttname"><a href="class_scene.html#ab9d522852e85884def3d10600106d724">Scene::GetTotalLights</a></div><div class="ttdeci">size_t GetTotalLights() const </div><div class="ttdef"><b>Definition:</b> <a href="_scene_8h_source.html#l00024">Scene.h:24</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 19 2015 02:23:59 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Sep 21 2015 00:25:57 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

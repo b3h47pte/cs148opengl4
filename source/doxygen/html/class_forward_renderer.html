@@ -114,12 +114,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab27ea6139730631d79488cec3c564597"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_forward_renderer.html#ab27ea6139730631d79488cec3c564597">~ForwardRenderer</a> ()</td></tr>
 <tr class="memdesc:ab27ea6139730631d79488cec3c564597"><td class="mdescLeft">&#160;</td><td class="mdescRight">Just a day in the life of a destructor.  <a href="#ab27ea6139730631d79488cec3c564597">More...</a><br /></td></tr>
 <tr class="separator:ab27ea6139730631d79488cec3c564597"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99c523e11a4335d061da8bdba51f1c9a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_forward_renderer.html#a99c523e11a4335d061da8bdba51f1c9a">Initialize</a> ()</td></tr>
-<tr class="memdesc:a99c523e11a4335d061da8bdba51f1c9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads the data that the forward renderer needs.  <a href="#a99c523e11a4335d061da8bdba51f1c9a">More...</a><br /></td></tr>
-<tr class="separator:a99c523e11a4335d061da8bdba51f1c9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3693c5cd68afffc14652f24fcdc62abc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_forward_renderer.html#a3693c5cd68afffc14652f24fcdc62abc">Render</a> ()</td></tr>
-<tr class="memdesc:a3693c5cd68afffc14652f24fcdc62abc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders a frame using a multi-pass forward renderer with all the lights in the scene.  <a href="#a3693c5cd68afffc14652f24fcdc62abc">More...</a><br /></td></tr>
-<tr class="separator:a3693c5cd68afffc14652f24fcdc62abc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cbca647822780d6cfbd39552d73ee06"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_forward_renderer.html#a5cbca647822780d6cfbd39552d73ee06">Initialize</a> () override</td></tr>
+<tr class="memdesc:a5cbca647822780d6cfbd39552d73ee06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads the data that the forward renderer needs.  <a href="#a5cbca647822780d6cfbd39552d73ee06">More...</a><br /></td></tr>
+<tr class="separator:a5cbca647822780d6cfbd39552d73ee06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a5deafa5deaf1e0abaab0e2074928c1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_forward_renderer.html#a1a5deafa5deaf1e0abaab0e2074928c1">Render</a> () override</td></tr>
+<tr class="memdesc:a1a5deafa5deaf1e0abaab0e2074928c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders a frame using a multi-pass forward renderer with all the lights in the scene.  <a href="#a1a5deafa5deaf1e0abaab0e2074928c1">More...</a><br /></td></tr>
+<tr class="separator:a1a5deafa5deaf1e0abaab0e2074928c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_renderer"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_renderer')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_renderer.html">Renderer</a></td></tr>
 <tr class="memitem:adc8ce31cd649bdf220ca8355809b1d06 inherit pub_methods_class_renderer"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_renderer.html#adc8ce31cd649bdf220ca8355809b1d06">Renderer</a> (std::shared_ptr&lt; class <a class="el" href="class_scene.html">Scene</a> &gt; inputScene, std::shared_ptr&lt; class <a class="el" href="class_camera.html">Camera</a> &gt; inputCamera)</td></tr>
 <tr class="memdesc:adc8ce31cd649bdf220ca8355809b1d06 inherit pub_methods_class_renderer"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="class_renderer.html" title="A generic rendering interface. ">Renderer</a> constructor takes in a scene to be rendered and the camera from which to render the scene.  <a href="#adc8ce31cd649bdf220ca8355809b1d06">More...</a><br /></td></tr>
@@ -143,7 +143,7 @@ Protected Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A multi-pass forward renderer with lights. </p>
-<p>More details about what a multi-pass forward renderer is can be found in the documentation for the <a class="el" href="class_forward_renderer.html#a3693c5cd68afffc14652f24fcdc62abc" title="Renders a frame using a multi-pass forward renderer with all the lights in the scene. ">Render()</a> function. Do note that this class will not support transparent objects out of the box! You will have to find a way to handle them if you want to display transparent objects properly. </p>
+<p>More details about what a multi-pass forward renderer is can be found in the documentation for the <a class="el" href="class_forward_renderer.html#a1a5deafa5deaf1e0abaab0e2074928c1" title="Renders a frame using a multi-pass forward renderer with all the lights in the scene. ">Render()</a> function. Do note that this class will not support transparent objects out of the box! You will have to find a way to handle them if you want to display transparent objects properly. </p>
 
 <p>Definition at line <a class="el" href="_forward_renderer_8h_source.html#l00013">13</a> of file <a class="el" href="_forward_renderer_8h_source.html">ForwardRenderer.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -206,7 +206,7 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a99c523e11a4335d061da8bdba51f1c9a"></a>
+<a class="anchor" id="a5cbca647822780d6cfbd39552d73ee06"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -222,13 +222,13 @@ Protected Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Loads the data that the forward renderer needs. </p>
-<p>Loads the depth prepass shader. See the documentation of <a class="el" href="class_forward_renderer.html#a3693c5cd68afffc14652f24fcdc62abc" title="Renders a frame using a multi-pass forward renderer with all the lights in the scene. ">Render()</a> for why it is necessary. </p>
+<p>Loads the depth prepass shader. See the documentation of <a class="el" href="class_forward_renderer.html#a1a5deafa5deaf1e0abaab0e2074928c1" title="Renders a frame using a multi-pass forward renderer with all the lights in the scene. ">Render()</a> for why it is necessary. </p>
 
 <p>Implements <a class="el" href="class_renderer.html#a7cb221f355f181d84d66e8c09f50f04a">Renderer</a>.</p>
 
@@ -236,7 +236,7 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a3693c5cd68afffc14652f24fcdc62abc"></a>
+<a class="anchor" id="a1a5deafa5deaf1e0abaab0e2074928c1"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -252,7 +252,7 @@ Protected Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -299,13 +299,13 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/Users/michaelbao/workspace/cs148opengl4/source/common/Rendering/<a class="el" href="_forward_renderer_8h_source.html">ForwardRenderer.h</a></li>
-<li>/Users/michaelbao/workspace/cs148opengl4/source/common/Rendering/<a class="el" href="_forward_renderer_8cpp_source.html">ForwardRenderer.cpp</a></li>
+<li>/Users/michaelbao/PhysBAM/Courses/2015/cs148/cs148opengl4/source/common/Rendering/<a class="el" href="_forward_renderer_8h_source.html">ForwardRenderer.h</a></li>
+<li>/Users/michaelbao/PhysBAM/Courses/2015/cs148/cs148opengl4/source/common/Rendering/<a class="el" href="_forward_renderer_8cpp_source.html">ForwardRenderer.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 19 2015 02:24:01 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Sep 21 2015 00:25:58 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

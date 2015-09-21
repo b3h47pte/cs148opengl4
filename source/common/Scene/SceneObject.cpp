@@ -7,6 +7,7 @@
 const std::string SceneObject::MODEL_MATRIX_LOCATION = "modelMatrix";
 const std::string SceneObject::VIEW_MATRIX_LOCATION = "viewMatrix";
 const std::string SceneObject::PROJECTION_MATRIX_LOCATION = "projectionMatrix";
+const float SceneObject::MINIMUM_SCALE = 0.01f;
 
 SceneObject::SceneObject():
     cachedTransformationMatrix(1.f), position(0.f, 0.f, 0.f, 1.f), rotation(1.f, 0.f, 0.f, 0.f), scale(1.f)

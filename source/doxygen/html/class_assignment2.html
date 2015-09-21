@@ -153,7 +153,7 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a727f63f898a68bddf6d88309195ef194 inherit pub_static_methods_class_application"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a unique pointer to an <a class="el" href="class_application.html" title="Handles creating configurable objects (i.e. scene, camera, renderer), handling SDL events passed in b...">Application</a>. This should be used instead of the constructor.  <a href="#a727f63f898a68bddf6d88309195ef194">More...</a><br /></td></tr>
 <tr class="separator:a727f63f898a68bddf6d88309195ef194 inherit pub_static_methods_class_application"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a511e638cf5748e10151f17d6140b9119 inherit pub_static_methods_class_application"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; class <a class="el" href="class_scene.html">Scene</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application.html#a511e638cf5748e10151f17d6140b9119">CreateScene</a> ()</td></tr>
-<tr class="memdesc:a511e638cf5748e10151f17d6140b9119 inherit pub_static_methods_class_application"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shared pointer of type <a class="el" href="class_scene.html">Scene</a>.  <a href="#a511e638cf5748e10151f17d6140b9119">More...</a><br /></td></tr>
+<tr class="memdesc:a511e638cf5748e10151f17d6140b9119 inherit pub_static_methods_class_application"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shared pointer of type <a class="el" href="class_scene.html" title="Contains all the objects that need to be rendered as well as the lights. ">Scene</a>.  <a href="#a511e638cf5748e10151f17d6140b9119">More...</a><br /></td></tr>
 <tr class="separator:a511e638cf5748e10151f17d6140b9119 inherit pub_static_methods_class_application"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53c0a539fd2c4fe2cc48143cc0a3ea24 inherit pub_static_methods_class_application"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; class <a class="el" href="class_camera.html">Camera</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_application.html#a53c0a539fd2c4fe2cc48143cc0a3ea24">CreateCamera</a> ()</td></tr>
 <tr class="memdesc:a53c0a539fd2c4fe2cc48143cc0a3ea24 inherit pub_static_methods_class_application"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shared pointer of type <a class="el" href="class_camera.html">Camera</a>.  <a href="#a53c0a539fd2c4fe2cc48143cc0a3ea24">More...</a><br /></td></tr>
@@ -574,7 +574,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Called by <a class="el" href="class_application.html#a17cf1ea4552d26a1c20f7d98d793d41d" title="Initialization function to setup the stored camera and scene. ">Initialize()</a> to populate the scene. </p>
-<p>Note by the time this function is called, the <a class="el" href="class_application.html" title="Handles creating configurable objects (i.e. scene, camera, renderer), handling SDL events passed in b...">Application</a> sub-class is fully constructed and <a class="el" href="class_scene.html">Scene</a> object is already created. </p>
+<p>Note by the time this function is called, the <a class="el" href="class_application.html" title="Handles creating configurable objects (i.e. scene, camera, renderer), handling SDL events passed in b...">Application</a> sub-class is fully constructed and <a class="el" href="class_scene.html" title="Contains all the objects that need to be rendered as well as the lights. ">Scene</a> object is already created. </p>
 
 <p>Reimplemented from <a class="el" href="class_application.html#aa8e8017ef8dd86293c96d0645e66d440">Application</a>.</p>
 
@@ -611,7 +611,7 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p>If you need something in the <a class="el" href="class_scene.html">Scene</a> to change over time, this is where you should implement that logic. It is recommended that you make use of the deltaTime variable to make things change smoothly! </p>
+<p>If you need something in the <a class="el" href="class_scene.html" title="Contains all the objects that need to be rendered as well as the lights. ">Scene</a> to change over time, this is where you should implement that logic. It is recommended that you make use of the deltaTime variable to make things change smoothly! </p>
 
 <p>Reimplemented from <a class="el" href="class_application.html#a0800afd5651153d31fa775a8048d14dd">Application</a>.</p>
 
@@ -731,13 +731,13 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/Users/michaelbao/workspace/cs148opengl4/source/assignment2/<a class="el" href="_assignment2_8h_source.html">Assignment2.h</a></li>
-<li>/Users/michaelbao/workspace/cs148opengl4/source/assignment2/<a class="el" href="_assignment2_8cpp_source.html">Assignment2.cpp</a></li>
+<li>/Users/michaelbao/PhysBAM/Courses/2015/cs148/cs148opengl4/source/assignment2/<a class="el" href="_assignment2_8h_source.html">Assignment2.h</a></li>
+<li>/Users/michaelbao/PhysBAM/Courses/2015/cs148/cs148opengl4/source/assignment2/<a class="el" href="_assignment2_8cpp_source.html">Assignment2.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 19 2015 02:24:00 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Sep 21 2015 00:25:57 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

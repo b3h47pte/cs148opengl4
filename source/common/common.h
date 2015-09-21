@@ -6,7 +6,12 @@
 #ifndef __COMMON__
 #define __COMMON__
 
+#ifdef _WIN32
+#include "SDL.h"
+#undef main
+#else
 #include "SDL2/SDL.h"
+#endif
 #include "glm/glm.hpp"
 #include "glm/gtc/type_ptr.hpp"
 #include "glm/gtc/matrix_transform.hpp"
@@ -96,7 +101,7 @@ inline void _DisplayOpenGLError(std::string command, std::string file, int line)
 /*! \var PI
  * \brief The PI constant.
  */
-constexpr float PI = 3.14159265359f;
+const float PI = 3.14159265359f;
 
 /*! \def STRINGIFY_HELPER
  * \brief Help stringify a macro.
@@ -117,10 +122,14 @@ constexpr float PI = 3.14159265359f;
  * Curious about Modern C++? The book <a href="http://www.amazon.com/Effective-Modern-Specific-Ways-Improve/dp/1491903996">Effective Modern C++</a> by Scott Meyes is a great
  * book if you are already familiar with C++.
  */
+#ifdef _WIN32
+#define make_unique std::make_unique
+#else
 template<typename T, typename... Ts>
 std::unique_ptr<T> make_unique(Ts&&... params)
 {
     return std::unique_ptr<T>(new T(std::forward<Ts>(params)...));
 }
+#endif
 
 #endif

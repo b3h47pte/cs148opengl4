@@ -96,6 +96,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>Interfaces with the underlying GLSL shader program.  
+ <a href="class_shader_program.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_shader_program_8h_source.html">ShaderProgram.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ShaderProgram:</div>
@@ -103,50 +106,66 @@ Inheritance diagram for ShaderProgram:</div>
  <div class="center">
   <img src="class_shader_program.png" usemap="#ShaderProgram_map" alt=""/>
   <map id="ShaderProgram_map" name="ShaderProgram_map">
-<area href="class_blinn_phong_shader.html" alt="BlinnPhongShader" shape="rect" coords="0,56,117,80"/>
+<area href="class_blinn_phong_shader.html" title="The CPU Interface to the BlinnPhong shader (either or: vert or frag version or the textured version)..." alt="BlinnPhongShader" shape="rect" coords="0,56,117,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aba2db5734b2f70cc34078126ad279588"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#aba2db5734b2f70cc34078126ad279588">ShaderProgram</a> (const std::unordered_map&lt; GLenum, std::string &gt; &amp;inputShaders)</td></tr>
+<tr class="memdesc:aba2db5734b2f70cc34078126ad279588"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shader program.  <a href="#aba2db5734b2f70cc34078126ad279588">More...</a><br /></td></tr>
 <tr class="separator:aba2db5734b2f70cc34078126ad279588"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d2eadcfc48cc2e2ddb82aba70553a9f"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#a2d2eadcfc48cc2e2ddb82aba70553a9f">~ShaderProgram</a> ()</td></tr>
+<tr class="memdesc:a2d2eadcfc48cc2e2ddb82aba70553a9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A destructor to clean up the shader program.  <a href="#a2d2eadcfc48cc2e2ddb82aba70553a9f">More...</a><br /></td></tr>
 <tr class="separator:a2d2eadcfc48cc2e2ddb82aba70553a9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a906b0232f27663b28cc800ac2851541f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#a906b0232f27663b28cc800ac2851541f">StartUseShader</a> () const </td></tr>
+<tr class="memdesc:a906b0232f27663b28cc800ac2851541f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notifies the OpenGL state that we will be using the underlying GLSL program.  <a href="#a906b0232f27663b28cc800ac2851541f">More...</a><br /></td></tr>
 <tr class="separator:a906b0232f27663b28cc800ac2851541f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5afb6f91d30b6e197fab0827c416c51f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#a5afb6f91d30b6e197fab0827c416c51f">StopUseShader</a> () const </td></tr>
+<tr class="memdesc:a5afb6f91d30b6e197fab0827c416c51f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tells the OpenGL state to no longer us the underlying shader.  <a href="#a5afb6f91d30b6e197fab0827c416c51f">More...</a><br /></td></tr>
 <tr class="separator:a5afb6f91d30b6e197fab0827c416c51f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a281396edbb786eacf86ae4997a3e90c6"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#a281396edbb786eacf86ae4997a3e90c6">GetProgram</a> () const </td></tr>
+<tr class="memdesc:a281396edbb786eacf86ae4997a3e90c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the underlying shader program identifier created by <a href="https://www.opengl.org/sdk/docs/man/html/glCreateProgram.xhtml">glCreateProgram</a>.  <a href="#a281396edbb786eacf86ae4997a3e90c6">More...</a><br /></td></tr>
 <tr class="separator:a281396edbb786eacf86ae4997a3e90c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f3c1c149aa0988e07e0a513c69c1770"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#a2f3c1c149aa0988e07e0a513c69c1770">SetupShaderLighting</a> (const class <a class="el" href="class_light.html">Light</a> *light) const </td></tr>
+<tr class="memdesc:a2f3c1c149aa0988e07e0a513c69c1770"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function will pass to the GLSL shader the variables needed by the shader to accurately shade the model using the given light.  <a href="#a2f3c1c149aa0988e07e0a513c69c1770">More...</a><br /></td></tr>
 <tr class="separator:a2f3c1c149aa0988e07e0a513c69c1770"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7a595a10717c6051d6c582c850c4ed7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#ad7a595a10717c6051d6c582c850c4ed7">SetupShaderMaterials</a> () const </td></tr>
+<tr class="memdesc:ad7a595a10717c6051d6c582c850c4ed7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up the shader material (what this material is depends on the shader).  <a href="#ad7a595a10717c6051d6c582c850c4ed7">More...</a><br /></td></tr>
 <tr class="separator:ad7a595a10717c6051d6c582c850c4ed7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75e888f885b9028847e2d9556a754170"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#a75e888f885b9028847e2d9556a754170">SetupShaderCamera</a> (const class <a class="el" href="class_camera.html">Camera</a> *camera) const </td></tr>
+<tr class="memdesc:a75e888f885b9028847e2d9556a754170"><td class="mdescLeft">&#160;</td><td class="mdescRight">Passes camera parameters to the shader if necessary.  <a href="#a75e888f885b9028847e2d9556a754170">More...</a><br /></td></tr>
 <tr class="separator:a75e888f885b9028847e2d9556a754170"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47298abb4ffc8d75f88b3d603aa989f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#a47298abb4ffc8d75f88b3d603aa989f9">SetShaderUniform</a> (const std::string &amp;location, const glm::mat4 &amp;value) const </td></tr>
+<tr class="memdesc:a47298abb4ffc8d75f88b3d603aa989f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a shader uniform with a mat4x4 value.  <a href="#a47298abb4ffc8d75f88b3d603aa989f9">More...</a><br /></td></tr>
 <tr class="separator:a47298abb4ffc8d75f88b3d603aa989f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a4c9cd6967787bded962acd7ce6b3c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#a3a4c9cd6967787bded962acd7ce6b3c6">SetShaderUniform</a> (const std::string &amp;location, float value) const </td></tr>
+<tr class="memdesc:a3a4c9cd6967787bded962acd7ce6b3c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a shader uniform with a float value.  <a href="#a3a4c9cd6967787bded962acd7ce6b3c6">More...</a><br /></td></tr>
 <tr class="separator:a3a4c9cd6967787bded962acd7ce6b3c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93e7090cc8ff284bfcde6ae972aa5b9e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#a93e7090cc8ff284bfcde6ae972aa5b9e">SetShaderUniform</a> (const std::string &amp;location, int value) const </td></tr>
+<tr class="memdesc:a93e7090cc8ff284bfcde6ae972aa5b9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a shader uniform with a int value.  <a href="#a93e7090cc8ff284bfcde6ae972aa5b9e">More...</a><br /></td></tr>
 <tr class="separator:a93e7090cc8ff284bfcde6ae972aa5b9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08b8936758c067aad38e6cd94608663f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#a08b8936758c067aad38e6cd94608663f">SetShaderUniform</a> (const std::string &amp;location, const glm::vec4 &amp;value) const </td></tr>
+<tr class="memdesc:a08b8936758c067aad38e6cd94608663f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a shader uniform with a vec4 value.  <a href="#a08b8936758c067aad38e6cd94608663f">More...</a><br /></td></tr>
 <tr class="separator:a08b8936758c067aad38e6cd94608663f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2e00fa2f9107b34c758996021574b15"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#ae2e00fa2f9107b34c758996021574b15">SetShaderSubroutine</a> (const std::string &amp;location, const std::string &amp;subroutine, GLenum substage) const </td></tr>
+<tr class="memdesc:ae2e00fa2f9107b34c758996021574b15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a shader subroutine variable to point to the desired subroutine.  <a href="#ae2e00fa2f9107b34c758996021574b15">More...</a><br /></td></tr>
 <tr class="separator:ae2e00fa2f9107b34c758996021574b15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16169356d5ce43e64e6018ad5d79f594"><td class="memTemplParams" colspan="2">template&lt;int N&gt; </td></tr>
-<tr class="memitem:a16169356d5ce43e64e6018ad5d79f594"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_shader_program.html#a16169356d5ce43e64e6018ad5d79f594">SetupUniformBlock</a> (const std::string &amp;blockName, const std::array&lt; const char *, N &gt; &amp;names, std::array&lt; GLuint, N &gt; &amp;indices, std::array&lt; GLint, N &gt; &amp;offsets, std::vector&lt; GLubyte &gt; &amp;data, GLuint &amp;blockLocation, GLint &amp;blockSize, GLuint &amp;bufferLocation)</td></tr>
-<tr class="separator:a16169356d5ce43e64e6018ad5d79f594"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac2a462281a872df0ed8d197ec0b4104"><td class="memTemplParams" colspan="2">template&lt;int N&gt; </td></tr>
+<tr class="memitem:aac2a462281a872df0ed8d197ec0b4104"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_shader_program.html#aac2a462281a872df0ed8d197ec0b4104">SetupUniformBlock</a> (const std::string &amp;blockName, std::array&lt; const char *, N &gt; &amp;names, std::array&lt; GLuint, N &gt; &amp;indices, std::array&lt; GLint, N &gt; &amp;offsets, std::vector&lt; GLubyte &gt; &amp;data, GLuint &amp;blockLocation, GLint &amp;blockSize, GLuint &amp;bufferLocation)</td></tr>
+<tr class="memdesc:aac2a462281a872df0ed8d197ec0b4104"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up a shader uniform block with N variables.  <a href="#aac2a462281a872df0ed8d197ec0b4104">More...</a><br /></td></tr>
+<tr class="separator:aac2a462281a872df0ed8d197ec0b4104"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a9c09a5050b37c958e07ce4d9756421b9"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; struct <a class="el" href="struct_light_properties.html">LightProperties</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#a9c09a5050b37c958e07ce4d9756421b9">CreateLightProperties</a> ()</td></tr>
+<tr class="memdesc:a9c09a5050b37c958e07ce4d9756421b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the light properties that is of the right type for this shader.  <a href="#a9c09a5050b37c958e07ce4d9756421b9">More...</a><br /></td></tr>
 <tr class="separator:a9c09a5050b37c958e07ce4d9756421b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-methods"></a>
 Static Protected Member Functions</h2></td></tr>
 <tr class="memitem:ab5c50c33203cf65b7f6ffe00d2243d5a"><td class="memItemLeft" align="right" valign="top">static GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#ab5c50c33203cf65b7f6ffe00d2243d5a">LoadShaderObject</a> (GLenum type, const std::string &amp;filename)</td></tr>
+<tr class="memdesc:ab5c50c33203cf65b7f6ffe00d2243d5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads in a shader object and returns the OpenGL shader object name.  <a href="#ab5c50c33203cf65b7f6ffe00d2243d5a">More...</a><br /></td></tr>
 <tr class="separator:ab5c50c33203cf65b7f6ffe00d2243d5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
@@ -161,12 +180,14 @@ Private Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
-<tr class="memitem:a6dfa734f6cd9bdd1debf1a6f39bdfa05"><td class="memItemLeft" align="right" valign="top">static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#a6dfa734f6cd9bdd1debf1a6f39bdfa05">SHADER_ERROR_LOG_SIZE</a> = 500</td></tr>
-<tr class="separator:a6dfa734f6cd9bdd1debf1a6f39bdfa05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8839da24bcba7d96ce590146523a8d47"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader_program.html#a8839da24bcba7d96ce590146523a8d47">SHADER_ERROR_LOG_SIZE</a> = 500</td></tr>
+<tr class="separator:a8839da24bcba7d96ce590146523a8d47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_shader_program_8h_source.html#l00008">8</a> of file <a class="el" href="_shader_program_8h_source.html">ShaderProgram.h</a>.</p>
+<div class="textblock"><p>Interfaces with the underlying GLSL shader program. </p>
+<p>This class wil manage the GLSL shader program from loading and compiling to setting runtime variables. The shader interfaces closely with the underlying shader especially in <a class="el" href="class_shader_program.html#a2f3c1c149aa0988e07e0a513c69c1770" title="This function will pass to the GLSL shader the variables needed by the shader to accurately shade the...">ShaderProgram::SetupShaderLighting()</a>, <a class="el" href="class_shader_program.html#ad7a595a10717c6051d6c582c850c4ed7" title="Sets up the shader material (what this material is depends on the shader). ">ShaderProgram::SetupShaderMaterials()</a>, and <a class="el" href="class_shader_program.html#a75e888f885b9028847e2d9556a754170" title="Passes camera parameters to the shader if necessary. ">ShaderProgram::SetupShaderCamera()</a>. This class (and its subclasses) will directly correspond to a shader program (vertex shader plus a fragment shader). So if you ever decide to create a new type of shader (not the provided Blinn-Phong one), you will have to create a new sub-class of <a class="el" href="class_shader_program.html" title="Interfaces with the underlying GLSL shader program. ">ShaderProgram</a> to make sure that its uniforms are setup properly. </p>
+
+<p>Definition at line <a class="el" href="_shader_program_8h_source.html#l00018">18</a> of file <a class="el" href="_shader_program_8h_source.html">ShaderProgram.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aba2db5734b2f70cc34078126ad279588"></a>
 <div class="memitem">
@@ -181,6 +202,15 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Creates a shader program. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inputShaders</td><td>A map of the shader type to the shader file location.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>At the minimum a vertex shader is required to create a GLSL shader program; however, using a fragment shader is highly recommended unless you know what you are doing. </p>
 
 <p>Definition at line <a class="el" href="_shader_program_8cpp_source.html#l00013">13</a> of file <a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a>.</p>
 
@@ -206,6 +236,8 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>A destructor to clean up the shader program. </p>
 
 <p>Definition at line <a class="el" href="_shader_program_8cpp_source.html#l00063">63</a> of file <a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a>.</p>
 
@@ -233,7 +265,11 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_shader_program_8cpp_source.html#l00169">169</a> of file <a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a>.</p>
+<p>Creates the light properties that is of the right type for this shader. </p>
+<dl class="section return"><dt>Returns</dt><dd>The light properties that is of the right type for this shader.</dd></dl>
+<p>The <a class="el" href="struct_light_properties.html">LightProperties</a> structure is necessary to separate the type of light (point, directional, etc.) and what properties are necessary for the shader to calculate the final color of the fragment. When creating a light, you should request a light property from the shader you will be using and then set the light properties on the structure and then pass it to the light. Note that this restricts you (currently) to using only one shader in the entire scene. However, you can easily expand the <a class="el" href="class_light.html">Light</a> class to contain multiple light properties and using the right properties structure for the appropriate shader. </p>
+
+<p>Definition at line <a class="el" href="_shader_program_8cpp_source.html#l00175">175</a> of file <a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a>.</p>
 
 </div>
 </div>
@@ -258,7 +294,10 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_shader_program_8h_source.html#l00017">17</a> of file <a class="el" href="_shader_program_8h_source.html">ShaderProgram.h</a>.</p>
+<p>Gets the underlying shader program identifier created by <a href="https://www.opengl.org/sdk/docs/man/html/glCreateProgram.xhtml">glCreateProgram</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>The shader program identifier created by <a href="https://www.opengl.org/sdk/docs/man/html/glCreateProgram.xhtml">glCreateProgram</a>. </dd></dl>
+
+<p>Definition at line <a class="el" href="_shader_program_8h_source.html#l00047">47</a> of file <a class="el" href="_shader_program_8h_source.html">ShaderProgram.h</a>.</p>
 
 </div>
 </div>
@@ -294,6 +333,16 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Reads in a shader object and returns the OpenGL shader object name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>Is the same as the shaderType paramter in <a href="https://www.opengl.org/sdk/docs/man/html/glCreateShader.xhtml">glCreateShader</a>. </td></tr>
+    <tr><td class="paramname">filename</td><td>The filename to load the shader from. Note that the base directory of shaders is defined in SHADER_PATH which is set in the configuration step with CMake. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The OpenGL shader object name. </dd></dl>
+
 <p>Definition at line <a class="el" href="_shader_program_8cpp_source.html#l00068">68</a> of file <a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a>.</p>
 
 </div>
@@ -328,7 +377,19 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_shader_program_8cpp_source.html#l00138">138</a> of file <a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a>.</p>
+<p>Sets a shader subroutine variable to point to the desired subroutine. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">location</td><td>The name of the uniform variable in the shader. </td></tr>
+    <tr><td class="paramname">subroutine</td><td>The name of the subroutine function in the shader. </td></tr>
+    <tr><td class="paramname">substage</td><td>The stage of the shader program that the subroutine is in (i.e. GL_VERTEX_SHADER or GL_FRAGMENT_SHADER). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Subroutines are broken on Mac OSX with a NVIDIA graphics card.</dd></dl>
+<p>You can read more about shader subroutines <a href="https://www.opengl.org/wiki/Shader_Subroutine">here</a> or in Chapter 2 of the OpenGL Programming Guide. </p>
+
+<p>Definition at line <a class="el" href="_shader_program_8cpp_source.html#l00143">143</a> of file <a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a>.</p>
 
 </div>
 </div>
@@ -356,7 +417,16 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_shader_program_8cpp_source.html#l00113">113</a> of file <a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a>.</p>
+<p>Sets a shader uniform with a mat4x4 value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">location</td><td>The name of the uniform variable in the shader. </td></tr>
+    <tr><td class="paramname">value</td><td>The value to pass to the shader. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_shader_program_8cpp_source.html#l00118">118</a> of file <a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a>.</p>
 
 </div>
 </div>
@@ -384,7 +454,17 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_shader_program_8cpp_source.html#l00125">125</a> of file <a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a>.</p>
+<p>Sets a shader uniform with a float value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">location</td><td>The name of the uniform variable in the shader. </td></tr>
+    <tr><td class="paramname">value</td><td>The value to pass to the shader. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>A value of type double will be implicity cast to a float. If you ever need to pass a double to the shader, make sure to add a function overload for double! </dd></dl>
+
+<p>Definition at line <a class="el" href="_shader_program_8cpp_source.html#l00130">130</a> of file <a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a>.</p>
 
 </div>
 </div>
@@ -412,7 +492,16 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_shader_program_8cpp_source.html#l00119">119</a> of file <a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a>.</p>
+<p>Sets a shader uniform with a int value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">location</td><td>The name of the uniform variable in the shader. </td></tr>
+    <tr><td class="paramname">value</td><td>The value to pass to the shader. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_shader_program_8cpp_source.html#l00124">124</a> of file <a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a>.</p>
 
 </div>
 </div>
@@ -440,7 +529,16 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_shader_program_8cpp_source.html#l00131">131</a> of file <a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a>.</p>
+<p>Sets a shader uniform with a vec4 value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">location</td><td>The name of the uniform variable in the shader. </td></tr>
+    <tr><td class="paramname">value</td><td>The value to pass to the shader. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_shader_program_8cpp_source.html#l00136">136</a> of file <a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a>.</p>
 
 </div>
 </div>
@@ -466,9 +564,17 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Passes camera parameters to the shader if necessary. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">camera</td><td>The camera we want to use for shading. This should not be a null pointer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Reimplemented in <a class="el" href="class_blinn_phong_shader.html#a0e3e2e1d5981f173a72e82d0ef4d643d">BlinnPhongShader</a>.</p>
 
-<p>Definition at line <a class="el" href="_shader_program_8cpp_source.html#l00165">165</a> of file <a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_shader_program_8cpp_source.html#l00171">171</a> of file <a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a>.</p>
 
 </div>
 </div>
@@ -494,9 +600,17 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>This function will pass to the GLSL shader the variables needed by the shader to accurately shade the model using the given light. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">light</td><td>The light we want to use for shading. This should not be a null pointer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Reimplemented in <a class="el" href="class_blinn_phong_shader.html#a9e4a7358ce59f7fa77ed872eb15eabe7">BlinnPhongShader</a>.</p>
 
-<p>Definition at line <a class="el" href="_shader_program_8cpp_source.html#l00157">157</a> of file <a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_shader_program_8cpp_source.html#l00163">163</a> of file <a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a>.</p>
 
 </div>
 </div>
@@ -521,13 +635,16 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Sets up the shader material (what this material is depends on the shader). </p>
+<p>This functions is meant to be a general setup function for the shader. This function has no access to the scene or anything else stored in the application so its primary purpose is to work with objects stored within the shader program object (i.e. textures). </p>
+
 <p>Reimplemented in <a class="el" href="class_blinn_phong_shader.html#ade1dfa6ceb0b2650b2ca3b849ee875ac">BlinnPhongShader</a>.</p>
 
-<p>Definition at line <a class="el" href="_shader_program_8cpp_source.html#l00161">161</a> of file <a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_shader_program_8cpp_source.html#l00167">167</a> of file <a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a16169356d5ce43e64e6018ad5d79f594"></a>
+<a class="anchor" id="aac2a462281a872df0ed8d197ec0b4104"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -545,7 +662,7 @@ template&lt;int N&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::array&lt; const char *, N &gt; &amp;&#160;</td>
+          <td class="paramtype">std::array&lt; const char *, N &gt; &amp;&#160;</td>
           <td class="paramname"><em>names</em>, </td>
         </tr>
         <tr>
@@ -597,7 +714,22 @@ template&lt;int N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_shader_program_8h_source.html#l00031">31</a> of file <a class="el" href="_shader_program_8h_source.html">ShaderProgram.h</a>.</p>
+<p>Sets up a shader uniform block with N variables. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">blockName</td><td>The name of the uniform block in the shader. </td></tr>
+    <tr><td class="paramname">names</td><td>The names of the variables within the uniform block. </td></tr>
+    <tr><td class="paramname">indices</td><td>The indices of the variable within the uniform block. </td></tr>
+    <tr><td class="paramname">offsets</td><td>The offset (number of bytes) into memory for the data that we pass to the buffer that is linked to the uniform block for each variable. </td></tr>
+    <tr><td class="paramname">blockLocation</td><td>The uniform location of the uniform block. </td></tr>
+    <tr><td class="paramname">blockSize</td><td>The number of bytes allocated for the uniform block. </td></tr>
+    <tr><td class="paramname">bufferLocation</td><td>The buffer object name generated by <a href="https://www.opengl.org/sdk/docs/man/html/glGenBuffers.xhtml">glGenBuffers</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>You can read more about uniform blocks (uniform buffer objects) <a href="https://www.packtpub.com/books/content/opengl-40-using-uniform-blocks-and-uniform-buffer-objects">here</a>. </p>
+
+<p>Definition at line <a class="el" href="_shader_program_8h_source.html#l00115">115</a> of file <a class="el" href="_shader_program_8h_source.html">ShaderProgram.h</a>.</p>
 
 </div>
 </div>
@@ -622,7 +754,10 @@ template&lt;int N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_shader_program_8cpp_source.html#l00103">103</a> of file <a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a>.</p>
+<p>Notifies the OpenGL state that we will be using the underlying GLSL program. </p>
+<p>If the shader program failed to compile or link (and you still manage to get to this function call), <a class="el" href="class_shader_program.html#a906b0232f27663b28cc800ac2851541f" title="Notifies the OpenGL state that we will be using the underlying GLSL program. ">StartUseShader()</a> will do nothing. </p>
+
+<p>Definition at line <a class="el" href="_shader_program_8cpp_source.html#l00108">108</a> of file <a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a>.</p>
 
 </div>
 </div>
@@ -647,12 +782,14 @@ template&lt;int N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_shader_program_8cpp_source.html#l00108">108</a> of file <a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a>.</p>
+<p>Tells the OpenGL state to no longer us the underlying shader. </p>
+
+<p>Definition at line <a class="el" href="_shader_program_8cpp_source.html#l00113">113</a> of file <a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a6dfa734f6cd9bdd1debf1a6f39bdfa05"></a>
+<a class="anchor" id="a8839da24bcba7d96ce590146523a8d47"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -660,7 +797,7 @@ template&lt;int N&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr int ShaderProgram::SHADER_ERROR_LOG_SIZE = 500</td>
+          <td class="memname">const int ShaderProgram::SHADER_ERROR_LOG_SIZE = 500</td>
         </tr>
       </table>
   </td>
@@ -670,7 +807,7 @@ template&lt;int N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_shader_program_8h_source.html#l00064">64</a> of file <a class="el" href="_shader_program_8h_source.html">ShaderProgram.h</a>.</p>
+<p>Definition at line <a class="el" href="_shader_program_8h_source.html#l00164">164</a> of file <a class="el" href="_shader_program_8h_source.html">ShaderProgram.h</a>.</p>
 
 </div>
 </div>
@@ -692,7 +829,7 @@ template&lt;int N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_shader_program_8h_source.html#l00062">62</a> of file <a class="el" href="_shader_program_8h_source.html">ShaderProgram.h</a>.</p>
+<p>Definition at line <a class="el" href="_shader_program_8h_source.html#l00162">162</a> of file <a class="el" href="_shader_program_8h_source.html">ShaderProgram.h</a>.</p>
 
 </div>
 </div>
@@ -714,18 +851,18 @@ template&lt;int N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_shader_program_8h_source.html#l00060">60</a> of file <a class="el" href="_shader_program_8h_source.html">ShaderProgram.h</a>.</p>
+<p>Definition at line <a class="el" href="_shader_program_8h_source.html#l00160">160</a> of file <a class="el" href="_shader_program_8h_source.html">ShaderProgram.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/Users/michaelbao/workspace/cs148opengl4/source/common/Rendering/Shaders/<a class="el" href="_shader_program_8h_source.html">ShaderProgram.h</a></li>
-<li>/Users/michaelbao/workspace/cs148opengl4/source/common/Rendering/Shaders/<a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a></li>
+<li>/Users/michaelbao/PhysBAM/Courses/2015/cs148/cs148opengl4/source/common/Rendering/Shaders/<a class="el" href="_shader_program_8h_source.html">ShaderProgram.h</a></li>
+<li>/Users/michaelbao/PhysBAM/Courses/2015/cs148/cs148opengl4/source/common/Rendering/Shaders/<a class="el" href="_shader_program_8cpp_source.html">ShaderProgram.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 19 2015 02:24:02 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Sep 21 2015 00:25:59 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

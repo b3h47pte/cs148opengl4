@@ -53,7 +53,7 @@ protected:
     static const std::string MODEL_MATRIX_LOCATION;
     static const std::string VIEW_MATRIX_LOCATION;
     static const std::string PROJECTION_MATRIX_LOCATION;
-    static constexpr float MINIMUM_SCALE = 0.01f;
+    static const float MINIMUM_SCALE;
 
 private:
     std::vector<std::shared_ptr<class RenderingObject>> renderObject;

@@ -8,6 +8,11 @@
 class SceneObject;
 class Light;
 
+/*! \brief Contains all the objects that need to be rendered as well as the lights.
+ *
+ *  A Scene object functions more or less as a giant container. It stores all the objects
+ *  and lights that will be used for rendering.
+ */
 class Scene: public std::enable_shared_from_this<Scene>
 {
 public:

@@ -67,10 +67,15 @@ ShaderProgram::~ShaderProgram()
 
 GLuint ShaderProgram::LoadShaderObject(GLenum type, const std::string& filename)
 {
-    std::ifstream fs("../shaders/" + filename, std::ifstream::in);
+#ifndef SHADER_PATH
+    static_assert(false, "SHADER_PATH is not defined. Check to make sure your projects are setup correctly");
+#endif
+
+    const std::string completeFilename = std::string(STRINGIFY(SHADER_PATH)) + "/" + filename;
+    std::ifstream fs(completeFilename, std::ifstream::in);
 
     if (!fs.is_open()) {
-        std::cerr << "ERROR: Could not read shader from " << filename << std::endl;
+        std::cerr << "ERROR: Could not read shader from " << completeFilename << std::endl;
         return 0;
     }
     

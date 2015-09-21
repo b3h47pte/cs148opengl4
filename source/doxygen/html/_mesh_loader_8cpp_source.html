@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.9.1"/>
-<title>CS148 OpenGL 4 Assignments: /Users/michaelbao/workspace/cs148opengl4/source/common/Utility/Mesh/Loading/MeshLoader.cpp Source File</title>
+<title>CS148 OpenGL 4 Assignments: /Users/michaelbao/PhysBAM/Courses/2015/cs148/cs148opengl4/source/common/Utility/Mesh/Loading/MeshLoader.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -121,7 +121,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    std::vector&lt;std::shared_ptr&lt;RenderingObject&gt;&gt; loadedMeshes;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0; i &lt; scene-&gt;mNumMeshes; ++i) {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">for</span> (decltype(scene-&gt;mNumMeshes) i = 0; i &lt; scene-&gt;mNumMeshes; ++i) {</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">const</span> aiMesh* mesh = scene-&gt;mMeshes[i];</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">if</span> (!mesh-&gt;HasPositions()) {</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            std::cerr &lt;&lt; <span class="stringliteral">&quot;WARNING: A mesh in &quot;</span> &lt;&lt; filename &lt;&lt; <span class="stringliteral">&quot; does not have positions. Skipping.&quot;</span> &lt;&lt; std::endl;</div>
@@ -135,7 +135,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        std::unique_ptr&lt;RenderingObject::ColorArray&gt; colors = mesh-&gt;HasVertexColors(0) ? make_unique&lt;RenderingObject::ColorArray&gt;(totalVertices) : <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        std::unique_ptr&lt;RenderingObject::IndexArray&gt; indices = mesh-&gt;HasFaces() ? make_unique&lt;RenderingObject::IndexArray&gt;(mesh-&gt;mNumFaces * 3) : <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> v = 0; v &lt; totalVertices; ++v) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">for</span> (decltype(totalVertices) v = 0; v &lt; totalVertices; ++v) {</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            positions-&gt;at(v) = glm::vec4(mesh-&gt;mVertices[v].x, mesh-&gt;mVertices[v].y, mesh-&gt;mVertices[v].z, 1.f);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            </div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordflow">if</span> (normals) {</div>
@@ -151,7 +151,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            }</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> f = 0; f &lt; mesh-&gt;mNumFaces &amp;&amp; indices; ++f) {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">for</span> (decltype(mesh-&gt;mNumFaces) f = 0; f &lt; mesh-&gt;mNumFaces &amp;&amp; indices; ++f) {</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keyword">const</span> aiFace&amp; face =  mesh-&gt;mFaces[f];</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordflow">if</span> (face.mNumIndices != 3) {</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                std::cerr &lt;&lt; <span class="stringliteral">&quot;WARNING: Input mesh may not be triangulated. Skipping face.&quot;</span> &lt;&lt; std::endl;</div>
@@ -175,12 +175,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="_shader_program_8h_html"><div class="ttname"><a href="_shader_program_8h.html">ShaderProgram.h</a></div></div>
 <div class="ttc" id="namespace_mesh_loader_html"><div class="ttname"><a href="namespace_mesh_loader.html">MeshLoader</a></div><div class="ttdef"><b>Definition:</b> <a href="_mesh_loader_8cpp_source.html#l00008">MeshLoader.cpp:8</a></div></div>
 <div class="ttc" id="namespace_mesh_loader_html_aa3c176ea2f4dbb7ec6ae45441985b3d8"><div class="ttname"><a href="namespace_mesh_loader.html#aa3c176ea2f4dbb7ec6ae45441985b3d8">MeshLoader::LoadMesh</a></div><div class="ttdeci">std::vector&lt; std::shared_ptr&lt; RenderingObject &gt; &gt; LoadMesh(std::shared_ptr&lt; ShaderProgram &gt; inputShader, const std::string &amp;filename)</div><div class="ttdef"><b>Definition:</b> <a href="_mesh_loader_8cpp_source.html#l00011">MeshLoader.cpp:11</a></div></div>
-<div class="ttc" id="common_8h_html_a6df1d22fb5f09eccc23b9f399670cfd7"><div class="ttname"><a href="common_8h.html#a6df1d22fb5f09eccc23b9f399670cfd7">STRINGIFY</a></div><div class="ttdeci">#define STRINGIFY(x)</div><div class="ttdoc">Stringify a macro. </div><div class="ttdef"><b>Definition:</b> <a href="common_8h_source.html#l00112">common.h:112</a></div></div>
+<div class="ttc" id="common_8h_html_a6df1d22fb5f09eccc23b9f399670cfd7"><div class="ttname"><a href="common_8h.html#a6df1d22fb5f09eccc23b9f399670cfd7">STRINGIFY</a></div><div class="ttdeci">#define STRINGIFY(x)</div><div class="ttdoc">Stringify a macro. </div><div class="ttdef"><b>Definition:</b> <a href="common_8h_source.html#l00117">common.h:117</a></div></div>
 <div class="ttc" id="_mesh_loader_8h_html"><div class="ttname"><a href="_mesh_loader_8h.html">MeshLoader.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 19 2015 02:23:59 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Sep 21 2015 00:25:57 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

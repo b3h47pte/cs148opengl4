@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.9.1"/>
-<title>CS148 OpenGL 4 Assignments: /Users/michaelbao/workspace/cs148opengl4/source/common/Rendering/ForwardRenderer.h Source File</title>
+<title>CS148 OpenGL 4 Assignments: /Users/michaelbao/PhysBAM/Courses/2015/cs148/cs148opengl4/source/common/Rendering/ForwardRenderer.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -103,9 +103,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_forward_renderer.html#ab27ea6139730631d79488cec3c564597">~ForwardRenderer</a>();</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_forward_renderer.html#a99c523e11a4335d061da8bdba51f1c9a">Initialize</a>();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_forward_renderer.html#a5cbca647822780d6cfbd39552d73ee06">Initialize</a>() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_forward_renderer.html#a3693c5cd68afffc14652f24fcdc62abc">Render</a>();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_forward_renderer.html#a1a5deafa5deaf1e0abaab0e2074928c1">Render</a>() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">protected</span>:</div>
 <div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="class_forward_renderer.html#a8f703bc4c646416804bc82f4d220a648">   70</a></span>&#160;    std::shared_ptr&lt;class ShaderProgram&gt; <a class="code" href="class_forward_renderer.html#a8f703bc4c646416804bc82f4d220a648">depthPrepassShader</a>;</div>
@@ -113,17 +113,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="class_forward_renderer_html_ab27ea6139730631d79488cec3c564597"><div class="ttname"><a href="class_forward_renderer.html#ab27ea6139730631d79488cec3c564597">ForwardRenderer::~ForwardRenderer</a></div><div class="ttdeci">virtual ~ForwardRenderer()</div><div class="ttdoc">Just a day in the life of a destructor. </div><div class="ttdef"><b>Definition:</b> <a href="_forward_renderer_8cpp_source.html#l00015">ForwardRenderer.cpp:15</a></div></div>
+<div class="ttc" id="class_forward_renderer_html_a5cbca647822780d6cfbd39552d73ee06"><div class="ttname"><a href="class_forward_renderer.html#a5cbca647822780d6cfbd39552d73ee06">ForwardRenderer::Initialize</a></div><div class="ttdeci">virtual void Initialize() override</div><div class="ttdoc">Loads the data that the forward renderer needs. </div><div class="ttdef"><b>Definition:</b> <a href="_forward_renderer_8cpp_source.html#l00019">ForwardRenderer.cpp:19</a></div></div>
 <div class="ttc" id="class_renderer_html"><div class="ttname"><a href="class_renderer.html">Renderer</a></div><div class="ttdoc">A generic rendering interface. </div><div class="ttdef"><b>Definition:</b> <a href="_renderer_8h_source.html#l00013">Renderer.h:13</a></div></div>
 <div class="ttc" id="_renderer_8h_html"><div class="ttname"><a href="_renderer_8h.html">Renderer.h</a></div></div>
 <div class="ttc" id="class_forward_renderer_html_af8ed84e45085c4dc60d565fcc3c198d1"><div class="ttname"><a href="class_forward_renderer.html#af8ed84e45085c4dc60d565fcc3c198d1">ForwardRenderer::ForwardRenderer</a></div><div class="ttdeci">ForwardRenderer(std::shared_ptr&lt; class Scene &gt; inputScene, std::shared_ptr&lt; class Camera &gt; inputCamera)</div><div class="ttdoc">Stores the input scene and the input camera for use for rendering. </div><div class="ttdef"><b>Definition:</b> <a href="_forward_renderer_8cpp_source.html#l00010">ForwardRenderer.cpp:10</a></div></div>
 <div class="ttc" id="class_forward_renderer_html"><div class="ttname"><a href="class_forward_renderer.html">ForwardRenderer</a></div><div class="ttdoc">A multi-pass forward renderer with lights. </div><div class="ttdef"><b>Definition:</b> <a href="_forward_renderer_8h_source.html#l00013">ForwardRenderer.h:13</a></div></div>
-<div class="ttc" id="class_forward_renderer_html_a99c523e11a4335d061da8bdba51f1c9a"><div class="ttname"><a href="class_forward_renderer.html#a99c523e11a4335d061da8bdba51f1c9a">ForwardRenderer::Initialize</a></div><div class="ttdeci">virtual void Initialize()</div><div class="ttdoc">Loads the data that the forward renderer needs. </div><div class="ttdef"><b>Definition:</b> <a href="_forward_renderer_8cpp_source.html#l00019">ForwardRenderer.cpp:19</a></div></div>
-<div class="ttc" id="class_forward_renderer_html_a3693c5cd68afffc14652f24fcdc62abc"><div class="ttname"><a href="class_forward_renderer.html#a3693c5cd68afffc14652f24fcdc62abc">ForwardRenderer::Render</a></div><div class="ttdeci">virtual void Render()</div><div class="ttdoc">Renders a frame using a multi-pass forward renderer with all the lights in the scene. </div><div class="ttdef"><b>Definition:</b> <a href="_forward_renderer_8cpp_source.html#l00028">ForwardRenderer.cpp:28</a></div></div>
+<div class="ttc" id="class_forward_renderer_html_a1a5deafa5deaf1e0abaab0e2074928c1"><div class="ttname"><a href="class_forward_renderer.html#a1a5deafa5deaf1e0abaab0e2074928c1">ForwardRenderer::Render</a></div><div class="ttdeci">virtual void Render() override</div><div class="ttdoc">Renders a frame using a multi-pass forward renderer with all the lights in the scene. </div><div class="ttdef"><b>Definition:</b> <a href="_forward_renderer_8cpp_source.html#l00028">ForwardRenderer.cpp:28</a></div></div>
 <div class="ttc" id="class_forward_renderer_html_a8f703bc4c646416804bc82f4d220a648"><div class="ttname"><a href="class_forward_renderer.html#a8f703bc4c646416804bc82f4d220a648">ForwardRenderer::depthPrepassShader</a></div><div class="ttdeci">std::shared_ptr&lt; class ShaderProgram &gt; depthPrepassShader</div><div class="ttdoc">The depth prepass shader. </div><div class="ttdef"><b>Definition:</b> <a href="_forward_renderer_8h_source.html#l00070">ForwardRenderer.h:70</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 19 2015 02:23:59 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Sep 21 2015 00:25:57 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

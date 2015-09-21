@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.9.1"/>
-<title>CS148 OpenGL 4 Assignments: /Users/michaelbao/workspace/cs148opengl4/source/common/common.h File Reference</title>
+<title>CS148 OpenGL 4 Assignments: /Users/michaelbao/PhysBAM/Courses/2015/cs148/cs148opengl4/source/common/common.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -142,7 +142,7 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a6a1e5c0227931d99b703e1fd3adebf52"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_8h.html#a6a1e5c0227931d99b703e1fd3adebf52">PI</a> = 3.14159265359f</td></tr>
+<tr class="memitem:a6a1e5c0227931d99b703e1fd3adebf52"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_8h.html#a6a1e5c0227931d99b703e1fd3adebf52">PI</a> = 3.14159265359f</td></tr>
 <tr class="memdesc:a6a1e5c0227931d99b703e1fd3adebf52"><td class="mdescLeft">&#160;</td><td class="mdescRight">The PI constant.  <a href="#a6a1e5c0227931d99b703e1fd3adebf52">More...</a><br /></td></tr>
 <tr class="separator:a6a1e5c0227931d99b703e1fd3adebf52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -188,7 +188,7 @@ Variables</h2></td></tr>
 </dl>
 <p>This is only defined in the Debug build when NDEBUG is NOT defined. If you are unfamiliar with C++ preprocess macros, the <b>FILE</b> macro, or the <b>LINE</b> macro, you can read <a href="http://www.cplusplus.com/doc/tutorial/preprocessor/">this</a> for more information. </p>
 
-<p>Definition at line <a class="el" href="common_8h_source.html#l00091">91</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
+<p>Definition at line <a class="el" href="common_8h_source.html#l00096">96</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
 
 </div>
 </div>
@@ -209,7 +209,7 @@ Variables</h2></td></tr>
 <p>Stringify a macro. </p>
 <p>This takes in a macro that was defined to be a string and actually converts it into a string that can be used by the application. See <a class="el" href="namespace_mesh_loader.html#aa3c176ea2f4dbb7ec6ae45441985b3d8">MeshLoader::LoadMesh</a> for an example. Why is this nested macro necessary? You can read about it here: <a href="https://gcc.gnu.org/onlinedocs/cpp/Stringification.html">link</a>. </p>
 
-<p>Definition at line <a class="el" href="common_8h_source.html#l00112">112</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
+<p>Definition at line <a class="el" href="common_8h_source.html#l00117">117</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
 
 </div>
 </div>
@@ -229,7 +229,7 @@ Variables</h2></td></tr>
 
 <p>Help stringify a macro. </p>
 
-<p>Definition at line <a class="el" href="common_8h_source.html#l00104">104</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
+<p>Definition at line <a class="el" href="common_8h_source.html#l00109">109</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
 
 </div>
 </div>
@@ -283,7 +283,7 @@ Variables</h2></td></tr>
 </dl>
 <p>This function is used by the OGL_CALL macro to provide debugging information in stdout when an OpenGL API call fails. </p>
 
-<p>Definition at line <a class="el" href="common_8h_source.html#l00072">72</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
+<p>Definition at line <a class="el" href="common_8h_source.html#l00077">77</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
 
 </div>
 </div>
@@ -319,7 +319,7 @@ Variables</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A string that explain the OpenGL error. These are copied directly from the OpenGL documentation.</dd></dl>
 <p>This function is called by _DisplayOpenGLError to get a user-friendly message in addition to an errror code. </p>
 
-<p>Definition at line <a class="el" href="common_8h_source.html#l00038">38</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
+<p>Definition at line <a class="el" href="common_8h_source.html#l00043">43</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
 
 </div>
 </div>
@@ -342,7 +342,7 @@ template&lt;typename T , typename... Ts&gt; </div>
 <p>Create a std::unique_ptr much like std::make_shared. </p>
 <p>To avoid too many compilation problems I stuck with using C++11 where the committee forgot to include std::make_unique (it's there in C++14). This is a convenience function. Curious about Modern C++? The book <a href="http://www.amazon.com/Effective-Modern-Specific-Ways-Improve/dp/1491903996">Effective Modern C++</a> by Scott Meyes is a great book if you are already familiar with C++. </p>
 
-<p>Definition at line <a class="el" href="common_8h_source.html#l00121">121</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
+<p>Definition at line <a class="el" href="common_8h_source.html#l00129">129</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
 
 </div>
 </div>
@@ -359,14 +359,14 @@ template&lt;typename T , typename... Ts&gt; </div>
 
 <p>The PI constant. </p>
 
-<p>Definition at line <a class="el" href="common_8h_source.html#l00099">99</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
+<p>Definition at line <a class="el" href="common_8h_source.html#l00104">104</a> of file <a class="el" href="common_8h_source.html">common.h</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 19 2015 02:23:59 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Sep 21 2015 00:25:57 for CS148 OpenGL 4 Assignments by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>
